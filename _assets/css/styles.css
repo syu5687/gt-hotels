@@ -1,0 +1,10 @@
+/* （前回のCSSそのまま）… */
+
+.langbar{
+  display:flex; gap:8px; padding:10px 16px; justify-content:flex-end; border-bottom:1px solid #eee;
+}
+.langbar button{
+  appearance:none; border:1px solid #e5e7eb; background:#fff; color:#334155;
+  padding:6px 10px; border-radius:10px; cursor:pointer; font-size:12px;
+}
+.langbar button.is-active{ border-color:#0d5c63; color:#0d5c63; font-weight:700; }
