@@ -1,111 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
-  <title>HOTEL FLAGS SASEBO KUJUKUSHIMA the BEKKAN | iPad横用LP</title>
-  <meta name="description" content="大人の休日の最高峰へ。癒し極まる、ハイグレードホテル。天然温泉、屋外プール、プレミアムラウンジ、ライブキッチン×ビュッフェ。">
-  <link rel="preload" href="/_assets/images/hero-pool.jpg" as="image" />
-  <link rel="stylesheet" href="/_assets/css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Garden Terrace Hotels</title>
+  <meta name="description" content="Garden Terrace Hotels | Luxury / City Resort / Relax" />
+  <link rel="preload" as="image" href="/_assets/images/hero.jpg">
+  <link rel="preload" as="video" href="/_assets/media/hero.mp4" type="video/mp4">
+  <style>
+	:root{
+	  --bg:#fff; --text:#1f2937; --muted:#6b7280; --brand:#8f8f8f; --gold:#b7a27a;
+	  --line:#e5e7eb; --maxw:1200px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.08);
+	}
+	html,body{height:100%}
+	body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,"游ゴシック体",YuGothic,"ヒラギノ角ゴ ProN W3",Hiragino Kaku Gothic ProN,Arial,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+	a{color:inherit}
+	/* Header */
+	header{position:sticky;top:0;z-index:30;background:var(--brand);backdrop-filter:saturate(120%) blur(6px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+	.bar{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:12px 20px}
+	.logo{font-weight:600;color:#fff;letter-spacing:.02em}
+	nav{display:flex;gap:clamp(14px,3vw,36px)}
+	nav a{color:#fff;text-decoration:none;letter-spacing:.12em;font-size:clamp(13px,1.6vw,16px);padding:10px 4px;position:relative}
+	nav a::after{content:"";position:absolute;left:10%;right:10%;bottom:6px;height:2px;background:transparent;transition:background .2s}
+	nav a:hover::after,nav a:focus::after{background:rgba(255,255,255,.9)}
+	/* Hero */
+	.hero{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+	.hero video{width:100%;height:100%;object-fit:cover;display:block}
+	.overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.15) 40%,rgba(0,0,0,.45))}
+	.hero-title{position:absolute;inset:0;display:grid;place-items:center;color:#fff;letter-spacing:.18em;font-weight:600;text-shadow:0 2px 20px rgba(0,0,0,.4);font-size:clamp(28px,5.4vw,60px)}
+	/* Intro/Sections */
+	.intro{text-align:center;padding:28px 20px 10px}
+	.intro h2{margin:0;font-size:clamp(18px,2.2vw,22px);letter-spacing:.12em;font-weight:600}
+	.scroll{margin-top:6px;color:var(--muted);font-size:12px;letter-spacing:.3em}
+	.section{max-width:var(--maxw);margin:26px auto;padding:0 20px 8px}
+	.section h3{text-align:center;font-weight:600;letter-spacing:.28em;color:#666;margin:14px 0 18px;font-size:clamp(14px,1.8vw,16px);position:relative}
+	.section h3::before,.section h3::after{content:"";position:absolute;top:50%;width:36%;height:1px;background:var(--line)}
+	.section h3::before{left:0}.section h3::after{right:0}
+	.logos{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.2vw,24px);align-items:center}
+	.logo-card{display:flex;justify-content:center;align-items:center;min-height:88px;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.02);transition:transform .2s, box-shadow .2s}
+	.logo-card:hover,.logo-card:focus{transform:translateY(-2px);box-shadow:var(--shadow)}
+	.logo-card img{max-width:90%;height:auto;object-fit:contain;filter:contrast(92%) saturate(85%)}
+	footer{margin:40px 0 28px;text-align:center;color:var(--muted);font-size:12px}
+	/* iPad 横向き(1024x768) 優先最適化 */
+	@media (min-width:960px) and (max-width:1180px) and (orientation:landscape){
+	  :root{--maxw:1040px}
+	  .logos{grid-template-columns:repeat(3,1fr)}
+	}
+	/* 狭幅: 2列落ち */
+	@media (max-width:719px){
+	  .logos{grid-template-columns:repeat(2,1fr)}
+	  .section h3::before,.section h3::after{width:28%}
+	}
+  </style>
 </head>
 <body>
-  <main class="wrap" role="main">
-	<!-- 言語スイッチ -->
-	<nav class="langbar" aria-label="言語切替">
-	  <button data-lang="JA" class="is-active">日本語</button>
-	  <button data-lang="EN-US">EN</button>
-	  <button data-lang="KO">한국어</button>
-	  <button data-lang="ZH">中文</button>
-	</nav>
+  <header>
+	<div class="bar" role="navigation" aria-label="メイン">
+	  <div class="logo">Garden Terrace Hotels</div>
+	  <nav aria-label="サイト内カテゴリ">
+		<a href="#luxury">LUXURY</a>
+		<a href="#city">CITY RESORT</a>
+		<a href="#relax">RELAX</a>
+		<a href="#brochure">BROCHURE</a>
+	  </nav>
+	</div>
+  </header>
 
-	<!-- HERO -->
-	<header class="hero">
-	  <div>
-		<span class="badge" data-i18n="brand">HOTEL FLAGS SASEBO KUJUKUSHIMA the BEKKAN</span>
-		<h1 data-i18n="hero_title">大人の休日の最高峰へ。癒し極まる、ハイグレードホテル。</h1>
-		<p class="sub" data-i18n="hero_sub">海と森に抱かれた、洗練の和空間。天然温泉・屋外プール・ラウンジで深いくつろぎを。</p>
-	  </div>
-	</header>
+  <main id="main">
+	<!-- Hero -->
+	<section class="hero" aria-label="メインビジュアル">
+	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" autoplay muted loop playsinline preload="auto"></video>
+	  <div class="overlay" aria-hidden="true"></div>
+	  <h1 class="hero-title">LUXURY HOTEL</h1>
+	</section>
 
-	<!-- 温浴／館内 -->
-	<section aria-labelledby="sec-relax">
-	  <h2 id="sec-relax" class="sec-title" data-i18n="relax_h">すべては、日常を離れた深いくつろぎのために。</h2>
-	  <p class="lead" data-i18n="relax_lead">天然温泉の大浴場、温水プール、サウナ、リラクゼーションスペース。ご宿泊者限定のプレミアムラウンジもご用意。</p>
-	  <div class="grid cols-3 mt-14">
-		<article class="card">
-		  <img src="/_assets/images/spa.jpg" alt="天然温泉 大浴場" loading="lazy" />
-		  <div class="body" data-i18n="relax_spa">多種類・高濃度の温泉成分を含むスパは専門家からも高評価。</div>
-		</article>
-		<article class="card">
-		  <img src="/_assets/images/lounge.jpg" alt="プレミアムラウンジ" loading="lazy" />
-		  <div class="body" data-i18n="relax_lounge">2階のプレミアムラウンジでは厳選ドリンクとフィンガーフードを。</div>
-		</article>
-		<article class="card">
-		  <img src="/_assets/images/pool.jpg" alt="屋外プール" loading="lazy" />
-		  <div class="body" data-i18n="relax_pool">絶景の屋外プールで、開放的な時間を。</div>
-		</article>
+	<!-- Intro -->
+	<section class="intro">
+	  <h2>Garden Terrace Hotels</h2>
+	  <div class="scroll">SCROLL</div>
+	</section>
+
+	<!-- LUXURY -->
+	<section id="luxury" class="section" aria-label="ラグジュアリー">
+	  <h3>LUXURY</h3>
+	  <div class="logos">
+		<a class="logo-card" href="luxury-nagasaki.html"><img src="/_assets/images/nagasaki.png" alt="Garden Terrace Nagasaki"></a>
+		<a class="logo-card" href="luxury-saga.html"><img src="/_assets/images/saga.png" alt="Garden Terrace Saga"></a>
+		<a class="logo-card" href="luxury-fukuoka.html"><img src="/_assets/images/fukuoka.png" alt="Garden Terrace Fukuoka"></a>
+		<a class="logo-card" href="luxury-urari-tako.html"><img src="/_assets/images/urari.png" alt="URARI TAKO 浪裏"></a>
+		<a class="logo-card" href="luxury-royal-chester-nagasaki.html"><img src="/_assets/images/royal-chester.png" alt="Royal Chester Nagasaki"></a>
+		<a class="logo-card" href="luxury-reserve.html"><img src="/_assets/images/reserve.png" alt="Reserve"></a>
 	  </div>
 	</section>
 
-	<!-- ライブキッチン -->
-	<section aria-labelledby="sec-kitchen">
-	  <h2 id="sec-kitchen" class="sec-title" data-i18n="kitchen_h">長崎＆佐世保名物を味わう “ライブキッチン × ビュッフェ”</h2>
-	  <div class="grid cols-2">
-		<figure class="card">
-		  <img src="/_assets/images/buffet.jpg" alt="ビュッフェダイニング THE ONE" loading="lazy" />
-		</figure>
-		<div class="card">
-		  <div class="body" data-i18n="kitchen_body">
-			目の前で繰り広げられる職人の技。鉄板の音、天ぷらが揚がる香ばしさ、寿司は一貫ずつ、石窯からは熱々のピザ。
-			出来たての美味しさと臨場感をお楽しみください。
-		  </div>
-		  <ul class="features">
-			<li data-i18n="kitchen_li1">本館1階「ビュッフェダイニング THE ONE」で提供</li>
-			<li data-i18n="kitchen_li2">朝食・夕食とも和洋中の多彩なラインナップ</li>
-		  </ul>
+	<!-- CITY RESORT -->
+	<section id="city" class="section" aria-label="シティリゾート">
+	  <h3>CITY RESORT</h3>
+	  <div class="logos">
+		<a class="logo-card" href="city-flags-sasebo-kujukushima.html"><img src="/_assets/images/sasebo.png" alt="Hotel Flags Sasebo Kujukushima"></a>
+		<a class="logo-card" href="city-flags-isahaya-nagasaki.html"><img src="/_assets/images/isahaya.png" alt="Hotel Flags Isahaya Nagasaki"></a>
+		<a class="logo-card" href="city-reserve.html"><img src="/_assets/images/reserve.png" alt="Reserve"></a>
+	  </div>
+	</section>
+
+	<!-- RELAX -->
+	<section id="relax" class="section" aria-label="リラックス">
+	  <h3>RELAX</h3>
+	  <div class="logos">
+		<a class="logo-card" href="relax-flags-bekkan.html"><img src="/_assets/images/bekkan.png" alt="Hotel Flags Bekkan"></a>
+		<a class="logo-card" href="relax-sasebo-city-forest-park.html"><img src="/_assets/images/forest.png" alt="Sasebo City Forest Park"></a>
+		<a class="logo-card" href="relax-reserve.html"><img src="/_assets/images/reserve.png" alt="Reserve"></a>
+	  </div>
+	</section>
+
+	<!-- BROCHURE / PDF -->
+	<section id="brochure" class="section" aria-label="ご案内PDF">
+	  <h3>BROCHURE</h3>
+	  <div class="logos" style="grid-template-columns:1fr;">
+		<div class="logo-card" style="flex-direction:column;">
+		  <p style="margin:0 0 10px; letter-spacing:.08em;">トップページ資料（PDF）</p>
+		  <a class="pdf-btn" href="/_assets/docs/_2508GTH-WEB-TOP01.pdf" target="_blank" rel="noopener" type="application/pdf" style="display:inline-block;padding:12px 18px;border-radius:999px;border:1px solid var(--line);text-decoration:none;">
+			PDFを開く（新しいタブ）
+		  </a>
+		  <div style="margin-top:10px; font-size:12px; color:var(--muted)">iPadでは新規タブで開くのが最も安定します。</div>
 		</div>
 	  </div>
 	</section>
 
-	<!-- 客室 -->
-	<section aria-labelledby="sec-room">
-	  <h2 id="sec-room" class="sec-title" data-i18n="room_h">壮大な九十九島を望む、贅沢な眺望。</h2>
-	  <p class="lead" data-i18n="room_lead">畳のぬくもりと洋の快適さが調和した和洋室など、素足が心地よい上質な空間をご用意。</p>
-	  <div class="grid cols-2 mt-12">
-		<article class="card">
-		  <img src="/_assets/images/room-1.jpg" alt="オーシャンビュー和洋室" loading="lazy" />
-		  <div class="body">
-			<span class="chip" data-i18n="room_chip1">オーシャンビュー和洋室</span>
-			<span class="chip" data-i18n="room_chip2">和洋室</span>
-			<span class="chip" data-i18n="room_chip3">デラックスツイン</span>
-			<span class="chip" data-i18n="room_chip4">和室（ベッドタイプ）</span>
-		  </div>
-		</article>
-		<article class="card">
-		  <img src="/_assets/images/room-2.jpg" alt="客室からの眺望" loading="lazy" />
-		  <div class="body" data-i18n="room_note"><strong>チェックイン</strong> 15:00–22:00　/　<strong>チェックアウト</strong> 11:00</div>
-		</article>
-	  </div>
-	</section>
-
-	<!-- CTA -->
-	<section aria-labelledby="sec-cta">
-	  <div class="cta">
-		<div>
-		  <h2 id="sec-cta" class="sec-title white m-0" data-i18n="cta_h">ご予約・お問い合わせ</h2>
-		  <p class="cta-note" data-i18n="cta_note">空室状況・料金は日程により変動します。最新情報は公式サイトでご確認ください。</p>
-		</div>
-		<div>
-		  <a class="btn" href="#" data-i18n="cta_btn" aria-label="予約ページへ">空室状況を確認する</a>
-		</div>
-	  </div>
-	</section>
-
-	<footer>
-	  <small data-i18n="copyright">© HOTEL FLAGS SASEBO KUJUKUSHIMA the BEKKAN</small>
-	</footer>
+	<footer>© <span id="y"></span> Garden Terrace Hotels</footer>
   </main>
 
-  <script src="/_assets/js/main.js" defer></script>
+  <script>
+	document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
