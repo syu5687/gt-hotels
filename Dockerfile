@@ -1,48 +1,27 @@
-# ---------------------------
-# 1) production 依存のみインストール
-# ---------------------------
-FROM node:20-alpine AS deps
-WORKDIR /app
-# package.json と lock を拾う（lock が無いリポにも対応）
-COPY package*.json ./
-# lock があれば npm ci、無ければ npm install
-RUN if [ -f package-lock.json ]; then \
-      npm ci --omit=dev; \
-    else \
-      npm install --omit=dev; \
-    fi
+FROM php:8.1-apache
 
-# ---------------------------
-# 2) ビルド（dev依存を含めて TS をコンパイル）
-# ---------------------------
-FROM node:20-alpine AS build
-WORKDIR /app
-COPY . .
-# lock があれば npm ci、無ければ npm install
-RUN if [ -f package-lock.json ]; then \
-      npm ci; \
-    else \
-      npm install; \
-    fi \
- && npm run build
-
-# ---------------------------
-# 3) 本番ランタイム
-# ---------------------------
-FROM node:20-alpine
-WORKDIR /app
-ENV NODE_ENV=production
-
-# 実行に必要な node_modules（prod）だけを採用
-COPY --from=deps /app/node_modules ./node_modules
-
-# ビルド成果物と静的ファイルを配置
-COPY --from=build /app/dist ./dist
-COPY _assets ./_assets
-COPY index.html ./index.html
-
-# Cloud Run のポート（$PORT が渡されるが、デフォルト 8080）
+ENV PORT=8080
 EXPOSE 8080
 
-# 起動
-CMD ["node", "dist/server.js"]
+# Cloud Run用Apache設定
+RUN sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf \
+ && echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# .htaccess対応とmod_rewrite
+RUN a2enmod rewrite \
+ && sed -i "s/AllowOverride None/AllowOverride All/" /etc/apache2/apache2.conf
+
+# /var/www/html にアクセス許可
+RUN printf '%s\n' \
+  '<Directory /var/www/html>' \
+  '    Options Indexes FollowSymLinks' \
+  '    AllowOverride All' \
+  '    Require all granted' \
+  '</Directory>' >> /etc/apache2/apache2.conf
+
+# ファイル配置
+COPY . /var/www/html
+
+# パーミッション
+RUN chown -R www-data:www-data /var/www/html \
+ && chmod -R 755 /var/www/html
