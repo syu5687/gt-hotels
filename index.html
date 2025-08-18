@@ -26,7 +26,14 @@
 	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
 	.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
 	.nav a:hover::after{background:#fff}
-	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px; display:flex; align-items:center; gap:6px;}
+	.lang{position:relative}
+	.lang-btn{color:#fff;font-size:12px;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;display:flex;align-items:center;gap:8px;background:transparent;cursor:pointer}
+	.lang-btn:focus{outline:2px solid rgba(255,255,255,.7);outline-offset:2px}
+	.lang img{width:16px;height:16px;display:block}
+	.lang-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:260px;background:rgba(0,0,0,.65);backdrop-filter:saturate(140%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px;display:none;z-index:50}
+	.lang-menu a{display:block;color:#fff;text-decoration:none;padding:10px 12px;border-radius:10px;letter-spacing:.18em}
+	.lang-menu a[data-lang="ja"], .lang-menu a[data-lang="en"]{font-family:'Cinzel', serif}
+	.lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
 	.lang img{width:14px; height:14px; display:block;}
 
 	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; box-shadow:0 8px 22px rgba(0,0,0,.3);} /* 下に影 */
@@ -62,7 +69,17 @@
 		<a href="#city">CITY RESORT</a>
 		<a href="#relax">RELAX</a>
 	  </nav>
-	  <div class="lang"><a href="#jp"><img src="/_assets/svg/world.svg" alt="World Icon"> JAPANESE</a></div>
+	  <div class="lang">
+		<button id="langBtn" class="lang-btn" aria-haspopup="true" aria-expanded="false">
+		  <img src="/_assets/svg/world.svg" alt="World Icon" width="14" height="14"/> JAPANESE
+		</button>
+		<div id="langMenu" class="lang-menu" role="menu" aria-label="Language selector">
+		  <a role="menuitem" href="#jp" data-lang="ja">JAPANESE</a>
+		  <a role="menuitem" href="#en" data-lang="en">ENGLISH</a>
+		  <a role="menuitem" href="#zh-hant" data-lang="zh-Hant">繁体字</a>
+		  <a role="menuitem" href="#zh-hans" data-lang="zh-Hans">簡体字</a>
+		</div>
+	  </div>
 	</div>
   </header>
 
@@ -133,6 +150,14 @@
 	  }
 	  isPlaying = !isPlaying;
 	});
+	// Language dropdown toggle
+	const langBtn = document.getElementById('langBtn');
+	const langMenu = document.getElementById('langMenu');
+	function closeLang(){ langMenu.style.display='none'; langBtn.setAttribute('aria-expanded','false'); }
+	function openLang(){ langMenu.style.display='block'; langBtn.setAttribute('aria-expanded','true'); }
+	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu.style.display==='block'; open ? closeLang() : openLang(); });
+	document.addEventListener('click', (e)=>{ if(langMenu.style.display==='block' && !langMenu.contains(e.target)){ closeLang(); } });
+	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
   </script>
 </body>
 </html>
