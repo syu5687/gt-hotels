@@ -51,7 +51,14 @@
 	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
 
-	.logos{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; align-items:center; justify-items:center;}
+	.logos{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:center; justify-items:center;}
+	.logos-3 .spacer{visibility:hidden}
+	.logo-card{display:grid; place-items:center; min-height:180px; padding:18px; background:#fff;}
+	.logo-card img{max-width:100%; height:auto; object-fit:contain; display:block;}
+	/* 上段3つは大きく */
+	.logos-3 .logo-card:nth-child(-n+3) img[alt*="Nagasaki"],
+	.logos-3 .logo-card:nth-child(-n+3) img[alt*="Saga"],
+	.logos-3 .logo-card:nth-child(-n+3) img[alt*="Fukuoka"]{width:240px;}
 	.logo-card{display:grid; place-items:center; min-height:92px; padding:18px; background:#fff;}
 	.logo-card img{max-width:100%; height:auto; object-fit:contain; display:block;}
 
@@ -101,10 +108,11 @@
 
 	<section id="luxury" class="section">
 	  <h3>LUXURY</h3>
-	  <div class="logos">
+	  <div class="logos logos-3">
 		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
 		<div class="logo-card"><a href="luxury-saga.html"><img src="_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
 		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
+		<div class="logo-card spacer" aria-hidden="true"></div>
 		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
 		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
 	  </div>
