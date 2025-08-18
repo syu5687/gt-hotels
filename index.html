@@ -9,38 +9,14 @@
   <link rel="preload" as="video" href="/_assets/media/hero.mp4" type="video/mp4">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-	@font-face {
-	  font-family: 'TrajanPro';
-	  src: local('Trajan Pro'), local('TrajanPro-Regular'),
-		   url('/_assets/fonts/TrajanPro-Regular.woff2') format('woff2'),
-		   url('/_assets/fonts/TrajanPro-Regular.woff') format('woff');
-	  font-weight: 400;
-	  font-style: normal;
-	  font-display: swap;
-	}
-	@font-face {
-	  font-family: 'TrajanPro';
-	  src: local('Trajan Pro Bold'), local('TrajanPro-Bold'),
-		   url('/_assets/fonts/TrajanPro-Bold.woff2') format('woff2'),
-		   url('/_assets/fonts/TrajanPro-Bold.woff') format('woff');
-	  font-weight: 700;
-	  font-style: normal;
-	  font-display: swap;
-	}
-
 	:root{
 	  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
-	  --line:#E6E6E6; --gold:#B7A27A; --maxw:1040px; --radius:14px;
+	  --line:#E6E6E6; --maxw:1040px;
 	}
 
-	html,body{height:100%}
 	body{
-	  margin:0;
-	  color:var(--ink);
-	  background:var(--bg);
-	  font-family: 'Cinzel', serif;
-	  -webkit-font-smoothing:antialiased;
-	  text-rendering:optimizeLegibility;
+	  margin:0; color:var(--ink); background:var(--bg);
+	  font-family:'Cinzel', serif; -webkit-font-smoothing:antialiased;
 	}
 
 	header{position:sticky; top:0; z-index:20; background:var(--bar);} 
@@ -49,64 +25,28 @@
 	.nav{display:flex; gap:36px;}
 	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
 	.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
-	.nav a:hover::after, .nav a:focus-visible::after{background:#fff}
+	.nav a:hover::after{background:#fff}
 	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px}
 
-	/* Hero */
-	.hero{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
-	.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
-	.overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,.18) 40%,rgba(0,0,0,.46));z-index:1}
-	.hero-title{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:700;letter-spacing:.18em;text-shadow:0 2px 18px rgba(0,0,0,.42);font-size:56px;z-index:2}
-	
-	/* ▶ ボタンを中央に */
-	.play{
-	  position:absolute;left:50%;top:50%;
-	  transform:translate(-50%,-50%);
-	  width:76px;height:76px;border-radius:50%;
-	  display:grid;place-items:center;
-	  background:rgba(255,255,255,.92);
-	  border:1px solid rgba(0,0,0,.06);
-	  box-shadow:0 8px 24px rgba(0,0,0,.16);
-	  z-index:3;
-	}
-	.play svg{width:26px;height:26px;fill:#333;margin-left:3px}
-	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
-	.hero-title{position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; font-family:'TrajanPro', serif;}
-	.play{position:absolute; right:28px; bottom:28px; width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16);}
+	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
+	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0;}
+	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46)); z-index:1;}
+	.hero-title{position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; z-index:2;}
+	.play{position:absolute; top:65%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer; z-index:3;}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
 
-	.intro{ text-align:center; padding:24px 20px 6px; }
-	.intro h2{ margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; font-family:'TrajanPro', serif;}
-	.scroll{ margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; }
+	.intro{text-align:center; padding:24px 20px 6px; }
+	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em;}
+	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em;}
 
-/* Section headings: テキストの下に細い下線だけ */
-	.section{max-width:var(--maxw);margin:26px auto;padding:0 20px}
-	.section h3{
-	  text-align:center;
-	  font-weight:700;
-	  letter-spacing:.28em;
-	  color:#666;
-	  margin:18px 0 22px;
-	  font-size:15px;
-	  position:relative;
-	}
-	/* 左右ラインは廃止し、下線のみ */
-	.section h3::before,
-	.section h3::after{content:none}
-	.section h3::after{
-	  content:"";
-	  display:block;
-	  width:84%;               /* 線の長さ（好みで調整） */
-	  height:1px;
-	  margin:10px auto 0;
-	  background:var(--line);
-	}
-	.logos{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; align-items:center; }
-	.logo-card{ display:grid; place-items:center; min-height:92px; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:#fff;}
+	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
+	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+
+	.logos{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:center;}
+	.logo-card{display:grid; place-items:center; min-height:92px; padding:18px; background:#fff; border:none; box-shadow:none;}
 	.logo-card img{max-width:92%; height:auto; object-fit:contain;}
-	.logo-card a{ display:grid; place-items:center; width:100%; height:100%; text-decoration:none; }
 
-	footer{ margin:40px 0 28px; text-align:center; color:#777; font-size:12px; font-family: 'Cinzel', serif;}
+	footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
   </style>
 </head>
 <body>
@@ -139,37 +79,37 @@
 	<section id="luxury" class="section">
 	  <h3>LUXURY</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="/_assets/images/gtn.svg" alt="Garden Terrace Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-saga.html"><img src="/_assets/images/saga.png" alt="Garden Terrace Saga"></a></div>
-		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="/_assets/images/fukuoka.png" alt="Garden Terrace Fukuoka"></a></div>
-		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="/_assets/images/urari.png" alt="URARI TAKO 浪裏"></a></div>
-		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="/_assets/images/royalchester.png" alt="Royal Chester Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-reserve.html"><img src="/_assets/images/reserve.png" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="/_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
+		<div class="logo-card"><a href="luxury-saga.html"><img src="/_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
+		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="/_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
+		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="/_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
+		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="/_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
+		<div class="logo-card"><a href="luxury-reserve.html"><img src="/_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="city" class="section">
 	  <h3>CITY RESORT</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="/_assets/images/sasebo.png" alt="Hotel Flags Sasebo Kujukushima"></a></div>
-		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="/_assets/images/isahaya.png" alt="Hotel Flags Isahaya Nagasaki"></a></div>
-		<div class="logo-card"><a href="city-reserve.html"><img src="/_assets/images/reserve.png" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="/_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
+		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="/_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
+		<div class="logo-card"><a href="city-reserve.html"><img src="/_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="relax" class="section">
 	  <h3>RELAX</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="/_assets/images/bekkan.png" alt="Hotel Flags Bekkan"></a></div>
-		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="/_assets/images/forest.png" alt="Sasebo City Forest Park"></a></div>
-		<div class="logo-card"><a href="relax-reserve.html"><img src="/_assets/images/reserve.png" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="/_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
+		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="/_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
+		<div class="logo-card"><a href="relax-reserve.html"><img src="/_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="brochure" class="section">
 	  <h3>BROCHURE</h3>
 	  <div class="logos" style="grid-template-columns:1fr;">
-		<div class="logo-card" style="text-align:center; padding:24px 18px;">
+		<div class="logo-card" style="text-align:center; padding:24px 18px; background:none;">
 		  <p style="margin:0 0 10px; letter-spacing:.08em;">トップページ資料（PDF）</p>
 		  <a href="/_assets/docs/_2508GTH-WEB-TOP01.pdf" target="_blank" rel="noopener" type="application/pdf" style="display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid var(--line); text-decoration:none;">
 			PDFを開く（新しいタブ）
