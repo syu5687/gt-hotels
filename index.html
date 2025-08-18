@@ -53,8 +53,8 @@
 
 	/* グリッド配置 */
 	.logos{display:grid; gap:28px; justify-items:center; align-items:center;}
-	.logos.row-3{grid-template-columns:repeat(3,1fr);}            /* LUXURY 上段 3列 */
-	.logos.tail{grid-template-columns:repeat(2, 1fr); gap:28px;   /* CITY/RELAX 2列 */
+	.logos.row-3{grid-template-columns:repeat(3, minmax(260px, 1fr));}            /* LUXURY 上段 3列（最小幅ガード） */            /* LUXURY 上段 3列 */
+	.logos.tail{grid-template-columns:repeat(2, minmax(260px, 1fr)); gap:28px;   /* CITY/RELAX 2列（最小幅ガード） */
 				justify-items:center; align-items:center;
 				max-width:760px; margin-left:auto; margin-right:auto;}
 	.logos.center-1{grid-template-columns:1fr; place-items:center;
@@ -64,12 +64,14 @@
 	.logo-card{
   display:flex; align-items:center; justify-content:center;
   padding:18px; background:#fff;
+  min-width:260px;   /* 幅が0にならないガード */
+  min-height:160px;  /* 高さが0にならないガード */
 }
 	.logo-card a{display:block;}
 	.logo-card img{
   width:auto; height:auto;           /* intrinsic size を使う */
   max-width:100%;                    /* 枠からはみ出さない */
-  max-height:260px;                  /* 予防的な上限だけ設定（必要なら調整可） */
+  max-height:150px;                  /* 上限だけ設定（見本に近い） */
   object-fit:contain;
   display:block;
 }
