@@ -28,17 +28,30 @@
 	.nav a:hover::after{background:#fff}
 	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px}
 
-	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; display:flex; flex-direction:column; justify-content:center; align-items:center;}
-	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0;}
-	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46)); z-index:1;}
-	.hero-content{position:relative; z-index:2; text-align:center;}
-	.hero-title{color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; margin-bottom:20px;}
-	.play{width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer; margin:0 auto;}
+	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
+	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
+	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
+	.hero-title{position:absolute; top:38%; left:50%; transform:translateX(-50%); color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px;}
+	.play{position:absolute; top:58%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
 
+	/* 動画の下に影を付ける */
+	.hero::after{
+	  content:"";
+	  position:absolute;
+	  bottom:-20px;
+	  left:0;
+	  width:100%;
+	  height:40px;
+	  background:linear-gradient(to bottom, rgba(0,0,0,.25), transparent);
+	  pointer-events:none;
+	}
+
 	.intro{text-align:center; padding:24px 20px 6px; }
-	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em;}
-	.scroll{margin-top:8px;color:var(--muted);font-size:12px;letter-spacing:.3em;position:relative;display:inline-block;padding-bottom:22px;}
+	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; color:#c7b299;}
+	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; position:relative; display:inline-block;}
+	.scroll::after{content:""; display:block; margin:6px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg);}
+	.scroll-link{text-decoration:none; color:inherit;}
 
 	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
@@ -49,7 +62,6 @@
 	.logo-card object,.logo-card svg{width:180px;height:auto;display:block}
 
 	footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
-  .scroll::after{content:"";position:absolute;left:50%;bottom:0;width:14px;height:14px;border-left:1px solid var(--muted);border-bottom:1px solid var(--muted);transform:translateX(-50%) rotate(-45deg);}
   </style>
 </head>
 <body>
@@ -68,17 +80,15 @@
 
   <main>
 	<section class="hero">
-	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" muted loop playsinline preload="auto"></video>
+	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" preload="auto" playsinline></video>
 	  <div class="overlay"></div>
-	  <div class="hero-content">
-		<h1 class="hero-title">LUXURY HOTEL</h1>
-		<button id="playBtn" class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-	  </div>
+	  <h1 class="hero-title">LUXURY HOTEL</h1>
+	  <button class="play" id="playBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
 	</section>
 
 	<section class="intro">
 	  <h2>Garden Terrace Hotels</h2>
-	  <div class="scroll">SCROLL</div>
+	  <a href="#luxury" class="scroll-link"><div class="scroll">SCROLL</div></a>
 	</section>
 
 	<section id="luxury" class="section">
@@ -127,30 +137,22 @@
   </main>
 
   <script>
-	document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
+	document.getElementById('y').textContent = new Date().getFullYear();
 
 	const video = document.getElementById('heroVideo');
 	const playBtn = document.getElementById('playBtn');
 	let isPlaying = false;
 	playBtn?.addEventListener('click', () => {
-	  if(isPlaying){ video.pause(); playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; }
-	  else { video.play(); playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; }
+	  if(isPlaying){ 
+		video.pause(); 
+		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; 
+	  }
+	  else { 
+		video.play(); 
+		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; 
+	  }
 	  isPlaying = !isPlaying;
 	});
-
-	// ===== SVG 安定表示：<img src="*.svg"> を <object> へ置換（相対パス対応） =====
-	(function swapSvgImgToObject(){
-	  document.querySelectorAll('.logo-card img[src$=".svg"]').forEach(img => {
-		const data = img.getAttribute('src');
-		const obj = document.createElement('object');
-		obj.type = 'image/svg+xml';
-		obj.data = data; // 相対パスのまま
-		obj.setAttribute('aria-label', img.getAttribute('alt') || '');
-		obj.setAttribute('tabindex','-1');
-		const parent = img.parentNode;
-		parent.replaceChild(obj, img);
-	  });
-	})();
   </script>
 </body>
 </html>
