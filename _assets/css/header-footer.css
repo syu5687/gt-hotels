@@ -1,33 +1,106 @@
-header{position:sticky; top:0; z-index:1000; background:var(--bar);}
-.bar{
-  max-width:var(--maxw); margin:0 auto;
-  display:grid; grid-template-columns:1fr auto auto; align-items:center;
-  gap:16px; padding:12px 20px;
+:root {
+  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
+  --line:#E6E6E6; --maxw:1040px;
 }
-.logo{color:#fff; font-weight:600; letter-spacing:.02em; font-size:16px;}
 
-.nav{display:flex; gap:36px;}
-.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
-.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
-.nav a:hover::after,.nav a.is-active::after{background:#fff}
+/* Reset */
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: 'Cinzel', serif;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 60px; /* ← ヘッダー分の余白 */
+}
 
-/* Language dropdown: dark translucent */
-.lang{position:relative}
-.lang-btn{
-  display:flex; align-items:center; gap:8px; color:#fff; font-size:12px;
-  text-decoration:none; padding:6px 12px; border:1px solid rgba(255,255,255,.45);
-  border-radius:999px; background:transparent; cursor:pointer;
+/* === Header (always fixed) === */
+header {
+  position: fixed;   /* ← sticky から変更 */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bar);
+  height: 60px; /* 明示的に高さを指定 */
 }
-.lang-btn:focus{outline:2px solid rgba(255,255,255,.7); outline-offset:2px}
-.lang img{width:16px; height:16px; display:block}
-.lang-menu{
-  position:absolute; right:0; top:calc(100% + 10px); min-width:260px;
-  background:rgba(0,0,0,.65); backdrop-filter:saturate(140%) blur(6px);
-  border:1px solid rgba(255,255,255,.25); border-radius:16px; padding:14px;
-  display:none; z-index:2000
+
+.bar {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  height: 60px;
 }
-.lang.open .lang-menu{display:block}
-.lang-menu a{
-  display:block; color:#fff; text-decoration:none; padding:10px 12px; border-radius:10px; letter-spacing:.18em
+
+.logo {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .02em;
+  font-size: 16px;
 }
-.lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
+
+.nav {
+  display: flex;
+  gap: 36px;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: .22em;
+  padding: 10px 2px;
+  position: relative;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 12%; right: 12%;
+  bottom: 6px;
+  height: 2px;
+  background: transparent;
+  transition: background .2s ease;
+}
+.nav a:hover::after {
+  background: #fff;
+}
+
+/* === Language dropdown === */
+.lang { position: relative; }
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.lang-btn img { width: 14px; height: 14px; }
+.lang-menu {
+  display: none;
+  position: absolute;
+  right: 0; top: calc(100% + 6px);
+  background: rgba(0,0,0,.65);
+  backdrop-filter: saturate(140%) blur(6px);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 16px;
+  padding: 14px;
+  min-width: 260px;
+  z-index: 2000;
+}
+.lang.open .lang-menu { display: block; }
+.lang-menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  letter-spacing: .18em;
+}
+.lang-menu a:hover { background: rgba(255,255,255,.12); }
