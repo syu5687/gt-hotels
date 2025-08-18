@@ -7,19 +7,30 @@
   <meta name="description" content="Garden Terrace Hotels | Luxury / City Resort / Relax" />
   <link rel="preload" as="image" href="/_assets/images/hero.jpg">
   <link rel="preload" as="video" href="/_assets/media/hero.mp4" type="video/mp4">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-	/* =====================
-	   基本トークン（PDF準拠）
-	   ===================== */
+	@font-face {
+	  font-family: 'TrajanPro';
+	  src: local('Trajan Pro'), local('TrajanPro-Regular'),
+		   url('/_assets/fonts/TrajanPro-Regular.woff2') format('woff2'),
+		   url('/_assets/fonts/TrajanPro-Regular.woff') format('woff');
+	  font-weight: 400;
+	  font-style: normal;
+	  font-display: swap;
+	}
+	@font-face {
+	  font-family: 'TrajanPro';
+	  src: local('Trajan Pro Bold'), local('TrajanPro-Bold'),
+		   url('/_assets/fonts/TrajanPro-Bold.woff2') format('woff2'),
+		   url('/_assets/fonts/TrajanPro-Bold.woff') format('woff');
+	  font-weight: 700;
+	  font-style: normal;
+	  font-display: swap;
+	}
+
 	:root{
-	  --bg:#ffffff;            /* 背景 */
-	  --ink:#222222;           /* 本文色 */
-	  --muted:#777777;         /* 補助色 */
-	  --bar:#8f8f8f;           /* 上部グレーバー */
-	  --line:#E6E6E6;          /* 罫線 */
-	  --gold:#B7A27A;          /* アクセント（極薄使用） */
-	  --maxw:1040px;           /* iPad横 1024px ベース + 余白 */
-	  --radius:14px;           /* 角丸（PDFは小さめ） */
+	  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
+	  --line:#E6E6E6; --gold:#B7A27A; --maxw:1040px; --radius:14px;
 	}
 
 	html,body{height:100%}
@@ -27,90 +38,72 @@
 	  margin:0;
 	  color:var(--ink);
 	  background:var(--bg);
-	  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "游ゴシック体", YuGothic, "ヒラギノ角ゴ ProN", Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+	  font-family: 'Cinzel', serif;
 	  -webkit-font-smoothing:antialiased;
 	  text-rendering:optimizeLegibility;
-	  letter-spacing:.02em;
 	}
 
-	/* ===================== Header（PDFの細いグレーバー） ===================== */
 	header{position:sticky; top:0; z-index:20; background:var(--bar);} 
 	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px;}
 	.logo{color:#fff; font-weight:600; letter-spacing:.02em; font-size:16px;}
 	.nav{display:flex; gap:36px;}
-	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative; -webkit-tap-highlight-color:transparent}
+	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
 	.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
 	.nav a:hover::after, .nav a:focus-visible::after{background:#fff}
 	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px}
 
-	/* ===================== Hero（中央大見出し＋再生ボタン） ===================== */
 	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
-	.hero media, .hero video, .hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
+	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
 	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
-	.hero-title{position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px;}
+	.hero-title{position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; font-family:'TrajanPro', serif;}
 	.play{position:absolute; right:28px; bottom:28px; width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16);}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
 
-	/* ===================== Intro（SCROLL） ===================== */
 	.intro{ text-align:center; padding:24px 20px 6px; }
-	.intro h2{ margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; }
+	.intro h2{ margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; font-family:'TrajanPro', serif;}
 	.scroll{ margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; }
 
-	/* ===================== Sections ===================== */
 	.section{ max-width:var(--maxw); margin:26px auto; padding:0 20px; }
-	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#666; margin:14px 0 18px; font-size:15px; position:relative; }
+	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#666; margin:14px 0 18px; font-size:15px; position:relative; font-family:'TrajanPro', serif;}
 	.section h3::before, .section h3::after{ content:""; position:absolute; top:50%; width:36%; height:1px; background:var(--line); }
 	.section h3::before{ left:0; } .section h3::after{ right:0; }
 
-	/* ロゴグリッド（3列固定・陰影なし・余白広め＝PDF準拠） */
 	.logos{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; align-items:center; }
 	.logo-card{ display:grid; place-items:center; min-height:92px; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:#fff;}
-	.logo-card img{max-width:92%; height:auto; object-fit:contain; filter:grayscale(100%) contrast(.92) saturate(.85);} /* モノクロ想定 */
-	.logo-card:focus-within{ outline:2px solid var(--gold); outline-offset:2px; }
+	.logo-card img{max-width:92%; height:auto; object-fit:contain;}
 	.logo-card a{ display:grid; place-items:center; width:100%; height:100%; text-decoration:none; }
 
-	footer{ margin:40px 0 28px; text-align:center; color:#777; font-size:12px; }
-
-	/* ===== iPad 横向き 1024×768 最適化 ===== */
-	@media (min-width:960px) and (max-width:1180px) and (orientation:landscape){
-	  :root{ --maxw:1040px; }
-	  .hero-title{ font-size:56px; }
-	}
-	/* 狭幅は2列落ち（モバイル保険） */
-	@media (max-width:719px){ .logos{ grid-template-columns:repeat(2,1fr); } .section h3::before, .section h3::after{ width:28%; } }
+	footer{ margin:40px 0 28px; text-align:center; color:#777; font-size:12px; font-family: 'Cinzel', serif;}
   </style>
 </head>
 <body>
   <header>
-	<div class="bar" role="navigation" aria-label="メイン">
+	<div class="bar">
 	  <div class="logo">Garden Terrace Hotels</div>
-	  <nav class="nav" aria-label="サイト内カテゴリ">
+	  <nav class="nav">
 		<a href="#luxury">LUXURY</a>
 		<a href="#city">CITY RESORT</a>
 		<a href="#relax">RELAX</a>
 		<a href="#brochure">BROCHURE</a>
 	  </nav>
-	  <div class="lang"><a href="#jp" aria-label="日本語">JAPANESE</a></div>
+	  <div class="lang"><a href="#jp">JAPANESE</a></div>
 	</div>
   </header>
 
-  <main id="main">
-	<!-- ===== Hero ===== -->
-	<section class="hero" aria-label="メインビジュアル">
+  <main>
+	<section class="hero">
 	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" autoplay muted loop playsinline preload="auto"></video>
-	  <div class="overlay" aria-hidden="true"></div>
+	  <div class="overlay"></div>
 	  <h1 class="hero-title">LUXURY HOTEL</h1>
-	  <button class="play" aria-label="動画を再生"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+	  <button class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
 	</section>
 
-	<!-- ===== Intro ===== -->
 	<section class="intro">
 	  <h2>Garden Terrace Hotels</h2>
 	  <div class="scroll">SCROLL</div>
 	</section>
 
-	<!-- ===== LUXURY ===== -->
-	<section id="luxury" class="section" aria-label="ラグジュアリー">
+	<section id="luxury" class="section">
 	  <h3>LUXURY</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="/_assets/images/nagasaki.png" alt="Garden Terrace Nagasaki"></a></div>
@@ -122,8 +115,7 @@
 	  </div>
 	</section>
 
-	<!-- ===== CITY RESORT ===== -->
-	<section id="city" class="section" aria-label="シティリゾート">
+	<section id="city" class="section">
 	  <h3>CITY RESORT</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="/_assets/images/sasebo.png" alt="Hotel Flags Sasebo Kujukushima"></a></div>
@@ -132,8 +124,7 @@
 	  </div>
 	</section>
 
-	<!-- ===== RELAX ===== -->
-	<section id="relax" class="section" aria-label="リラックス">
+	<section id="relax" class="section">
 	  <h3>RELAX</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="/_assets/images/bekkan.png" alt="Hotel Flags Bekkan"></a></div>
@@ -142,16 +133,14 @@
 	  </div>
 	</section>
 
-	<!-- ===== BROCHURE / PDF ===== -->
-	<section id="brochure" class="section" aria-label="ご案内PDF">
+	<section id="brochure" class="section">
 	  <h3>BROCHURE</h3>
 	  <div class="logos" style="grid-template-columns:1fr;">
 		<div class="logo-card" style="text-align:center; padding:24px 18px;">
 		  <p style="margin:0 0 10px; letter-spacing:.08em;">トップページ資料（PDF）</p>
-		  <a class="pdf-btn" href="/_assets/docs/_2508GTH-WEB-TOP01.pdf" target="_blank" rel="noopener" type="application/pdf" style="display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid var(--line); text-decoration:none;">
+		  <a href="/_assets/docs/_2508GTH-WEB-TOP01.pdf" target="_blank" rel="noopener" type="application/pdf" style="display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid var(--line); text-decoration:none;">
 			PDFを開く（新しいタブ）
 		  </a>
-		  <div style="margin-top:10px; font-size:12px; color:var(--muted)">iPadでは新規タブで開くのが最も安定します。</div>
 		</div>
 	  </div>
 	</section>
@@ -160,16 +149,7 @@
   </main>
 
   <script>
-	// 年号
 	document.getElementById('y').textContent = new Date().getFullYear();
-
-	// 再生ボタン（ミュート切替）
-	(function(){
-	  const v = document.getElementById('heroVideo');
-	  const btn = document.querySelector('.play');
-	  if(!v || !btn) return;
-	  btn.addEventListener('click', ()=>{ v.muted = !v.muted; btn.style.transform='scale(0.96)'; setTimeout(()=>btn.style.transform='scale(1)',140); });
-	})();
   </script>
 </body>
 </html>
