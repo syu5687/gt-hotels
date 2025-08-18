@@ -34,6 +34,28 @@
 	.hero-title{position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; z-index:2;}
 	.play{position:absolute; top:65%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer; z-index:3;}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
+	
+	.scroll{
+	  margin-top:8px;
+	  color:var(--muted);
+	  font-size:12px;
+	  letter-spacing:.3em;
+	  position:relative;
+	  display:inline-block;
+	  padding-bottom:18px; /* 矢印の分だけ余白 */
+	}
+	
+	.scroll::after{
+	  content:"";
+	  position:absolute;
+	  left:50%;
+	  bottom:0;
+	  transform:translateX(-50%);
+	  width:10px; height:10px;
+	  border-left:1px solid var(--muted);
+	  border-bottom:1px solid var(--muted);
+	  transform:translateX(-50%) rotate(-45deg);
+	}
 
 	.intro{text-align:center; padding:24px 20px 6px; }
 	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em;}
