@@ -51,44 +51,32 @@
 	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
 
-	/* グリッド配置 */
 	.logos{display:grid; gap:28px; justify-items:center; align-items:center;}
-	.logos.row-3{grid-template-columns:repeat(3, minmax(260px, 1fr)); align-items:center; justify-items:center;}            /* LUXURY 上段 3列（最小幅ガード） */            /* LUXURY 上段 3列 */
-	.logos.tail{grid-template-columns:repeat(2, minmax(260px, 1fr)); gap:28px; align-items:center; justify-items:center; max-width:760px; margin-left:auto; margin-right:auto;}
-	.logos.center-1{grid-template-columns:1fr; place-items:center;
-					max-width:520px; margin-left:auto; margin-right:auto;} /* 単体用（今は未使用） */
+	.logos.row-3{grid-template-columns:repeat(3,1fr);} /* 3列固定行 */
+	.logos.tail{grid-template-columns:repeat(2, 1fr); gap:28px; justify-items:center; align-items:center; max-width:760px; margin-left:auto; margin-right:auto;}  /* 1〜2個を中央寄せ */
+	.logos.center-1{grid-template-columns:1fr; place-items:center; max-width:520px; margin-left:auto; margin-right:auto;} /* 単体中央 */
 
-	/* すべてのロゴを同じ見た目サイズに */
-	.logo-card{
-  display:flex; align-items:center; justify-content:center;
-  padding:18px; background:#fff;
-  min-width:260px;   /* 列の最小幅 */
-  /* width:min(100%, 360px);  ← 0px化の原因になりうるため削除 */
-  width:auto;        /* トラック幅に追従 */
-  min-height:160px;  /* 行の最小高 */
-}
-	.logo-card a{display:block;}
-	.logo-card img{
-  width:auto; height:auto;           /* intrinsic size を使う */
-  max-width:100%;
-  max-height:180px;                  /* 上限 */
-  min-width:100px;                   /* 0x0 回避の最終ガード */
-  object-fit:contain;
-  display:block;
-}
+	.logo-card{display:grid; place-items:center; min-height:160px; padding:18px; background:#fff;}
+	.logo-card img{max-width:100%; height:auto; object-fit:contain; display:block;}
+
+	/* 上段3つのロゴを大きめに調整 */
+	.logos.row-3 .logo-card img {
+	  max-height: 220px;
+	  width: auto;
+	}
 
 	footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
-
-	/* === Language dropdown: dark translucent design (persist) === */
-	.lang{position:relative}
-	.lang-btn{color:#fff;font-size:12px;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;display:flex;align-items:center;gap:8px;background:transparent;cursor:pointer}
-	.lang-btn:focus{outline:2px solid rgba(255,255,255,.7);outline-offset:2px}
-	.lang img{width:16px;height:16px;display:block}
-	.lang-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:260px;background:rgba(0,0,0,.65);backdrop-filter:saturate(140%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px;display:none;z-index:2000}
-	.lang.open .lang-menu{display:block}
-	.lang-menu a{display:block;color:#fff;text-decoration:none;padding:10px 12px;border-radius:10px;letter-spacing:.18em}
-	.lang-menu a[data-lang="ja"], .lang-menu a[data-lang="en"]{font-family:'Cinzel', serif}
-	.lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
+  
+  /* === Language dropdown: dark translucent design (persist) === */
+  .lang{position:relative}
+  .lang-btn{color:#fff;font-size:12px;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;display:flex;align-items:center;gap:8px;background:transparent;cursor:pointer}
+  .lang-btn:focus{outline:2px solid rgba(255,255,255,.7);outline-offset:2px}
+  .lang img{width:16px;height:16px;display:block}
+  .lang-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:260px;background:rgba(0,0,0,.65);backdrop-filter:saturate(140%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px;display:none;z-index:2000}
+  .lang.open .lang-menu{display:block}
+  .lang-menu a{display:block;color:#fff;text-decoration:none;padding:10px 12px;border-radius:10px;letter-spacing:.18em}
+  .lang-menu a[data-lang="ja"], .lang-menu a[data-lang="en"]{font-family:'Cinzel', serif}
+  .lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
   </style>
 </head>
 <body>
@@ -133,7 +121,7 @@
 		<div class="logo-card"><a href="luxury-saga.html"><img src="/_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
 		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="/_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
 	  </div>
-	  <!-- 残り（1〜2個）を2列中央寄せ -->
+	  <!-- 残り（1〜2個）を中央寄せで並べる -->
 	  <div class="logos tail">
 		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="/_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
 		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="/_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
