@@ -9,15 +9,9 @@
   <link rel="preload" as="video" href="/_assets/media/hero.mp4" type="video/mp4">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-	:root{
-	  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
-	  --line:#E6E6E6; --maxw:1040px;
-	}
+	:root{$1 --header-h:64px;} 
 
-	body{
-	  margin:0; color:var(--ink); background:var(--bg);
-	  font-family:'Cinzel', serif; -webkit-font-smoothing:antialiased;
-	}
+	body{$1} html{scroll-behavior:smooth; scroll-padding-top:calc(var(--header-h) + 8px);} 
 
 	header{position:sticky; top:0; z-index:20; background:var(--bar);} 
 	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px;}
@@ -50,7 +44,7 @@
 	.scroll::after{content:""; display:block; margin:6px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg);}
 	.scroll-link{text-decoration:none; color:inherit;}
 
-	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
+	.section{ max-width:var(--maxw); margin:40px auto; padding:0 20px; scroll-margin-top:calc(var(--header-h) + 8px); }
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
 
 	.logos{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:center;}
@@ -65,14 +59,15 @@
   <header>
 	<div class="bar">
 	  <div class="logo">Garden Terrace Hotels</div>
-	  <nav class="nav">
-		<a href="#luxury">LUXURY</a>
-		<a href="#city">CITY RESORT</a>
-		<a href="#relax">RELAX</a>
+	  <nav class="nav" aria-label="Main Navigation">
+		<a href="#luxury" data-i18n="LUXURY">LUXURY</a>
+		<a href="#city" data-i18n="CITY RESORT">CITY RESORT</a>
+		<a href="#relax" data-i18n="RELAX">RELAX</a>
 	  </nav>
 	  <div class="lang">
 	  <button id="langBtn" class="lang-btn" aria-haspopup="true" aria-expanded="false">
-		<img src="/_assets/svg/world.svg" alt="World Icon" width="16" height="16"/> JAPANESE
+		<img src="/_assets/svg/world.svg" alt="World Icon" width="16" height="16"/>
+		<span data-i18n="JAPANESE">JAPANESE</span>
 	  </button>
 	  <div id="langMenu" class="lang-menu" role="menu" aria-label="Language selector">
 		<a role="menuitem" href="#jp" data-lang="ja">JAPANESE</a>
@@ -95,12 +90,12 @@
 	</section>
 
 	<section class="intro">
-	  <h2>Garden Terrace Hotels</h2>
-	  <a href="#luxury" class="scroll-link"><div class="scroll">SCROLL</div></a>
+	  <h2 data-i18n="Garden Terrace Hotels">Garden Terrace Hotels<\/h2>
+	  <a href="#luxury" class="scroll-link"><div class="scroll" data-i18n="SCROLL">SCROLL<\/div></a>
 	</section>
 
 	<section id="luxury" class="section">
-	  <h3>LUXURY</h3>
+	  <h3 data-i18n="LUXURY">LUXURY</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
 		<div class="logo-card"><a href="luxury-saga.html"><img src="_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
@@ -112,7 +107,7 @@
 	</section>
 
 	<section id="city" class="section">
-	  <h3>CITY RESORT</h3>
+	  <h3 data-i18n="CITY RESORT">CITY RESORT</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
 		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
@@ -121,7 +116,7 @@
 	</section>
 
 	<section id="relax" class="section">
-	  <h3>RELAX</h3>
+	  <h3 data-i18n="RELAX">RELAX</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
 		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
@@ -157,6 +152,52 @@
 	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu.style.display==='block'; open ? closeLang() : openLang(); });
 	document.addEventListener('click', (e)=>{ if(langMenu.style.display==='block' && !langMenu.contains(e.target)){ closeLang(); } });
 	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
+	  // Language dropdown toggle
+	const langBtn = document.getElementById('langBtn');
+	const langMenu = document.getElementById('langMenu');
+	function closeLang(){ if(langMenu){ langMenu.style.display='none'; langBtn?.setAttribute('aria-expanded','false'); } }
+	function openLang(){ if(langMenu){ langMenu.style.display='block'; langBtn?.setAttribute('aria-expanded','true'); } }
+	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu && langMenu.style.display==='block'; open ? closeLang() : openLang(); });
+	document.addEventListener('click', (e)=>{ if(langMenu && langMenu.style.display==='block' && !langMenu.contains(e.target as Node)){ closeLang(); } });
+	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
+
+	// ===== DeepL 連携：ページ内翻訳（サーバキャッシュ＋localStorage） =====
+	async function collectI18nKeys(){
+	  const s = new Set();
+	  document.querySelectorAll('[data-i18n]').forEach(n => s.add(n.getAttribute('data-i18n')));
+	  return Array.from(s) as string[];
+	}
+	function applyI18n(map){
+	  document.querySelectorAll('[data-i18n]').forEach((n: any)=>{
+		const k = n.getAttribute('data-i18n');
+		if(k && map[k]) n.textContent = map[k];
+	  });
+	}
+	async function translatePage(target){
+	  const SOURCE = 'JA';
+	  const TARGET = String(target || 'EN').toUpperCase();
+	  const cacheKey = `i18n:${SOURCE}->${TARGET}`;
+	  try{
+		const local = localStorage.getItem(cacheKey);
+		if(local){ applyI18n(JSON.parse(local)); return; }
+	  }catch{}
+	  const keys = await collectI18nKeys();
+	  const res = await fetch('/api/translate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ source: SOURCE, target: TARGET, keys }) });
+	  const data = await res.json();
+	  if(data && data.translations){
+		applyI18n(data.translations);
+		try{ localStorage.setItem(cacheKey, JSON.stringify(data.translations)); }catch{}
+	  }
+	}
+	// ドロップダウン内の言語クリックで翻訳
+	langMenu?.addEventListener('click', (e)=>{
+	  const el = (e.target as HTMLElement).closest('[data-lang]');
+	  if(!el) return;
+	  e.preventDefault();
+	  const lang = el.getAttribute('data-lang');
+	  translatePage(lang);
+	  closeLang();
+	});
   </script>
 </body>
 </html>
