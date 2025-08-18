@@ -79,11 +79,28 @@
 	.intro h2{ margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; font-family:'TrajanPro', serif;}
 	.scroll{ margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; }
 
-	.section{ max-width:var(--maxw); margin:26px auto; padding:0 20px; }
-	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#666; margin:14px 0 18px; font-size:15px; position:relative; font-family:'TrajanPro', serif;}
-	.section h3::before, .section h3::after{ content:""; position:absolute; top:50%; width:36%; height:1px; background:var(--line); }
-	.section h3::before{ left:0; } .section h3::after{ right:0; }
-
+/* Section headings: テキストの下に細い下線だけ */
+	.section{max-width:var(--maxw);margin:26px auto;padding:0 20px}
+	.section h3{
+	  text-align:center;
+	  font-weight:700;
+	  letter-spacing:.28em;
+	  color:#666;
+	  margin:18px 0 22px;
+	  font-size:15px;
+	  position:relative;
+	}
+	/* 左右ラインは廃止し、下線のみ */
+	.section h3::before,
+	.section h3::after{content:none}
+	.section h3::after{
+	  content:"";
+	  display:block;
+	  width:84%;               /* 線の長さ（好みで調整） */
+	  height:1px;
+	  margin:10px auto 0;
+	  background:var(--line);
+	}
 	.logos{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; align-items:center; }
 	.logo-card{ display:grid; place-items:center; min-height:92px; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:#fff;}
 	.logo-card img{max-width:92%; height:auto; object-fit:contain;}
