@@ -5,7 +5,7 @@
 
   <!-- メインビジュアル -->
   <section class="gtn-hero">
-	<img src="_assets/images/gtn/hero.jpg" alt="GARDEN TERRACE NAGASAKI" class="fullwidth">
+	<img src="_assets/images/dummy.jpg" alt="GARDEN TERRACE NAGASAKI" class="fullwidth">
 	<div class="gtn-hero-copy">
 	  <p>まだ見たことのない特別な長崎に逢える場所。</p>
 	  <p class="sub">GARDEN TERRACE NAGASAKI HOTELS & RESORTS</p>
@@ -15,8 +15,8 @@
   <!-- 客室 / テラス -->
   <section class="gtn-rooms">
 	<div class="gtn-rooms-images">
-	  <img src="_assets/images/gtn/room01.jpg" alt="">
-	  <img src="_assets/images/gtn/room02.jpg" alt="">
+	  <img src="_assets/images/dummy.jpg" alt="">
+	  <img src="_assets/images/dummy.jpg" alt="">
 	</div>
 	<div class="gtn-rooms-text">
 	  <p>
@@ -31,7 +31,7 @@
 
   <!-- ダイニング -->
   <section class="gtn-dining">
-	<img src="_assets/images/gtn/dining01.jpg" alt="" class="fullwidth">
+	<img src="_assets/images/dummy.jpg" alt="" class="fullwidth">
 	<div class="gtn-dining-text">
 	  <p>
 		海の幸山の幸に恵まれた長崎ならではの旬の食材を長崎の街の光が映し込む<br>
@@ -52,7 +52,7 @@
 
   <!-- プール＆スパ -->
   <section class="gtn-pool">
-	<img src="_assets/images/gtn/pool.jpg" alt="" class="fullwidth">
+	<img src="_assets/images/dummy.jpg" alt="" class="fullwidth">
 	<div class="gtn-pool-text">
 	  <p>
 		長崎港や市街地の街並みを望む全長20mのインフィニティプール。<br>
@@ -70,7 +70,7 @@
 
   <!-- 客室タイプ -->
   <section class="gtn-rooms-detail">
-	<img src="_assets/images/gtn/room-detail.jpg" alt="" class="fullwidth">
+	<img src="_assets/images/dummy.jpg" alt="" class="fullwidth">
 	<div class="gtn-rooms-detail-text">
 	  <p>
 		長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。<br>
