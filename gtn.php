@@ -1,5 +1,5 @@
 <?php
-// Garden Terrace Nagasaki (GTN) — PDF準拠：セクション見出しなし
+// Garden Terrace Nagasaki — PDF完全準拠版（見出しなし・SEOタグなし）
 $pageTitle = 'Garden Terrace Nagasaki';
 $pageDesc  = 'Garden Terrace Nagasaki';
 require __DIR__.'/partials/head.php';
@@ -9,24 +9,25 @@ require __DIR__.'/partials/head.php';
 
 <main id="gtn">
 
-  <!-- HERO（PDFどおり：2行タイトル＋再生ボタン＋落ち影） -->
-  <section class="gtn-hero">
-	<video id="gtnVideo" class="gtn-hero__video"
-		   src="<?= asset('/_assets/media/gtn-hero.mp4') ?>"
-		   poster="<?= asset('/_assets/images/gtn/hero.jpg') ?>"
-		   preload="auto" playsinline muted></video>
-	<div class="gtn-hero__overlay"></div>
-	<h1 class="gtn-hero__title">
-	  <span>TERRACE</span>
-	  <span>NAGASAKI</span>
-	</h1>
-	<button class="gtn-hero__play" id="gtnPlay" aria-label="Play / Pause">
-	  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-	</button>
-	<div class="gtn-hero__shadow" aria-hidden="true"></div>
+  <!-- HERO：PDFのまま（写真＋右上ロゴ＋下部コピー） -->
+  <section class="gtn-hero gtn-hero--image">
+	<img class="gtn-hero__img"
+		 src="<?= asset('/_assets/images/gtn/hero.jpg') ?>"
+		 alt="">
+	<!-- 右上ロゴ（PDFの小さなホテルロゴ） -->
+	<img class="gtn-hero__brand"
+		 src="<?= asset('/_assets/svg/nagasaki.svg') ?>"
+		 alt="">
+	<!-- 下部コピー（中央寄せ／2段） -->
+	<div class="gtn-hero__caption">
+	  <p class="copy-ja">まだ見たことのない特別な長崎に逢える場所。</p>
+	  <p class="copy-en">GARDEN TERRACE NAGASAKI HOTELS & RESORTS</p>
+	</div>
+	<!-- 読みやすさ用の下部グラデ（PDFの印象どおり） -->
+	<div class="gtn-hero__bottomGrad" aria-hidden="true"></div>
   </section>
 
-  <!-- セクション 1（CONCEPT 相当：見出しなし） -->
+  <!-- セクション1（CONCEPT相当・見出し無し） -->
   <section class="gtn-section">
 	<div class="gtn-box">
 	  <p>
@@ -37,7 +38,7 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- セクション 2（DINING 相当：見出しなし） -->
+  <!-- セクション2（DINING相当・見出し無し） -->
   <section class="gtn-section">
 	<div class="gtn-box">
 	  <p>
@@ -53,7 +54,7 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- セクション 3（POOL / GYM & SAUNA 相当：見出しなし） -->
+  <!-- セクション3（POOL / GYM & SAUNA相当・見出し無し） -->
   <section class="gtn-section">
 	<div class="gtn-box">
 	  <p>
@@ -66,7 +67,7 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- セクション 4（ROOMS 相当：見出しなし） -->
+  <!-- セクション4（ROOMS相当・見出し無し） -->
   <section class="gtn-section">
 	<div class="gtn-box">
 	  <p>
@@ -99,7 +100,7 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- 予約CTA（PDFでボタンがあれば） -->
+  <!-- 予約CTA（PDFに相当する控えめボタン） -->
   <section class="gtn-section">
 	<div class="gtn-cta">
 	  <a class="gtn-btn" href="/reserve.php">予約ページへ</a>
@@ -110,15 +111,3 @@ require __DIR__.'/partials/head.php';
 
 <?php require __DIR__.'/partials/footer.php'; ?>
 <?php require __DIR__.'/partials/scripts.php'; ?>
-
-<script>
-  // 再生 / 一時停止（ヒーロー）
-  const v = document.getElementById('gtnVideo');
-  const p = document.getElementById('gtnPlay');
-  let playing = false;
-  p.addEventListener('click', () => {
-	if(playing){ v.pause(); p.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; }
-	else{ v.play(); p.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; }
-	playing = !playing;
-  }, {passive:true});
-</script>
