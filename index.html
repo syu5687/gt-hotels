@@ -11,7 +11,7 @@
   <style>
 	:root{
 	  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
-	  --line:#E6E6E6; --maxw:1040px;
+	  --line:#E6E6E6; --maxw:1040px; --header-h:56px;
 	}
 
 	body{
@@ -26,23 +26,23 @@
 	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
 	.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
 	.nav a:hover::after{background:#fff}
-	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px}
+	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px; display:flex; align-items:center; gap:6px;}
+	.lang img{width:14px; height:14px; display:block;}
 
-	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
+	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; box-shadow:0 8px 22px rgba(0,0,0,.3);} /* 下に影 */
 	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
 	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
 	.hero-title{position:absolute; top:40%; left:50%; transform:translateX(-50%); color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px;}
 	.play{position:absolute; top:55%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
-	.hero::after{content:""; position:absolute; bottom:-20px; left:0; right:0; height:40px; background:linear-gradient(to bottom, rgba(0,0,0,.25), transparent);}  
 
 	.intro{text-align:center; padding:24px 20px 6px; }
 	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; color:#c7b299;}
-	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; position:relative; display:inline-block; cursor:pointer;}
+	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; position:relative; display:inline-block;}
 	.scroll::after{content:""; display:block; margin:6px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg);}
 	.scroll-link{text-decoration:none; color:inherit;}
 
-	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
+	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px; scroll-margin-top:calc(var(--header-h) + 20px);}
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
 
 	.logos{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:center;}
@@ -57,21 +57,21 @@
   <header>
 	<div class="bar">
 	  <div class="logo">Garden Terrace Hotels</div>
-	  <nav class="nav">
+	  <nav class="nav" aria-label="Main Navigation">
 		<a href="#luxury">LUXURY</a>
 		<a href="#city">CITY RESORT</a>
 		<a href="#relax">RELAX</a>
 	  </nav>
-	  <div class="lang"><a href="#jp">JAPANESE</a></div>
+	  <div class="lang"><a href="#jp"><img src="/_assets/svg/world.svg" alt="World Icon"> JAPANESE</a></div>
 	</div>
   </header>
 
   <main>
 	<section class="hero">
-	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" preload="auto" playsinline></video>
+	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" preload="auto" playsinline aria-label="Background promotional video"></video>
 	  <div class="overlay"></div>
 	  <h1 class="hero-title">LUXURY HOTEL</h1>
-	  <button class="play" id="playBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+	  <button class="play" id="playBtn" aria-label="Play video" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
 	</section>
 
 	<section class="intro">
@@ -82,30 +82,30 @@
 	<section id="luxury" class="section">
 	  <h3>LUXURY</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-saga.html"><img src="_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
-		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
-		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
-		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="luxury-saga.html"><img src="_assets/svg/saga.svg" alt="Garden Terrace Saga" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="_assets/svg/urari.svg" alt="URARI TAKO 浪裏" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="luxury-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve" loading="lazy" decoding="async"></a></div>
 	  </div>
 	</section>
 
 	<section id="city" class="section">
 	  <h3>CITY RESORT</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
-		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
-		<div class="logo-card"><a href="city-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="city-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve" loading="lazy" decoding="async"></a></div>
 	  </div>
 	</section>
 
 	<section id="relax" class="section">
 	  <h3>RELAX</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
-		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
-		<div class="logo-card"><a href="relax-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="_assets/svg/forest.svg" alt="Sasebo City Forest Park" loading="lazy" decoding="async"></a></div>
+		<div class="logo-card"><a href="relax-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve" loading="lazy" decoding="async"></a></div>
 	  </div>
 	</section>
 
@@ -122,10 +122,14 @@
 	  if(isPlaying){ 
 		video.pause(); 
 		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; 
+		playBtn.setAttribute('aria-label','Play video');
+		playBtn.setAttribute('aria-pressed','false');
 	  }
 	  else { 
 		video.play(); 
 		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; 
+		playBtn.setAttribute('aria-label','Pause video');
+		playBtn.setAttribute('aria-pressed','true');
 	  }
 	  isPlaying = !isPlaying;
 	});
