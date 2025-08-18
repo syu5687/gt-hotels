@@ -67,44 +67,56 @@ header {
   background: #fff;
 }
 
-/* === Language dropdown === */
+/* === Language dropdown (pill button) === */
 .lang { position: relative; }
-.lang-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #fff;
-  font-size: 12px;
-  text-decoration: none;
-  padding: 6px 12px;
-  border: 1px solid rgba(255,255,255,.45);
-  border-radius: 999px;
-  cursor: pointer;
-}
-.lang-btn img { width: 14px; height: 14px; }
-.lang-menu {
-  display: none;
-  position: absolute;
-  right: 0; top: calc(100% + 6px);
-  background: rgba(0,0,0,.65);
-  backdrop-filter: saturate(140%) blur(6px);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 16px;
-  padding: 14px;
-  min-width: 260px;
-  z-index: 2000;
-}
-.lang.open .lang-menu { display: block; }
-.lang-menu a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 10px;
-  letter-spacing: .18em;
-}
-.lang-menu a:hover { background: rgba(255,255,255,.12); }
 
+.lang-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+
+  /* 視認性アップ：白地に濃い文字＋薄い枠線 */
+  background: rgba(255,255,255,.95);
+  color: #333;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+
+.lang-btn img{ width:16px; height:16px; display:block; }
+
+.lang-btn:hover{
+  background: #fff;
+  color: #222;
+  border-color: rgba(0,0,0,.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+/* 開いている時も読みやすい配色を維持 */
+.lang.open .lang-btn{
+  background:#fff;
+  color:#222;
+  border-color: rgba(0,0,0,.15);
+}
+
+/* ドロップダウン（既存） */
+.lang-menu{
+  position:absolute; right:0; top:calc(100% + 10px); min-width:260px;
+  background:rgba(0,0,0,.65); backdrop-filter:saturate(140%) blur(6px);
+  border:1px solid rgba(255,255,255,.25); border-radius:16px; padding:14px;
+  display:none; z-index:2000;
+}
+.lang.open .lang-menu{ display:block; }
+.lang-menu a{
+  display:block; color:#fff; text-decoration:none; padding:10px 12px;
+  border-radius:10px; letter-spacing:.18em;
+}
+.lang-menu a:hover,.lang-menu a:focus{ background:rgba(255,255,255,.12); }
 /* === Footer === */
 .site-footer{
   margin:40px 0 28px;
