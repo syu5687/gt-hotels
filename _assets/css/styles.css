@@ -1,10 +1,55 @@
-/* （前回のCSSそのまま）… */
+:root{
+  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
+  --line:#E6E6E6; --maxw:1040px;
+}
 
-.langbar{
-  display:flex; gap:8px; padding:10px 16px; justify-content:flex-end; border-bottom:1px solid #eee;
+html,body{height:100%}
+body{
+  margin:0; color:var(--ink); background:var(--bg);
+  font-family:'Cinzel', serif; -webkit-font-smoothing:antialiased;
 }
-.langbar button{
-  appearance:none; border:1px solid #e5e7eb; background:#fff; color:#334155;
-  padding:6px 10px; border-radius:10px; cursor:pointer; font-size:12px;
+
+/* ===== Hero ===== */
+.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; box-shadow:0 16px 28px rgba(0,0,0,.16);}
+.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
+.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
+.hero-title{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; text-align:center;
 }
-.langbar button.is-active{ border-color:#0d5c63; color:#0d5c63; font-weight:700; }
+.play{
+  position:absolute; top:65%; left:50%; transform:translate(-50%,-50%);
+  width:76px; height:76px; border-radius:50%; display:grid; place-items:center;
+  background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;
+}
+.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
+
+/* ===== Intro ===== */
+.intro{text-align:center; padding:24px 20px 6px;}
+.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; color:#c7b299;}
+.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; position:relative; display:inline-block;}
+.scroll::after{content:""; display:block; margin:6px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg);}
+.scroll-link{text-decoration:none; color:inherit;}
+
+/* ===== Sections ===== */
+.section{max-width:var(--maxw); margin:40px auto; padding:0 20px; scroll-margin-top:90px;}
+.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+
+/* ===== Logos grid ===== */
+.logos{display:grid; gap:32px; justify-items:center; align-items:center;}
+.logos.row-3{grid-template-columns:repeat(3, minmax(260px, 1fr));} /* 上段3列（最小幅ガード） */
+.logos.tail{ grid-template-columns:repeat(2, minmax(260px, 1fr)); max-width:760px; margin:0 auto;}
+
+/* Logo card */
+.logo-card{display:flex; align-items:center; justify-content:center; min-height:200px; padding:18px; background:#fff;}
+.logo-card a{display:flex; align-items:center; justify-content:center; width:100%; height:100%;}
+.logo-card img{
+  width:auto; height:auto; max-width:100%; max-height:180px;
+  min-width:120px; min-height:40px; object-fit:contain; display:block; margin:auto;
+}
+
+/* 上段3つだけ拡大（ご指定：280px） */
+.logos.row-3 .logo-card img{ max-height:280px; }
+
+/* Footer */
+footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
