@@ -62,15 +62,17 @@
 
 	/* すべてのロゴを同じ見た目サイズに */
 	.logo-card{
-	  display:flex; align-items:center; justify-content:center;
-	  width:260px; height:160px;                    /* 共通の枠 */
-	  padding:18px; background:#fff;
-	}
+  display:flex; align-items:center; justify-content:center;
+  padding:18px; background:#fff;
+}
 	.logo-card a{display:block;}
 	.logo-card img{
-	  max-width:100%; max-height:100%;
-	  object-fit:contain; display:block;
-	}
+  width:auto; height:auto;           /* intrinsic size を使う */
+  max-width:100%;                    /* 枠からはみ出さない */
+  max-height:260px;                  /* 予防的な上限だけ設定（必要なら調整可） */
+  object-fit:contain;
+  display:block;
+}
 
 	footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
 
