@@ -54,6 +54,26 @@
 	.logo-card object,.logo-card svg{width:180px;height:auto;display:block}
 
 	footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
+  
+  /* === Overrides (sticky header + scroll button + z-index fixes) === */
+  :root{ --header-h:64px; }
+  html{ scroll-behavior:smooth; scroll-padding-top:calc(var(--header-h) + 8px); }
+  header{ position:sticky; top:0; z-index:1000; background:var(--bar); box-shadow:0 1px 0 rgba(0,0,0,.08); }
+  .bar{ min-height:64px; }
+  .hero{ z-index:0; }
+  .overlay{ z-index:0; }
+  .scroll{ display:block; margin-top:10px; }
+  .scroll::after{ content:""; display:block; margin:8px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg); }
+  
+  /* === Overrides (sticky header + scroll button + z-index fixes) === */
+  :root{ --header-h:64px; }
+  html{ scroll-behavior:smooth; scroll-padding-top:calc(var(--header-h) + 8px); }
+  header{ position:sticky; top:0; z-index:1000; background:var(--bar); box-shadow:0 1px 0 rgba(0,0,0,.08); }
+  .bar{ min-height:64px; }
+  .hero{ z-index:0; }
+  .overlay{ z-index:0; }
+  .scroll{ display:block; margin-top:10px; }
+  .scroll::after{ content:""; display:block; margin:8px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg); }
   </style>
 </head>
 <body>
@@ -86,8 +106,8 @@
 	</section>
 
 	<section class="intro">
-	  <h2>Garden Terrace Hotels</h2>
-	  <div class="scroll" id="scrollBtn">SCROLL</div>
+	  <h2 data-i18n="Garden Terrace Hotels">Garden Terrace Hotels</h2>
+	  <a href="#luxury" class="scroll-link"><span class="scroll" data-i18n="SCROLL">SCROLL</span></a>
 	</section>
 
 	<section id="luxury" class="section">
