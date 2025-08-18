@@ -9,42 +9,43 @@
   <link rel="preload" as="video" href="/_assets/media/hero.mp4" type="video/mp4">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-	:root{$1 --header-h:64px;} 
+	:root{
+	  --bg:#ffffff; --ink:#222222; --muted:#777777; --bar:#8f8f8f;
+	  --line:#E6E6E6; --maxw:1040px;
+	}
 
-	body{$1} html{scroll-behavior:smooth; scroll-padding-top:calc(var(--header-h) + 8px);} 
+	body{
+	  margin:0; color:var(--ink); background:var(--bg);
+	  font-family:'Cinzel', serif; -webkit-font-smoothing:antialiased;
+	}
 
-	header{position:sticky; top:0; z-index:1000; background:var(--bar); box-shadow:0 1px 0 rgba(255,255,255,.25);}  
-	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px; min-height:56px;} 
+	header{position:sticky; top:0; z-index:20; background:var(--bar);} 
+	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px;}
 	.logo{color:#fff; font-weight:600; letter-spacing:.02em; font-size:16px;}
 	.nav{display:flex; gap:36px;}
-	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;} 
+	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
 	.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
 	.nav a:hover::after{background:#fff}
-	.lang{position:relative}
-	.lang-btn{color:#fff;font-size:12px;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;display:flex;align-items:center;gap:8px;background:transparent;cursor:pointer}
-	.lang-btn:focus{outline:2px solid rgba(255,255,255,.7);outline-offset:2px}
-	.lang img{width:16px;height:16px;display:block}
-	.lang-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:260px;background:rgba(0,0,0,.75);backdrop-filter:saturate(140%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px;display:none;z-index:2000}
-	.lang-menu a{display:block;color:#fff;text-decoration:none;padding:10px 12px;border-radius:10px;letter-spacing:.18em}
-	.lang-menu a[data-lang="ja"], .lang-menu a[data-lang="en"]{font-family:'Cinzel', serif}
-	.lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
+	.lang{position:relative;}
+	.lang-btn{display:flex; align-items:center; gap:6px; background:none; border:1px solid rgba(255,255,255,.45); color:#fff; padding:6px 12px; border-radius:999px; cursor:pointer; font-size:12px;}
+	.lang-btn img{width:14px; height:14px;}
+	.lang-menu{display:none; position:absolute; right:0; top:calc(100% + 6px); background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.15); border-radius:6px; overflow:hidden; z-index:2000;}
+	.lang-menu a{display:block; padding:10px 16px; text-decoration:none; color:#333; font-size:14px; white-space:nowrap;}
+	.lang-menu a:hover{background:#f5f5f5;}
 
-	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; z-index:0;} 
+	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
 	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
-	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46)); z-index:0;} 
-
-	.hero-content{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; text-align:center; z-index:1;} 
-	.hero-title{color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; margin:0;}
-	.play{margin-top:22px; width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;}
+	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
+	.hero-title{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; text-align:center;}
+	.play{position:absolute; top:65%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
 
 	.intro{text-align:center; padding:24px 20px 6px; }
 	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; color:#c7b299;}
-	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; position:relative; display:inline-block;}
+	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em; position:relative; display:inline-block; cursor:pointer;}
 	.scroll::after{content:""; display:block; margin:6px auto 0; width:14px; height:14px; border-left:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:rotate(-45deg);}
-	.scroll-link{text-decoration:none; color:inherit;}
 
-	.section{ max-width:var(--maxw); margin:40px auto; padding:0 20px; scroll-margin-top:calc(var(--header-h) + 8px); }
+	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
 
 	.logos{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:center;}
@@ -59,25 +60,20 @@
   <header>
 	<div class="bar">
 	  <div class="logo">Garden Terrace Hotels</div>
-	  <nav class="nav" aria-label="Main Navigation">
-		<a href="#luxury" data-i18n="LUXURY">LUXURY</a>
-		<a href="#city" data-i18n="CITY RESORT">CITY RESORT</a>
-		<a href="#relax" data-i18n="RELAX">RELAX</a>
+	  <nav class="nav">
+		<a href="#luxury">LUXURY</a>
+		<a href="#city">CITY RESORT</a>
+		<a href="#relax">RELAX</a>
 	  </nav>
 	  <div class="lang">
-	  <button id="langBtn" class="lang-btn" aria-haspopup="true" aria-expanded="false">
-		<img src="/_assets/svg/world.svg" alt="World Icon" width="16" height="16"/>
-		<span data-i18n="JAPANESE">JAPANESE</span>
-	  </button>
-	  <div id="langMenu" class="lang-menu" role="menu" aria-label="Language selector">
-		<a role="menuitem" href="#jp" data-lang="ja">JAPANESE</a>
-		<a role="menuitem" href="#en" data-lang="en">ENGLISH</a>
-		<a role="menuitem" href="#zh-hant" data-lang="zh-Hant">繁体字</a>
-		<a role="menuitem" href="#zh-hans" data-lang="zh-Hans">簡体字</a>
+		<button class="lang-btn" id="langBtn"><img src="/_assets/svg/world.svg" alt="world"> JAPANESE</button>
+		<div class="lang-menu" id="langMenu">
+		  <a href="#" data-lang="ja">JAPANESE</a>
+		  <a href="#" data-lang="en">ENGLISH</a>
+		  <a href="#" data-lang="zh-Hant">繁體字</a>
+		  <a href="#" data-lang="zh-Hans">简体字</a>
+		</div>
 	  </div>
-	</div>
-	</div>
-	</div>
 	</div>
   </header>
 
@@ -85,44 +81,39 @@
 	<section class="hero">
 	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" preload="auto" playsinline></video>
 	  <div class="overlay"></div>
-	  <div class="hero-content">
-		<h1 class="hero-title">LUXURY HOTEL</h1>
-		<button class="play" id="playBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-	  </div>
+	  <h1 class="hero-title">LUXURY HOTEL</h1>
+	  <button class="play" id="playBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
 	</section>
 
 	<section class="intro">
-	  <h2 data-i18n="Garden Terrace Hotels">Garden Terrace Hotels</$1>
-	  <a href="#luxury" class="scroll-link"><div class="scroll" data-i18n="SCROLL">SCROLL</$1></a>
+	  <h2>Garden Terrace Hotels</h2>
+	  <div class="scroll" id="scrollBtn">SCROLL</div>
 	</section>
 
 	<section id="luxury" class="section">
-	  <h3 data-i18n="LUXURY">LUXURY</h3>
+	  <h3>LUXURY</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
 		<div class="logo-card"><a href="luxury-saga.html"><img src="_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
 		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
 		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
 		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="city" class="section">
-	  <h3 data-i18n="CITY RESORT">CITY RESORT</h3>
+	  <h3>CITY RESORT</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
 		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
-		<div class="logo-card"><a href="city-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="relax" class="section">
-	  <h3 data-i18n="RELAX">RELAX</h3>
+	  <h3>RELAX</h3>
 	  <div class="logos">
 		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
 		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
-		<div class="logo-card"><a href="relax-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
@@ -139,107 +130,32 @@
 	  if(isPlaying){ 
 		video.pause(); 
 		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; 
-		playBtn.setAttribute('aria-pressed','false');
-		playBtn.setAttribute('aria-label','Play video');
-	  } else { 
+	  }
+	  else { 
 		video.play(); 
 		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; 
-		playBtn.setAttribute('aria-pressed','true');
-		playBtn.setAttribute('aria-label','Pause video');
 	  }
 	  isPlaying = !isPlaying;
 	});
 
-	// === Language dropdown (toggle) ===
-	const langBtn = document.getElementById('langBtn');
-	const langMenu = document.getElementById('langMenu');
-	function closeLang(){ if(langMenu){ langMenu.style.display='none'; langBtn?.setAttribute('aria-expanded','false'); } }
-	function openLang(){ if(langMenu){ langMenu.style.display='block'; langBtn?.setAttribute('aria-expanded','true'); } }
-	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu && langMenu.style.display==='block'; open ? closeLang() : openLang(); });
-	document.addEventListener('click', (e)=>{ if(langMenu && langMenu.style.display==='block' && !langMenu.contains(e.target as Node)){ closeLang(); } });
-	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
-
-	// === DeepL page translation hookup ===
-	async function collectI18nKeys(){
-	  const s = new Set();
-	  document.querySelectorAll('[data-i18n]').forEach(n => s.add(n.getAttribute('data-i18n')));
-	  return Array.from(s) as string[];
-	}
-	function applyI18n(map){
-	  document.querySelectorAll('[data-i18n]').forEach((n)=>{
-		const k = n.getAttribute('data-i18n');
-		if(k && (map as any)[k]) (n as HTMLElement).textContent = (map as any)[k];
-	  });
-	}
-	async function translatePage(target){
-	  const SOURCE = 'JA';
-	  const TARGET = String(target || 'EN').toUpperCase();
-	  const storageKey = `i18n:${SOURCE}->${TARGET}`;
-	  try{ const local = localStorage.getItem(storageKey); if(local){ applyI18n(JSON.parse(local)); return; } }catch{}
-	  const keys = await collectI18nKeys();
-	  const res = await fetch('/api/translate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ source: SOURCE, target: TARGET, keys }) });
-	  const data = await res.json();
-	  if(data && data.translations){ applyI18n(data.translations); try{ localStorage.setItem(storageKey, JSON.stringify(data.translations)); }catch{} }
-	}
-	langMenu?.addEventListener('click', (e)=>{
-	  const el = (e.target as HTMLElement).closest('[data-lang]');
-	  if(!el) return; e.preventDefault();
-	  translatePage(el.getAttribute('data-lang'));
-	  closeLang();
+	// Scroll button
+	document.getElementById('scrollBtn')?.addEventListener('click', () => {
+	  const target = document.getElementById('luxury');
+	  const offset = 80;
+	  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+	  window.scrollTo({top, behavior:'smooth'});
 	});
-	  // Language dropdown toggle
-	const langBtn = document.getElementById('langBtn');
-	const langMenu = document.getElementById('langMenu');
-	function closeLang(){ langMenu.style.display='none'; langBtn.setAttribute('aria-expanded','false'); }
-	function openLang(){ langMenu.style.display='block'; langBtn.setAttribute('aria-expanded','true'); }
-	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu.style.display==='block'; open ? closeLang() : openLang(); });
-	document.addEventListener('click', (e)=>{ if(langMenu.style.display==='block' && !langMenu.contains(e.target)){ closeLang(); } });
-	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
-	  // Language dropdown toggle
-	const langBtn = document.getElementById('langBtn');
-	const langMenu = document.getElementById('langMenu');
-	function closeLang(){ if(langMenu){ langMenu.style.display='none'; langBtn?.setAttribute('aria-expanded','false'); } }
-	function openLang(){ if(langMenu){ langMenu.style.display='block'; langBtn?.setAttribute('aria-expanded','true'); } }
-	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu && langMenu.style.display==='block'; open ? closeLang() : openLang(); });
-	document.addEventListener('click', (e)=>{ if(langMenu && langMenu.style.display==='block' && !langMenu.contains(e.target as Node)){ closeLang(); } });
-	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
 
-	// ===== DeepL 連携：ページ内翻訳（サーバキャッシュ＋localStorage） =====
-	async function collectI18nKeys(){
-	  const s = new Set();
-	  document.querySelectorAll('[data-i18n]').forEach(n => s.add(n.getAttribute('data-i18n')));
-	  return Array.from(s) as string[];
-	}
-	function applyI18n(map){
-	  document.querySelectorAll('[data-i18n]').forEach((n: any)=>{
-		const k = n.getAttribute('data-i18n');
-		if(k && map[k]) n.textContent = map[k];
-	  });
-	}
-	async function translatePage(target){
-	  const SOURCE = 'JA';
-	  const TARGET = String(target || 'EN').toUpperCase();
-	  const cacheKey = `i18n:${SOURCE}->${TARGET}`;
-	  try{
-		const local = localStorage.getItem(cacheKey);
-		if(local){ applyI18n(JSON.parse(local)); return; }
-	  }catch{}
-	  const keys = await collectI18nKeys();
-	  const res = await fetch('/api/translate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ source: SOURCE, target: TARGET, keys }) });
-	  const data = await res.json();
-	  if(data && data.translations){
-		applyI18n(data.translations);
-		try{ localStorage.setItem(cacheKey, JSON.stringify(data.translations)); }catch{}
+	// Lang dropdown
+	const langBtn = document.getElementById('langBtn');
+	const langMenu = document.getElementById('langMenu');
+	langBtn?.addEventListener('click', ()=>{
+	  langMenu.style.display = langMenu.style.display==='block' ? 'none':'block';
+	});
+	document.addEventListener('click',(e)=>{
+	  if(!langBtn.contains(e.target) && !langMenu.contains(e.target)){
+		langMenu.style.display='none';
 	  }
-	}
-	// ドロップダウン内の言語クリックで翻訳
-	langMenu?.addEventListener('click', (e)=>{
-	  const el = (e.target as HTMLElement).closest('[data-lang]');
-	  if(!el) return;
-	  e.preventDefault();
-	  const lang = el.getAttribute('data-lang');
-	  translatePage(lang);
-	  closeLang();
 	});
   </script>
 </body>
