@@ -63,8 +63,9 @@
   display:flex; align-items:center; justify-content:center;
   padding:18px; background:#fff;
   min-width:260px;   /* 列の最小幅 */
-  width:min(100%, 360px);            /* 実幅を確保 */
-  min-height:160px;                  /* 行の最小高 */
+  /* width:min(100%, 360px);  ← 0px化の原因になりうるため削除 */
+  width:auto;        /* トラック幅に追従 */
+  min-height:160px;  /* 行の最小高 */
 }
 	.logo-card a{display:block;}
 	.logo-card img{
