@@ -13,27 +13,27 @@
 
 	body{$1} html{scroll-behavior:smooth; scroll-padding-top:calc(var(--header-h) + 8px);} 
 
-	header{position:sticky; top:0; z-index:20; background:var(--bar);} 
-	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px;}
+	header{position:sticky; top:0; z-index:1000; background:var(--bar); box-shadow:0 1px 0 rgba(255,255,255,.25);}  
+	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px; min-height:56px;} 
 	.logo{color:#fff; font-weight:600; letter-spacing:.02em; font-size:16px;}
 	.nav{display:flex; gap:36px;}
-	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;}
+	.nav a{color:#fff; text-decoration:none; font-size:14px; letter-spacing:.22em; padding:10px 2px; position:relative;} 
 	.nav a::after{content:""; position:absolute; left:12%; right:12%; bottom:6px; height:2px; background:transparent; transition:background .2s ease}
 	.nav a:hover::after{background:#fff}
 	.lang{position:relative}
 	.lang-btn{color:#fff;font-size:12px;text-decoration:none;padding:6px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;display:flex;align-items:center;gap:8px;background:transparent;cursor:pointer}
 	.lang-btn:focus{outline:2px solid rgba(255,255,255,.7);outline-offset:2px}
 	.lang img{width:16px;height:16px;display:block}
-	.lang-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:260px;background:rgba(0,0,0,.65);backdrop-filter:saturate(140%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px;display:none;z-index:50}
+	.lang-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:260px;background:rgba(0,0,0,.75);backdrop-filter:saturate(140%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:14px;display:none;z-index:2000}
 	.lang-menu a{display:block;color:#fff;text-decoration:none;padding:10px 12px;border-radius:10px;letter-spacing:.18em}
 	.lang-menu a[data-lang="ja"], .lang-menu a[data-lang="en"]{font-family:'Cinzel', serif}
 	.lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
 
-	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
+	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; z-index:0;} 
 	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
-	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
+	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46)); z-index:0;} 
 
-	.hero-content{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; text-align:center;}
+	.hero-content{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; text-align:center; z-index:1;} 
 	.hero-title{color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; margin:0;}
 	.play{margin-top:22px; width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;}
 	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
@@ -77,6 +77,8 @@
 	  </div>
 	</div>
 	</div>
+	</div>
+	</div>
   </header>
 
   <main>
@@ -90,8 +92,8 @@
 	</section>
 
 	<section class="intro">
-	  <h2 data-i18n="Garden Terrace Hotels">Garden Terrace Hotels<\/h2>
-	  <a href="#luxury" class="scroll-link"><div class="scroll" data-i18n="SCROLL">SCROLL<\/div></a>
+	  <h2 data-i18n="Garden Terrace Hotels">Garden Terrace Hotels</$1>
+	  <a href="#luxury" class="scroll-link"><div class="scroll" data-i18n="SCROLL">SCROLL</$1></a>
 	</section>
 
 	<section id="luxury" class="section">
@@ -137,12 +139,53 @@
 	  if(isPlaying){ 
 		video.pause(); 
 		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>'; 
-	  }
-	  else { 
+		playBtn.setAttribute('aria-pressed','false');
+		playBtn.setAttribute('aria-label','Play video');
+	  } else { 
 		video.play(); 
 		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'; 
+		playBtn.setAttribute('aria-pressed','true');
+		playBtn.setAttribute('aria-label','Pause video');
 	  }
 	  isPlaying = !isPlaying;
+	});
+
+	// === Language dropdown (toggle) ===
+	const langBtn = document.getElementById('langBtn');
+	const langMenu = document.getElementById('langMenu');
+	function closeLang(){ if(langMenu){ langMenu.style.display='none'; langBtn?.setAttribute('aria-expanded','false'); } }
+	function openLang(){ if(langMenu){ langMenu.style.display='block'; langBtn?.setAttribute('aria-expanded','true'); } }
+	langBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); const open = langMenu && langMenu.style.display==='block'; open ? closeLang() : openLang(); });
+	document.addEventListener('click', (e)=>{ if(langMenu && langMenu.style.display==='block' && !langMenu.contains(e.target as Node)){ closeLang(); } });
+	document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLang(); });
+
+	// === DeepL page translation hookup ===
+	async function collectI18nKeys(){
+	  const s = new Set();
+	  document.querySelectorAll('[data-i18n]').forEach(n => s.add(n.getAttribute('data-i18n')));
+	  return Array.from(s) as string[];
+	}
+	function applyI18n(map){
+	  document.querySelectorAll('[data-i18n]').forEach((n)=>{
+		const k = n.getAttribute('data-i18n');
+		if(k && (map as any)[k]) (n as HTMLElement).textContent = (map as any)[k];
+	  });
+	}
+	async function translatePage(target){
+	  const SOURCE = 'JA';
+	  const TARGET = String(target || 'EN').toUpperCase();
+	  const storageKey = `i18n:${SOURCE}->${TARGET}`;
+	  try{ const local = localStorage.getItem(storageKey); if(local){ applyI18n(JSON.parse(local)); return; } }catch{}
+	  const keys = await collectI18nKeys();
+	  const res = await fetch('/api/translate', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ source: SOURCE, target: TARGET, keys }) });
+	  const data = await res.json();
+	  if(data && data.translations){ applyI18n(data.translations); try{ localStorage.setItem(storageKey, JSON.stringify(data.translations)); }catch{} }
+	}
+	langMenu?.addEventListener('click', (e)=>{
+	  const el = (e.target as HTMLElement).closest('[data-lang]');
+	  if(!el) return; e.preventDefault();
+	  translatePage(el.getAttribute('data-lang'));
+	  closeLang();
 	});
 	  // Language dropdown toggle
 	const langBtn = document.getElementById('langBtn');
