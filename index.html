@@ -19,7 +19,7 @@
 	  font-family:'Cinzel', serif; -webkit-font-smoothing:antialiased;
 	}
 
-	header{position:sticky; top:0; z-index:20; background:var(--bar);} 
+	header{position:sticky; top:0; z-index:1000; background:var(--bar);} ;}  
 	.bar{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:16px; padding:12px 20px;}
 	.logo{color:#fff; font-weight:600; letter-spacing:.02em; font-size:16px;}
 	.nav{display:flex; gap:36px;}
@@ -53,7 +53,7 @@
 
 	.logos{display:grid; gap:28px; justify-items:center; align-items:center;}
 	.logos.row-3{grid-template-columns:repeat(3,1fr);} /* 3列固定行 */
-	.logos.tail{grid-template-columns:repeat(auto-fit, minmax(240px, auto)); justify-content:center; max-width:760px; margin-left:auto; margin-right:auto;} /* 1〜2個を中央寄せ */
+ .logos.tail{grid-template-columns:repeat(2, 1fr); gap:28px; justify-items:center; align-items:center; max-width:760px; margin-left:auto; margin-right:auto;} t:auto;}  /* 1〜2個を中央寄せ */
 	.logos.center-1{grid-template-columns:1fr; place-items:center; max-width:520px; margin-left:auto; margin-right:auto;} /* 単体中央 */
 
 	.logo-card{display:grid; place-items:center; min-height:160px; padding:18px; background:#fff;}
@@ -140,10 +140,8 @@
 	  </div>
 	</section>
 
-	<section id="city" class="section">
-	  <h3>CITY RESORT</h3>
-	  <div class="logos center-1">
-		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="/_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
+	>
+		<div class="logo-card"><a href="city-flags-sasebo-kujukclass="logos tail""/_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
 		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="/_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
 	  </div>
 	</section>
@@ -151,8 +149,9 @@
 	<section id="relax" class="section">
 	  <h3>RELAX</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="/_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
-		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="/_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
+   <section id="relax" class="section">
+	  <h3>RELAX</h3>
+	  <div class="logos tail"> href="relax-sasebo-city-forest-park.html"><img src="/_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
 	  </div>
 	</section>
 
