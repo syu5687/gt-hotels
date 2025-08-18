@@ -1,50 +1,46 @@
-<?php
-// Garden Terrace Nagasaki — PDF完全準拠版（見出しなし・SEOタグなし）
-$pageTitle = 'Garden Terrace Nagasaki';
-$pageDesc  = 'Garden Terrace Nagasaki';
-require __DIR__.'/partials/head.php';
-?>
-<link rel="stylesheet" href="<?= asset('/_assets/css/gtn.css') ?>">
-<?php require __DIR__.'/partials/header.php'; ?>
+<?php include 'partials/head.php'; ?>
+<?php include 'partials/header.php'; ?>
 
-<main id="gtn">
+<main class="gtn">
 
-  <!-- HERO：PDFのまま（写真＋右上ロゴ＋下部コピー） -->
-  <section class="gtn-hero gtn-hero--image">
-	<img class="gtn-hero__img"
-		 src="<?= asset('/_assets/images/gtn/hero.jpg') ?>"
-		 alt="">
-	<!-- 右上ロゴ（PDFの小さなホテルロゴ） -->
-	<img class="gtn-hero__brand"
-		 src="<?= asset('/_assets/svg/nagasaki.svg') ?>"
-		 alt="">
-	<!-- 下部コピー（中央寄せ／2段） -->
-	<div class="gtn-hero__caption">
-	  <p class="copy-ja">まだ見たことのない特別な長崎に逢える場所。</p>
-	  <p class="copy-en">GARDEN TERRACE NAGASAKI HOTELS & RESORTS</p>
+  <!-- メインビジュアル -->
+  <section class="gtn-hero">
+	<img src="_assets/images/gtn/hero.jpg" alt="GARDEN TERRACE NAGASAKI" class="fullwidth">
+	<div class="gtn-hero-copy">
+	  <p>まだ見たことのない特別な長崎に逢える場所。</p>
+	  <p class="sub">GARDEN TERRACE NAGASAKI HOTELS & RESORTS</p>
 	</div>
-	<!-- 読みやすさ用の下部グラデ（PDFの印象どおり） -->
-	<div class="gtn-hero__bottomGrad" aria-hidden="true"></div>
   </section>
 
-  <!-- セクション1（CONCEPT相当・見出し無し） -->
-  <section class="gtn-section">
-	<div class="gtn-box">
+  <!-- 客室 / テラス -->
+  <section class="gtn-rooms">
+	<div class="gtn-rooms-images">
+	  <img src="_assets/images/gtn/room01.jpg" alt="">
+	  <img src="_assets/images/gtn/room02.jpg" alt="">
+	</div>
+	<div class="gtn-rooms-text">
 	  <p>
-		まだ見たことのない特別な長崎に逢える場所。彩り豊かな長崎の食文化を、五感で味わうシティリゾート。<br>
-		客室はすべてオーシャンビュー。大小さまざまな窓が切り取る港町の風景は、まるで一枚の絵画のよう。バスルームから眺める夜景も格別です。<br>
-		非日常のくつろぎを、別荘感覚でお楽しみください。
+		客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、<br>
+		そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。<br>
+		非日常感あふれるシティーリゾートの時間を、別荘感覚で堪能していただけます。<br>
+		バスルームからのぞむ港の夜景も格別です。<br>
+		宿泊者だけに許される贅沢な寛ぎをお楽しみください。
 	  </p>
 	</div>
   </section>
 
-  <!-- セクション2（DINING相当・見出し無し） -->
-  <section class="gtn-section">
-	<div class="gtn-box">
+  <!-- ダイニング -->
+  <section class="gtn-dining">
+	<img src="_assets/images/gtn/dining01.jpg" alt="" class="fullwidth">
+	<div class="gtn-dining-text">
 	  <p>
-		海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともに。四季の恵みをアートのように仕立てたメニューをご用意しています。
+		海の幸山の幸に恵まれた長崎ならではの旬の食材を長崎の街の光が映し込む<br>
+		長崎港を眺めながらじっくりとご賞味下さい。<br>
+		四季折々の旬の味覚を活かしたアートと呼ぶに相応しいメニューの数々。<br>
+		海側に開いた窓は、長崎の風景を切り取る「額縁」となり、<br>
+		港を見渡すオーシャンビューをお食事とともにお楽しみいただけます。
 	  </p>
-	  <ul class="gtn-list">
+	  <ul>
 		<li>鉄板焼ダイニング「竹彩」</li>
 		<li>レストラン「フォレスト」</li>
 		<li>鮨ダイニング「天空」</li>
@@ -54,60 +50,59 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- セクション3（POOL / GYM & SAUNA相当・見出し無し） -->
-  <section class="gtn-section">
-	<div class="gtn-box">
+  <!-- プール＆スパ -->
+  <section class="gtn-pool">
+	<img src="_assets/images/gtn/pool.jpg" alt="" class="fullwidth">
+	<div class="gtn-pool-text">
 	  <p>
-		長崎港と市街地を一望できる全長20mのインフィニティプール。無垢のウッドデッキ、ジャグジー、ソファセットを備え、<br>
-		日中は海と空とプールが溶け合うリゾート体験を、夕景以降は世界新三大夜景に包まれるロマンティックな時間を演出します。
+		長崎港や市街地の街並みを望む全長20mのインフィニティプール。<br>
+		無垢のウッドデッキにジャグジー、ソファセットなどが整備され、<br>
+		日中は海と空、プールが一つになり、まるで海外のリゾートホテルをイメージさせる癒しの空間が創出されます。<br>
+		夕暮れ時以降は、世界新三大夜景に認定された長崎の夜景が目の前に広がり、<br>
+		ロマンチックで感動的な世界に包まれます。
 	  </p>
 	  <p>
-		ジム＆サウナでは、眼下に広がる景色を眺めながらワークアウトやサウナをご体験いただけます。心地よい汗で心身ともにリフレッシュ。
+		ジムとサウナでは眼下に広がる長崎の景色を眺めながら運動やサウナ体験を楽しみたい方におすすめです。<br>
+		心地よい汗を流して日頃の疲れを癒し、心身ともにリフレッシュ。
 	  </p>
 	</div>
   </section>
 
-  <!-- セクション4（ROOMS相当・見出し無し） -->
-  <section class="gtn-section">
-	<div class="gtn-box">
+  <!-- 客室タイプ -->
+  <section class="gtn-rooms-detail">
+	<img src="_assets/images/gtn/room-detail.jpg" alt="" class="fullwidth">
+	<div class="gtn-rooms-detail-text">
 	  <p>
-		新館ロイヤルテラス高層階のラグジュアリールーム「プレミアムハーバースイート」、離れ棟「オーシャンスイート」「タワースイート」など、<br>
-		海側に開いたテラスと印象的な天井が生む開放感。時間とともに表情を変える港の眺めと、静謐でラグジュアリーな滞在をお届けします。
+		長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。<br>
+		本館のほかに2棟ある「離れ」の宿泊棟「オーシャンスイート」「タワースイート」。<br>
+		シンプルな装飾の室内空間に、立体的に彫り込まれた印象的な天井や、海側に開放感あふれるテラスを構えたラグジュアリーな空間。<br>
+		扉を開くと、海側に大きく開いた窓が目に飛び込み、時間の経過や季節の移ろいとともに表情を変える景色を楽しめます。<br>
+		落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。
 	  </p>
 
-	  <div class="gtn-cols">
-		<div>
-		  <ul class="gtn-list">
-			<li>オーシャンビュー和洋室</li>
-			<li>和洋室</li>
-			<li>デラックスツイン</li>
-			<li>和室（ベッドタイプ）</li>
-		  </ul>
-		</div>
-		<div>
-		  <ul class="gtn-list">
-			<li>二食付き（和洋中ビュッフェ）</li>
-			<li>朝食付き（和洋中ビュッフェ）</li>
-		  </ul>
-		  <p class="gtn-note">
-			※夕食は含まれません。チェックイン当日に追加料金のお支払いで夕食の追加変更が可能です。<br>
-			※お食事は本館1階「ビュッフェダイニング THE ONE」にてご提供します。
-		  </p>
-		</div>
-	  </div>
+	  <h3>■ 客室タイプ</h3>
+	  <ul>
+		<li>オーシャンビュー和洋室</li>
+		<li>和洋室</li>
+		<li>デラックスツイン</li>
+		<li>和室（ベッドタイプ）</li>
+	  </ul>
 
-	  <p class="gtn-meta">Check-in 15:00–22:00 ／ Check-out 11:00</p>
-	</div>
-  </section>
+	  <h3>■ 宿泊プラン</h3>
+	  <ul>
+		<li>二食付き（和洋中ビュッフェ）</li>
+		<li>朝食付き（和洋中ビュッフェ）</li>
+	  </ul>
+	  <p class="note">
+		※夕食は含まれません。宿泊日当日追加金額のお支払いで夕食追加の変更も可能です。<br>
+		※お食事は本館1階「ビュッフェダイニング THE ONE」にてご提供いたします。
+	  </p>
 
-  <!-- 予約CTA（PDFに相当する控えめボタン） -->
-  <section class="gtn-section">
-	<div class="gtn-cta">
-	  <a class="gtn-btn" href="/reserve.php">予約ページへ</a>
+	  <p>チェックイン / 15:00 - 22:00　　チェックアウト / 11:00</p>
 	</div>
   </section>
 
 </main>
 
-<?php require __DIR__.'/partials/footer.php'; ?>
-<?php require __DIR__.'/partials/scripts.php'; ?>
+<?php include 'partials/footer.php'; ?>
+<?php include 'partials/scripts.php'; ?>
