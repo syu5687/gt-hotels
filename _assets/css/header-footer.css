@@ -104,3 +104,18 @@ header {
   letter-spacing: .18em;
 }
 .lang-menu a:hover { background: rgba(255,255,255,.12); }
+
+/* === Footer === */
+.site-footer{
+  margin:40px 0 28px;
+  color:#777;
+  font-size:12px;
+}
+.site-footer .footer-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+/* セクションのアンカー位置補正（ヘッダー60px分） */
+.section { scroll-margin-top: 90px; } /* 余裕を持って90px */
