@@ -28,25 +28,24 @@
 	.nav a:hover::after{background:#fff}
 	.lang a{color:#fff; font-size:12px; text-decoration:none; padding:6px 10px; border:1px solid rgba(255,255,255,.45); border-radius:999px}
 
-	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000;}
-	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
-	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46));}
-	.hero-title{position:absolute; inset:0; display:grid; place-items:center; color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px;}
-	.control-btn{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer;}
-	.control-btn svg{width:26px; height:26px; fill:#333;}
+	.hero{position:relative; width:100%; aspect-ratio:16/9; background:#000; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+	.hero video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; z-index:0;}
+	.overlay{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.38), rgba(0,0,0,.18) 40%, rgba(0,0,0,.46)); z-index:1;}
+	.hero-content{position:relative; z-index:2; text-align:center;}
+	.hero-title{color:#fff; font-weight:700; letter-spacing:.18em; text-shadow:0 2px 18px rgba(0,0,0,.42); font-size:56px; margin-bottom:20px;}
+	.play{width:76px; height:76px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.06); box-shadow:0 8px 24px rgba(0,0,0,.16); cursor:pointer; margin:0 auto;}
+	.play svg{width:26px; height:26px; fill:#333; margin-left:3px}
 
 	.intro{text-align:center; padding:24px 20px 6px; }
-	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em; color:#c7b299;}
+	.intro h2{margin:0; font-size:20px; font-weight:600; letter-spacing:.14em;}
 	.scroll{margin-top:8px; color:var(--muted); font-size:12px; letter-spacing:.3em;}
-	.scroll a{color:inherit; text-decoration:none; display:inline-block;}
-	.scroll svg{display:block; margin:6px auto 0; width:18px; height:18px; stroke:var(--muted);}
 
 	.section{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
 	.section h3{ text-align:center; font-weight:700; letter-spacing:.28em; color:#000; margin:0 0 20px; font-size:16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
 
 	.logos{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:center;}
 	.logo-card{display:grid; place-items:center; min-height:92px; padding:18px; background:#fff;}
-	.logo-card img{max-width:92%; height:auto; object-fit:contain;}
+	.logo-card img{width:180px; height:auto; object-fit:contain;}
 
 	footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
   </style>
@@ -67,51 +66,46 @@
 
   <main>
 	<section class="hero">
-	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" preload="auto"></video>
+	  <video id="heroVideo" src="/_assets/media/hero.mp4" poster="/_assets/images/hero.jpg" muted loop playsinline preload="auto"></video>
 	  <div class="overlay"></div>
-	  <h1 class="hero-title">LUXURY HOTEL</h1>
-	  <button id="playPauseBtn" class="control-btn">
-		<svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-		<svg id="pauseIcon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-	  </button>
+	  <div class="hero-content">
+		<h1 class="hero-title">LUXURY HOTEL</h1>
+		<button id="playBtn" class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+	  </div>
 	</section>
 
 	<section class="intro">
 	  <h2>Garden Terrace Hotels</h2>
-	  <div class="scroll">
-		<a href="#luxury">SCROLL
-		  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-		</a>
-	  </div>
+	  <div class="scroll">SCROLL</div>
 	</section>
 
 	<section id="luxury" class="section">
 	  <h3>LUXURY</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-saga.html"><img src="_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
-		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
-		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
-		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
-		<div class="logo-card"><a href="luxury-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="luxury-nagasaki.html"><img src="/_assets/svg/nagasaki.svg" alt="Garden Terrace Nagasaki"></a></div>
+		<div class="logo-card"><a href="luxury-saga.html"><img src="/_assets/svg/saga.svg" alt="Garden Terrace Saga"></a></div>
+		<div class="logo-card"><a href="luxury-fukuoka.html"><img src="/_assets/svg/fukuoka.svg" alt="Garden Terrace Fukuoka"></a></div>
+		<div class="logo-card"><a href="luxury-urari-tako.html"><img src="/_assets/svg/urari.svg" alt="URARI TAKO 浪裏"></a></div>
+		<div class="logo-card"><a href="luxury-royal-chester-nagasaki.html"><img src="/_assets/svg/royalchester.svg" alt="Royal Chester Nagasaki"></a></div>
+		<div class="logo-card"><a href="luxury-reserve.html"><img src="/_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="city" class="section">
 	  <h3>CITY RESORT</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
-		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
-		<div class="logo-card"><a href="city-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="city-flags-sasebo-kujukushima.html"><img src="/_assets/svg/sasebo.svg" alt="Hotel Flags Sasebo Kujukushima"></a></div>
+		<div class="logo-card"><a href="city-flags-isahaya-nagasaki.html"><img src="/_assets/svg/isahaya.svg" alt="Hotel Flags Isahaya Nagasaki"></a></div>
+		<div class="logo-card"><a href="city-reserve.html"><img src="/_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
 	<section id="relax" class="section">
 	  <h3>RELAX</h3>
 	  <div class="logos">
-		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
-		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
-		<div class="logo-card"><a href="relax-reserve.html"><img src="_assets/svg/reserve.svg" alt="Reserve"></a></div>
+		<div class="logo-card"><a href="relax-flags-bekkan.html"><img src="/_assets/svg/bekkan.svg" alt="Hotel Flags Bekkan"></a></div>
+		<div class="logo-card"><a href="relax-sasebo-city-forest-park.html"><img src="/_assets/svg/forest.svg" alt="Sasebo City Forest Park"></a></div>
+		<div class="logo-card"><a href="relax-reserve.html"><img src="/_assets/svg/reserve.svg" alt="Reserve"></a></div>
 	  </div>
 	</section>
 
@@ -132,20 +126,18 @@
 
   <script>
 	const video = document.getElementById('heroVideo');
-	const playPauseBtn = document.getElementById('playPauseBtn');
-	const playIcon = document.getElementById('playIcon');
-	const pauseIcon = document.getElementById('pauseIcon');
+	const playBtn = document.getElementById('playBtn');
+	let isPlaying = false;
 
-	playPauseBtn.addEventListener('click', ()=>{
-	  if(video.paused){
-		video.play();
-		playIcon.style.display='none';
-		pauseIcon.style.display='block';
-	  } else {
+	playBtn.addEventListener('click', () => {
+	  if(isPlaying){
 		video.pause();
-		playIcon.style.display='block';
-		pauseIcon.style.display='none';
+		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+	  } else {
+		video.play();
+		playBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 	  }
+	  isPlaying = !isPlaying;
 	});
 
 	document.getElementById('y').textContent = new Date().getFullYear();
