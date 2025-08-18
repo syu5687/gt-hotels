@@ -1,45 +1,33 @@
 <?php
-// Garden Terrace Nagasaki (GTN) — PDF準拠レイアウト
+// Garden Terrace Nagasaki (GTN) — PDF準拠：セクション見出しなし
 $pageTitle = 'Garden Terrace Nagasaki';
 $pageDesc  = 'Garden Terrace Nagasaki';
 require __DIR__.'/partials/head.php';
 ?>
-
-<!-- ページ専用CSS -->
 <link rel="stylesheet" href="<?= asset('/_assets/css/gtn.css') ?>">
-
 <?php require __DIR__.'/partials/header.php'; ?>
 
 <main id="gtn">
 
-  <!-- HERO（動画＋大見出し） -->
+  <!-- HERO（PDFどおり：2行タイトル＋再生ボタン＋落ち影） -->
   <section class="gtn-hero">
-	<video id="gtnVideo"
-		   class="gtn-hero__video"
+	<video id="gtnVideo" class="gtn-hero__video"
 		   src="<?= asset('/_assets/media/gtn-hero.mp4') ?>"
 		   poster="<?= asset('/_assets/images/gtn/hero.jpg') ?>"
 		   preload="auto" playsinline muted></video>
-
 	<div class="gtn-hero__overlay"></div>
-
-	<!-- PDF通りの2行見出し（Trajan系・大文字・強い字間） -->
 	<h1 class="gtn-hero__title">
 	  <span>TERRACE</span>
 	  <span>NAGASAKI</span>
 	</h1>
-
-	<!-- 再生／一時停止ボタン（タイトルと干渉しない位置） -->
 	<button class="gtn-hero__play" id="gtnPlay" aria-label="Play / Pause">
 	  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
 	</button>
-
-	<!-- 下部の落ち影（PDFの雰囲気どおりに段階的グラデ） -->
 	<div class="gtn-hero__shadow" aria-hidden="true"></div>
   </section>
 
-  <!-- CONCEPT（PDFの箱罫・見出しセンター・見出し下罫） -->
+  <!-- セクション 1（CONCEPT 相当：見出しなし） -->
   <section class="gtn-section">
-	<h2 class="gtn-secTitle">CONCEPT</h2>
 	<div class="gtn-box">
 	  <p>
 		まだ見たことのない特別な長崎に逢える場所。彩り豊かな長崎の食文化を、五感で味わうシティリゾート。<br>
@@ -49,9 +37,8 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- DINING -->
+  <!-- セクション 2（DINING 相当：見出しなし） -->
   <section class="gtn-section">
-	<h2 class="gtn-secTitle">DINING</h2>
 	<div class="gtn-box">
 	  <p>
 		海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともに。四季の恵みをアートのように仕立てたメニューをご用意しています。
@@ -66,9 +53,8 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- POOL / GYM & SAUNA -->
+  <!-- セクション 3（POOL / GYM & SAUNA 相当：見出しなし） -->
   <section class="gtn-section">
-	<h2 class="gtn-secTitle">POOL / GYM &amp; SAUNA</h2>
 	<div class="gtn-box">
 	  <p>
 		長崎港と市街地を一望できる全長20mのインフィニティプール。無垢のウッドデッキ、ジャグジー、ソファセットを備え、<br>
@@ -80,9 +66,8 @@ require __DIR__.'/partials/head.php';
 	</div>
   </section>
 
-  <!-- ROOMS -->
+  <!-- セクション 4（ROOMS 相当：見出しなし） -->
   <section class="gtn-section">
-	<h2 class="gtn-secTitle">ROOMS</h2>
 	<div class="gtn-box">
 	  <p>
 		新館ロイヤルテラス高層階のラグジュアリールーム「プレミアムハーバースイート」、離れ棟「オーシャンスイート」「タワースイート」など、<br>
@@ -91,7 +76,6 @@ require __DIR__.'/partials/head.php';
 
 	  <div class="gtn-cols">
 		<div>
-		  <strong class="gtn-label">客室タイプ</strong>
 		  <ul class="gtn-list">
 			<li>オーシャンビュー和洋室</li>
 			<li>和洋室</li>
@@ -100,7 +84,6 @@ require __DIR__.'/partials/head.php';
 		  </ul>
 		</div>
 		<div>
-		  <strong class="gtn-label">宿泊プラン</strong>
 		  <ul class="gtn-list">
 			<li>二食付き（和洋中ビュッフェ）</li>
 			<li>朝食付き（和洋中ビュッフェ）</li>
@@ -112,15 +95,12 @@ require __DIR__.'/partials/head.php';
 		</div>
 	  </div>
 
-	  <p class="gtn-meta">
-		Check-in 15:00–22:00 ／ Check-out 11:00
-	  </p>
+	  <p class="gtn-meta">Check-in 15:00–22:00 ／ Check-out 11:00</p>
 	</div>
   </section>
 
-  <!-- RESERVATION（PDFのトーンに合わせ控えめな丸ボタン） -->
+  <!-- 予約CTA（PDFでボタンがあれば） -->
   <section class="gtn-section">
-	<h2 class="gtn-secTitle">RESERVATION</h2>
 	<div class="gtn-cta">
 	  <a class="gtn-btn" href="/reserve.php">予約ページへ</a>
 	</div>
@@ -132,7 +112,7 @@ require __DIR__.'/partials/head.php';
 <?php require __DIR__.'/partials/scripts.php'; ?>
 
 <script>
-  // 再生 / 一時停止
+  // 再生 / 一時停止（ヒーロー）
   const v = document.getElementById('gtnVideo');
   const p = document.getElementById('gtnPlay');
   let playing = false;
