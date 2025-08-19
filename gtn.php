@@ -35,13 +35,13 @@ require __DIR__ . '/partials/header.php';
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/gtn/sec1-1.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtn/sec1-2.webp') ?>" alt="">
 		</figure>
   
 		<!-- 右：小写真 + 本文 -->
 		<div class="rooms-side">
 		  <figure class="rooms-photoS">
-			<img src="<?= asset('/_assets/images/gtn/sec1-2.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/gtn/sec1-1.webp') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
 			<!-- ※テキストはPDFに合わせて後で差し替えてください -->
