@@ -1,127 +1,115 @@
-/*
- * Styles for the GTN internal page.  This stylesheet defines the
- * layout and typography for the hero area and the subsequent
- * thematic sections.  It relies on variables and base styles
- * defined in the global stylesheet (e.g. header-footer.css), but
- * specifies its own structure and spacing.
- */
+/* ================================
+   Garden Terrace Nagasaki Page (gtn.php)
+   ================================ */
 
-/* Base container for the page */
+/* ページ全体 */
 .gtn {
-  color: #222;
-  line-height: 1.6;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", "Noto Serif JP", serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.8;
+  font-size: 16px;
 }
 
-/* Hero section */
+/* セクション共通 */
+.gtn-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+}
+
+.gtn-sec:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* イメージ部分 */
+.gtn-sec .gtn-img {
+  flex: 1 1 50%;
+}
+
+.gtn-sec .gtn-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* テキスト部分 */
+.gtn-sec .gtn-txt {
+  flex: 1 1 50%;
+  text-align: left;
+}
+
+.gtn-sec .gtn-txt h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.gtn-sec .gtn-txt p {
+  font-size: 16px;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+/* ヒーローエリア */
 .gtn-hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 100vh;
   overflow: hidden;
 }
 
-.gtn-hero-image img {
+.gtn-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Dark overlay for readability */
-.gtn-hero-overlay {
+.gtn-hero .gtn-hero-caption {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-/* Centered content on the hero */
-.gtn-hero-content {
-  position: absolute;
-  top: 50%;
+  bottom: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  color: #fff;
   text-align: center;
-  color: #ffffff;
-  z-index: 1;
 }
 
-.gtn-hero-title {
-  margin: 0;
-  font-size: 48px;
-  letter-spacing: 0.1em;
+.gtn-hero .gtn-hero-caption h1 {
+  font-size: 40px;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.gtn-hero-subtitle {
-  margin-top: 12px;
+.gtn-hero .gtn-hero-caption p {
   font-size: 18px;
-  letter-spacing: 0.1em;
 }
 
-/* Generic section styling */
-.gtn-section {
-  padding: 60px 20px;
-  border-bottom: 1px solid #eeeeee;
-  background: #ffffff;
-}
-
-/* Inner wrapper constrains width and aligns content */
-.gtn-section-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-/* Image container within section */
-.gtn-section-image {
-  flex: 1 1 45%;
-  position: relative;
-}
-
-.gtn-section-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-}
-
-/* Textual content within section */
-.gtn-section-text {
-  flex: 1 1 50%;
-}
-
-.gtn-section-title {
-  font-size: 32px;
-  margin: 0 0 16px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-}
-
-.gtn-section-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Responsive adjustments */
+/* レスポンシブ */
 @media (max-width: 768px) {
-  .gtn-hero-title {
-    font-size: 32px;
+  .gtn-sec {
+    flex-direction: column !important;
+    gap: 20px;
+    padding: 40px 20px;
   }
-  .gtn-section-inner {
-    flex-direction: column;
+
+  .gtn-sec .gtn-txt {
+    text-align: center;
   }
-  .gtn-section-image,
-  .gtn-section-text {
-    flex: 1 1 100%;
+
+  .gtn-hero .gtn-hero-caption h1 {
+    font-size: 28px;
   }
-  .gtn-section-title {
-    font-size: 24px;
-    text-align: left;
+
+  .gtn-hero .gtn-hero-caption p {
+    font-size: 14px;
   }
 }
