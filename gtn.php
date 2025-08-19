@@ -66,7 +66,7 @@ require __DIR__ . '/partials/header.php';
   
 	  <!-- ワイドビジュアル -->
 	  <figure class="dining-hero">
-		<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		<img src="<?= asset('/_assets/images/gtn/sec2-1.webp') ?>" alt="">
 	  </figure>
   
 	  <!-- 見出し + 説明文 -->
