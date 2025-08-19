@@ -1,19 +1,16 @@
 <?php
-// ページ情報（SEOテキストは不要とのことなので空）
+// ページ情報（index.cssは読み込まない運用。gtn.php → gtn.css を自動読込）
 $pageTitle = 'Garden Terrace Nagasaki';
-$pageDesc  = '';
+$pageDesc  = ''; // SEOテキスト不要
 
-// head 側で追加CSSを挿入できる実装がある場合の想定
-$pageCSS   = [ asset('/_assets/css/gtn.css') ];
-
-require __DIR__.'/partials/head.php';
-require __DIR__.'/partials/header.php';
+require __DIR__ . '/partials/head.php';
+require __DIR__ . '/partials/header.php';
 ?>
 
 <main class="gtn">
 
   <!-- =========================
-	   HERO（背景はdummy.jpgでも可）
+	   HERO
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
@@ -30,7 +27,6 @@ require __DIR__.'/partials/header.php';
   ========================== -->
   <section class="gtn-sec gtn-sec--rooms">
 	<div class="gtn-sec__grid">
-	  <!-- 画像はダミー固定（背景以外は dummy.jpg） -->
 	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
 	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
 
@@ -43,7 +39,7 @@ require __DIR__.'/partials/header.php';
   </section>
 
   <!-- =========================
-	   SECTION 2：ダイニング総コピー
+	   SECTION 2：ダイニング（リード＋本文＋サムネ）
   ========================== -->
   <section class="gtn-sec gtn-sec--dining-lead">
 	<div class="gtn-sec__fullimg">
@@ -60,7 +56,6 @@ require __DIR__.'/partials/header.php';
 	  <p>海側に開いた窓は、長崎の風景を切り取る「額縁」となり、 港を見渡すオーシャンビューをお食事とともにお楽しみいただけます。</p>
 	</div>
 
-	<!-- サムネ群（ダミー画像） -->
 	<div class="gtn-sec__thumbs">
 	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
@@ -68,7 +63,6 @@ require __DIR__.'/partials/header.php';
 	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	</div>
 
-	<!-- レストラン名 -->
 	<ul class="gtn-list gtn-list--restaurants">
 	  <li>鉄板焼ダイニング「竹彩」</li>
 	  <li>レストラン「フォレスト」</li>
@@ -91,7 +85,6 @@ require __DIR__.'/partials/header.php';
 	  <p>ジムとサウナでは眼下に広がる長崎の景色を眺めながら運動やサウナ体験を楽しみたい方におすすめです。心地よい汗を流して日頃の疲れを癒し、心身ともにリフレッシュ。</p>
 	</div>
 
-	<!-- 小サムネ群（ダミー画像） -->
 	<div class="gtn-sec__thumbs">
 	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
@@ -115,7 +108,6 @@ require __DIR__.'/partials/header.php';
 	  </div>
 	</div>
 
-	<!-- タイプ／プラン -->
 	<div class="gtn-box gtn-box--columns">
 	  <div class="gtn-box__col">
 		<h3>■ 客室タイプ</h3>
@@ -144,5 +136,5 @@ require __DIR__.'/partials/header.php';
 
 </main>
 
-<?php require __DIR__.'/partials/footer.php'; ?>
-<?php require __DIR__.'/partials/scripts.php'; ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>
+<?php require __DIR__ . '/partials/scripts.php'; ?>
