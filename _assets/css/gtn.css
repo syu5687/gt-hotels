@@ -69,7 +69,7 @@
     url("/assets/images/back1.svg") center/contain no-repeat,
     url("../images/back1.svg") center/contain no-repeat,
     #fff;
-  opacity:.32;
+  opacity:.100;
   pointer-events:none;
   z-index:-1;
 }
