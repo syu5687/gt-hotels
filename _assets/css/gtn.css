@@ -17,7 +17,7 @@
 /* =========================================================
    HERO（1ページ目上部：写真 + 下部コピー）
 ========================================================= */
-.gtn-hero { position:relative; overflow:hidden; padding:0; background:#000; }
+.gtn-hero { position:relative; overflow:hidden; padding:0; }
 .gtn-hero__bg img {
   width:100%;
   height:min(72vh,760px);
