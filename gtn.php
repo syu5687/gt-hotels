@@ -195,33 +195,33 @@ require __DIR__ . '/partials/header.php';
 	  </div>
   
 	  <!-- 下段：2カラムのボックス（箇条書き） -->
-	  <div class="stay-info">
-		<div class="box">
-		  <h3>客室タイプ</h3>
-		  <ul>
-			<li>オーシャンビュー和洋室</li>
-			<li>和洋室</li>
-			<li>デラックスツイン</li>
-			<li>和室（ベッドタイプ）</li>
-		  </ul>
+<div class="stay-info">
+		<div class="stay-box">
+		  <div class="stay-col">
+			<h4>客室タイプ</h4>
+			<ul>
+			  <li>オーシャンビュー和洋室</li>
+			  <li>和洋室</li>
+			  <li>デラックスツイン</li>
+			  <li>和室（ベッドタイプ）</li>
+			</ul>
+		  </div>
+		  <div class="stay-col">
+			<h4>宿泊プラン</h4>
+			<ul>
+			  <li>二食付き（和洋中ビュッフェ）</li>
+			  <li>朝食付き（和洋中ビュッフェ）</li>
+			</ul>
+			<p class="note">※夕食は含まれません。宿泊日当日追加金額のお支払いで夕食追加の変更も可能です。</p>
+			<p class="note">※お食事は本館1階「ビュッフェダイニング THE ONE」にてご提供いたします。</p>
+		  </div>
 		</div>
-		<div class="box">
-		  <h3>宿泊プラン</h3>
-		  <ul>
-			<li>二食付き（和洋中セレクション）</li>
-			<li>朝食付き（和洋中セレクション）</li>
-		  </ul>
-		  <p class="note"><!-- PDF脚注（※ から始まる注記）をここへ貼付 --></p>
+	  
+		<div class="stay-bottom">
+		  <span>チェックイン / 15:00 − 22:00</span>
+		  <span>チェックアウト / 11:00</span>
 		</div>
 	  </div>
-  
-	  <!-- チェックイン／アウト -->
-	  <div class="stay-times">
-		<div class="time">チェックイン / 15:00 – 22:00</div>
-		<div class="time">チェックアウト / 11:00</div>
-	  </div>
-  
-	</div>
   </section>
 </main>
 

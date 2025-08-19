@@ -325,3 +325,44 @@
 .stay-times .time{
   font-size:14px; letter-spacing:.08em; color:#222
 }
+.stay-info {
+  background: #faf9f5;
+  padding: 2em;
+  border: 1px solid #e5e3dc;
+}
+
+.stay-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.stay-col h4 {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.stay-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stay-col ul li {
+  margin: 0.3em 0;
+}
+
+.stay-col .note {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 0.5em;
+}
+
+.stay-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95em;
+}
