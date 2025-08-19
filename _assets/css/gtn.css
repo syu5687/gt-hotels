@@ -8,7 +8,7 @@
 
 /* ---- 基本スコープ ---- */
 .gtn * { box-sizing: border-box; }
-.gtn { color:#222; font-family:'Cinzel', serif; line-height:1.9; background:#c6ba9a; }
+.gtn { color:#222; font-family:'Cinzel', serif; line-height:1.9; }
 .gtn img { display:block; max-width:100%; height:auto; }
 .gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul { margin:0; }
 .gtn section { padding:60px 20px; }
@@ -55,7 +55,7 @@
   padding:56px 20px 48px;
   position: relative;
   z-index: 0;
-  background: #c6ba9a url('/_assets/images/back1.svg') no-repeat center top;
+  background:  url('/_assets/images/back1.svg') no-repeat center top;
   background-size: cover;
 }
 .gtn-sec--rooms .gtn-wrap { max-width:1180px; margin:0 auto; }
@@ -133,7 +133,7 @@
   padding:56px 0;
   position: relative;
   z-index: 0;
-  background: #c6ba9a url('/_assets/images/back1.svg') no-repeat center top;
+  background: url('/_assets/images/back1.svg') no-repeat center top;
   background-size: cover;
 }
 .gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
