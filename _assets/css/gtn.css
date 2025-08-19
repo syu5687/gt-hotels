@@ -414,3 +414,19 @@
 /* （同様の事象が出る可能性に備えて、他セクションも統一） */
 .gtn .dining-hero { margin: 0 0 28px !important; }
 .gtn .stay-hero   { margin: 0 0 24px !important; } /* 既存値に合わせて少し小さめ */
+
+/* back1.svg を元の比率で表示するように修正 */
+.rooms-deco__bg,
+.breeze-deco__bg {
+  display: block;
+  width: min(1600px, 96vw);   /* 元の最大幅制御に戻す */
+  height: auto !important;    /* 縦横比を維持 */
+  margin: 0 auto;
+}
+
+/* 周囲の帯（背景色）は削除 or 無効化 */
+.rooms-deco,
+.breeze-deco {
+  background: transparent !important;
+  padding: 0 !important;
+}
