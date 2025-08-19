@@ -61,6 +61,16 @@
 .gtn-sec--rooms .rooms-grid {
   display:grid; gap:32px; align-items:start;
 }
+/* Section1（客室） */
+.gtn-sec--rooms {
+  position: relative;
+  background-color: #c6ba9a; /* ベース色 */
+  background-image: url("../images/back1.jpeg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: 0;
+}
 @media (min-width:960px) {
   .gtn-sec--rooms .rooms-grid {
     grid-template-columns:minmax(520px,1fr) minmax(420px,560px);
@@ -148,7 +158,16 @@
 ========================================================= */
 .gtn-sec--breeze { padding:56px 0; background:#f7f6f3; }
 .gtn-sec--breeze .gtn-wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
-
+/* Section3（プール・スパ・ジム） */
+.gtn-sec--breeze {
+  position: relative;
+  background-color: #c6ba9a; /* ベース色 */
+  background-image: url("../images/back1.jpeg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: 0;
+}
 /* ワイド */
 .breeze-hero { margin:0 0 28px; }
 .breeze-hero img {
