@@ -154,7 +154,22 @@
    Section 3: BREEZE（プール・スパ・ジム）
    ※ 装飾は <img> 方式は使わず、必要なら同様に挿入可能
 ========================================================= */
-.gtn-sec--breeze { position: relative; padding: 56px 0; background: #f7f6f3; }
+/* Section3: BREEZE */
+.gtn-sec--breeze {
+  position: relative;
+  padding: 56px 0;
+  background: #f7f6f3; /* ← Section1 と同じ背景色 */
+}
+
+.breeze-deco {
+  margin-top: 26px; /* Section1 と同じ余白 */
+}
+.breeze-deco__bg {
+  display: block;
+  width: min(1600px, 96vw);
+  height: auto;
+  margin: 0 auto;
+}
 .gtn-sec--breeze .gtn-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
 .breeze-hero{ margin: 0 0 28px; }
