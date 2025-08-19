@@ -53,9 +53,10 @@ require __DIR__ . '/partials/header.php';
 	  </div>
   
 <!-- 下：デコ矩形（2段） -->
-	  <div class="rooms-deco">
+	  <div class="rooms-deco rooms-deco--band">
 		<img src="<?= asset('/_assets/images/back1.svg') ?>" alt="" class="rooms-deco__bg">
-	  </div>  </section>
+	  </div>
+    </section>
 
   <!-- =========================
 			 SECTION 2：ダイニング
@@ -161,9 +162,9 @@ require __DIR__ . '/partials/header.php';
 		</div>
 	  
 		<!-- ▼ Section3 装飾（back1.svg） -->
-		<div class="breeze-deco">
-		  <img src="<?= asset('/_assets/images/back1.svg') ?>" alt="" class="breeze-deco__bg">
-		</div>  
+		<div class="rooms-deco rooms-deco--band">
+		  <img src="<?= asset('/_assets/images/back1.svg') ?>" alt="" class="rooms-deco__bg">
+		</div>
 	</div>
   </section>
   <!-- =========================
