@@ -1,242 +1,229 @@
 /* =========================================================
    GTN PAGE — FULL CSS (scoped under .gtn)
-   PDF完全一致寄せ／ヘッダー・フッター共通の上で本ページのみ適用
    ---------------------------------------------------------
-   使い方：<main class="gtn"> ... </main>
-   画像は dummy.jpg を差し込んでいます
+   ・ページ全体の背景色: #c6ba9a
+   ・HERO テキストは画像の上に重ねる
+   ・Section1(rooms) / Section3(breeze) は back1.svg を
+     擬似要素で“所定位置”に敷く（contain・非反復）
+   ・rooms のデコ矩形は非表示
+   ・チェックイン／チェックアウトは左寄せ
 ========================================================= */
 
 /* ---- 基本スコープ ---- */
-.gtn * { box-sizing: border-box; }
-.gtn { color:#222; font-family:'Cinzel', serif; line-height:1.9; }
-.gtn img { display:block; max-width:100%; height:auto; }
-.gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul { margin:0; }
-.gtn section { padding:60px 20px; }
-.gtn .gtn-wrap { max-width:1180px; margin:0 auto; }
+.gtn *{box-sizing:border-box}
+.gtn{
+  color:#222;
+  font-family:'Cinzel', serif;
+  line-height:1.9;       /* ページ全体 */
+}
+.gtn img{display:block;max-width:100%;height:auto}
+.gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul{margin:0}
+.gtn section{padding:60px 20px}
+.gtn .gtn-wrap{max-width:1180px;margin:0 auto}
 
 /* =========================================================
-   HERO（1ページ目上部：写真 + 下部コピー）
+   HERO（画像上にテキストを重ねる）
 ========================================================= */
-.gtn-hero { position:relative; overflow:hidden; padding:0; }
-.gtn-hero__bg img {
+.gtn-hero{position:relative;overflow:hidden;padding:0;background:#000}
+.gtn-hero__bg img{
   width:100%;
   height:min(72vh,760px);
   object-fit:cover;
   object-position:center;
   filter:saturate(1.02);
 }
-.gtn-hero__lead { position:absolute; left:0; right:0; bottom:40px; text-align:center; }
-.gtn-hero__copyL {
-  font-size:clamp(18px,2.2vw,22px);
-  letter-spacing:.18em;
-  color:#fff;
-  text-shadow:0 2px 12px rgba(0,0,0,.45);
-  margin-bottom:14px;
+.gtn-hero__lead{
+  position:absolute;left:0;right:0;bottom:40px;
+  text-align:center;padding:0 16px;
 }
-.gtn-hero__brand {
+.gtn-hero__copyL{
+  font-size:clamp(18px,2.2vw,22px);
+  letter-spacing:.18em;color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.45);
+  margin-bottom:12px;line-height:1.6;
+}
+.gtn-hero__brand{
   font-size:clamp(12px,1.5vw,14px);
-  color:#fff;
-  letter-spacing:.22em;
+  color:#fff;letter-spacing:.22em;
   text-shadow:0 2px 10px rgba(0,0,0,.4);
 }
 
-/* （共通）セクション見出し（必要なら使用） */
-.gtn-sec .gtn-sec__heading { margin:36px auto 18px; text-align:center; }
-.gtn-sec .gtn-sec__heading h2 {
-  font-size:clamp(20px,2.4vw,24px);
-  letter-spacing:.22em;
-  font-weight:700;
-}
-
 /* =========================================================
-   ROOMS（Section1）— 左に大、右に小 + 本文／背景は back1.svg
+   ROOMS（左に大／右に小＋本文）+ 装飾敷き back1.svg
 ========================================================= */
-.gtn-sec--rooms {
+.gtn-sec--rooms{
+  position:relative;
   padding:56px 20px 48px;
-  position: relative;
-  z-index: 0;
-  background:  url('/_assets/images/back1.svg') no-repeat center top;
-  background-size: cover;
+  background:transparent;      /* 背景画像は擬似要素で敷く */
+  overflow:visible;
 }
-.gtn-sec--rooms .gtn-wrap { max-width:1180px; margin:0 auto; }
-
-.gtn-sec--rooms .rooms-grid { display:grid; gap:32px; align-items:start; }
+.gtn-sec--rooms .gtn-wrap{max-width:1180px;margin:0 auto}
+.gtn-sec--rooms .rooms-grid{display:grid;gap:32px;align-items:start}
 @media (min-width:960px){
   .gtn-sec--rooms .rooms-grid{
     grid-template-columns:minmax(520px,1fr) minmax(420px,560px);
   }
 }
 
-/* 左：大写真 */
+/* ===== back1.svg を“所定位置”に敷く（セクション下側） ===== */
+.gtn-sec--rooms::before{
+  content:"";
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:min(1600px,96vw);
+  /* PDF見た目に合わせ、文章～下端にかけて現れる高さ */
+  height:460px;
+  bottom:0;                   /* セクション下側に固定 */
+  background:
+    url('/_assets/images/back1.svg') no-repeat center bottom / contain;
+  pointer-events:none;z-index:0;opacity:1;
+}
+
+/* コンテンツは上に来る */
+.gtn-sec--rooms > *{position:relative;z-index:1}
+
+/* 画像・テキスト */
 .rooms-photoL img{
-  width:100%;
-  height:clamp(320px, 52vw, 540px);
-  object-fit:cover; object-position:center; border:none;
+  width:100%;height:clamp(320px,52vw,540px);
+  object-fit:cover;object-position:center;border:none
 }
-
-/* 右：小写真 + 本文 */
-.rooms-side{ display:flex; flex-direction:column; gap:22px; }
+.rooms-side{display:flex;flex-direction:column;gap:22px}
 .rooms-photoS img{
-  width:100%;
-  height:clamp(160px, 22vw, 230px);
-  object-fit:cover; object-position:center;
+  width:100%;height:clamp(160px,22vw,230px);
+  object-fit:cover;object-position:center
 }
-.rooms-text{ font-family:'TrajanPro','Cinzel',serif; line-height:2; color:#222; }
-.rooms-text p + p{ margin-top:1em; }
+.rooms-text{font-family:'TrajanPro','Cinzel',serif;line-height:2;color:#222}
+.rooms-text p + p{margin-top:1em}
 
-/* デコ矩形は使用しない（HTML残っていても非表示） */
-.rooms-deco{ display:none !important; }
+/* デコ矩形は不要（back1.svgで置換） */
+.rooms-deco{display:none}
 
 /* =========================================================
-   DINING（Section2）— 上にワイド、見出し+リード、2枚 + 3枚
+   DINING（ワイド → 見出し＋リード → 2枚 + 3枚）
 ========================================================= */
-.gtn-sec--dining{ padding:56px 0; background:#f7f6f3; }
-.gtn-sec--dining .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
-
-/* 上のワイド */
-.dining-hero{ margin:0 0 28px; }
+.gtn-sec--dining{padding:56px 0;background:#f7f6f3}
+.gtn-sec--dining .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.dining-hero{margin:0 0 28px}
 .dining-hero img{
-  width:100%; height:clamp(260px, 40vw, 420px);
-  object-fit:cover; object-position:center;
+  width:100%;height:clamp(260px,40vw,420px);
+  object-fit:cover;object-position:center
 }
-
-/* タイトル + リード */
-.dining-head{ margin:18px 0 22px; }
+.dining-head{margin:18px 0 22px}
 .dining-title{
-  margin:0 0 12px; font-size:clamp(22px,2.4vw,28px);
-  letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111;
+  margin:0 0 12px;font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:.08em;font-family:'TrajanPro','Cinzel',serif;color:#111
 }
-.dining-lead{ color:#333; line-height:2; }
-.dining-lead p + p{ margin-top:.7em; }
-
-/* 画像グリッド */
-.dining-grid{ display:grid; gap:24px; margin-top:22px; }
-.dining-grid--two{ grid-template-columns:1fr; }
-.dining-grid--three{ grid-template-columns:1fr; }
+.dining-lead{color:#333;line-height:2}
+.dining-lead p + p{margin-top:.7em}
+.dining-grid{display:grid;gap:24px;margin-top:22px}
+.dining-grid--two{grid-template-columns:1fr}
+.dining-grid--three{grid-template-columns:1fr}
 @media (min-width:860px){
-  .dining-grid--two{ grid-template-columns:1fr 1fr; }
-  .dining-grid--three{ grid-template-columns:1fr 1fr 1fr; }
+  .dining-grid--two{grid-template-columns:1fr 1fr}
+  .dining-grid--three{grid-template-columns:1fr 1fr 1fr}
 }
-.card{ margin:0; }
+.card{margin:0}
 .card img{
-  width:100%; height:clamp(180px, 26vw, 260px);
-  object-fit:cover; object-position:center; background:#ddd;
+  width:100%;height:clamp(180px,26vw,260px);
+  object-fit:cover;object-position:center;background:#ddd
 }
-.card figcaption{
-  margin-top:8px; font-size:13px; color:#4b4b4b; letter-spacing:.05em;
-}
+.card figcaption{margin-top:8px;font-size:13px;color:#4b4b4b;letter-spacing:.05em}
 
 /* =========================================================
-   BREEZE（Section3）— ワイド → 3枚横 → タイトル&本文／背景は back1.svg
+   BREEZE（プール・スパ・ジム）+ 装飾敷き back1.svg
 ========================================================= */
 .gtn-sec--breeze{
+  position:relative;
   padding:56px 0;
-  position: relative;
-  z-index: 0;
-  background: url('/_assets/images/back1.svg') no-repeat center top;
-  background-size: cover;
+  background:transparent;      /* 装飾は擬似要素に任せる */
+  overflow:visible;
 }
-.gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
+.gtn-sec--breeze .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 
-/* ワイド */
-.breeze-hero{ margin:0 0 28px; }
+/* back1.svg：こちらはセクション中央～下部に薄く敷く */
+.gtn-sec--breeze::before{
+  content:"";
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:min(1600px,96vw);
+  height:420px;               /* Section3 用の見栄え高さ */
+  bottom:0;
+  background:
+    url('/_assets/images/back1.svg') no-repeat center bottom / contain;
+  pointer-events:none;z-index:0;opacity:1;
+}
+.gtn-sec--breeze > *{position:relative;z-index:1}
+
+.breeze-hero{margin:0 0 28px}
 .breeze-hero img{
-  width:100%; height:clamp(240px, 38vw, 420px);
-  object-fit:cover; object-position:center;
+  width:100%;height:clamp(240px,38vw,420px);
+  object-fit:cover;object-position:center
 }
-
-/* 3枚横 */
-.breeze-trio{ display:grid; gap:18px; margin:0 0 26px; }
+.breeze-trio{display:grid;gap:18px;margin:0 0 26px}
 .breeze-trio img{
-  width:100%; height:clamp(120px, 20vw, 200px);
-  object-fit:cover; object-position:center; background:#e1e1e1;
+  width:100%;height:clamp(120px,20vw,200px);
+  object-fit:cover;object-position:center;background:#e1e1e1
 }
-@media (min-width:860px){
-  .breeze-trio{ grid-template-columns:1fr 1fr 1fr; }
-}
-
-/* タイトル + 本文 */
-.breeze-head{ margin:8px 0 6px; }
+@media (min-width:860px){.breeze-trio{grid-template-columns:1fr 1fr 1fr}}
+.breeze-head{margin:8px 0 6px}
 .breeze-title{
-  margin:0 0 12px; font-size:clamp(22px,2.4vw,28px);
-  letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111;
+  margin:0 0 12px;font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:.08em;font-family:'TrajanPro','Cinzel',serif;color:#111
 }
-.breeze-body{ color:#333; line-height:2; }
-.breeze-body p + p{ margin-top:.7em; }
+.breeze-body{color:#333;line-height:2}
+.breeze-body p + p{margin-top:.7em}
 
 /* =========================================================
-   STAY（Section4）— ワイド → 見出し/リード → 2枚 → 1枠内ボックス
+   STAY（ワイド → 見出し/リード → 2枚 → 1枠内）
 ========================================================= */
-.gtn-sec--stay{ padding:56px 0; background:#f7f6f3; }
-.gtn-sec--stay .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
-
-/* ワイド */
-.stay-hero{ margin:0 0 24px; }
+.gtn-sec--stay{padding:56px 0;background:#f7f6f3}
+.gtn-sec--stay .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.stay-hero{margin:0 0 24px}
 .stay-hero img{
-  width:100%; height:clamp(240px, 38vw, 420px);
-  object-fit:cover; object-position:center;
+  width:100%;height:clamp(240px,38vw,420px);
+  object-fit:cover;object-position:center
 }
-
-/* 見出し */
 .stay-title{
-  margin:12px 0 12px;
-  font-size:clamp(22px, 2.6vw, 30px);
-  letter-spacing:.08em;
-  font-family:'TrajanPro','Cinzel',serif;
-  color:#111;
+  margin:12px 0 12px;font-size:clamp(22px,2.6vw,30px);
+  letter-spacing:.08em;font-family:'TrajanPro','Cinzel',serif;color:#111
 }
-
-/* リード */
-.stay-lead{ color:#333; line-height:2; margin:0 0 18px; }
-.stay-lead p + p{ margin-top:.7em; }
-
-/* 2枚横 */
-.stay-duo{ display:grid; gap:18px; margin:8px 0 26px; }
+.stay-lead{color:#333;line-height:2;margin:0 0 18px}
+.stay-lead p + p{margin-top:.7em}
+.stay-duo{display:grid;gap:18px;margin:8px 0 26px}
 .stay-duo img{
-  width:100%; height:clamp(160px, 26vw, 260px);
-  object-fit:cover; object-position:center; background:#e1e1e1;
+  width:100%;height:clamp(160px,26vw,260px);
+  object-fit:cover;object-position:center;background:#e1e1e1
 }
-@media (min-width:900px){
-  .stay-duo{ grid-template-columns:1fr 1fr; }
-}
+@media (min-width:900px){.stay-duo{grid-template-columns:1fr 1fr}}
 
-/* ▼ 1枠内ボックス（客室タイプ／宿泊プラン + チェックイン/アウト） */
+/* 1枠内ボックス */
 .stay-info{
-  background:#faf9f5;
-  border:1px solid #e5e3dc;
-  padding:24px;
-  margin:8px 0 0;
+  background:#faf9f5;border:1px solid #e5e3dc;
+  padding:24px;margin:8px 0 0
 }
-
-/* 上段：2カラム */
 .stay-box{
-  display:grid;
-  gap:24px;
-  border-bottom:1px solid #d9d6cd;
-  padding-bottom:16px;
-  margin-bottom:16px;
+  display:grid;gap:24px;border-bottom:1px solid #d9d6cd;
+  padding-bottom:16px;margin-bottom:16px
 }
-@media (min-width:900px){
-  .stay-box{ grid-template-columns:1fr 1fr; }
-}
+@media (min-width:900px){.stay-box{grid-template-columns:1fr 1fr}}
 .stay-col h4{
-  font-weight:700;
-  margin:0 0 10px;
-  font-size:15px;
-  letter-spacing:.08em;
-  font-family:'TrajanPro','Cinzel',serif;
-  color:#111;
+  font-weight:700;margin:0 0 10px;font-size:15px;
+  letter-spacing:.08em;font-family:'TrajanPro','Cinzel',serif;color:#111
 }
-.stay-col ul{ list-style:none; padding:0; margin:0; line-height:1.9; }
-.stay-col li{ margin:0; }
-.stay-col .note{ font-size:13px; color:#555; line-height:1.8; margin-top:.5em; }
+.stay-col ul{list-style:none;padding:0;margin:0;line-height:1.9}
+.stay-col li{margin:0}
+.stay-col .note{font-size:13px;color:#555;line-height:1.8;margin-top:.5em}
 
-/* 下段：左並び（横並び左寄せ） */
+/* チェックイン／アウト：左寄せで横並び */
 .stay-bottom{
-  display:flex;
-  justify-content:flex-start;
-  gap:24px;
-  font-size:14px;
-  letter-spacing:.06em;
-  color:#222;
+  display:flex;justify-content:flex-start;gap:24px;
+  font-size:14px;letter-spacing:.06em;color:#222
+}
+
+/* =========================================================
+   余白・レスポンシブ微調整
+========================================================= */
+@media (max-width:720px){
+  .gtn section{padding:44px 16px}
+  .gtn-hero__lead{bottom:28px}
+  .gtn-sec--rooms::before{height:380px}
+  .gtn-sec--breeze::before{height:360px}
 }
