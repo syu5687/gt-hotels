@@ -1,7 +1,7 @@
 <?php require_once __DIR__.'/../config/app.php'; ?>
 <header>
   <div class="bar">
-	<div class="logo">Garden Terrace Hotels</div>
+	<div class="logo"><a href="/">Garden Terrace Hotels</a></div>
 	<nav class="nav">
 	  <a href="/#luxury" <?= is_active(['index.php','']) ?>>LUXURY</a>
 	  <a href="/#city"   <?= is_active(['index.php','']) ?>>CITY RESORT</a>
