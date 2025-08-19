@@ -132,19 +132,19 @@ require __DIR__ . '/partials/header.php';
   
 	  <!-- 上：ワイド（プールの俯瞰） -->
 	  <figure class="breeze-hero">
-		<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		<img src="<?= asset('/_assets/images/gtn/sec3-1.webp') ?>" alt="">
 	  </figure>
   
 	  <!-- 中：3枚横並び（ラウンジ／ジム／サウナ） -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtn/sec3-2.webpg') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtn/sec3-3.webp') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtn/sec3-4.webp') ?>" alt="">
 		</figure>
 	  </div>
   
