@@ -233,7 +233,7 @@
 }
 .breeze-trio{ display: grid; gap: 18px; margin: 0 0 26px; }
 .breeze-trio img{
-  width: 100%; height: clamp(120px, 20vw, 200px);
+  width: 100%;
   object-fit: cover; object-position: center; background: #e1e1e1;
 }
 @media (min-width: 860px){ .breeze-trio{ grid-template-columns: 1fr 1fr 1fr; } }
