@@ -76,37 +76,55 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 2：ダイニング（リード＋本文＋サムネ）
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining-lead">
-	<div class="gtn-sec__fullimg">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+<!-- ===== Section 2: DINING ===== -->
+  <section class="gtn-sec gtn-sec--dining">
+	<div class="gtn-wrap">
+  
+	  <!-- ワイドビジュアル -->
+	  <figure class="dining-hero">
+		<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  </figure>
+  
+	  <!-- 見出し + 説明文 -->
+	  <div class="dining-head">
+		<h2 class="dining-title">彩り豊かな長崎の食文化を五感で味わう。</h2>
+		<div class="dining-lead">
+		  <p>海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともにゆったりとご賞味ください。</p>
+		  <p>四季折々の恵みを活かしたアートと調和したメニューの数々。</p>
+		  <p>窓側に開いた設えは、港の風景を切り取る「額縁」となり、港と晩景オーシャンビューをお食事とともにお楽しみいただけます。</p>
+		</div>
+	  </div>
+  
+	  <!-- 上段：2カラムの料理写真 -->
+	  <div class="dining-grid dining-grid--two">
+		<figure class="card">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <figcaption>レストラン「フォレスト」</figcaption>
+		</figure>
+		<figure class="card">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <figcaption>九州創作「千山万水」</figcaption>
+		</figure>
+	  </div>
+  
+	  <!-- 下段：3カラム（カウンター系） -->
+	  <div class="dining-grid dining-grid--three">
+		<figure class="card">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <figcaption>鉄板焼ダイニング「竹彩」</figcaption>
+		</figure>
+		<figure class="card">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <figcaption>鮨ダイニング「天空」</figcaption>
+		</figure>
+		<figure class="card">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  <figcaption>懐石料理と天ぷら「秋月」</figcaption>
+		</figure>
+	  </div>
+  
 	</div>
-
-	<div class="gtn-sec__heading">
-	  <h2>彩り豊かな長崎の食文化を五感で味わう。</h2>
-	</div>
-
-	<div class="gtn-sec__txt gtn-sec__txt--narrow">
-	  <p>海の幸山の幸に恵まれた長崎ならではの旬の食材を長崎の街の光が映し込む 長崎港を眺めながらじっくりとご賞味下さい。</p>
-	  <p>四季折々の旬の味覚を活かしたアートと呼ぶに相応しいメニューの数々。</p>
-	  <p>海側に開いた窓は、長崎の風景を切り取る「額縁」となり、 港を見渡すオーシャンビューをお食事とともにお楽しみいただけます。</p>
-	</div>
-
-	<div class="gtn-sec__thumbs">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	</div>
-
-	<ul class="gtn-list gtn-list--restaurants">
-	  <li>鉄板焼ダイニング「竹彩」</li>
-	  <li>レストラン「フォレスト」</li>
-	  <li>鮨ダイニング「天空」</li>
-	  <li>懐石料理と天ぷら「秋月」</li>
-	  <li>九州創作「千山万水」</li>
-	</ul>
   </section>
-
   <!-- =========================
 	   SECTION 3：プール・スパ・ジム
   ========================== -->

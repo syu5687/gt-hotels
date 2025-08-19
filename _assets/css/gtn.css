@@ -176,3 +176,47 @@
   .gtn-sec--rooms .rooms-grid{gap:36px}
   .rooms-deco .deco-row{gap:20px}
 }
+/* ========== DINING section ========== */
+.gtn-sec--dining{padding:56px 0;background:#f7f6f3}
+.gtn-sec--dining .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ワイドビジュアル（上の大きい画像） */
+.dining-hero{margin:0 0 28px}
+.dining-hero img{
+  width:100%;height: clamp(260px, 40vw, 420px);
+  object-fit: cover;object-position:center;display:block
+}
+
+/* タイトル＋リード */
+.dining-head{margin:18px 0 22px}
+.dining-title{
+  margin:0 0 12px;font-size: clamp(22px, 2.4vw, 28px);
+  letter-spacing:.08em;font-family:'TrajanPro','Cinzel',serif;color:#111
+}
+.dining-lead{color:#333;line-height:2}
+.dining-lead p{margin:0}
+.dining-lead p + p{margin-top:.7em}
+
+/* 画像グリッド */
+.dining-grid{display:grid;gap:24px;margin-top:22px}
+.dining-grid--two{
+  grid-template-columns: 1fr;
+}
+.dining-grid--three{
+  grid-template-columns: 1fr;
+}
+@media (min-width:860px){
+  .dining-grid--two{grid-template-columns: 1fr 1fr}
+  .dining-grid--three{grid-template-columns: 1fr 1fr 1fr}
+}
+
+/* 各カード */
+.card{margin:0}
+.card img{
+  width:100%;height: clamp(180px, 26vw, 260px);
+  object-fit: cover;object-position:center;display:block;
+  background:#ddd
+}
+.card figcaption{
+  margin-top:8px;font-size:13px;color:#4b4b4b;letter-spacing:.05em
+}
