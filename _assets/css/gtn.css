@@ -435,3 +435,78 @@
   z-index: -1;         /* テキストの背面 */
   pointer-events: none;/* クリック操作など邪魔しない */
 }
+/* ===== Section1 テキスト背面に back1.svg を“透け”で敷く ===== */
+
+/* テキストブロックを相対化して、背面に擬似要素を置く土台を作る */
+.gtn-sec--rooms .rooms-text{
+  position: relative;
+  z-index: 1;            /* テキストを最前面に */
+}
+
+/* 擬似要素をテキストの背面にフル幅で敷く（左右＆下余白ゼロ） */
+.gtn-sec--rooms .rooms-text::before{
+  content: "";
+  position: absolute;
+  left: calc(50% - 50vw);   /* ← 画面左右端まで広げる（左右余白ゼロ） */
+  right: calc(50% - 50vw);
+  top: -8px;                /* 少し上へ広げて行間に入るニュアンス */
+  bottom: -18px;            /* 下も少し伸ばす：下余白ゼロ相当 */
+  background:
+    #f7f6f3 url('/_assets/images/back1.svg') center/contain no-repeat;
+  opacity: .28;             /* ← “透け具合” 調整（0.2〜0.35 くらいで好みへ） */
+  z-index: -1;              /* テキストの背面へ */
+  pointer-events: none;     /* クリック邪魔しない */
+}
+
+/* スマホは少し控えめに（必要なら） */
+@media (max-width: 768px){
+  .gtn-sec--rooms .rooms-text::before{
+    opacity: .22;
+    top: -4px;
+    bottom: -12px;
+    background-size: 1200px auto;   /* 透け柄サイズを微調整 */
+  }
+}
+/* ================================
+   Section1 & Section3：テキスト背面に back1.svg を敷く
+   （左右・下 0 / 行間に薄く被せる）
+================================ */
+
+/* 1) 既存のバンドを非表示（余白の原因を除去） */
+.gtn-sec--rooms .rooms-deco,
+.gtn-sec--breeze .rooms-deco { display: none; }
+
+/* 2) テキストを前面に（背面に敷く擬似要素より前） */
+.gtn-sec--rooms .rooms-text,
+.gtn-sec--breeze .breeze-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* 3) 擬似要素で back1.svg をフルブリード配置（左右と下の余白ゼロ） */
+.gtn-sec--rooms .rooms-text::before,
+.gtn-sec--breeze .breeze-body::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* ビューポート基準のフル幅にするため中央基準に */
+  bottom: 0;                   /* 下を 0 に密着 */
+  width: 100vw;                /* 画面幅いっぱい（左右 0 相当） */
+  height: clamp(140px, 22vw, 220px); /* 行間に被るくらいの帯高（お好みで調整可） */
+
+  /* セクションの地色を合わせ、その上に back1.svg を重ねる */
+  background:
+    linear-gradient(#f7f6f3, #f7f6f3),           /* 地色（指示書の薄ベージュ） */
+    url("/_assets/images/back1.svg") no-repeat center / contain;
+  opacity: .34;                /* 透け具合。強すぎる/弱すぎる場合は 0.25〜0.45 で調整 */
+  pointer-events: none;
+  z-index: -1;                 /* テキストの背面 */
+}
+
+/* Section1/3 全体は背面を受け止められるよう relative に（保険） */
+.gtn-sec--rooms,
+.gtn-sec--breeze { position: relative; }
+
+/* セクションの地色を統一（指示書と同じトーン） */
+.gtn-sec--rooms { background: #fff; }     /* Sec.1 は白（写真＋テキスト） */
+.gtn-sec--breeze { background: #f7f6f3; } /* Sec.3 は薄ベージュ */
