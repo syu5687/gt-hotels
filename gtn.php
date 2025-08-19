@@ -106,7 +106,7 @@ require __DIR__ . '/partials/header.php';
 			  <!-- 3行目：横長3枚（各画像の下にキャプション） -->
 			  <div class="dining-row row-3wide">
 				<figure class="card wide">
-				  <img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="鉄板焼ダイニング 竹彩">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
 				  <figcaption>鉄板焼ダイニング「竹彩」</figcaption>
 				</figure>
 				<figure class="card wide">
@@ -114,7 +114,7 @@ require __DIR__ . '/partials/header.php';
 				  <figcaption>鮨ダイニング「天空」</figcaption>
 				</figure>
 				<figure class="card wide">
-				  <img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="懐石料理と天ぷら 秋月">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
 				  <figcaption>懐石料理と天ぷら「秋月」</figcaption>
 				</figure>
 			  </div>
@@ -122,7 +122,8 @@ require __DIR__ . '/partials/header.php';
 			</div><!-- /.dining-gallery -->
 	  
 		  </div>
-		</section>  <!-- =========================
+		</section>  
+		<!-- =========================
 	   SECTION 3：プール・スパ・ジム
   ========================== -->
 <!-- ===== Section 3: BREEZE / POOL ===== -->
