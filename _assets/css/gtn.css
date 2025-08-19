@@ -184,3 +184,12 @@
 @media (max-width:720px){
   .gtn section{ padding:44px 16px; }
 }
+/* ===== Section3 の3枚画像を Section2(.card img)と完全に統一 ===== */
+.gtn .breeze-trio img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(180px, 26vw, 260px) !important; /* ← Section2と同じ高さ */
+  object-fit: cover !important;
+  object-position: center !important;
+  background: #ddd !important;
+}
