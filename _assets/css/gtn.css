@@ -333,3 +333,18 @@
   padding: 28px 0 18px;
   text-align: center;
 }
+/* Section3 の3枚画像を Section2 と完全に統一 */
+.breeze-trio {
+  display: grid;
+  gap: 24px; /* section2と同じ余白 */
+}
+@media (min-width: 860px){
+  .breeze-trio {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.breeze-trio img {
+  height: clamp(180px, 26vw, 260px); /* section2と同じ高さ */
+  object-fit: cover;
+  object-position: center;
+}
