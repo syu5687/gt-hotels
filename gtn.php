@@ -25,15 +25,50 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
+<!-- ===== Rooms Section (PDF 1段目の構成) ===== -->
   <section class="gtn-sec gtn-sec--rooms">
-	<div class="gtn-sec__grid">
-	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
-	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
-
-	  <div class="gtn-sec__txt">
-		<p>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
-		<p>非日常感あふれるシティーリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
-		<p>宿泊者だけに許される贅沢な寛ぎをお楽しみください。</p>
+	<div class="gtn-wrap">
+	  <div class="rooms-grid">
+		<!-- 左：大きい写真 -->
+		<figure class="rooms-photoL">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		</figure>
+  
+		<!-- 右：小写真 + 本文 -->
+		<div class="rooms-side">
+		  <figure class="rooms-photoS">
+			<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		  </figure>
+		  <div class="rooms-text">
+			<!-- ※テキストはPDFに合わせて後で差し替えてください -->
+			<p>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
+			<p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
+			<p>宿泊者だけに許される贅沢をお楽しみください。</p>
+		  </div>
+		</div>
+	  </div>
+  
+	  <!-- 下：デコ矩形（2段） -->
+	  <div class="rooms-deco">
+		<!-- 1段目（大きめ） -->
+		<div class="deco-row deco-row--lg">
+		  <span class="box box-a"></span>
+		  <span class="box box-b"></span>
+		  <span class="box box-c"></span>
+		  <span class="box box-d"></span>
+		  <span class="box box-e"></span>
+		</div>
+		<!-- 2段目（小さめ・多め） -->
+		<div class="deco-row deco-row--sm">
+		  <span class="box"></span>
+		  <span class="box"></span>
+		  <span class="box"></span>
+		  <span class="box"></span>
+		  <span class="box"></span>
+		  <span class="box"></span>
+		  <span class="box"></span>
+		  <span class="box"></span>
+		</div>
 	  </div>
 	</div>
   </section>

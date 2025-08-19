@@ -107,3 +107,72 @@
 .gtn-sec--dining-lead{padding-top:46px}
 .gtn-sec--pool{padding-top:46px}
 .gtn-sec--quality{padding-top:50px}
+
+/* ========== Rooms first block ========== */
+.gtn-sec--rooms{padding-top:56px;padding-bottom:48px;background:#fff}
+.gtn-sec--rooms .rooms-grid{
+  display:grid;gap:32px;align-items:start
+}
+@media (min-width:960px){
+  .gtn-sec--rooms .rooms-grid{
+    grid-template-columns: minmax(520px,1fr) minmax(420px,560px);
+  }
+}
+
+/* 左の大写真 */
+.rooms-photoL img{
+  width:100%;
+  height: clamp(320px, 52vw, 540px);
+  object-fit: cover;
+  object-position: center;
+  display:block;
+  border: none;
+}
+
+/* 右側：小写真と文章の縦並び */
+.rooms-side{display:flex;flex-direction:column;gap:22px}
+
+/* 小写真（右上） */
+.rooms-photoS img{
+  width:100%;
+  height: clamp(160px, 22vw, 230px);
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+
+/* 本文 */
+.rooms-text{font-family: 'TrajanPro','Cinzel',serif; line-height:2; color:#222}
+.rooms-text p + p{margin-top:1em}
+
+/* デコ矩形（下2段） */
+.rooms-deco{margin-top:26px}
+.rooms-deco .deco-row{
+  display:grid;gap:18px;justify-content:space-between;
+}
+.rooms-deco .deco-row .box{
+  display:block;background:#f4f1e8;border-radius:4px;height:64px;
+}
+
+/* 1段目：大きめ／幅をずらしてPDF風のリズムに */
+.rooms-deco .deco-row--lg{
+  grid-template-columns: repeat(5, 1fr);
+}
+.rooms-deco .deco-row--lg .box-a{grid-column: span 1}
+.rooms-deco .deco-row--lg .box-b{grid-column: span 1}
+.rooms-deco .deco-row--lg .box-c{grid-column: span 1}
+.rooms-deco .deco-row--lg .box-d{grid-column: span 1}
+.rooms-deco .deco-row--lg .box-e{grid-column: span 1}
+
+/* 2段目：小さめ多数 */
+.rooms-deco .deco-row--sm{
+  margin-top:18px;
+  grid-template-columns: repeat(8, 1fr);
+}
+.rooms-deco .deco-row--sm .box{height:58px}
+
+/* 余白バランス（PDF寄せ用微調整） */
+@media (min-width:1200px){
+  .gtn-sec--rooms .rooms-grid{gap:36px}
+  .rooms-deco .deco-row{gap:20px}
+}
