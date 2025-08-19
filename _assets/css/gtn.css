@@ -13,10 +13,6 @@
 .gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul { margin:0; }
 .gtn section { padding:60px 20px; }
 .gtn .gtn-wrap { max-width:1180px; margin:0 auto; }
-/* gtn.php 全体の背景色 */
-.gtn {
-  background-color: #c6ba9a;
-}
 
 /* =========================================================
    HERO（1ページ目上部：写真 + 下部コピー）
