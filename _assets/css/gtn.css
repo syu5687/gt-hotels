@@ -33,7 +33,7 @@
   filter:saturate(1.02);
 }
 .gtn-hero__lead{
-  position:absolute;left:0;right:0;bottom:40px;
+  position:absolute;left:0;right:0;bottom:80px;
   text-align:center;padding:0 16px;
 }
 .gtn-hero__copyL{
