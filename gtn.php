@@ -175,7 +175,7 @@ require __DIR__ . '/partials/header.php';
   
 	  <!-- 上：ワイド（客室のワイド写真） -->
 	  <figure class="stay-hero">
-		<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		<img src="<?= asset('/_assets/images/gtn/sec4-1.webp') ?>" alt="">
 	  </figure>
   
 	  <!-- 見出し -->
@@ -191,8 +191,8 @@ require __DIR__ . '/partials/header.php';
 	  </div>  
 	  <!-- 中段：2枚横並び（客室カット） -->
 	  <div class="stay-duo">
-		<figure class="duo"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
-		<figure class="duo"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
+		<figure class="duo"><img src="<?= asset('/_assets/images/gtn/sec4-2.webp') ?>" alt=""></figure>
+		<figure class="duo"><img src="<?= asset('/_assets/images/gtn/sec4-3.webp') ?>" alt=""></figure>
 	  </div>
   
 	  <!-- 下段：2カラムのボックス（箇条書き） -->
