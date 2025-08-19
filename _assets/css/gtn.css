@@ -1,5 +1,5 @@
 /* =========================================================
-   GTN PAGE — Clean CSS (scoped under .gtn)  [2025-08-20 fixed]
+   GTN PAGE — Clean CSS (scoped under .gtn)  [2025-08-20 final]
 ========================================================= */
 
 /* ---- 基本スコープ ---- */
@@ -53,17 +53,30 @@
 .rooms-photoL img{ width:100%; height:clamp(320px,52vw,540px); object-fit:cover; object-position:center; }
 .rooms-side{ display:flex; flex-direction:column; gap:22px; }
 .rooms-photoS img{ width:100%; height:clamp(160px,22vw,230px); object-fit:cover; object-position:center; }
-.rooms-text{ line-height:2; color:#222; position:relative; z-index:1; }
 
-/* ▼ Section1：本文背面に back1.svg（修正版：SVGが上） */
+/* 本文と背面の積層基準（z-index:0 で新しいスタックを作る） */
+.rooms-text{
+  line-height:2; color:#222;
+  position: relative; z-index: 0;
+}
+
+/* ▼ Section1：本文背面に back1.svg（SVG→地色の順／複数パスのフォールバック） */
 .gtn-sec--rooms .rooms-text::before{
   content:"";
   position:absolute; left:0; right:0; top:-8px; bottom:-14px;
   background:
     url("/_assets/images/back1.svg") center/contain no-repeat,
+    url("/assets/images/back1.svg") center/contain no-repeat,
+    url("../images/back1.svg") center/contain no-repeat,
     #fff;
-  opacity:.30; pointer-events:none; z-index:-1;
+  opacity:.32;
+  pointer-events:none;
+  z-index:-1;
 }
+
+/* 不要な旧デコは無効化（保険） */
+.gtn-sec--rooms .rooms-deco,
+.gtn-sec--rooms .rooms-deco__bg{ display:none !important; }
 
 /* =========================================================
    Section 2: DINING
@@ -112,23 +125,33 @@
   margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
 }
 
+/* 3枚グリッド：Section2 と同じ高さに統一 */
 .breeze-trio{ display:grid; gap:24px; margin:0 0 26px; }
 @media (min-width:860px){ .breeze-trio{ grid-template-columns:1fr 1fr 1fr; } }
 .breeze-trio img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
 
 .breeze-head{ margin:8px 0 6px; }
 .breeze-title{ margin:0 0 12px; font-size:clamp(22px,2.4vw,28px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
-.breeze-body{ color:#333; line-height:2; position:relative; z-index:1; }
+
+/* 本文と背面の積層基準（z-index:0 で新しいスタックを作る） */
+.breeze-body{
+  color:#333; line-height:2;
+  position: relative; z-index: 0;
+}
 .breeze-body p + p{ margin-top:.7em; }
 
-/* ▼ Section3：本文背面に back1.svg（修正版：SVGが上） */
+/* ▼ Section3：本文背面に back1.svg（SVG→地色の順／複数パスのフォールバック） */
 .gtn-sec--breeze .breeze-body::before{
   content:"";
   position:absolute; left:0; right:0; top:-8px; bottom:-14px;
   background:
     url("/_assets/images/back1.svg") center/contain no-repeat,
+    url("/assets/images/back1.svg") center/contain no-repeat,
+    url("../images/back1.svg") center/contain no-repeat,
     #f7f6f3;
-  opacity:.30; pointer-events:none; z-index:-1;
+  opacity:.32;
+  pointer-events:none;
+  z-index:-1;
 }
 
 /* =========================================================
@@ -161,7 +184,7 @@
 .stay-bottom{ display:flex; gap:24px; font-size:14px; letter-spacing:.06em; color:#222; }
 
 /* =========================================================
-   共通調整
+   レスポンシブ微調整
 ========================================================= */
 @media (max-width:720px){
   .gtn section{ padding:44px 16px; }
