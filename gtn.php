@@ -26,10 +26,9 @@ require __DIR__ . '/partials/header.php';
 		 alt="Garden Terrace Nagasaki">
   </section>
 
-  <!-- =========================
-	   SECTION 1：客室・眺望
+<!-- =========================
+	 SECTION 1：客室・眺望
   ========================== -->
-<!-- ===== Rooms Section (PDF 1段目の構成) ===== -->
   <section class="gtn-sec gtn-sec--rooms">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
@@ -43,21 +42,20 @@ require __DIR__ . '/partials/header.php';
 		  <figure class="rooms-photoS">
 			<img src="<?= asset('/_assets/images/gtn/sec1-1.webp') ?>" alt="">
 		  </figure>
-		  <div class="rooms-text">
-			<!-- ※テキストはPDFに合わせて後で差し替えてください -->
-			<p>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
-			<p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
-			<p>宿泊者だけに許される贅沢をお楽しみください。</p>
+  
+		  <!-- ★ テキストと背景SVGを同じブロックに -->
+		  <div class="rooms-text-wrap">
+			<img src="<?= asset('/_assets/images/back1.svg') ?>" alt="" class="rooms-deco__bg">
+			<div class="rooms-text">
+			  <p>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
+			  <p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
+			  <p>宿泊者だけに許される贅沢をお楽しみください。</p>
+			</div>
 		  </div>
 		</div>
 	  </div>
-  
-<!-- 下：デコ矩形（2段） -->
-	  <div class="rooms-deco rooms-deco--band">
-		<img src="<?= asset('/_assets/images/back1.svg') ?>" alt="" class="rooms-deco__bg">
-	  </div>
-    </section>
-
+	</div>
+  </section>
   <!-- =========================
 			 SECTION 2：ダイニング
 		========================== -->

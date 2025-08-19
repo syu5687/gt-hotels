@@ -415,19 +415,23 @@
 .gtn .dining-hero { margin: 0 0 28px !important; }
 .gtn .stay-hero   { margin: 0 0 24px !important; } /* 既存値に合わせて少し小さめ */
 
-/* back1.svg 用の装飾調整 */
+/* ▼ テキスト背面に back1.svg を透過で重ねる */
 .rooms-deco,
 .breeze-deco {
-  background: transparent !important;  /* CSS側の帯を消す */
-  padding: 0 !important;
-  margin: 0 !important;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .rooms-deco__bg,
 .breeze-deco__bg {
-  display: block;
-  width: 100%;            /* 横幅いっぱい */
-  height: auto !important;
-  margin: 0;              /* 左右・上下余白ゼロ */
-  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;       /* ←透け具合を調整 */
+  z-index: -1;         /* テキストの背面 */
+  pointer-events: none;/* クリック操作など邪魔しない */
 }
