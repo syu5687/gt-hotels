@@ -65,7 +65,7 @@ require __DIR__ . '/partials/header.php';
 	  
 			<!-- ワイドビジュアル（PDF上の大きい1枚がある場合は使用） -->
 			<figure class="dining-hero">
-			  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+			  <img src="<?= asset('/_assets/images/gtn/sec2-1.webp') ?>" alt="">
 			</figure>
 	  
 			<!-- 見出し + リード -->
@@ -84,21 +84,21 @@ require __DIR__ . '/partials/header.php';
 			  <!-- 1行目：2列（キャプションなし） -->
 			  <div class="dining-row row-2col">
 				<figure class="card no-cap">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-2.webp') ?>" alt="">
 				</figure>
 				<figure class="card no-cap">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-3.webp') ?>" alt="">
 				</figure>
 			  </div>
 	  
 			  <!-- 2行目：2列（各画像にキャプション） -->
 			  <div class="dining-row row-2col">
 				<figure class="card">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="レストラン フォレスト">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
 				  <figcaption>レストラン「フォレスト」</figcaption>
 				</figure>
 				<figure class="card">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="九州創作 千山万水">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
 				  <figcaption>九州創作「千山万水」</figcaption>
 				</figure>
 			  </div>
@@ -106,15 +106,15 @@ require __DIR__ . '/partials/header.php';
 			  <!-- 3行目：横長3枚（各画像の下にキャプション） -->
 			  <div class="dining-row row-3wide">
 				<figure class="card wide">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="鉄板焼ダイニング 竹彩">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="鉄板焼ダイニング 竹彩">
 				  <figcaption>鉄板焼ダイニング「竹彩」</figcaption>
 				</figure>
 				<figure class="card wide">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="鮨ダイニング 天空">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
 				  <figcaption>鮨ダイニング「天空」</figcaption>
 				</figure>
 				<figure class="card wide">
-				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="懐石料理と天ぷら 秋月">
+				  <img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="懐石料理と天ぷら 秋月">
 				  <figcaption>懐石料理と天ぷら「秋月」</figcaption>
 				</figure>
 			  </div>
