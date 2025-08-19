@@ -1,368 +1,250 @@
-/* ===== GTN PAGE ONLY (scoped) ===== */
-.gtn *{box-sizing:border-box}
-.gtn{color:#222;font-family:'Cinzel',serif;line-height:1.9}
-.gtn img{display:block;max-width:100%;height:auto}
+/* =========================================================
+   GTN PAGE — FULL CSS (scoped under .gtn)
+   PDF完全一致寄せ／ヘッダー・フッター共通の上で本ページのみ適用
+   ---------------------------------------------------------
+   使い方：<main class="gtn"> ... </main>
+   画像は dummy.jpg を差し込んでいます
+========================================================= */
 
-/* 余白の初期化（gtn配下のみに限定） */
-.gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul{margin:0}
-.gtn section{padding:60px 20px}
-.gtn .gtn-wrap{max-width:1180px;margin:0 auto}
+/* ---- 基本スコープ ---- */
+.gtn * { box-sizing: border-box; }
+.gtn { color:#222; font-family:'Cinzel', serif; line-height:1.9; }
+.gtn img { display:block; max-width:100%; height:auto; }
+.gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul { margin:0; }
+.gtn section { padding:60px 20px; }
+.gtn .gtn-wrap { max-width:1180px; margin:0 auto; }
 
-/* ---------------- HERO ---------------- */
-.gtn-hero{position:relative;overflow:hidden;padding:0}
-.gtn-hero__bg img{
+/* =========================================================
+   HERO（1ページ目上部：写真 + 下部コピー）
+========================================================= */
+.gtn-hero { position:relative; overflow:hidden; padding:0; background:#000; }
+.gtn-hero__bg img {
   width:100%;
-  height:min(72vh,760px);           /* 画面高さ基準のヒーロー */
+  height:min(72vh,760px);
   object-fit:cover;
   object-position:center;
+  filter:saturate(1.02);
 }
-.gtn-hero__lead{position:absolute;left:0;right:0;bottom:40px;text-align:center}
-.gtn-hero__copyL{
+.gtn-hero__lead { position:absolute; left:0; right:0; bottom:40px; text-align:center; }
+.gtn-hero__copyL {
   font-size:clamp(18px,2.2vw,22px);
   letter-spacing:.18em;
   color:#fff;
   text-shadow:0 2px 12px rgba(0,0,0,.45);
   margin-bottom:14px;
 }
-.gtn-hero__brand{
+.gtn-hero__brand {
   font-size:clamp(12px,1.5vw,14px);
   color:#fff;
   letter-spacing:.22em;
   text-shadow:0 2px 10px rgba(0,0,0,.4);
 }
 
-/* 罫線・セクション見出し */
-.gtn-sec .gtn-sec__heading{margin:36px auto 18px;text-align:center}
-.gtn-sec .gtn-sec__heading h2{
+/* （共通）セクション見出し */
+.gtn-sec .gtn-sec__heading { margin:36px auto 18px; text-align:center; }
+.gtn-sec .gtn-sec__heading h2 {
   font-size:clamp(20px,2.4vw,24px);
   letter-spacing:.22em;
   font-weight:700;
 }
 
-/* ---------------- 2カラム基礎 ---------------- */
-.gtn-sec__grid{display:grid;gap:28px}
-@media (min-width:900px){
-  .gtn-sec__grid{grid-template-columns:1fr 1fr}
-  .gtn-sec__grid--reverse{direction:rtl}
-  .gtn-sec__grid--reverse > *{direction:ltr}
+/* =========================================================
+   ROOMS（PDF：左に大、右に小 + 本文／下にデコ矩形）
+========================================================= */
+.gtn-sec--rooms { padding:56px 20px 48px; background:#fff; }
+.gtn-sec--rooms .gtn-wrap { max-width:1180px; margin:0 auto; }
+
+.gtn-sec--rooms .rooms-grid {
+  display:grid; gap:32px; align-items:start;
 }
-.gtn-sec__img{background:#f8f8f8}
-.gtn-sec__img img{width:100%;height:auto}
-
-/* テキストブロック */
-.gtn-sec__txt{align-self:center}
-.gtn-sec__txt p + p{margin-top:1.1em}
-.gtn-sec__txt h2{
-  font-size:clamp(20px,2.4vw,24px);
-  letter-spacing:.18em;
-  margin-bottom:14px;
-}
-
-/* ---------------- フル/ワイド画像 ---------------- */
-.gtn-sec__fullimg img{width:100%;height:auto}
-.gtn-sec__wideimg{margin:0 auto}
-.gtn-sec__wideimg img{
-  width:100%;
-  height:auto;
-  object-fit:cover;
-}
-
-/* 細幅テキスト */
-.gtn-sec__txt--narrow{max-width:860px;margin:26px auto 0}
-
-/* サムネイル並び（小画像群） */
-.gtn-sec__thumbs{
-  display:grid;gap:14px;margin:18px auto 0;max-width:1180px
-}
-.gtn-sec__thumbs img{width:100%;height:auto;object-fit:cover;background:#f6f6f6}
-@media (min-width:720px){.gtn-sec__thumbs{grid-template-columns:repeat(4,1fr)}}
-
-/* リスト */
-.gtn-list{list-style:none;padding:0;margin:16px 0 0}
-.gtn-list li{letter-spacing:.05em}
-.gtn-list--restaurants{max-width:860px;margin:18px auto 0;text-align:center}
-.gtn-list--restaurants li + li{margin-top:.35em}
-
-.gtn-note{font-size:.92em;color:#666}
-
-/* 2カラムの説明BOX（タイプ/プラン） */
-.gtn-box{max-width:1180px;margin:28px auto 0}
-.gtn-box--columns{display:grid;gap:24px}
-@media (min-width:900px){.gtn-box--columns{grid-template-columns:1fr 1fr}}
-.gtn-box__col h3{font-size:18px;letter-spacing:.12em;margin-bottom:8px}
-
-/* チェックイン・アウト */
-.gtn-checktimes{
-  text-align:center;
-  letter-spacing:.08em;
-  margin:22px 0 0;
-}
-
-/* セクション余白の微調整（PDF寄せ） */
-.gtn-sec--rooms .gtn-wrap,
-.gtn-sec--dining-lead .gtn-wrap,
-.gtn-sec--pool .gtn-wrap,
-.gtn-sec--quality .gtn-wrap{max-width:1180px;margin:0 auto}
-.gtn-sec--rooms{padding-top:50px}
-.gtn-sec--dining-lead{padding-top:46px}
-.gtn-sec--pool{padding-top:46px}
-.gtn-sec--quality{padding-top:50px}
-
-/* ========== Rooms first block ========== */
-.gtn-sec--rooms{padding-top:56px;padding-bottom:48px;background:#fff}
-.gtn-sec--rooms .rooms-grid{
-  display:grid;gap:32px;align-items:start
-}
-@media (min-width:960px){
-  .gtn-sec--rooms .rooms-grid{
-    grid-template-columns: minmax(520px,1fr) minmax(420px,560px);
+@media (min-width:960px) {
+  .gtn-sec--rooms .rooms-grid {
+    grid-template-columns:minmax(520px,1fr) minmax(420px,560px);
   }
 }
 
-/* 左の大写真 */
-.rooms-photoL img{
+/* 左：大写真 */
+.rooms-photoL img {
   width:100%;
-  height: clamp(320px, 52vw, 540px);
-  object-fit: cover;
-  object-position: center;
-  display:block;
-  border: none;
+  height:clamp(320px, 52vw, 540px);
+  object-fit:cover; object-position:center; border:none;
 }
 
-/* 右側：小写真と文章の縦並び */
-.rooms-side{display:flex;flex-direction:column;gap:22px}
-
-/* 小写真（右上） */
-.rooms-photoS img{
+/* 右：小写真 + 本文 */
+.rooms-side { display:flex; flex-direction:column; gap:22px; }
+.rooms-photoS img {
   width:100%;
-  height: clamp(160px, 22vw, 230px);
-  object-fit: cover;
-  object-position: center;
-  display:block;
+  height:clamp(160px, 22vw, 230px);
+  object-fit:cover; object-position:center;
+}
+.rooms-text { font-family:'TrajanPro','Cinzel',serif; line-height:2; color:#222; }
+.rooms-text p + p { margin-top:1em; }
+
+/* 下：デコ矩形（PDFの薄ベージュの箱） */
+.rooms-deco { margin-top:26px; }
+.rooms-deco .deco-row { display:grid; gap:18px; justify-content:space-between; }
+.rooms-deco .deco-row .box {
+  display:block; background:#f4f1e8; border-radius:4px; height:64px;
+}
+.rooms-deco .deco-row--lg { grid-template-columns:repeat(5,1fr); }
+.rooms-deco .deco-row--lg .box-a{grid-column:span 1}
+.rooms-deco .deco-row--lg .box-b{grid-column:span 1}
+.rooms-deco .deco-row--lg .box-c{grid-column:span 1}
+.rooms-deco .deco-row--lg .box-d{grid-column:span 1}
+.rooms-deco .deco-row--lg .box-e{grid-column:span 1}
+.rooms-deco .deco-row--sm { margin-top:18px; grid-template-columns:repeat(8,1fr); }
+.rooms-deco .deco-row--sm .box { height:58px; }
+
+@media (min-width:1200px) {
+  .gtn-sec--rooms .rooms-grid { gap:36px; }
+  .rooms-deco .deco-row { gap:20px; }
 }
 
-/* 本文 */
-.rooms-text{font-family: 'TrajanPro','Cinzel',serif; line-height:2; color:#222}
-.rooms-text p + p{margin-top:1em}
+/* =========================================================
+   DINING（PDF：上にワイド写真、見出し+リード、2枚 + 3枚）
+========================================================= */
+.gtn-sec--dining { padding:56px 0; background:#f7f6f3; }
+.gtn-sec--dining .gtn-wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
 
-/* デコ矩形（下2段） */
-.rooms-deco{margin-top:26px}
-.rooms-deco .deco-row{
-  display:grid;gap:18px;justify-content:space-between;
-}
-.rooms-deco .deco-row .box{
-  display:block;background:#f4f1e8;border-radius:4px;height:64px;
-}
-
-/* 1段目：大きめ／幅をずらしてPDF風のリズムに */
-.rooms-deco .deco-row--lg{
-  grid-template-columns: repeat(5, 1fr);
-}
-.rooms-deco .deco-row--lg .box-a{grid-column: span 1}
-.rooms-deco .deco-row--lg .box-b{grid-column: span 1}
-.rooms-deco .deco-row--lg .box-c{grid-column: span 1}
-.rooms-deco .deco-row--lg .box-d{grid-column: span 1}
-.rooms-deco .deco-row--lg .box-e{grid-column: span 1}
-
-/* 2段目：小さめ多数 */
-.rooms-deco .deco-row--sm{
-  margin-top:18px;
-  grid-template-columns: repeat(8, 1fr);
-}
-.rooms-deco .deco-row--sm .box{height:58px}
-
-/* 余白バランス（PDF寄せ用微調整） */
-@media (min-width:1200px){
-  .gtn-sec--rooms .rooms-grid{gap:36px}
-  .rooms-deco .deco-row{gap:20px}
-}
-/* ========== DINING section ========== */
-.gtn-sec--dining{padding:56px 0;background:#f7f6f3}
-.gtn-sec--dining .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-
-/* ワイドビジュアル（上の大きい画像） */
-.dining-hero{margin:0 0 28px}
-.dining-hero img{
-  width:100%;height: clamp(260px, 40vw, 420px);
-  object-fit: cover;object-position:center;display:block
+/* 上のワイド */
+.dining-hero { margin:0 0 28px; }
+.dining-hero img {
+  width:100%; height:clamp(260px, 40vw, 420px);
+  object-fit:cover; object-position:center;
 }
 
-/* タイトル＋リード */
-.dining-head{margin:18px 0 22px}
-.dining-title{
-  margin:0 0 12px;font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing:.08em;font-family:'TrajanPro','Cinzel',serif;color:#111
+/* タイトル + リード */
+.dining-head { margin:18px 0 22px; }
+.dining-title {
+  margin:0 0 12px; font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111;
 }
-.dining-lead{color:#333;line-height:2}
-.dining-lead p{margin:0}
-.dining-lead p + p{margin-top:.7em}
+.dining-lead { color:#333; line-height:2; }
+.dining-lead p + p { margin-top:.7em; }
 
 /* 画像グリッド */
-.dining-grid{display:grid;gap:24px;margin-top:22px}
-.dining-grid--two{
-  grid-template-columns: 1fr;
+.dining-grid { display:grid; gap:24px; margin-top:22px; }
+.dining-grid--two { grid-template-columns:1fr; }
+.dining-grid--three { grid-template-columns:1fr; }
+@media (min-width:860px) {
+  .dining-grid--two { grid-template-columns:1fr 1fr; }
+  .dining-grid--three { grid-template-columns:1fr 1fr 1fr; }
 }
-.dining-grid--three{
-  grid-template-columns: 1fr;
+.card { margin:0; }
+.card img {
+  width:100%; height:clamp(180px, 26vw, 260px);
+  object-fit:cover; object-position:center; background:#ddd;
 }
-@media (min-width:860px){
-  .dining-grid--two{grid-template-columns: 1fr 1fr}
-  .dining-grid--three{grid-template-columns: 1fr 1fr 1fr}
-}
-
-/* 各カード */
-.card{margin:0}
-.card img{
-  width:100%;height: clamp(180px, 26vw, 260px);
-  object-fit: cover;object-position:center;display:block;
-  background:#ddd
-}
-.card figcaption{
-  margin-top:8px;font-size:13px;color:#4b4b4b;letter-spacing:.05em
-}
-/* ========== Section 3 : Breeze / Pool ========== */
-.gtn-sec--breeze{padding:56px 0;background:#f7f6f3}
-.gtn-sec--breeze .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-
-/* ワイドヒーロー */
-.breeze-hero{margin:0 0 28px}
-.breeze-hero img{
-  width:100%;
-  height: clamp(240px, 38vw, 420px);
-  object-fit: cover; object-position:center;
-  display:block; background:#ddd;
+.card figcaption {
+  margin-top:8px; font-size:13px; color:#4b4b4b; letter-spacing:.05em;
 }
 
-/* 3枚横並び */
-.breeze-trio{display:grid; gap:18px; margin:0 0 26px}
-.breeze-trio .tri{margin:0}
-.breeze-trio img{
-  width:100%; height: clamp(120px, 20vw, 200px);
-  object-fit: cover; object-position:center; display:block; background:#e1e1e1;
-}
-@media (min-width:860px){
-  .breeze-trio{grid-template-columns: 1fr 1fr 1fr}
+/* =========================================================
+   BREEZE（PDF：ワイド → 3枚横 → タイトル&本文）
+========================================================= */
+.gtn-sec--breeze { padding:56px 0; background:#f7f6f3; }
+.gtn-sec--breeze .gtn-wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
+
+/* ワイド */
+.breeze-hero { margin:0 0 28px; }
+.breeze-hero img {
+  width:100%; height:clamp(240px, 38vw, 420px);
+  object-fit:cover; object-position:center;
 }
 
-/* タイトル＋本文 */
-.breeze-head{margin:8px 0 6px}
-.breeze-title{
-  margin:0 0 12px;
-  font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing:.08em;
-  font-family:'TrajanPro','Cinzel',serif;
-  color:#111;
+/* 3枚横 */
+.breeze-trio { display:grid; gap:18px; margin:0 0 26px; }
+.breeze-trio img {
+  width:100%; height:clamp(120px, 20vw, 200px);
+  object-fit:cover; object-position:center; background:#e1e1e1;
 }
-.breeze-body{color:#333; line-height:2}
-.breeze-body p{margin:0}
-.breeze-body p + p{margin-top:.7em}
+@media (min-width:860px) {
+  .breeze-trio { grid-template-columns:1fr 1fr 1fr; }
+}
 
-/* ========== Section 4 : Stay ========== */
-.gtn-sec--stay{padding:56px 0;background:#f7f6f3}
-.gtn-sec--stay .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+/* タイトル + 本文 */
+.breeze-head { margin:8px 0 6px; }
+.breeze-title {
+  margin:0 0 12px; font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111;
+}
+.breeze-body { color:#333; line-height:2; }
+.breeze-body p + p { margin-top:.7em; }
 
-/* ワイドヒーロー */
-.stay-hero{margin:0 0 24px}
-.stay-hero img{
-  width:100%;
-  height: clamp(240px, 38vw, 420px);
-  object-fit: cover; object-position:center;
-  display:block; background:#ddd;
+/* =========================================================
+   STAY（PDF：ワイド → 見出し/リード → 2枚 → 1枠内ボックス）
+========================================================= */
+.gtn-sec--stay { padding:56px 0; background:#f7f6f3; }
+.gtn-sec--stay .gtn-wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
+
+/* ワイド */
+.stay-hero { margin:0 0 24px; }
+.stay-hero img {
+  width:100%; height:clamp(240px, 38vw, 420px);
+  object-fit:cover; object-position:center;
 }
 
 /* 見出し */
-.stay-title{
+.stay-title {
   margin:12px 0 12px;
-  font-size: clamp(22px, 2.6vw, 30px);
+  font-size:clamp(22px, 2.6vw, 30px);
   letter-spacing:.08em;
   font-family:'TrajanPro','Cinzel',serif;
   color:#111;
 }
 
-/* リード本文 */
-.stay-lead{color:#333; line-height:2; margin:0 0 18px}
-.stay-lead p{margin:0}
-.stay-lead p + p{margin-top:.7em}
+/* リード */
+.stay-lead { color:#333; line-height:2; margin:0 0 18px; }
+.stay-lead p + p { margin-top:.7em; }
 
-/* 2枚横並び */
-.stay-duo{display:grid; gap:18px; margin:8px 0 26px}
-.stay-duo .duo{margin:0}
-.stay-duo img{
-  width:100%;
-  height: clamp(160px, 26vw, 260px);
-  object-fit: cover; object-position:center; display:block; background:#e1e1e1;
+/* 2枚横 */
+.stay-duo { display:grid; gap:18px; margin:8px 0 26px; }
+.stay-duo img {
+  width:100%; height:clamp(160px, 26vw, 260px);
+  object-fit:cover; object-position:center; background:#e1e1e1;
 }
-@media (min-width:900px){
-  .stay-duo{grid-template-columns: 1fr 1fr}
+@media (min-width:900px) {
+  .stay-duo { grid-template-columns:1fr 1fr; }
 }
 
-/* 情報ボックス（2カラム） */
-.stay-info{
-  display:grid; gap:18px; margin:8px 0 24px
-}
-@media (min-width:900px){
-  .stay-info{grid-template-columns: 1fr 1fr}
-}
-.stay-info .box{
-  background:#fff; border:1px solid #e1e1e1;
-  padding:18px 20px
-}
-.stay-info h3{
-  margin:0 0 10px; font-size:15px; letter-spacing:.08em;
-  font-family:'TrajanPro','Cinzel',serif; color:#111
-}
-.stay-info ul{margin:0; padding-left:1.2em; line-height:1.9}
-.stay-info li{margin:0}
-.stay-info .note{margin:10px 0 0; font-size:13px; color:#666; line-height:1.8}
-
-/* チェックイン／アウト */
-.stay-times{
-  display:grid; gap:12px; padding:16px 0 0; border-top:1px solid #e1e1e1
-}
-@media (min-width:700px){
-  .stay-times{grid-template-columns: 1fr 1fr}
-}
-.stay-times .time{
-  font-size:14px; letter-spacing:.08em; color:#222
-}
+/* ▼ 1枠内ボックス（客室タイプ／宿泊プラン + チェックイン/アウト） */
 .stay-info {
-  background: #faf9f5;
-  padding: 2em;
-  border: 1px solid #e5e3dc;
+  background:#faf9f5;
+  border:1px solid #e5e3dc;
+  padding:24px;
+  margin:8px 0 0;
 }
 
+/* 上段：2カラム */
 .stay-box {
-  display: flex;
-  justify-content: space-between;
-  gap: 2em;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
+  display:grid;
+  gap:24px;
+  border-bottom:1px solid #d9d6cd;
+  padding-bottom:16px;
+  margin-bottom:16px;
 }
-
+@media (min-width:900px) {
+  .stay-box { grid-template-columns:1fr 1fr; }
+}
 .stay-col h4 {
-  font-weight: bold;
-  margin-bottom: 0.5em;
+  font-weight:700;
+  margin:0 0 10px;
+  font-size:15px;
+  letter-spacing:.08em;
+  font-family:'TrajanPro','Cinzel',serif;
+  color:#111;
 }
+.stay-col ul { list-style:none; padding:0; margin:0; line-height:1.9; }
+.stay-col li { margin:0; }
+.stay-col .note { font-size:13px; color:#555; line-height:1.8; margin-top:.5em; }
 
-.stay-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.stay-col ul li {
-  margin: 0.3em 0;
-}
-
-.stay-col .note {
-  font-size: 0.85em;
-  color: #555;
-  margin-top: 0.5em;
-}
-
+/* 下段：左右並び */
 .stay-bottom {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95em;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  font-size:14px;
+  letter-spacing:.06em;
+  color:#222;
 }
+/* ▲ ここまで（旧 .stay-info/.stay-times の重複ルールは置き換え済） */
