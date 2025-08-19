@@ -510,3 +510,38 @@
 /* セクションの地色を統一（指示書と同じトーン） */
 .gtn-sec--rooms { background: #fff; }     /* Sec.1 は白（写真＋テキスト） */
 .gtn-sec--breeze { background: #f7f6f3; } /* Sec.3 は薄ベージュ */
+/* ================================
+   テキスト背面に back1.svg を半透明で敷く（左右・下 0）
+   Section1（.rooms-text-wrap）と Section3（.breeze-body-wrap）共通
+================================ */
+.gtn .text-with-back {           /* 共通ラッパ */
+  position: relative;
+  z-index: 0;
+}
+.gtn .text-with-back > .text {   /* 実テキストは前面 */
+  position: relative;
+  z-index: 1;
+}
+
+/* 背面SVG（左右0/下0。画面幅いっぱいに敷く） */
+.gtn .text-with-back > .back1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;                  /* 下 0 に密着 */
+  width: 100vw;               /* 画面幅いっぱい（左右0相当） */
+  height: clamp(140px, 22vw, 220px);  /* 行間に入る帯の高さ */
+  object-fit: contain;        /* 図形比率を維持 */
+  object-position: center bottom;
+  opacity: .32;               /* 透け具合（0.25〜0.45で調整） */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* セクション地色（指示書準拠） */
+.gtn-sec--rooms  { background:#fff; }
+.gtn-sec--breeze { background:#f7f6f3; }
+
+/* 使わない旧バンドは消す（残っていると余白原因になる） */
+.gtn-sec--rooms  .rooms-deco,
+.gtn-sec--breeze .rooms-deco { display:none !important; }
