@@ -407,3 +407,10 @@
 
 /* 万一他所で max-width:100% が邪魔していた場合の保険 */
 .gtn .breeze-trio img { max-width: 100% !important; }
+
+/* ヒーロー画像の直下余白を強制復活 */
+.gtn .breeze-hero { margin: 0 0 28px !important; }
+
+/* （同様の事象が出る可能性に備えて、他セクションも統一） */
+.gtn .dining-hero { margin: 0 0 28px !important; }
+.gtn .stay-hero   { margin: 0 0 24px !important; } /* 既存値に合わせて少し小さめ */
