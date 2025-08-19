@@ -20,29 +20,29 @@ require __DIR__.'/partials/header.php';
   <section id="luxury" class="section">
 	<h3>LUXURY</h3>
 	<div class="logos row-3">
-	  <div class="logo-card"><a href="/luxury-nagasaki.php"><img src="<?= asset('/_assets/svg/nagasaki.svg') ?>" alt="Garden Terrace Nagasaki"></a></div>
-	  <div class="logo-card"><a href="/luxury-saga.php"><img src="<?= asset('/_assets/svg/saga.svg') ?>" alt="Garden Terrace Saga"></a></div>
-	  <div class="logo-card"><a href="/luxury-fukuoka.php"><img src="<?= asset('/_assets/svg/fukuoka.svg') ?>" alt="Garden Terrace Fukuoka"></a></div>
+	  <div class="logo-card"><a href="/gtn.php"><img src="<?= asset('/_assets/svg/nagasaki.svg') ?>" alt="Garden Terrace Nagasaki"></a></div>
+	  <div class="logo-card"><a href="/gts.php"><img src="<?= asset('/_assets/svg/saga.svg') ?>" alt="Garden Terrace Saga"></a></div>
+	  <div class="logo-card"><a href="/gtf.php"><img src="<?= asset('/_assets/svg/fukuoka.svg') ?>" alt="Garden Terrace Fukuoka"></a></div>
 	</div>
 	<div class="logos tail">
-	  <div class="logo-card"><a href="/luxury-urari-tako.php"><img src="<?= asset('/_assets/svg/urari.svg') ?>" alt="URARI TAKO 浪裏"></a></div>
-	  <div class="logo-card"><a href="/luxury-royal-chester-nagasaki.php"><img src="<?= asset('/_assets/svg/royalchester.svg') ?>" alt="Royal Chester Nagasaki"></a></div>
+	  <div class="logo-card"><a href="urari.php"><img src="<?= asset('/_assets/svg/urari.svg') ?>" alt="URARI TAKEO"></a></div>
+	  <div class="logo-card"><a href="/rcn.php"><img src="<?= asset('/_assets/svg/royalchester.svg') ?>" alt="Royal Chester Nagasaki"></a></div>
 	</div>
   </section>
 
   <section id="city" class="section">
 	<h3>CITY RESORT</h3>
 	<div class="logos tail">
-	  <div class="logo-card"><a href="/city-flags-sasebo-kujukushima.php"><img src="<?= asset('/_assets/svg/sasebo.svg') ?>" alt="Hotel Flags Sasebo Kujukushima"></a></div>
-	  <div class="logo-card"><a href="/city-flags-isahaya-nagasaki.php"><img src="<?= asset('/_assets/svg/isahaya.svg') ?>" alt="Hotel Flags Isahaya Nagasaki"></a></div>
+	  <div class="logo-card"><a href="/hf99.php"><img src="<?= asset('/_assets/svg/sasebo.svg') ?>" alt="Hotel Flags Sasebo Kujukushima"></a></div>
+	  <div class="logo-card"><a href="/hfi.php"><img src="<?= asset('/_assets/svg/isahaya.svg') ?>" alt="Hotel Flags Isahaya Nagasaki"></a></div>
 	</div>
   </section>
 
   <section id="relax" class="section">
 	<h3>RELAX</h3>
 	<div class="logos tail">
-	  <div class="logo-card"><a href="/relax-flags-bekkan.php"><img src="<?= asset('/_assets/svg/bekkan.svg') ?>" alt="Hotel Flags Bekkan"></a></div>
-	  <div class="logo-card"><a href="/relax-sasebo-city-forest-park.php"><img src="<?= asset('/_assets/svg/forest.svg') ?>" alt="Sasebo City Forest Park"></a></div>
+	  <div class="logo-card"><a href="/bek.php"><img src="<?= asset('/_assets/svg/bekkan.svg') ?>" alt="Hotel Flags Bekkan"></a></div>
+	  <div class="logo-card"><a href="/conkana.php"><img src="<?= asset('/_assets/svg/forest.svg') ?>" alt="conkana"></a></div>
 	</div>
   </section>
 </main>
