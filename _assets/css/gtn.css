@@ -278,3 +278,29 @@
   margin: 0;
   padding: 0;
 }
+/* === HERO を親のパディングから「はみ出させて」横幅100vwにする === */
+.gtn { overflow-x: hidden; }               /* 念のため横スクロール抑止 */
+
+.gtn-hero {
+  padding: 0;                              /* 念押し */
+  margin: 0;
+  width: 100vw;                            /* 画面幅いっぱい */
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);           /* 親のセンタリング/パディングを無視 */
+  margin-right: calc(50% - 50vw);
+}
+
+.gtn-hero__bg,
+.gtn-hero__bg picture,
+.gtn-hero__bg img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto;                            /* すでに object-fit 指定がある場合はそちらを優先 */
+}
+
+/* ヒーロー内のテキスト位置はそのまま維持（必要なら調整） */
+.gtn-hero__lead { bottom: 80px; }
+@media (max-width: 768px){ .gtn-hero__lead { bottom: 56px; } }
