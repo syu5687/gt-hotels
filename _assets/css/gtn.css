@@ -48,6 +48,37 @@
   text-shadow:0 2px 10px rgba(0,0,0,.4);
 }
 
+/* ========= HERO 調整（テキスト位置を少し上に） ========= */
+.gtn-hero__lead{
+  position:absolute; left:0; right:0;
+  bottom:80px;                    /* 以前 40px → 上げる */
+  text-align:center; padding:0 16px;
+}
+@media (max-width: 768px){
+  .gtn-hero__lead{ bottom:56px; } /* スマホはやや下げる */
+}
+
+/* ========= HERO 右上ロゴ ========= */
+.gtn-hero{ position:relative; }
+.gtn-hero__mark{
+  position:absolute;
+  right:clamp(12px, 2.4vw, 28px);    /* 端からの余白 */
+  top:clamp(56px, 8vh, 120px);       /* ヘッダーを避けて上部に配置 */
+  width:clamp(140px, 18vw, 260px);   /* 画面幅に追随するサイズ */
+  height:auto;
+  pointer-events:none;               /* 下の要素をクリック可能にする */
+  filter:drop-shadow(0 2px 10px rgba(0,0,0,.35)); /* 視認性確保 */
+  z-index:2;                         /* 背景より前面 */
+}
+
+@media (max-width: 480px){
+  .gtn-hero__mark{
+    top:48px;                        /* スマホはさらに上へ */
+    right:16px;
+    width:170px;                     /* モバイルは少し小さめ */
+  }
+}
+
 /* =========================================================
    ROOMS（左に大／右に小＋本文）+ 装飾敷き back1.svg
 ========================================================= */
