@@ -253,7 +253,7 @@
    余白・レスポンシブ微調整
 ========================================================= */
 @media (max-width:720px){
-  .gtn section{padding:0}
+  .gtn section{padding:44px 16px}
   .gtn-hero__lead{bottom:28px}
   .gtn-sec--rooms::before{height:380px}
   .gtn-sec--breeze::before{height:360px}
