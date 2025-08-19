@@ -256,3 +256,72 @@
 .breeze-body{color:#333; line-height:2}
 .breeze-body p{margin:0}
 .breeze-body p + p{margin-top:.7em}
+
+/* ========== Section 4 : Stay ========== */
+.gtn-sec--stay{padding:56px 0;background:#f7f6f3}
+.gtn-sec--stay .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ワイドヒーロー */
+.stay-hero{margin:0 0 24px}
+.stay-hero img{
+  width:100%;
+  height: clamp(240px, 38vw, 420px);
+  object-fit: cover; object-position:center;
+  display:block; background:#ddd;
+}
+
+/* 見出し */
+.stay-title{
+  margin:12px 0 12px;
+  font-size: clamp(22px, 2.6vw, 30px);
+  letter-spacing:.08em;
+  font-family:'TrajanPro','Cinzel',serif;
+  color:#111;
+}
+
+/* リード本文 */
+.stay-lead{color:#333; line-height:2; margin:0 0 18px}
+.stay-lead p{margin:0}
+.stay-lead p + p{margin-top:.7em}
+
+/* 2枚横並び */
+.stay-duo{display:grid; gap:18px; margin:8px 0 26px}
+.stay-duo .duo{margin:0}
+.stay-duo img{
+  width:100%;
+  height: clamp(160px, 26vw, 260px);
+  object-fit: cover; object-position:center; display:block; background:#e1e1e1;
+}
+@media (min-width:900px){
+  .stay-duo{grid-template-columns: 1fr 1fr}
+}
+
+/* 情報ボックス（2カラム） */
+.stay-info{
+  display:grid; gap:18px; margin:8px 0 24px
+}
+@media (min-width:900px){
+  .stay-info{grid-template-columns: 1fr 1fr}
+}
+.stay-info .box{
+  background:#fff; border:1px solid #e1e1e1;
+  padding:18px 20px
+}
+.stay-info h3{
+  margin:0 0 10px; font-size:15px; letter-spacing:.08em;
+  font-family:'TrajanPro','Cinzel',serif; color:#111
+}
+.stay-info ul{margin:0; padding-left:1.2em; line-height:1.9}
+.stay-info li{margin:0}
+.stay-info .note{margin:10px 0 0; font-size:13px; color:#666; line-height:1.8}
+
+/* チェックイン／アウト */
+.stay-times{
+  display:grid; gap:12px; padding:16px 0 0; border-top:1px solid #e1e1e1
+}
+@media (min-width:700px){
+  .stay-times{grid-template-columns: 1fr 1fr}
+}
+.stay-times .time{
+  font-size:14px; letter-spacing:.08em; color:#222
+}

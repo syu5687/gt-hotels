@@ -168,43 +168,61 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--quality">
-	<div class="gtn-sec__grid gtn-sec__grid--reverse">
-	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
-	  <div class="gtn-sec__txt">
-		<h2>その部屋は上質の本質を知るひと時となる。</h2>
+<!-- ===== Section 4: STAY ===== -->
+  <section class="gtn-sec gtn-sec--stay">
+	<div class="gtn-wrap">
+  
+	  <!-- 上：ワイド（客室のワイド写真） -->
+	  <figure class="stay-hero">
+		<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  </figure>
+  
+	  <!-- 見出し -->
+	  <h2 class="stay-title">その滞在は上質の本質を知るひと時となる。</h2>
+  
+	  <!-- リード本文（PDFの段落をここへそのまま貼付） -->
+<div class="stay-lead">
 		<p>長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。</p>
-		<p>本館のほかに 2 棟ある「離れ」の宿泊棟「オーシャンスイート」「タワースイート」。</p>
-		<p>シンプルな装飾の室内空間に、立体的に彫り込まれた印象的な天井や、海側に開放感あふれるテラスを構えたラグジュアリーな空間。扉を開くと、海側に大きく開いた窓が目に飛び込み、時間の経過や季節の移ろいとともに表情を変える景色を楽しめます。落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。</p>
+		<p>本館のほかに2棟ある「離れ」の宿泊棟「オーシャンスイート」「タワースイート」。</p>
+		<p>シンプルな装飾の室内空間に、立体的に彫り込まれた印象的な天井や、海側に開放感あふれるテラスを構えたラグジュアリーな空間。</p>
+		<p>扉を開くと、海側に大きく開いた窓が目に飛び込み、時間の経過や季節の移ろいとともに表情を変える景色を楽しめます。</p>
+		<p>落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。</p>
+	  </div>  
+	  <!-- 中段：2枚横並び（客室カット） -->
+	  <div class="stay-duo">
+		<figure class="duo"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
+		<figure class="duo"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
 	  </div>
+  
+	  <!-- 下段：2カラムのボックス（箇条書き） -->
+	  <div class="stay-info">
+		<div class="box">
+		  <h3>客室タイプ</h3>
+		  <ul>
+			<li>オーシャンビュー和洋室</li>
+			<li>和洋室</li>
+			<li>デラックスツイン</li>
+			<li>和室（ベッドタイプ）</li>
+		  </ul>
+		</div>
+		<div class="box">
+		  <h3>宿泊プラン</h3>
+		  <ul>
+			<li>二食付き（和洋中セレクション）</li>
+			<li>朝食付き（和洋中セレクション）</li>
+		  </ul>
+		  <p class="note"><!-- PDF脚注（※ から始まる注記）をここへ貼付 --></p>
+		</div>
+	  </div>
+  
+	  <!-- チェックイン／アウト -->
+	  <div class="stay-times">
+		<div class="time">チェックイン / 15:00 – 22:00</div>
+		<div class="time">チェックアウト / 11:00</div>
+	  </div>
+  
 	</div>
-
-	<div class="gtn-box gtn-box--columns">
-	  <div class="gtn-box__col">
-		<h3>■ 客室タイプ</h3>
-		<ul class="gtn-list">
-		  <li>オーシャンビュー和洋室</li>
-		  <li>和洋室</li>
-		  <li>デラックスツイン</li>
-		  <li>和室（ベッドタイプ）</li>
-		</ul>
-	  </div>
-	  <div class="gtn-box__col">
-		<h3>■ 宿泊プラン</h3>
-		<ul class="gtn-list">
-		  <li>二食付き（和洋中ビュッフェ）</li>
-		  <li>朝食付き（和洋中ビュッフェ）</li>
-		  <li class="gtn-note">※夕食は含まれません。宿泊日当日追加金額のお支払いで夕食追加の変更も可能です。</li>
-		  <li class="gtn-note">※お食事は本館 1 階「ビュッフェダイニング THE ONE」にてご提供いたします。</li>
-		</ul>
-	  </div>
-	</div>
-
-	<p class="gtn-checktimes">
-	  チェックイン / 15：00 ー 22：00　　チェックアウト / 11：00
-	</p>
   </section>
-
 </main>
 
 <?php require __DIR__ . '/partials/footer.php'; ?>
