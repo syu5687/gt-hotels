@@ -1,10 +1,10 @@
 <?php
-// ページ情報（必要に応じて出力先で利用）
+// ページ情報（SEOテキストは不要とのことなので空）
 $pageTitle = 'Garden Terrace Nagasaki';
-$pageDesc  = ''; // SEO不要のため空
+$pageDesc  = '';
 
-// この配列を head 側で拾って <link rel="stylesheet"> を差し込む想定
-$pageCSS   = ['/_assets/css/gtn.css'];
+// head 側で追加CSSを挿入できる実装がある場合の想定
+$pageCSS   = [ asset('/_assets/css/gtn.css') ];
 
 require __DIR__.'/partials/head.php';
 require __DIR__.'/partials/header.php';
@@ -17,11 +17,10 @@ require __DIR__.'/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="/_assets/images/dummy.jpg" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
-	  <p class="gtn-hero__copyS">彩り豊かな長崎の食文化を五感で味わう。</p>
 	  <p class="gtn-hero__brand">GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS</p>
 	</div>
   </section>
@@ -32,8 +31,8 @@ require __DIR__.'/partials/header.php';
   <section class="gtn-sec gtn-sec--rooms">
 	<div class="gtn-sec__grid">
 	  <!-- 画像はダミー固定（背景以外は dummy.jpg） -->
-	  <figure class="gtn-sec__img"><img src="/_assets/images/dummy.jpg" alt=""></figure>
-	  <figure class="gtn-sec__img"><img src="/_assets/images/dummy.jpg" alt=""></figure>
+	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
+	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
 
 	  <div class="gtn-sec__txt">
 		<p>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
@@ -48,11 +47,13 @@ require __DIR__.'/partials/header.php';
   ========================== -->
   <section class="gtn-sec gtn-sec--dining-lead">
 	<div class="gtn-sec__fullimg">
-	  <img src="/_assets/images/dummy.jpg" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	</div>
+
 	<div class="gtn-sec__heading">
 	  <h2>彩り豊かな長崎の食文化を五感で味わう。</h2>
 	</div>
+
 	<div class="gtn-sec__txt gtn-sec__txt--narrow">
 	  <p>海の幸山の幸に恵まれた長崎ならではの旬の食材を長崎の街の光が映し込む 長崎港を眺めながらじっくりとご賞味下さい。</p>
 	  <p>四季折々の旬の味覚を活かしたアートと呼ぶに相応しいメニューの数々。</p>
@@ -61,13 +62,13 @@ require __DIR__.'/partials/header.php';
 
 	<!-- サムネ群（ダミー画像） -->
 	<div class="gtn-sec__thumbs">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	</div>
 
-	<!-- レストラン名（PDF表現に合わせて行揃え） -->
+	<!-- レストラン名 -->
 	<ul class="gtn-list gtn-list--restaurants">
 	  <li>鉄板焼ダイニング「竹彩」</li>
 	  <li>レストラン「フォレスト」</li>
@@ -81,7 +82,7 @@ require __DIR__.'/partials/header.php';
 	   SECTION 3：プール・スパ・ジム
   ========================== -->
   <section class="gtn-sec gtn-sec--pool">
-	<div class="gtn-sec__wideimg"><img src="/_assets/images/dummy.jpg" alt=""></div>
+	<div class="gtn-sec__wideimg"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></div>
 
 	<div class="gtn-sec__txt gtn-sec__txt--narrow">
 	  <h2>心地よい風 澄み渡る空がリゾートタイムを演出</h2>
@@ -92,11 +93,11 @@ require __DIR__.'/partials/header.php';
 
 	<!-- 小サムネ群（ダミー画像） -->
 	<div class="gtn-sec__thumbs">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
-	  <img src="/_assets/images/dummy.jpg" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	</div>
   </section>
 
@@ -105,7 +106,7 @@ require __DIR__.'/partials/header.php';
   ========================== -->
   <section class="gtn-sec gtn-sec--quality">
 	<div class="gtn-sec__grid gtn-sec__grid--reverse">
-	  <figure class="gtn-sec__img"><img src="/_assets/images/dummy.jpg" alt=""></figure>
+	  <figure class="gtn-sec__img"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></figure>
 	  <div class="gtn-sec__txt">
 		<h2>その部屋は上質の本質を知るひと時となる。</h2>
 		<p>長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。</p>
@@ -114,7 +115,7 @@ require __DIR__.'/partials/header.php';
 	  </div>
 	</div>
 
-	<!-- タイプ／プラン（PDFの並びに合わせ簡潔な定義リスト） -->
+	<!-- タイプ／プラン -->
 	<div class="gtn-box gtn-box--columns">
 	  <div class="gtn-box__col">
 		<h3>■ 客室タイプ</h3>
@@ -144,3 +145,4 @@ require __DIR__.'/partials/header.php';
 </main>
 
 <?php require __DIR__.'/partials/footer.php'; ?>
+<?php require __DIR__.'/partials/scripts.php'; ?>
