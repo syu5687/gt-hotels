@@ -248,3 +248,17 @@
   color: #222;
 }
 /* ▲ ここまで（旧 .stay-info/.stay-times の重複ルールは置き換え済） */
+
+/* section1 背景 */
+.gtn-sec--rooms {
+  position: relative;
+  background: #c6ba9a url('/_assets/images/back1.svg') no-repeat center top;
+  background-size: cover;   /* 画面全体にフィット */
+}
+
+/* section3 背景 */
+.gtn-sec--breeze {
+  position: relative;
+  background: #c6ba9a url('/_assets/images/back1.svg') no-repeat center top;
+  background-size: cover;
+}
