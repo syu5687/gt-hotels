@@ -1,115 +1,109 @@
-/* ================================
-   Garden Terrace Nagasaki Page (gtn.php)
-   ================================ */
+/* ===== GTN PAGE ONLY (scoped) ===== */
+.gtn *{box-sizing:border-box}
+.gtn{color:#222;font-family:'Cinzel',serif;line-height:1.9}
+.gtn img{display:block;max-width:100%;height:auto}
 
-/* ページ全体 */
-.gtn {
-  font-family: "Cinzel", "Noto Serif JP", serif;
-  color: #333;
-  background: #fff;
-  line-height: 1.8;
-  font-size: 16px;
+/* 余白の初期化（gtn配下のみに限定） */
+.gtn h1,.gtn h2,.gtn h3,.gtn p,.gtn ul{margin:0}
+.gtn section{padding:60px 20px}
+.gtn .gtn-wrap{max-width:1180px;margin:0 auto}
+
+/* ---------------- HERO ---------------- */
+.gtn-hero{position:relative;overflow:hidden;padding:0}
+.gtn-hero__bg img{
+  width:100%;
+  height:min(72vh,760px);           /* 画面高さ基準のヒーロー */
+  object-fit:cover;
+  object-position:center;
+}
+.gtn-hero__lead{position:absolute;left:0;right:0;bottom:40px;text-align:center}
+.gtn-hero__copyL{
+  font-size:clamp(18px,2.2vw,22px);
+  letter-spacing:.18em;
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.45);
+  margin-bottom:14px;
+}
+.gtn-hero__brand{
+  font-size:clamp(12px,1.5vw,14px);
+  color:#fff;
+  letter-spacing:.22em;
+  text-shadow:0 2px 10px rgba(0,0,0,.4);
 }
 
-/* セクション共通 */
-.gtn-sec {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 80px 5%;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-bottom: 1px solid #eee;
+/* 罫線・セクション見出し */
+.gtn-sec .gtn-sec__heading{margin:36px auto 18px;text-align:center}
+.gtn-sec .gtn-sec__heading h2{
+  font-size:clamp(20px,2.4vw,24px);
+  letter-spacing:.22em;
+  font-weight:700;
 }
 
-.gtn-sec:nth-child(even) {
-  flex-direction: row-reverse;
+/* ---------------- 2カラム基礎 ---------------- */
+.gtn-sec__grid{display:grid;gap:28px}
+@media (min-width:900px){
+  .gtn-sec__grid{grid-template-columns:1fr 1fr}
+  .gtn-sec__grid--reverse{direction:rtl}
+  .gtn-sec__grid--reverse > *{direction:ltr}
+}
+.gtn-sec__img{background:#f8f8f8}
+.gtn-sec__img img{width:100%;height:auto}
+
+/* テキストブロック */
+.gtn-sec__txt{align-self:center}
+.gtn-sec__txt p + p{margin-top:1.1em}
+.gtn-sec__txt h2{
+  font-size:clamp(20px,2.4vw,24px);
+  letter-spacing:.18em;
+  margin-bottom:14px;
 }
 
-/* イメージ部分 */
-.gtn-sec .gtn-img {
-  flex: 1 1 50%;
+/* ---------------- フル/ワイド画像 ---------------- */
+.gtn-sec__fullimg img{width:100%;height:auto}
+.gtn-sec__wideimg{margin:0 auto}
+.gtn-sec__wideimg img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
 }
 
-.gtn-sec .gtn-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-  object-fit: cover;
+/* 細幅テキスト */
+.gtn-sec__txt--narrow{max-width:860px;margin:26px auto 0}
+
+/* サムネイル並び（小画像群） */
+.gtn-sec__thumbs{
+  display:grid;gap:14px;margin:18px auto 0;max-width:1180px
+}
+.gtn-sec__thumbs img{width:100%;height:auto;object-fit:cover;background:#f6f6f6}
+@media (min-width:720px){.gtn-sec__thumbs{grid-template-columns:repeat(4,1fr)}}
+
+/* リスト */
+.gtn-list{list-style:none;padding:0;margin:16px 0 0}
+.gtn-list li{letter-spacing:.05em}
+.gtn-list--restaurants{max-width:860px;margin:18px auto 0;text-align:center}
+.gtn-list--restaurants li + li{margin-top:.35em}
+
+.gtn-note{font-size:.92em;color:#666}
+
+/* 2カラムの説明BOX（タイプ/プラン） */
+.gtn-box{max-width:1180px;margin:28px auto 0}
+.gtn-box--columns{display:grid;gap:24px}
+@media (min-width:900px){.gtn-box--columns{grid-template-columns:1fr 1fr}}
+.gtn-box__col h3{font-size:18px;letter-spacing:.12em;margin-bottom:8px}
+
+/* チェックイン・アウト */
+.gtn-checktimes{
+  text-align:center;
+  letter-spacing:.08em;
+  margin:22px 0 0;
 }
 
-/* テキスト部分 */
-.gtn-sec .gtn-txt {
-  flex: 1 1 50%;
-  text-align: left;
-}
-
-.gtn-sec .gtn-txt h2 {
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 20px;
-}
-
-.gtn-sec .gtn-txt p {
-  font-size: 16px;
-  line-height: 1.9;
-  white-space: pre-line;
-}
-
-/* ヒーローエリア */
-.gtn-hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.gtn-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.gtn-hero .gtn-hero-caption {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  text-align: center;
-}
-
-.gtn-hero .gtn-hero-caption h1 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.gtn-hero .gtn-hero-caption p {
-  font-size: 18px;
-}
-
-/* レスポンシブ */
-@media (max-width: 768px) {
-  .gtn-sec {
-    flex-direction: column !important;
-    gap: 20px;
-    padding: 40px 20px;
-  }
-
-  .gtn-sec .gtn-txt {
-    text-align: center;
-  }
-
-  .gtn-hero .gtn-hero-caption h1 {
-    font-size: 28px;
-  }
-
-  .gtn-hero .gtn-hero-caption p {
-    font-size: 14px;
-  }
-}
+/* セクション余白の微調整（PDF寄せ） */
+.gtn-sec--rooms .gtn-wrap,
+.gtn-sec--dining-lead .gtn-wrap,
+.gtn-sec--pool .gtn-wrap,
+.gtn-sec--quality .gtn-wrap{max-width:1180px;margin:0 auto}
+.gtn-sec--rooms{padding-top:50px}
+.gtn-sec--dining-lead{padding-top:46px}
+.gtn-sec--pool{padding-top:46px}
+.gtn-sec--quality{padding-top:50px}

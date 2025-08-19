@@ -1,6 +1,6 @@
 <?php
 // アセットのキャッシュバスター
-define('ASSET_VER', '2025.08.18');
+define('ASSET_VER', '2025.08.19');
 
 // ルート相対URL（/_assets/...）をそのまま返す想定
 function url($path){ return $path; }
