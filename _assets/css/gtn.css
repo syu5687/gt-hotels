@@ -326,3 +326,10 @@
   object-position: center;
   background: #e1e1e1;
 }
+
+/* back1.svg用の背景帯 */
+.rooms-deco--band {
+  background: #f7f6f3;   /* セクション背景色 */
+  padding: 28px 0 18px;
+  text-align: center;
+}
