@@ -18,15 +18,32 @@ function is_active($filenames = []){
   return '';
 }
 
-// ページ名からCSSを自動で決定する関数
-function pageCss() {
-  $script = basename($_SERVER['SCRIPT_NAME'], '.php'); // 例: gtn.php → gtn
-  $cssPath = "/_assets/css/{$script}.css";
-  $fullPath = $_SERVER['DOCUMENT_ROOT'].$cssPath;
-
-  // 該当CSSファイルが存在する場合だけlinkタグを返す
-  if (file_exists($fullPath)) {
-    return '<link rel="stylesheet" href="'.asset($cssPath).'">';
-  }
-  return '';
-}
+/**
+ * ページ名からCSSを自動決定（gtn.php→gtn.css / gts.php→gts.css）
+ * - フロントコントローラ環境でも動くよう REQUEST_URI を優先
+ * - DOCUMENT_ROOT が未設定な環境のフォールバックも用意
+ */
+function pageCss(){
+   // 例: /foo/bar/gtn.php → gtn
+   $reqPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?? '';
+   $name    = pathinfo($reqPath, PATHINFO_FILENAME) ?: 'index';
+ 
+   // index.php の場合は CSS を読み込まない
+   if ($name === 'index') {
+     return '';
+   }
+ 
+   $cssPathWeb = "/_assets/css/{$name}.css";
+ 
+   // 実ファイルパスの解決（DOCUMENT_ROOT が無い環境用の保険込み）
+   $docRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/');
+   $try1    = $docRoot ? ($docRoot.$cssPathWeb) : null;
+   $try2    = realpath(__DIR__.'/../..').$cssPathWeb; // config/ からプロジェクトルート想定
+ 
+   $exists  = ($try1 && is_file($try1)) || is_file($try2);
+ 
+   if ($exists){
+     return '<link rel="stylesheet" href="'.asset($cssPathWeb).'">';
+   }
+   return '';
+ }
