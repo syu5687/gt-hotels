@@ -82,11 +82,11 @@ require __DIR__ . '/partials/header.php';
 	  <!-- 上段：2カラムの料理写真 -->
 	  <div class="dining-grid dining-grid--two">
 		<figure class="card">
-		  <img src="<?= asset('/_assets/images/gtn/sec2-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 		  <figcaption>レストラン「フォレスト」</figcaption>
 		</figure>
 		<figure class="card">
-		  <img src="<?= asset('/_assets/images/gtn/sec2-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 		  <figcaption>九州創作「千山万水」</figcaption>
 		</figure>
 	  </div>
