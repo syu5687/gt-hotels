@@ -318,3 +318,11 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
+/* Section 3 の3枚画像を Section 2 と同じ大きさにする */
+.breeze-trio img {
+  width: 100%;
+  height: clamp(180px, 26vw, 260px);  /* Section 2 の card img と統一 */
+  object-fit: cover;
+  object-position: center;
+  background: #e1e1e1;
+}
