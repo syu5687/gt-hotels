@@ -374,3 +374,15 @@
 /* 以前の “幅:min(1600px,96vw); height:auto;” を上書きするための保険 */
 .rooms-deco__bg,
 .breeze-deco__bg { max-width: 100%; }
+
+/* Section3 3枚の画像サイズを Section2 と完全に合わせる（figureの既定marginを打消し） */
+.breeze-trio .tri { 
+  margin: 0;               /* ← これが効きます */
+}
+
+.breeze-trio .tri img {
+  width: 100%;
+  height: clamp(180px, 26vw, 260px);  /* Section2のcardと同じ */
+  object-fit: cover;
+  object-position: center;
+}
