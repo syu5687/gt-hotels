@@ -17,7 +17,7 @@ require __DIR__ . '/partials/header.php';
 	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
-	  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
+	  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。,</p>
 	  <p class="gtn-hero__brand">GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS</p>
 	</div>
   </section>
