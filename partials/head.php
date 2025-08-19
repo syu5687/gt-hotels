@@ -13,5 +13,9 @@
 
   <link rel="stylesheet" href="<?= asset('/_assets/css/style.css') ?>">
   <link rel="stylesheet" href="<?= asset('/_assets/css/header-footer.css') ?>">
+  <!-- gtn.php のときだけ gtn.css を読み込み -->
+  <?php if (basename($_SERVER['SCRIPT_NAME']) === 'gtn.php'): ?>
+    <link rel="stylesheet" href="<?= asset('/_assets/css/gtn.css') ?>">
+  <?php endif; ?>
 </head>
 <body>
