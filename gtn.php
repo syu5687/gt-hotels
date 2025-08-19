@@ -48,30 +48,10 @@ require __DIR__ . '/partials/header.php';
 		</div>
 	  </div>
   
-	  <!-- 下：デコ矩形（2段） -->
+<!-- 下：デコ矩形（2段） -->
 	  <div class="rooms-deco">
-		<!-- 1段目（大きめ） -->
-		<div class="deco-row deco-row--lg">
-		  <span class="box box-a"></span>
-		  <span class="box box-b"></span>
-		  <span class="box box-c"></span>
-		  <span class="box box-d"></span>
-		  <span class="box box-e"></span>
-		</div>
-		<!-- 2段目（小さめ・多め） -->
-		<div class="deco-row deco-row--sm">
-		  <span class="box"></span>
-		  <span class="box"></span>
-		  <span class="box"></span>
-		  <span class="box"></span>
-		  <span class="box"></span>
-		  <span class="box"></span>
-		  <span class="box"></span>
-		  <span class="box"></span>
-		</div>
-	  </div>
-	</div>
-  </section>
+		<img src="<?= asset('/_assets/images/back1.svg') ?>" alt="" class="rooms-deco__bg">
+	  </div>  </section>
 
   <!-- =========================
 	   SECTION 2：ダイニング（リード＋本文＋サムネ）
