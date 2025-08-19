@@ -193,3 +193,63 @@
   object-position: center !important;
   background: #ddd !important;
 }
+/* =========================
+   GTN — 最終ロック（重複禁止・末尾配置）
+   ・Section2のカード画像とSection3の3枚を完全同一サイズに
+   ・ヒーロー直下の余白を固定
+   ・back1.svg をテキスト背面にフルブリードで敷く
+========================= */
+
+/* Section3：3枚グリッドのレイアウト（Section2と同じgap/列数） */
+.gtn .breeze-trio { display: grid; gap: 24px; }
+@media (min-width: 860px) { .gtn .breeze-trio { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* Section2カード画像の基準サイズ（参照用） */
+.gtn .card img {
+  width: 100%;
+  height: clamp(180px, 26vw, 260px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #ddd;
+}
+
+/* Section3画像を Section2 と完全統一（ここが“決定版”） */
+.gtn .breeze-trio img {
+  width: 100%;
+  height: clamp(180px, 26vw, 260px) !important; /* ← 強制 */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #ddd;
+}
+
+/* ヒーロー直下の余白が消えないよう固定 */
+.gtn .breeze-hero { margin: 0 0 28px !important; }
+.gtn .dining-hero { margin: 0 0 28px !important; }
+.gtn .stay-hero   { margin: 0 0 24px !important; }
+
+/* 旧 back1.svg の“帯”は使わない（余白の原因） */
+.gtn-sec--rooms  .rooms-deco,
+.gtn-sec--breeze .rooms-deco { display: none !important; }
+
+/* テキスト背面に back1.svg を“左右0／下0”で敷く共通ユーティリティ */
+.gtn .text-with-back { position: relative; z-index: 0; }
+.gtn .text-with-back > .text { position: relative; z-index: 1; }
+.gtn .text-with-back > .back1{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;                  /* 下 0 に密着 */
+  width: 100vw;               /* 画面幅いっぱい（左右0相当） */
+  height: clamp(140px, 22vw, 220px);
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: .32;               /* 透け具合（お好みで 0.25〜0.45） */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* セクション地色（指示書トーンに合わせる） */
+.gtn-sec--rooms  { background:#fff; }
+.gtn-sec--breeze { background:#f7f6f3; }
