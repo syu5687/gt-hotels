@@ -212,7 +212,7 @@
 .gtn-sec--breeze {
   position: relative;
   padding: 56px 0;
-  background: #f7f6f3; /* ← Section1 と同じ背景色 */
+  background: #fff; /* ← Section1 と同じ背景色 */
 }
 
 .breeze-deco {
