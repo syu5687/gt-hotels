@@ -121,3 +121,15 @@ header{
 
 /* セクションのアンカー位置補正（ヘッダー60px分） */
 .section{scroll-margin-top:90px;}
+/* === Language button icon fix === */
+.lang-btn svg,
+.lang-btn i {
+  color: #555;     /* 濃いめグレーで視認性UP */
+  fill: #555;      /* SVGアイコン対応 */
+  stroke: #555;    /* 必要ならストロークも */
+}
+
+.lang-btn:hover svg {
+  color: #222;
+  fill: #222;
+}
