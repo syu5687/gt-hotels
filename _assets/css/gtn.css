@@ -384,3 +384,26 @@
   background: #ddd;                   /* Section2と統一 */
   display: block;
 }
+/* ===== 強制オーバーライド（末尾に置く） ===== */
+
+/* figure のデフォルト余白を潰す：ブラウザ差の吸収 */
+.gtn figure { margin: 0; }
+
+/* Section3：3枚グリッドは Section2 と同じ gap に */
+.gtn .breeze-trio { display: grid; gap: 24px; }
+@media (min-width: 860px) {
+  .gtn .breeze-trio { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* Section3 の3枚画像を Section2(.card img)と完全統一 */
+.gtn .breeze-trio img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 26vw, 260px) !important; /* 高さを強制 */
+  object-fit: cover;
+  object-position: center;
+  background: #ddd;                               /* Section2と同じ */
+}
+
+/* 万一他所で max-width:100% が邪魔していた場合の保険 */
+.gtn .breeze-trio img { max-width: 100% !important; }
