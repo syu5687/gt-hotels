@@ -128,25 +128,43 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 3：プール・スパ・ジム
   ========================== -->
-  <section class="gtn-sec gtn-sec--pool">
-	<div class="gtn-sec__wideimg"><img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt=""></div>
-
-	<div class="gtn-sec__txt gtn-sec__txt--narrow">
-	  <h2>心地よい風 澄み渡る空がリゾートタイムを演出</h2>
-	  <p>長崎港や市街地の街並みを望む全長 20m のインフィニティプール。無垢のウッドデッキにジャグジー、ソファセットなどが整備され、日中は海と空、プールが一つになり、まるで海外のリゾートホテルをイメージさせる癒しの空間が創出されます。</p>
-	  <p>夕暮れ時以降は、世界新三大夜景に認定された長崎の夜景が目の前に広がり、ロマンチックで感動的な世界に包まれます。</p>
-	  <p>ジムとサウナでは眼下に広がる長崎の景色を眺めながら運動やサウナ体験を楽しみたい方におすすめです。心地よい汗を流して日頃の疲れを癒し、心身ともにリフレッシュ。</p>
-	</div>
-
-	<div class="gtn-sec__thumbs">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-	  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+<!-- ===== Section 3: BREEZE / POOL ===== -->
+  <section class="gtn-sec gtn-sec--breeze">
+	<div class="gtn-wrap">
+  
+	  <!-- 上：ワイド（プールの俯瞰） -->
+	  <figure class="breeze-hero">
+		<img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+	  </figure>
+  
+	  <!-- 中：3枚横並び（ラウンジ／ジム／サウナ） -->
+	  <div class="breeze-trio">
+		<figure class="tri">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		</figure>
+		<figure class="tri">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		</figure>
+		<figure class="tri">
+		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+		</figure>
+	  </div>
+  
+	  <!-- タイトル＋本文 -->
+	  <div class="breeze-head">
+		<h2 class="breeze-title">心地よい風 澄み渡る空がリゾートタイムを演出</h2>
+		<div class="breeze-body">
+		  <!-- ★PDFの本文をそのまま行ごとに<p>で貼り付けてください -->
+		  <p>（PDF本文：1段落）</p>
+		  <p>（PDF本文：2段落）</p>
+		  <p>（PDF本文：3段落）</p>
+		  <p>（PDF本文：4段落）</p>
+		  <p>（PDF本文：5段落）</p>
+		</div>
+	  </div>
+  
 	</div>
   </section>
-
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->

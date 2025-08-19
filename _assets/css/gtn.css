@@ -220,3 +220,39 @@
 .card figcaption{
   margin-top:8px;font-size:13px;color:#4b4b4b;letter-spacing:.05em
 }
+/* ========== Section 3 : Breeze / Pool ========== */
+.gtn-sec--breeze{padding:56px 0;background:#f7f6f3}
+.gtn-sec--breeze .gtn-wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* ワイドヒーロー */
+.breeze-hero{margin:0 0 28px}
+.breeze-hero img{
+  width:100%;
+  height: clamp(240px, 38vw, 420px);
+  object-fit: cover; object-position:center;
+  display:block; background:#ddd;
+}
+
+/* 3枚横並び */
+.breeze-trio{display:grid; gap:18px; margin:0 0 26px}
+.breeze-trio .tri{margin:0}
+.breeze-trio img{
+  width:100%; height: clamp(120px, 20vw, 200px);
+  object-fit: cover; object-position:center; display:block; background:#e1e1e1;
+}
+@media (min-width:860px){
+  .breeze-trio{grid-template-columns: 1fr 1fr 1fr}
+}
+
+/* タイトル＋本文 */
+.breeze-head{margin:8px 0 6px}
+.breeze-title{
+  margin:0 0 12px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  letter-spacing:.08em;
+  font-family:'TrajanPro','Cinzel',serif;
+  color:#111;
+}
+.breeze-body{color:#333; line-height:2}
+.breeze-body p{margin:0}
+.breeze-body p + p{margin-top:.7em}
