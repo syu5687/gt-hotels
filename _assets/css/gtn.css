@@ -1,5 +1,5 @@
 /* =========================================================
-   GTN PAGE — Clean CSS (scoped under .gtn)  [2025-08-19 clean]
+   GTN PAGE — Clean CSS (scoped under .gtn)  [2025-08-20 fixed]
 ========================================================= */
 
 /* ---- 基本スコープ ---- */
@@ -55,19 +55,15 @@
 .rooms-photoS img{ width:100%; height:clamp(160px,22vw,230px); object-fit:cover; object-position:center; }
 .rooms-text{ line-height:2; color:#222; position:relative; z-index:1; }
 
-/* ▼ Section1：本文背面に back1.svg（列内だけ／写真に被らない） */
+/* ▼ Section1：本文背面に back1.svg（修正版：SVGが上） */
 .gtn-sec--rooms .rooms-text::before{
   content:"";
   position:absolute; left:0; right:0; top:-8px; bottom:-14px;
   background:
-    linear-gradient(#fff,#fff),
-    url("/_assets/images/back1.svg") center/contain no-repeat;
+    url("/_assets/images/back1.svg") center/contain no-repeat,
+    #fff;
   opacity:.30; pointer-events:none; z-index:-1;
 }
-
-/* 旧「バンド画像」は使わない */
-.gtn-sec--rooms .rooms-deco,
-.gtn-sec--rooms .rooms-deco__bg{ display:none !important; }
 
 /* =========================================================
    Section 2: DINING
@@ -75,7 +71,6 @@
 .gtn-sec--dining{ padding:56px 0; background:#f7f6f3; }
 .gtn-sec--dining .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
-/* フルブリード大画像 */
 .dining-hero{ margin:0 0 28px; }
 .dining-hero img{
   display:block; width:100vw; max-width:100vw;
@@ -110,7 +105,6 @@
 .gtn-sec--breeze{ position:relative; padding:56px 0; background:#f7f6f3; }
 .gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
-/* フルブリード大画像（下余白維持） */
 .breeze-hero{ margin:0 0 28px; }
 .breeze-hero img{
   display:block; width:100vw; max-width:100vw;
@@ -118,7 +112,6 @@
   margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
 }
 
-/* 3枚グリッド：Section2 と同じ高さに統一 */
 .breeze-trio{ display:grid; gap:24px; margin:0 0 26px; }
 @media (min-width:860px){ .breeze-trio{ grid-template-columns:1fr 1fr 1fr; } }
 .breeze-trio img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
@@ -128,19 +121,15 @@
 .breeze-body{ color:#333; line-height:2; position:relative; z-index:1; }
 .breeze-body p + p{ margin-top:.7em; }
 
-/* ▼ Section3：本文背面に back1.svg（列内だけ） */
+/* ▼ Section3：本文背面に back1.svg（修正版：SVGが上） */
 .gtn-sec--breeze .breeze-body::before{
   content:"";
   position:absolute; left:0; right:0; top:-8px; bottom:-14px;
   background:
-    linear-gradient(#f7f6f3,#f7f6f3),
-    url("/_assets/images/back1.svg") center/contain no-repeat;
+    url("/_assets/images/back1.svg") center/contain no-repeat,
+    #f7f6f3;
   opacity:.30; pointer-events:none; z-index:-1;
 }
-
-/* 旧「バンド画像」は使わない */
-.gtn-sec--breeze .rooms-deco,
-.gtn-sec--breeze .rooms-deco__bg{ display:none !important; }
 
 /* =========================================================
    Section 4: STAY
@@ -148,7 +137,6 @@
 .gtn-sec--stay{ padding:56px 0; background:#f7f6f3; }
 .gtn-sec--stay .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
-/* フルブリード大画像 */
 .stay-hero{ margin:0 0 24px; }
 .stay-hero img{
   display:block; width:100vw; max-width:100vw;
@@ -164,7 +152,6 @@
 @media (min-width:900px){ .stay-duo{ grid-template-columns:1fr 1fr; } }
 .stay-duo img{ width:100%; height:clamp(160px,26vw,260px); object-fit:cover; object-position:center; background:#e1e1e1; }
 
-/* 1枠内ボックス */
 .stay-info{ background:#faf9f5; border:1px solid #e5e3dc; padding:24px; margin:8px 0 0; }
 .stay-box{ display:grid; gap:24px; border-bottom:1px solid #d9d6cd; padding-bottom:16px; margin-bottom:16px; }
 @media (min-width:900px){ .stay-box{ grid-template-columns:1fr 1fr; } }
@@ -174,82 +161,8 @@
 .stay-bottom{ display:flex; gap:24px; font-size:14px; letter-spacing:.06em; color:#222; }
 
 /* =========================================================
-   互換：旧 .text-with-back が残っている場合は無効化
-========================================================= */
-.gtn .text-with-back > .back1{ display:none !important; }
-
-/* =========================================================
-   レスポンシブ微調整
+   共通調整
 ========================================================= */
 @media (max-width:720px){
   .gtn section{ padding:44px 16px; }
 }
-/* ===== Section3 の3枚画像を Section2(.card img)と完全に統一 ===== */
-.gtn .breeze-trio img {
-  display: block !important;
-  width: 100% !important;
-  height: clamp(180px, 26vw, 260px) !important; /* ← Section2と同じ高さ */
-  object-fit: cover !important;
-  object-position: center !important;
-  background: #ddd !important;
-}
-/* =========================
-   GTN — 最終ロック（重複禁止・末尾配置）
-   ・Section2のカード画像とSection3の3枚を完全同一サイズに
-   ・ヒーロー直下の余白を固定
-   ・back1.svg をテキスト背面にフルブリードで敷く
-========================= */
-
-/* Section3：3枚グリッドのレイアウト（Section2と同じgap/列数） */
-.gtn .breeze-trio { display: grid; gap: 24px; }
-@media (min-width: 860px) { .gtn .breeze-trio { grid-template-columns: 1fr 1fr 1fr; } }
-
-/* Section2カード画像の基準サイズ（参照用） */
-.gtn .card img {
-  width: 100%;
-  height: clamp(180px, 26vw, 260px);
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  background: #ddd;
-}
-
-/* Section3画像を Section2 と完全統一（ここが“決定版”） */
-.gtn .breeze-trio img {
-  width: 100%;
-  height: clamp(180px, 26vw, 260px) !important; /* ← 強制 */
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  background: #ddd;
-}
-
-/* ヒーロー直下の余白が消えないよう固定 */
-.gtn .breeze-hero { margin: 0 0 28px !important; }
-.gtn .dining-hero { margin: 0 0 28px !important; }
-.gtn .stay-hero   { margin: 0 0 24px !important; }
-
-/* 旧 back1.svg の“帯”は使わない（余白の原因） */
-.gtn-sec--rooms  .rooms-deco,
-.gtn-sec--breeze .rooms-deco { display: none !important; }
-
-/* テキスト背面に back1.svg を“左右0／下0”で敷く共通ユーティリティ */
-.gtn .text-with-back { position: relative; z-index: 0; }
-.gtn .text-with-back > .text { position: relative; z-index: 1; }
-.gtn .text-with-back > .back1{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;                  /* 下 0 に密着 */
-  width: 100vw;               /* 画面幅いっぱい（左右0相当） */
-  height: clamp(140px, 22vw, 220px);
-  object-fit: contain;
-  object-position: center bottom;
-  opacity: .32;               /* 透け具合（お好みで 0.25〜0.45） */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* セクション地色（指示書トーンに合わせる） */
-.gtn-sec--rooms  { background:#fff; }
-.gtn-sec--breeze { background:#f7f6f3; }
