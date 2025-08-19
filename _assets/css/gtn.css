@@ -238,13 +238,13 @@
 .stay-col li { margin:0; }
 .stay-col .note { font-size:13px; color:#555; line-height:1.8; margin-top:.5em; }
 
-/* 下段：左右並び */
+/* 下段：左並び */
 .stay-bottom {
-  display:flex;
-  justify-content:space-between;
-  gap:16px;
-  font-size:14px;
-  letter-spacing:.06em;
-  color:#222;
+  display: flex;
+  justify-content: flex-start; /* 左寄せ */
+  gap: 24px; /* 横の余白調整 */
+  font-size: 14px;
+  letter-spacing: .06em;
+  color: #222;
 }
 /* ▲ ここまで（旧 .stay-info/.stay-times の重複ルールは置き換え済） */
