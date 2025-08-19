@@ -1,58 +1,127 @@
-:root{
-  --ink:#222; --muted:#777; --line:#e5e5e5; --maxw:1040px;
-  --gold:#c7b299;
+/*
+ * Styles for the GTN internal page.  This stylesheet defines the
+ * layout and typography for the hero area and the subsequent
+ * thematic sections.  It relies on variables and base styles
+ * defined in the global stylesheet (e.g. header-footer.css), but
+ * specifies its own structure and spacing.
+ */
+
+/* Base container for the page */
+.gtn {
+  color: #222;
+  line-height: 1.6;
+  font-family: 'Cinzel', serif;
 }
 
-/* ===== Hero（PDFそのまま：写真＋右上ロゴ＋下部コピー） ===== */
-.gtn-hero{ position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; }
-.gtn-hero--image .gtn-hero__img{
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-}
-/* 右上ロゴ（小さめ） */
-.gtn-hero__brand{
-  position:absolute; right:28px; top:18px; width:min(220px, 16vw); height:auto;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.2));
-}
-/* 下部コピー（中央寄せ） */
-.gtn-hero__caption{
-  position:absolute; left:50%; bottom:36px; transform:translateX(-50%); text-align:center;
-  color:#fff; text-shadow:0 2px 20px rgba(0,0,0,.35);
-}
-.gtn-hero__caption .copy-ja{
-  margin:0 0 6px; font-size: clamp(16px, 2.0vw, 20px); letter-spacing:.08em;
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-}
-.gtn-hero__caption .copy-en{
-  margin:0; font-family:'Cinzel', serif; letter-spacing:.22em;
-  font-size: clamp(11px, 1.2vw, 13px);
-}
-/* 下部の黒グラデ（文字を読みやすく） */
-.gtn-hero__bottomGrad{
-  position:absolute; left:0; right:0; bottom:0; height:28%;
-  background: linear-gradient(to top, rgba(0,0,0,.52), rgba(0,0,0,0));
-  pointer-events:none;
+/* Hero section */
+.gtn-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
 }
 
-/* ===== セクション（見出しなし） ===== */
-.gtn-section{ max-width:var(--maxw); margin:40px auto 48px; padding:0 20px; }
-.gtn-box{
-  border:1px solid var(--line); border-radius:12px; background:#fff;
-  padding:22px; box-shadow:0 8px 24px rgba(0,0,0,.02);
+.gtn-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.gtn-box p{ margin:0 0 12px; line-height:1.9; letter-spacing:.04em; color:var(--ink); }
-.gtn-list{ margin:10px 0 0 1.2em; line-height:1.9; }
-.gtn-note{ font-size:12px; color:var(--muted); line-height:1.8; }
 
-/* 2カラム（ROOMSのタイプ／プラン） */
-.gtn-cols{ display:grid; gap:18px; grid-template-columns:1fr 1fr; }
-@media (max-width: 960px){ .gtn-cols{ grid-template-columns:1fr; } }
-
-/* 予約ボタン（控えめ） */
-.gtn-cta{ text-align:center; }
-.gtn-btn{
-  display:inline-block; padding:12px 22px; letter-spacing:.14em; text-decoration:none;
-  color:#333; border:1px solid var(--line); border-radius:999px; background:#fff;
-  transition: box-shadow .2s ease, transform .08s ease;
+/* Dark overlay for readability */
+.gtn-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
-.gtn-btn:hover{ box-shadow:0 8px 22px rgba(0,0,0,.06); transform: translateY(-1px); }
-.gtn-meta{ margin-top:8px; color:#444; letter-spacing:.06em; }
+
+/* Centered content on the hero */
+.gtn-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.gtn-hero-title {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.gtn-hero-subtitle {
+  margin-top: 12px;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+/* Generic section styling */
+.gtn-section {
+  padding: 60px 20px;
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+}
+
+/* Inner wrapper constrains width and aligns content */
+.gtn-section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Image container within section */
+.gtn-section-image {
+  flex: 1 1 45%;
+  position: relative;
+}
+
+.gtn-section-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Textual content within section */
+.gtn-section-text {
+  flex: 1 1 50%;
+}
+
+.gtn-section-title {
+  font-size: 32px;
+  margin: 0 0 16px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.gtn-section-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gtn-hero-title {
+    font-size: 32px;
+  }
+  .gtn-section-inner {
+    flex-direction: column;
+  }
+  .gtn-section-image,
+  .gtn-section-text {
+    flex: 1 1 100%;
+  }
+  .gtn-section-title {
+    font-size: 24px;
+    text-align: left;
+  }
+}
