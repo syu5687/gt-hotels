@@ -138,7 +138,7 @@ require __DIR__ . '/partials/header.php';
 	  <!-- 中：3枚横並び（ラウンジ／ジム／サウナ） -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gtn/sec3-2.webpg') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtn/sec3-2.webp') ?>" alt="">
 		</figure>
 		<figure class="tri">
 		  <img src="<?= asset('/_assets/images/gtn/sec3-3.webp') ?>" alt="">
