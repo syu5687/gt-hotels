@@ -68,7 +68,7 @@
     url("/_assets/images/back1.svg") center/contain no-repeat,
     url("/assets/images/back1.svg") center/contain no-repeat,
     url("../images/back1.svg") center/contain no-repeat,
-    #fff;
+    #000;
   opacity:.100;
   pointer-events:none;
   z-index:-1;
