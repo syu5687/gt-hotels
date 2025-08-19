@@ -348,3 +348,34 @@
   object-fit: cover;
   object-position: center;
 }
+/* ===== back1.svg（装飾）を“ほどよい高さ”で固定 ===== */
+/* Section1 */
+.rooms-deco {
+  margin-top: 26px;
+  text-align: center;
+  background: #f7f6f3;      /* 周囲の帯色 */
+  padding: 20px 0;          /* 余白は控えめに */
+}
+
+.rooms-deco__bg {
+  display: inline-block;    /* 中央揃え */
+  height: clamp(120px, 18vw, 180px);  /* ← 高さに上限を付ける */
+  width: auto;                         /* 縦固定に合わせて横は自動 */
+}
+
+/* Section3（もし back1.svg を使うなら） */
+.breeze-deco {
+  margin-top: 26px;
+  text-align: center;
+  background: #f7f6f3;
+  padding: 20px 0;
+}
+.breeze-deco__bg {
+  display: inline-block;
+  height: clamp(120px, 18vw, 180px);
+  width: auto;
+}
+
+/* 以前の “幅:min(1600px,96vw); height:auto;” を上書きするための保険 */
+.rooms-deco__bg,
+.breeze-deco__bg { max-width: 100%; }
