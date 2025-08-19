@@ -304,3 +304,38 @@
 /* ヒーロー内のテキスト位置はそのまま維持（必要なら調整） */
 .gtn-hero__lead { bottom: 80px; }
 @media (max-width: 768px){ .gtn-hero__lead { bottom: 56px; } }
+/* ===== HERO を完全フルブリードに ===== */
+
+/* セクション共通パディングをヒーローだけ無効化 */
+.gtn-hero{ padding:0 !important; margin:0 !important; }
+
+/* ブラウザ既定の figure 余白を潰す（もし <figure> を使っても隙間が出ない） */
+.gtn-hero figure{ margin:0; }
+
+/* ラッパーと画像をブロック化して100%幅に */
+.gtn-hero__bg{ margin:0; padding:0; display:block; width:100%; }
+.gtn-hero__bg img{
+  display:block;       /* インライン画像の下に出る隙間を防ぐ */
+  width:100%;          /* 横いっぱい */
+  max-width:none;      /* 親の制限を受けない */
+  height:clamp(420px, 72vh, 820px); /* 画面高でバランス */
+  object-fit:cover;
+  object-position:center;
+  margin:0; padding:0; border:0;
+}
+
+/* ヒーロー直後のセクションがくっついて見える場合の安全距離は各セクション側で調整
+   （ここでは余白を追加しない）*/
+
+/* ヒーロー上のリードテキストは画像の上に重ねる（位置だけ再掲） */
+.gtn-hero__lead{
+  position:absolute; left:0; right:0;
+  bottom:80px;                /* はみ出し防止で少し上に */
+  text-align:center; padding:0 16px;
+}
+@media (max-width: 768px){
+  .gtn-hero__lead{ bottom:56px; }
+}
+
+/* 念のため、ページ側の左右余白を生まないガード */
+.gtn{ margin:0; }
