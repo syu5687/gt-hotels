@@ -58,58 +58,71 @@ require __DIR__ . '/partials/header.php';
 	  </div>  </section>
 
   <!-- =========================
-	   SECTION 2：ダイニング（リード＋本文＋サムネ）
-  ========================== -->
-<!-- ===== Section 2: DINING ===== -->
-  <section class="gtn-sec gtn-sec--dining">
-	<div class="gtn-wrap">
-  
-	  <!-- ワイドビジュアル -->
-	  <figure class="dining-hero">
-		<img src="<?= asset('/_assets/images/gtn/sec2-1.webp') ?>" alt="">
-	  </figure>
-  
-	  <!-- 見出し + 説明文 -->
-	  <div class="dining-head">
-		<h2 class="dining-title">彩り豊かな長崎の食文化を五感で味わう。</h2>
-		<div class="dining-lead">
-		  <p>海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともにゆったりとご賞味ください。</p>
-		  <p>四季折々の恵みを活かしたアートと調和したメニューの数々。</p>
-		  <p>窓側に開いた設えは、港の風景を切り取る「額縁」となり、港と晩景オーシャンビューをお食事とともにお楽しみいただけます。</p>
-		</div>
-	  </div>
-  
-	  <!-- 上段：2カラムの料理写真 -->
-	  <div class="dining-grid dining-grid--two">
-		<figure class="card">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-		  <figcaption>レストラン「フォレスト」</figcaption>
-		</figure>
-		<figure class="card">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-		  <figcaption>九州創作「千山万水」</figcaption>
-		</figure>
-	  </div>
-  
-	  <!-- 下段：3カラム（カウンター系） -->
-	  <div class="dining-grid dining-grid--three">
-		<figure class="card">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-		  <figcaption>鉄板焼ダイニング「竹彩」</figcaption>
-		</figure>
-		<figure class="card">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-		  <figcaption>鮨ダイニング「天空」</figcaption>
-		</figure>
-		<figure class="card">
-		  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
-		  <figcaption>懐石料理と天ぷら「秋月」</figcaption>
-		</figure>
-	  </div>
-  
-	</div>
-  </section>
-  <!-- =========================
+			 SECTION 2：ダイニング
+		========================== -->
+		<section class="gtn-sec gtn-sec--dining">
+		  <div class="gtn-wrap">
+	  
+			<!-- ワイドビジュアル（PDF上の大きい1枚がある場合は使用） -->
+			<figure class="dining-hero">
+			  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+			</figure>
+	  
+			<!-- 見出し + リード -->
+			<div class="dining-head">
+			  <h2 class="dining-title">彩り豊かな長崎の食文化を五感で味わう。</h2>
+			  <div class="dining-lead">
+				<p>海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともにゆったりとご賞味ください。</p>
+				<p>四季折々の恵みを活かしたアートと調和したメニューの数々。</p>
+				<p>窓側に開いた設えは、港の風景を切り取る「額縁」となり、港と晩景オーシャンビューをお食事とともにお楽しみいただけます。</p>
+			  </div>
+			</div>
+	  
+			<!-- ==== ギャラリー ==== -->
+			<div class="dining-gallery">
+	  
+			  <!-- 1行目：2列（キャプションなし） -->
+			  <div class="dining-row row-2col">
+				<figure class="card no-cap">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+				</figure>
+				<figure class="card no-cap">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="">
+				</figure>
+			  </div>
+	  
+			  <!-- 2行目：2列（各画像にキャプション） -->
+			  <div class="dining-row row-2col">
+				<figure class="card">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="レストラン フォレスト">
+				  <figcaption>レストラン「フォレスト」</figcaption>
+				</figure>
+				<figure class="card">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="九州創作 千山万水">
+				  <figcaption>九州創作「千山万水」</figcaption>
+				</figure>
+			  </div>
+	  
+			  <!-- 3行目：横長3枚（各画像の下にキャプション） -->
+			  <div class="dining-row row-3wide">
+				<figure class="card wide">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="鉄板焼ダイニング 竹彩">
+				  <figcaption>鉄板焼ダイニング「竹彩」</figcaption>
+				</figure>
+				<figure class="card wide">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="鮨ダイニング 天空">
+				  <figcaption>鮨ダイニング「天空」</figcaption>
+				</figure>
+				<figure class="card wide">
+				  <img src="<?= asset('/_assets/images/dummy.jpg') ?>" alt="懐石料理と天ぷら 秋月">
+				  <figcaption>懐石料理と天ぷら「秋月」</figcaption>
+				</figure>
+			  </div>
+	  
+			</div><!-- /.dining-gallery -->
+	  
+		  </div>
+		</section>  <!-- =========================
 	   SECTION 3：プール・スパ・ジム
   ========================== -->
 <!-- ===== Section 3: BREEZE / POOL ===== -->

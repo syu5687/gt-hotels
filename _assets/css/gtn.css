@@ -149,6 +149,60 @@
   object-fit: cover; object-position: center; background: #ddd;
 }
 .card figcaption{ margin-top: 8px; font-size: 13px; color: #4b4b4b; letter-spacing: .05em; }
+/* ==== DINING: 2行2列 + 3行目横長3枚 ==== */
+.dining-gallery { display: grid; gap: 24px; }
+
+/* 行ごとのレイアウト */
+.dining-row { display: grid; gap: 24px; }
+
+.dining-row.row-2col {
+  grid-template-columns: 1fr 1fr;               /* 2列 */
+}
+
+.dining-row.row-3wide {
+  grid-template-columns: 1fr 1fr 1fr;           /* 3列（横長） */
+}
+
+/* カード共通 */
+.card { margin: 0; }
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: #ddd;
+}
+
+/* 1・2行目の画像（標準） */
+.row-2col .card img {
+  height: clamp(180px, 26vw, 320px);
+}
+
+/* 3行目の横長画像 */
+.card.wide img {
+  height: clamp(180px, 22vw, 240px);            /* 横長プロポーション */
+}
+
+/* キャプション */
+.card figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #4b4b4b;
+  letter-spacing: .05em;
+  text-align: left;
+}
+
+/* 1行目はキャプションを出さない */
+.card.no-cap figcaption { display: none; }
+
+/* レスポンシブ（スマホは1列） */
+@media (max-width: 860px) {
+  .dining-row.row-2col,
+  .dining-row.row-3wide {
+    grid-template-columns: 1fr;
+  }
+  .card.wide img { height: clamp(180px, 48vw, 280px); }
+}
 
 /* =========================================================
    Section 3: BREEZE（プール・スパ・ジム）
