@@ -258,3 +258,23 @@
   .gtn-sec--rooms::before{height:380px}
   .gtn-sec--breeze::before{height:360px}
 }
+/* ヒーロー画像を横幅100%にする */
+.gtn-hero {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.gtn-hero__bg {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.gtn-hero__bg img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
