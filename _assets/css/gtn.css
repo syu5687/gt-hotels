@@ -1,9 +1,5 @@
 /* =========================================================
-   GTN PAGE — Clean CSS (scoped under .gtn)
-   ---------------------------------------------------------
-   ・HERO はフルブリード（左右上下の余白ゼロ）
-   ・セクションは .gtn-sec-*、画像は dummy/実画像で差し替え
-   ・Section1 と Section3 の装飾は back1.svg を <img> で配置
+   GTN PAGE — Clean CSS (scoped under .gtn)  [2025-08-19 clean]
 ========================================================= */
 
 /* ---- 基本スコープ ---- */
@@ -13,7 +9,7 @@
   font-family: 'Cinzel', serif;
   line-height: 1.9;
   margin: 0;
-  overflow-x: hidden; /* フルブリードの安全策 */
+  overflow-x: hidden;
 }
 .gtn img { display: block; max-width: 100%; height: auto; }
 .gtn h1, .gtn h2, .gtn h3, .gtn p, .gtn ul { margin: 0; }
@@ -21,527 +17,170 @@
 .gtn .gtn-wrap { max-width: 1180px; margin: 0 auto; }
 
 /* =========================================================
-   HERO（完全フルブリード + 画像上にテキスト）
+   HERO（フルブリード）
 ========================================================= */
-.gtn-hero {
+.gtn-hero{
   position: relative;
   padding: 0 !important;
-  margin: 0;
-  width: 100vw;             /* 画面幅いっぱい */
-  max-width: 100vw;
-  /* 親のパディング／センタリングを無視して広げる */
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  overflow: hidden;
+  width: 100vw; max-width: 100vw; overflow: hidden;
 }
-.gtn-hero figure { margin: 0; }
-
-.gtn-hero__bg { margin: 0; padding: 0; display: block; width: 100%; }
-.gtn-hero__bg img {
-  display: block;      /* ベースライン隙間対策 */
-  width: 100%;
-  max-width: none;
+.gtn-hero__bg img{
+  width: 100%; max-width: none;
   height: clamp(420px, 72vh, 820px);
-  object-fit: cover;
-  object-position: center;
-  margin: 0; padding: 0; border: 0;
+  object-fit: cover; object-position: center;
   filter: saturate(1.02);
 }
-
-/* HERO テキスト（画像の上） */
-.gtn-hero__lead {
-  position: absolute; left: 0; right: 0;
-  bottom: 80px; text-align: center; padding: 0 16px;
+.gtn-hero__lead{
+  position: absolute; left: 0; right: 0; bottom: 80px;
+  text-align: center; padding: 0 16px;
 }
-.gtn-hero__copyL {
-  font-size: clamp(18px, 2.2vw, 22px);
-  letter-spacing: .18em; color: #000;
-  text-shadow: 0 2px 12px rgba(0,0,0,.45);
-  margin-bottom: 12px; line-height: 1.6;
-}
-.gtn-hero__brand {
-  font-size: clamp(12px, 1.5vw, 14px);
-  color: #000; letter-spacing: .22em;
-  text-shadow: 0 2px 10px rgba(0,0,0,.40);
-}
-
-/* HERO 右上ロゴ */
-.gtn-hero__mark{
-  position: absolute;
-  right: clamp(12px, 2.4vw, 28px);
-  top: clamp(56px, 8vh, 120px);
-  width: clamp(140px, 18vw, 260px);
-  height: auto;
-  pointer-events: none;
-  filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
-  z-index: 2;
-}
-@media (max-width: 768px){ .gtn-hero__lead{ bottom: 56px; } }
-@media (max-width: 480px){
-  .gtn-hero__mark{ top: 48px; right: 16px; width: 170px; }
-}
+.gtn-hero__copyL{ font-size: clamp(18px, 2.2vw, 22px); letter-spacing: .18em; color:#000; text-shadow:0 2px 12px rgba(0,0,0,.45); margin-bottom:12px; line-height:1.6; }
+.gtn-hero__brand{ font-size: clamp(12px, 1.5vw, 14px); letter-spacing:.22em; color:#000; text-shadow:0 2px 10px rgba(0,0,0,.40); }
+.gtn-hero__mark{ position:absolute; right:clamp(12px,2.4vw,28px); top:clamp(56px,8vh,120px); width:clamp(140px,18vw,260px); filter:drop-shadow(0 2px 10px rgba(0,0,0,.35)); pointer-events:none; z-index:2; }
+@media (max-width:768px){ .gtn-hero__lead{ bottom:56px; } }
+@media (max-width:480px){ .gtn-hero__mark{ top:48px; right:16px; width:170px; } }
 
 /* =========================================================
-   Section 1: ROOMS（左：大写真／右：小写真＋本文）
-   ※ 装飾は <img class="rooms-deco__bg"> を使う
+   Section 1: ROOMS
 ========================================================= */
-.gtn-sec--rooms { position: relative; padding: 56px 20px 48px; background: transparent; }
-.gtn-sec--rooms .gtn-wrap { max-width: 1180px; margin: 0 auto; }
-.gtn-sec--rooms .rooms-grid { display: grid; gap: 32px; align-items: start; }
-@media (min-width: 960px){
-  .gtn-sec--rooms .rooms-grid{
-    grid-template-columns: minmax(520px,1fr) minmax(420px,560px);
-  }
+.gtn-sec--rooms{ position:relative; padding:56px 20px 48px; background:#fff; }
+.gtn-sec--rooms .rooms-grid{ display:grid; gap:32px; align-items:start; }
+@media (min-width:960px){
+  .gtn-sec--rooms .rooms-grid{ grid-template-columns:minmax(520px,1fr) minmax(420px,560px); }
 }
-.rooms-photoL img{
-  width: 100%;
-  height: clamp(320px, 52vw, 540px);
-  object-fit: cover; object-position: center; border: none;
-}
-.rooms-side { display: flex; flex-direction: column; gap: 22px; }
-.rooms-photoS img{
-  width: 100%;
-  height: clamp(160px, 22vw, 230px);
-  object-fit: cover; object-position: center;
-}
-.rooms-text{ font-family: 'TrajanPro','Cinzel',serif; line-height: 2; color: #222; }
-.rooms-text p + p { margin-top: 1em; }
+.rooms-photoL img{ width:100%; height:clamp(320px,52vw,540px); object-fit:cover; object-position:center; }
+.rooms-side{ display:flex; flex-direction:column; gap:22px; }
+.rooms-photoS img{ width:100%; height:clamp(160px,22vw,230px); object-fit:cover; object-position:center; }
+.rooms-text{ line-height:2; color:#222; position:relative; z-index:1; }
 
-/* ▼ PDFの薄ベージュ矩形を back1.svg 画像で表現（セクション末尾に配置） */
-.rooms-deco { margin-top: 26px; }
-.rooms-deco__bg{
-  display: block;
-  width: min(1600px, 96vw);
-  height: auto;
-  margin: 0 auto;
+/* ▼ Section1：本文背面に back1.svg（列内だけ／写真に被らない） */
+.gtn-sec--rooms .rooms-text::before{
+  content:"";
+  position:absolute; left:0; right:0; top:-8px; bottom:-14px;
+  background:
+    linear-gradient(#fff,#fff),
+    url("/_assets/images/back1.svg") center/contain no-repeat;
+  opacity:.30; pointer-events:none; z-index:-1;
 }
+
+/* 旧「バンド画像」は使わない */
+.gtn-sec--rooms .rooms-deco,
+.gtn-sec--rooms .rooms-deco__bg{ display:none !important; }
 
 /* =========================================================
-   Section 2: DINING（ワイド → 見出し＋リード → 2枚 + 3枚）
+   Section 2: DINING
 ========================================================= */
-.gtn-sec--dining { padding: 56px 0; background: #f7f6f3; }
-.gtn-sec--dining .gtn-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-.dining-hero { margin: 0 0 28px; }
+.gtn-sec--dining{ padding:56px 0; background:#f7f6f3; }
+.gtn-sec--dining .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
+
+/* フルブリード大画像 */
+.dining-hero{ margin:0 0 28px; }
 .dining-hero img{
-  width: 100%; height: clamp(260px, 40vw, 420px);
-  object-fit: cover; object-position: center;
-}
-.dining-head { margin: 18px 0 22px; }
-.dining-title{
-  margin: 0 0 12px;
-  font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing: .08em;
-  font-family: 'TrajanPro','Cinzel',serif;
-  color: #111;
-}
-.dining-lead{ color: #333; line-height: 2; }
-.dining-lead p + p { margin-top: .7em; }
-.dining-grid{ display: grid; gap: 24px; margin-top: 22px; }
-.dining-grid--two{ grid-template-columns: 1fr; }
-.dining-grid--three{ grid-template-columns: 1fr; }
-@media (min-width: 860px){
-  .dining-grid--two{ grid-template-columns: 1fr 1fr; }
-  .dining-grid--three{ grid-template-columns: 1fr 1fr 1fr; }
-}
-.card{ margin: 0; }
-.card img{
-  width: 100%; height: clamp(180px, 26vw, 260px);
-  object-fit: cover; object-position: center; background: #ddd;
-}
-.card figcaption{ margin-top: 8px; font-size: 13px; color: #4b4b4b; letter-spacing: .05em; }
-/* ==== DINING: 2行2列 + 3行目横長3枚 ==== */
-.dining-gallery { display: grid; gap: 24px; }
-
-/* 行ごとのレイアウト */
-.dining-row { display: grid; gap: 24px; }
-
-.dining-row.row-2col {
-  grid-template-columns: 1fr 1fr;               /* 2列 */
+  display:block; width:100vw; max-width:100vw;
+  height:clamp(260px,40vw,560px); object-fit:cover; object-position:center;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
 }
 
-.dining-row.row-3wide {
-  grid-template-columns: 1fr 1fr 1fr;           /* 3列（横長） */
-}
+.dining-head{ margin:18px 0 22px; }
+.dining-title{ margin:0 0 12px; font-size:clamp(22px,2.4vw,28px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.dining-lead{ color:#333; line-height:2; }
+.dining-lead p + p{ margin-top:.7em; }
 
-/* カード共通 */
-.card { margin: 0; }
+.dining-gallery{ display:grid; gap:24px; }
+.dining-row{ display:grid; gap:24px; }
+.dining-row.row-2col{ grid-template-columns:1fr 1fr; }
+.dining-row.row-3wide{ grid-template-columns:1fr 1fr 1fr; }
 
-.card img {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  background: #ddd;
-}
+.card{ margin:0; }
+.card img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
+.card.wide img{ height:clamp(180px,22vw,240px); }
+.card figcaption{ margin-top:8px; font-size:13px; color:#4b4b4b; letter-spacing:.05em; }
+.card.no-cap figcaption{ display:none; }
 
-/* 1・2行目の画像（標準） */
-.row-2col .card img {
-  height: clamp(180px, 26vw, 320px);
-}
-
-/* 3行目の横長画像 */
-.card.wide img {
-  height: clamp(180px, 22vw, 240px);            /* 横長プロポーション */
-}
-
-/* キャプション */
-.card figcaption {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #4b4b4b;
-  letter-spacing: .05em;
-  text-align: left;
-}
-
-/* 1行目はキャプションを出さない */
-.card.no-cap figcaption { display: none; }
-
-/* レスポンシブ（スマホは1列） */
-@media (max-width: 860px) {
-  .dining-row.row-2col,
-  .dining-row.row-3wide {
-    grid-template-columns: 1fr;
-  }
-  .card.wide img { height: clamp(180px, 48vw, 280px); }
+@media (max-width:860px){
+  .dining-row.row-2col, .dining-row.row-3wide{ grid-template-columns:1fr; }
+  .card.wide img{ height:clamp(180px,48vw,280px); }
 }
 
 /* =========================================================
-   Section 3: BREEZE（プール・スパ・ジム）
-   ※ 装飾は <img> 方式は使わず、必要なら同様に挿入可能
+   Section 3: BREEZE
 ========================================================= */
-/* Section3: BREEZE */
-.gtn-sec--breeze {
-  position: relative;
-  padding: 56px 0;
-  background: #fff; /* ← Section1 と同じ背景色 */
-}
+.gtn-sec--breeze{ position:relative; padding:56px 0; background:#f7f6f3; }
+.gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
-.breeze-deco {
-  margin-top: 26px; /* Section1 と同じ余白 */
-}
-
-.gtn-sec--breeze .gtn-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
-
-.breeze-hero{ margin: 0 0 28px; }
+/* フルブリード大画像（下余白維持） */
+.breeze-hero{ margin:0 0 28px; }
 .breeze-hero img{
-  width: 100%; height: clamp(240px, 38vw, 420px);
-  object-fit: cover; object-position: center;
+  display:block; width:100vw; max-width:100vw;
+  height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
 }
-.breeze-trio{ display: grid; gap: 18px; margin: 0 0 26px; }
-.breeze-trio img{
-  width: 100%;
-  object-fit: cover; object-position: center; background: #e1e1e1;
+
+/* 3枚グリッド：Section2 と同じ高さに統一 */
+.breeze-trio{ display:grid; gap:24px; margin:0 0 26px; }
+@media (min-width:860px){ .breeze-trio{ grid-template-columns:1fr 1fr 1fr; } }
+.breeze-trio img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
+
+.breeze-head{ margin:8px 0 6px; }
+.breeze-title{ margin:0 0 12px; font-size:clamp(22px,2.4vw,28px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.breeze-body{ color:#333; line-height:2; position:relative; z-index:1; }
+.breeze-body p + p{ margin-top:.7em; }
+
+/* ▼ Section3：本文背面に back1.svg（列内だけ） */
+.gtn-sec--breeze .breeze-body::before{
+  content:"";
+  position:absolute; left:0; right:0; top:-8px; bottom:-14px;
+  background:
+    linear-gradient(#f7f6f3,#f7f6f3),
+    url("/_assets/images/back1.svg") center/contain no-repeat;
+  opacity:.30; pointer-events:none; z-index:-1;
 }
-@media (min-width: 860px){ .breeze-trio{ grid-template-columns: 1fr 1fr 1fr; } }
-.breeze-head{ margin: 8px 0 6px; }
-.breeze-title{
-  margin: 0 0 12px; font-size: clamp(22px, 2.4vw, 28px);
-  letter-spacing: .08em; font-family: 'TrajanPro','Cinzel',serif; color: #111;
-}
-.breeze-body{ color: #333; line-height: 2; }
-.breeze-body p + p { margin-top: .7em; }
+
+/* 旧「バンド画像」は使わない */
+.gtn-sec--breeze .rooms-deco,
+.gtn-sec--breeze .rooms-deco__bg{ display:none !important; }
 
 /* =========================================================
-   Section 4: STAY（ワイド → 見出し/リード → 2枚 → 1枠内）
+   Section 4: STAY
 ========================================================= */
-.gtn-sec--stay { padding: 56px 0; background: #f7f6f3; }
-.gtn-sec--stay .gtn-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.gtn-sec--stay{ padding:56px 0; background:#f7f6f3; }
+.gtn-sec--stay .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
-.stay-hero{ margin: 0 0 24px; }
+/* フルブリード大画像 */
+.stay-hero{ margin:0 0 24px; }
 .stay-hero img{
-  width: 100%; height: clamp(240px, 38vw, 420px);
-  object-fit: cover; object-position: center;
+  display:block; width:100vw; max-width:100vw;
+  height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
 }
-.stay-title{
-  margin: 12px 0 12px; font-size: clamp(22px, 2.6vw, 30px);
-  letter-spacing: .08em; font-family: 'TrajanPro','Cinzel',serif; color: #111;
-}
-.stay-lead{ color: #333; line-height: 2; margin: 0 0 18px; }
-.stay-lead p + p { margin-top: .7em; }
 
-.stay-duo{ display: grid; gap: 18px; margin: 8px 0 26px; }
-.stay-duo img{
-  width: 100%; height: clamp(160px, 26vw, 260px);
-  object-fit: cover; object-position: center; background: #e1e1e1;
-}
-@media (min-width: 900px){ .stay-duo{ grid-template-columns: 1fr 1fr; } }
+.stay-title{ margin:12px 0 12px; font-size:clamp(22px,2.6vw,30px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.stay-lead{ color:#333; line-height:2; margin:0 0 18px; }
+.stay-lead p + p{ margin-top:.7em; }
+
+.stay-duo{ display:grid; gap:18px; margin:8px 0 26px; }
+@media (min-width:900px){ .stay-duo{ grid-template-columns:1fr 1fr; } }
+.stay-duo img{ width:100%; height:clamp(160px,26vw,260px); object-fit:cover; object-position:center; background:#e1e1e1; }
 
 /* 1枠内ボックス */
-.stay-info{
-  background: #faf9f5; border: 1px solid #e5e3dc;
-  padding: 24px; margin: 8px 0 0;
-}
-.stay-box{
-  display: grid; gap: 24px; border-bottom: 1px solid #d9d6cd;
-  padding-bottom: 16px; margin-bottom: 16px;
-}
-@media (min-width: 900px){ .stay-box{ grid-template-columns: 1fr 1fr; } }
-.stay-col h4{
-  font-weight: 700; margin: 0 0 10px; font-size: 15px;
-  letter-spacing: .08em; font-family: 'TrajanPro','Cinzel',serif; color: #111;
-}
-.stay-col ul{ list-style: none; padding: 0; margin: 0; line-height: 1.9; }
-.stay-col li{ margin: 0; }
-.stay-col .note{ font-size: 13px; color: #555; line-height: 1.8; margin-top: .5em; }
+.stay-info{ background:#faf9f5; border:1px solid #e5e3dc; padding:24px; margin:8px 0 0; }
+.stay-box{ display:grid; gap:24px; border-bottom:1px solid #d9d6cd; padding-bottom:16px; margin-bottom:16px; }
+@media (min-width:900px){ .stay-box{ grid-template-columns:1fr 1fr; } }
+.stay-col h4{ font-weight:700; margin:0 0 10px; font-size:15px; letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.stay-col ul{ list-style:none; padding:0; margin:0; line-height:1.9; }
+.stay-col .note{ font-size:13px; color:#555; line-height:1.8; margin-top:.5em; }
+.stay-bottom{ display:flex; gap:24px; font-size:14px; letter-spacing:.06em; color:#222; }
 
-/* チェックイン／アウト：左寄せで横並び */
-.stay-bottom{
-  display: flex; justify-content: flex-start; gap: 24px;
-  font-size: 14px; letter-spacing: .06em; color: #222;
-}
+/* =========================================================
+   互換：旧 .text-with-back が残っている場合は無効化
+========================================================= */
+.gtn .text-with-back > .back1{ display:none !important; }
 
 /* =========================================================
    レスポンシブ微調整
 ========================================================= */
-@media (max-width: 720px){
-  .gtn section{ padding: 44px 16px; } /* モバイルの横余白を少しタイトに */
-  .rooms-deco__bg{ width: 100%; }
+@media (max-width:720px){
+  .gtn section{ padding:44px 16px; }
 }
-/* ==== 各セクションのメイン画像は横幅いっぱい ==== */
-
-/* Dining の最初の大画像 */
-.dining-hero img,
-.breeze-hero img,
-.stay-hero img {
-  display: block;
-  width: 100vw;              /* 画面幅いっぱい */
-  max-width: 100vw;
-  height: clamp(240px, 40vw, 560px);
-  object-fit: cover;
-  object-position: center;
-
-  /* 中央基準で左右余白を打ち消す */
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-/* Section 3 の3枚画像を Section 2 と同じ大きさにする */
-.breeze-trio img {
-  width: 100%;
-  height: clamp(180px, 26vw, 260px);  /* Section 2 の card img と統一 */
-  object-fit: cover;
-  object-position: center;
-  background: #e1e1e1;
-}
-
-/* back1.svg用の背景帯 */
-.rooms-deco--band {
-  background: #f7f6f3;   /* セクション背景色 */
-  padding: 28px 0 18px;
-  text-align: center;
-}
-/* Section3 の3枚画像を Section2 と完全に統一 */
-.breeze-trio {
-  display: grid;
-  gap: 24px; /* section2と同じ余白 */
-}
-@media (min-width: 860px){
-  .breeze-trio {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-.breeze-trio img {
-  height: clamp(180px, 26vw, 260px); /* section2と同じ高さ */
-  object-fit: cover;
-  object-position: center;
-}
-/* ===== back1.svg（装飾）を“ほどよい高さ”で固定 ===== */
-/* Section1 */
-.rooms-deco {
-  margin-top: 26px;
-  text-align: center;
-  background: #f7f6f3;      /* 周囲の帯色 */
-  padding: 20px 0;          /* 余白は控えめに */
-}
-
-.rooms-deco__bg {
-  display: inline-block;    /* 中央揃え */
-  height: clamp(120px, 18vw, 180px);  /* ← 高さに上限を付ける */
-  width: auto;                         /* 縦固定に合わせて横は自動 */
-}
-
-/* Section3（もし back1.svg を使うなら） */
-.breeze-deco {
-  margin-top: 26px;
-  text-align: center;
-  background: #f7f6f3;
-  padding: 20px 0;
-}
-.breeze-deco__bg {
-  display: inline-block;
-  height: clamp(120px, 18vw, 180px);
-  width: auto;
-}
-
-/* 以前の “幅:min(1600px,96vw); height:auto;” を上書きするための保険 */
-.rooms-deco__bg,
-.breeze-deco__bg { max-width: 100%; }
-
-/* Section3 の3枚画像を Section2のカード画像と完全統一 */
-.breeze-trio img {
-  width: 100%;
-  height: clamp(180px, 26vw, 260px);  /* Section2の.card imgと同じ */
-  object-fit: cover;
-  object-position: center;
-  background: #ddd;                   /* Section2と統一 */
-  display: block;
-}
-/* ===== 強制オーバーライド（末尾に置く） ===== */
-
-/* figure のデフォルト余白を潰す：ブラウザ差の吸収 */
-.gtn figure { margin: 0; }
-
-/* Section3：3枚グリッドは Section2 と同じ gap に */
-.gtn .breeze-trio { display: grid; gap: 24px; }
-@media (min-width: 860px) {
-  .gtn .breeze-trio { grid-template-columns: 1fr 1fr 1fr; }
-}
-
-/* Section3 の3枚画像を Section2(.card img)と完全統一 */
-.gtn .breeze-trio img {
-  display: block;
-  width: 100%;
-  height: clamp(180px, 26vw, 260px) !important; /* 高さを強制 */
-  object-fit: cover;
-  object-position: center;
-  background: #ddd;                               /* Section2と同じ */
-}
-
-/* 万一他所で max-width:100% が邪魔していた場合の保険 */
-.gtn .breeze-trio img { max-width: 100% !important; }
-
-/* ヒーロー画像の直下余白を強制復活 */
-.gtn .breeze-hero { margin: 0 0 28px !important; }
-
-/* （同様の事象が出る可能性に備えて、他セクションも統一） */
-.gtn .dining-hero { margin: 0 0 28px !important; }
-.gtn .stay-hero   { margin: 0 0 24px !important; } /* 既存値に合わせて少し小さめ */
-
-/* ▼ テキスト背面に back1.svg を透過で重ねる */
-.rooms-deco,
-.breeze-deco {
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.rooms-deco__bg,
-.breeze-deco__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.25;       /* ←透け具合を調整 */
-  z-index: -1;         /* テキストの背面 */
-  pointer-events: none;/* クリック操作など邪魔しない */
-}
-/* ===== Section1 テキスト背面に back1.svg を“透け”で敷く ===== */
-
-/* テキストブロックを相対化して、背面に擬似要素を置く土台を作る */
-.gtn-sec--rooms .rooms-text{
-  position: relative;
-  z-index: 1;            /* テキストを最前面に */
-}
-
-/* 擬似要素をテキストの背面にフル幅で敷く（左右＆下余白ゼロ） */
-.gtn-sec--rooms .rooms-text::before{
-  content: "";
-  position: absolute;
-  left: calc(50% - 50vw);   /* ← 画面左右端まで広げる（左右余白ゼロ） */
-  right: calc(50% - 50vw);
-  top: -8px;                /* 少し上へ広げて行間に入るニュアンス */
-  bottom: -18px;            /* 下も少し伸ばす：下余白ゼロ相当 */
-  background:
-    #f7f6f3 url('/_assets/images/back1.svg') center/contain no-repeat;
-  opacity: .28;             /* ← “透け具合” 調整（0.2〜0.35 くらいで好みへ） */
-  z-index: -1;              /* テキストの背面へ */
-  pointer-events: none;     /* クリック邪魔しない */
-}
-
-/* スマホは少し控えめに（必要なら） */
-@media (max-width: 768px){
-  .gtn-sec--rooms .rooms-text::before{
-    opacity: .22;
-    top: -4px;
-    bottom: -12px;
-    background-size: 1200px auto;   /* 透け柄サイズを微調整 */
-  }
-}
-/* ================================
-   Section1 & Section3：テキスト背面に back1.svg を敷く
-   （左右・下 0 / 行間に薄く被せる）
-================================ */
-
-/* 1) 既存のバンドを非表示（余白の原因を除去） */
-.gtn-sec--rooms .rooms-deco,
-.gtn-sec--breeze .rooms-deco { display: none; }
-
-/* 2) テキストを前面に（背面に敷く擬似要素より前） */
-.gtn-sec--rooms .rooms-text,
-.gtn-sec--breeze .breeze-body {
-  position: relative;
-  z-index: 1;
-}
-
-/* 3) 擬似要素で back1.svg をフルブリード配置（左右と下の余白ゼロ） */
-.gtn-sec--rooms .rooms-text::before,
-.gtn-sec--breeze .breeze-body::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* ビューポート基準のフル幅にするため中央基準に */
-  bottom: 0;                   /* 下を 0 に密着 */
-  width: 100vw;                /* 画面幅いっぱい（左右 0 相当） */
-  height: clamp(140px, 22vw, 220px); /* 行間に被るくらいの帯高（お好みで調整可） */
-
-  /* セクションの地色を合わせ、その上に back1.svg を重ねる */
-  background:
-    linear-gradient(#f7f6f3, #f7f6f3),           /* 地色（指示書の薄ベージュ） */
-    url("/_assets/images/back1.svg") no-repeat center / contain;
-  opacity: .34;                /* 透け具合。強すぎる/弱すぎる場合は 0.25〜0.45 で調整 */
-  pointer-events: none;
-  z-index: -1;                 /* テキストの背面 */
-}
-
-/* Section1/3 全体は背面を受け止められるよう relative に（保険） */
-.gtn-sec--rooms,
-.gtn-sec--breeze { position: relative; }
-
-/* セクションの地色を統一（指示書と同じトーン） */
-.gtn-sec--rooms { background: #fff; }     /* Sec.1 は白（写真＋テキスト） */
-.gtn-sec--breeze { background: #f7f6f3; } /* Sec.3 は薄ベージュ */
-/* ================================
-   テキスト背面に back1.svg を半透明で敷く（左右・下 0）
-   Section1（.rooms-text-wrap）と Section3（.breeze-body-wrap）共通
-================================ */
-.gtn .text-with-back {           /* 共通ラッパ */
-  position: relative;
-  z-index: 0;
-}
-.gtn .text-with-back > .text {   /* 実テキストは前面 */
-  position: relative;
-  z-index: 1;
-}
-
-/* 背面SVG（左右0/下0。画面幅いっぱいに敷く） */
-.gtn .text-with-back > .back1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;                  /* 下 0 に密着 */
-  width: 100vw;               /* 画面幅いっぱい（左右0相当） */
-  height: clamp(140px, 22vw, 220px);  /* 行間に入る帯の高さ */
-  object-fit: contain;        /* 図形比率を維持 */
-  object-position: center bottom;
-  opacity: .32;               /* 透け具合（0.25〜0.45で調整） */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* セクション地色（指示書準拠） */
-.gtn-sec--rooms  { background:#fff; }
-.gtn-sec--breeze { background:#f7f6f3; }
-
-/* 使わない旧バンドは消す（残っていると余白原因になる） */
-.gtn-sec--rooms  .rooms-deco,
-.gtn-sec--breeze .rooms-deco { display:none !important; }
