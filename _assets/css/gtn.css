@@ -218,12 +218,7 @@
 .breeze-deco {
   margin-top: 26px; /* Section1 と同じ余白 */
 }
-.breeze-deco__bg {
-  display: block;
-  width: min(1600px, 96vw);
-  height: auto;
-  margin: 0 auto;
-}
+
 .gtn-sec--breeze .gtn-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
 .breeze-hero{ margin: 0 0 28px; }
