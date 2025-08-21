@@ -22,7 +22,14 @@ header{
   height:60px;                /* 明示高さ */
   box-shadow:none;            /* 青い帯や影は無し */
 }
+a {
+  color: inherit;       /* 親要素の文字色を引き継ぐ */
+  text-decoration: none; /* 下線を消す */
+}
 
+a:visited {
+  color: inherit;       /* 訪問済みリンクも同じ色にする */
+}
 .bar{
   max-width:var(--maxw);
   margin:0 auto;
