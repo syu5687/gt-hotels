@@ -132,3 +132,17 @@ header{
   color: #222;
   fill: #222;
 }
+.lang-btn img {
+  width:16px;
+  height:16px;
+  display:block;
+  /* テキスト色に合わせる */
+  filter: brightness(0) saturate(100%) invert(20%)
+          sepia(5%) saturate(350%) hue-rotate(180deg)
+          brightness(92%) contrast(90%);
+}
+.lang-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(10%)
+          sepia(10%) saturate(400%) hue-rotate(180deg)
+          brightness(70%) contrast(95%);
+}
