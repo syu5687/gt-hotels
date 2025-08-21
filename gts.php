@@ -89,15 +89,15 @@ require __DIR__ . '/partials/header.php';
 		<!-- 1行目：2列（キャプションなし） -->
 		<div class="dining-row row-2col">
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/gts/sec2-2.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/gts/sec2-2.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/gts/sec2-3.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/gts/sec2-3.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
 		</div>
 
 		<!-- 2行目：2列（キャプションあり） -->
-		<div class="dining-row row-2col" style="display: none">
+		<!-- <div class="dining-row row-2col">
 		  <figure class="card">
 			<img src="<?= asset('/_assets/images/gts/sec2-4.webp') ?>" alt="レストラン フォレスト">
 			<figcaption>レストラン「フォレスト」</figcaption>
@@ -106,28 +106,25 @@ require __DIR__ . '/partials/header.php';
 			<img src="<?= asset('/_assets/images/gts/sec2-5.webp') ?>" alt="九州創作 千山万水">
 			<figcaption>九州創作「千山万水」</figcaption>
 		  </figure>
-		</div>
+		</div> -->
 
 		<!-- 3行目：横長3枚（キャプションあり） -->
 		<div class="dining-row row-3wide">
 		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gts/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
-			<figcaption>鉄板焼ダイニング「竹彩」</figcaption>
+			<img src="<?= asset('/_assets/images/gts/sec2-8.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
 		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gts/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
-			<figcaption>鮨ダイニング「天空」</figcaption>
+			<img src="<?= asset('/_assets/images/gts/sec2-7.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
 		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gts/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
-			<figcaption>懐石料理と天ぷら「秋月」</figcaption>
+			<img src="<?= asset('/_assets/images/gts/sec2-6.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
 		</div>
 		
 		<!-- 右：小写真 + 本文 -->
 		<div class="dining-row row-2col">
 		  <figure class="card">
-			<img src="<?= asset('/_assets/images/gts/sec2-4.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/gts/sec2-4.webp') ?>" alt="チャイニーズ レストラン シャンリー">
 		  </figure>
 		  <div class="card">
 			<p>チャイニーズ レストラン シャンリー</p>
@@ -151,19 +148,19 @@ require __DIR__ . '/partials/header.php';
 
 	  <!-- 上：ワイド（プールの俯瞰） -->
 	  <figure class="breeze-hero">
-		<img src="<?= asset('/_assets/images/gts/sec3-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/gts/sec3-1.webp') ?>" alt="ラウンジ">
 	  </figure>
 
 	  <!-- 中：3枚横並び -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gts/sec3-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gts/sec3-2.webp') ?>" alt="サウナ">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gts/sec3-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gts/sec3-3.webp') ?>" alt="テラス">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gts/sec3-4.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gts/sec3-4.webp') ?>" alt="テラス">
 		</figure>
 	  </div>
 
@@ -267,22 +264,6 @@ require __DIR__ . '/partials/header.php';
 		  <div>1室</div>
 		  <div>1～5名</div>
 		  <div>ツイン　1400×2000+エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid" style="display: none">
-		  <div>プレミアムハーバースイート</div>
-		  <div>50</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid" style="display: none">
-		  <div>ロイヤルスイート</div>
-		  <div>100</div>
-		  <div>1室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
 		</div>
 
 		<div class="spec-divider"></div>

@@ -37,7 +37,7 @@
   position: absolute; left: 0; right: 0; bottom: 20px;
   text-align: center; padding: 0 16px;
 }
-.gtn-hero__copyL{ font-size: clamp(18px, 2.2vw, 22px); letter-spacing: .18em; color:#000; text-shadow:0 2px 12px rgba(0,0,0,.45); margin-bottom:12px; line-height:1.6; }
+.gtn-hero__copyL{ font-size: clamp(18px, 2.2vw, 22px); letter-spacing: .18em; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.45); margin-bottom:12px; line-height:1.6; }
 .gtn-hero__brand{ font-size: clamp(12px, 1.5vw, 14px); letter-spacing:.22em; color:#000; text-shadow:0 2px 10px rgba(0,0,0,.40); }
 .gtn-hero__mark{ position:absolute; right:clamp(12px,2.4vw,28px); top:clamp(56px,8vh,120px); width:clamp(140px,18vw,260px); filter:drop-shadow(0 2px 10px rgba(0,0,0,.35)); pointer-events:none; z-index:2; }
 @media (max-width:768px){ .gtn-hero__lead{ bottom:56px; } }
