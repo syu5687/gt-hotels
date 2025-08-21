@@ -34,7 +34,7 @@ require __DIR__ . '/partials/header.php';
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/gtf/sec1-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtf/sec1-1.webp') ?>" alt="">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
@@ -194,10 +194,10 @@ require __DIR__ . '/partials/header.php';
 	  
 	  <div class="dining-row row-2col">
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/gts/sec4-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtf/sec4-2.webp') ?>" alt="">
 		</figure>
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/gts/sec4-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtf/sec4-3.webp') ?>" alt="">
 		</figure>
 	  </div>
 
