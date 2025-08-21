@@ -130,13 +130,13 @@ require __DIR__ . '/partials/header.php';
 	  <!-- 中：3枚横並び -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/rcn/sec3-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec3-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/rcn/sec3-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec3-3.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/rcn/sec3-4.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec3-4.webp?1') ?>" alt="">
 		</figure>
 	  </div>
 
@@ -183,10 +183,10 @@ require __DIR__ . '/partials/header.php';
 	  
 	  <div class="dining-row row-2col">
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/rcn/sec4-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec4-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/rcn/sec4-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec4-3.webp?1') ?>" alt="">
 		</figure>
 	  </div>
 
