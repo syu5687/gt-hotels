@@ -181,82 +181,80 @@ require __DIR__ . '/partials/header.php';
 		<p>落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。</p>
 	  </div>
 
-	  <!-- 中段：2枚横並び -->
-	  <div class="stay-duo">
-		<figure class="duo"><img src="<?= asset('/_assets/images/gtn/sec4-2.webp') ?>" alt=""></figure>
-		<figure class="duo"><img src="<?= asset('/_assets/images/gtn/sec4-3.webp') ?>" alt=""></figure>
-	  </div>
-
-	  <!-- 下段：Bの内容（一覧表＋公式リンク） -->
-	  <div class="stay-info stay-specs">
-		<table class="spec-table" aria-label="客室仕様一覧">
-		  <thead>
-			<tr>
-			  <th scope="col">客室タイプ</th>
-			  <th scope="col">広さ（m²）</th>
-			  <th scope="col">室数</th>
-			  <th scope="col">定員数</th>
-			  <th scope="col">ベッドサイズ</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-			  <th scope="row">ガーデンスイート</th>
-			  <td>53〜59</td>
-			  <td>6室</td>
-			  <td>1〜3名</td>
-			  <td>ツイン 1400×2000＋エキストラベッド</td>
-			</tr>
-			<tr>
-			  <th scope="row">ジャパニーズスイート</th>
-			  <td>70〜79</td>
-			  <td>3室</td>
-			  <td>1〜6名</td>
-			  <td>和布団</td>
-			</tr>
-			<tr>
-			  <th scope="row">オーシャンスイート</th>
-			  <td>46〜54</td>
-			  <td>6室</td>
-			  <td>1〜3名</td>
-			  <td>ツイン 1400×2000＋エキストラベッド</td>
-			</tr>
-			<tr>
-			  <th scope="row">タワースイート</th>
-			  <td>50〜66</td>
-			  <td>6室</td>
-			  <td>1〜3名</td>
-			  <td>ツイン 1400×2000＋エキストラベッド</td>
-			</tr>
-			<tr>
-			  <th scope="row">ハーバースイート</th>
-			  <td>50</td>
-			  <td>8室</td>
-			  <td>1〜3名</td>
-			  <td>ツイン 1400×2000＋エキストラベッド</td>
-			</tr>
-			<tr>
-			  <th scope="row">プレミアムハーバースイート</th>
-			  <td>50</td>
-			  <td>6室</td>
-			  <td>1〜3名</td>
-			  <td>ツイン 1400×2000＋エキストラベッド</td>
-			</tr>
-			<tr>
-			  <th scope="row">ロイヤルスイート</th>
-			  <td>100</td>
-			  <td>1室</td>
-			  <td>1〜3名</td>
-			  <td>ツイン 1400×2000＋エキストラベッド</td>
-			</tr>
-		  </tbody>
-		</table>
-
-		<div class="spec-footer">
-		  <span class="dot" aria-hidden="true"></span>
-		  <span class="label">公式ホームページ</span>
-		  <a class="official-link" href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a>
+	  <!-- 下段：客室一覧（表） -->
+	  <div class="stay-spec">
+		<div class="spec-head spec-grid">
+		  <div>客室タイプ</div>
+		  <div>広さ（m²）</div>
+		  <div>室数</div>
+		  <div>定員数</div>
+		  <div>ベッドサイズ</div>
 		</div>
+
+		<div class="spec-divider"></div>
+
+		<div class="spec-row spec-grid">
+		  <div>ガーデンスイート</div>
+		  <div>53〜59</div>
+		  <div>6室</div>
+		  <div>1〜3名</div>
+		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>ジャパニーズスイート</div>
+		  <div>70〜79</div>
+		  <div>3室</div>
+		  <div>1〜6名</div>
+		  <div>和布団</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>オーシャンスイート</div>
+		  <div>46〜54</div>
+		  <div>6室</div>
+		  <div>1〜3名</div>
+		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>タワースイート</div>
+		  <div>50〜66</div>
+		  <div>6室</div>
+		  <div>1〜3名</div>
+		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>ハーバースイート</div>
+		  <div>50</div>
+		  <div>8室</div>
+		  <div>1〜3名</div>
+		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>プレミアムハーバースイート</div>
+		  <div>50</div>
+		  <div>6室</div>
+		  <div>1〜3名</div>
+		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>ロイヤルスイート</div>
+		  <div>100</div>
+		  <div>1室</div>
+		  <div>1〜3名</div>
+		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		</div>
+
+		<div class="spec-divider"></div>
+
+		<p class="spec-note">
+		  <span class="mark">■</span>公式ホームページ
+		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a>
+		</p>
 	  </div>
 
 	</div>
