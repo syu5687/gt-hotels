@@ -23,7 +23,7 @@ require __DIR__ . '/partials/header.php';
 	<!-- 右上ロゴ -->
 	<img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/saga.svg') ?>"
-		 alt="Garden Terrace Nagasaki">
+		 alt="Garden Terrace Saga">
   </section>
 
   <!-- =========================
