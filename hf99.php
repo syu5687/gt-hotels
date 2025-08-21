@@ -22,8 +22,8 @@ require __DIR__ . '/partials/header.php';
 	</div>
 	<!-- 右上ロゴ -->
 	<img class="gtn-hero__mark"
-		 src="<?= asset('/_assets/svg/hf99.svg') ?>"
-		 alt="Garden Terrace Nagasaki">
+		 src="<?= asset('/_assets/svg/sasebo.svg') ?>"
+		 alt="HOTEL FLAGS SASEBO KUJUKUSHIMA">
   </section>
 
   <!-- =========================
