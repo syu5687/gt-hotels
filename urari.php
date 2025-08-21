@@ -241,7 +241,7 @@ require __DIR__ . '/partials/header.php';
 
 		<div class="spec-row spec-grid">
 		  <div>デラックス和洋室</div>
-		  <div>59.4㎡～63.8</div>
+		  <div>59.4～63.8</div>
 		  <div>13室</div>
 		  <div>1～4名</div>
 		  <div>ツイン　1,400×2,100</div>
