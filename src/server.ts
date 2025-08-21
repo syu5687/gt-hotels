@@ -3,53 +3,51 @@ import express, { Request, Response, NextFunction } from "express";
 import path from "path";
 import fs from "fs/promises";
 import crypto from "crypto";
+import cors from "cors";
 
-// ========== 基本設定 ==========
+// ========= 基本設定 =========
 const app = express();
-app.set("trust proxy", 1); // Cloud Run / Proxy 環境
+app.set("trust proxy", 1);
 app.use(express.json({ limit: "1mb" }));
 
-// ルート・静的配信
+// CORS（必要なドメインだけ許可）
+const allowOrigins = [
+  "https://gt-hotels-665477084949.asia-northeast1.run.app", // PHPサイト
+  // 必要に応じて追加
+];
+app.use(
+  cors({
+	origin(origin, cb) {
+	  if (!origin) return cb(null, true); // サーバ間など Origin 無し許容
+	  if (allowOrigins.includes(origin)) return cb(null, true);
+	  return cb(new Error("CORS blocked"), false);
+	},
+  })
+);
+
+// ルート直下の静的配信（不要なら削除OK）
 const ROOT_DIR = process.cwd();
 const ASSETS_DIR = path.join(ROOT_DIR, "_assets");
+app.use(
+  express.static(ROOT_DIR, {
+	extensions: ["html"],
+	setHeaders: (res, p) => {
+	  if (p.endsWith(".html")) res.setHeader("Cache-Control", "no-store");
+	},
+  })
+);
 
-// ルート直下（index.html 等）
-app.use(express.static(ROOT_DIR, {
-  extensions: ["html"],
-  setHeaders: (res, p) => {
-	if (p.endsWith(".html")) res.setHeader("Cache-Control", "no-store");
-  }
-}));
-
-// /_assets の静的配信（SVG/PDF の Content-Type 明示）
-app.use("/_assets", express.static(ASSETS_DIR, {
-  maxAge: "30d",
-  setHeaders: (res, p) => {
-	if (p.endsWith(".svg")) res.setHeader("Content-Type", "image/svg+xml; charset=utf-8");
-	if (p.endsWith(".pdf")) res.setHeader("Content-Type", "application/pdf");
-  }
-}));
-
-// index ルート
-app.get("/", (_req, res) => {
-  res.sendFile(path.join(ROOT_DIR, "index.html"));
-});
-
-// ヘルスチェック
+// 健康チェック
 app.get("/healthz", (_req, res) => res.status(200).json({ ok: true }));
 
-// ========== DeepL 連携 + キャッシュ ==========
-
-// キャッシュ型
+// ========= DeepL + キャッシュ =========
 type CacheMap = Record<string, string>;
 
-// キャッシュストア共通IF
 interface ICacheStore {
   load(): Promise<CacheMap>;
   save(map: CacheMap): Promise<void>;
 }
 
-// ローカルJSONストア（_assets/i18n/translations-cache.json）
 class LocalJsonStore implements ICacheStore {
   private file: string;
   constructor() {
@@ -70,13 +68,11 @@ class LocalJsonStore implements ICacheStore {
   }
 }
 
-// GCS ストア（任意・環境変数がある時だけ使用）
 class GcsStore implements ICacheStore {
   private storage: any;
   private bucketName: string;
   private objectName: string;
   constructor() {
-	// 依存は任意。無い場合は throw し、呼び出し側で Local にフォールバック。
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	const { Storage } = require("@google-cloud/storage");
 	this.storage = new Storage();
@@ -88,37 +84,37 @@ class GcsStore implements ICacheStore {
 	const [exists] = await file.exists();
 	if (!exists) return {};
 	const [buf] = await file.download();
-	try { return JSON.parse(buf.toString("utf-8")); } catch { return {}; }
+	try {
+	  return JSON.parse(buf.toString("utf-8"));
+	} catch {
+	  return {};
+	}
   }
   async save(map: CacheMap): Promise<void> {
 	const file = this.storage.bucket(this.bucketName).file(this.objectName);
 	await file.save(JSON.stringify(map, null, 2), {
 	  contentType: "application/json; charset=utf-8",
 	  resumable: false,
-	  // キャッシュはサーバサイド制御のためクライアントキャッシュ指示は不要
-	  metadata: { cacheControl: "no-store" }
+	  metadata: { cacheControl: "no-store" },
 	});
   }
 }
 
-// キャッシュキー
 const keyHash = (text: string, source: string, target: string) =>
   crypto.createHash("sha256").update(`${source}|${target}|${text}`).digest("hex");
 
-// ストアの選択（GCS > Local）
 function createStore(): ICacheStore {
   if (process.env.GCS_BUCKET) {
 	try {
 	  return new GcsStore();
 	} catch (e) {
-	  console.warn("[i18n] GCS store init failed, fallback to local JSON.", (e as Error).message);
+	  console.warn("[i18n] GCS init failed, fallback to local JSON.", (e as Error).message);
 	}
   }
   return new LocalJsonStore();
 }
 const store: ICacheStore = createStore();
 
-// メモリキャッシュ
 let CACHE: CacheMap = {};
 (async () => {
   try {
@@ -130,20 +126,14 @@ let CACHE: CacheMap = {};
   }
 })();
 
-// DeepL バッチ翻訳
-async function deeplTranslateBatch(
-  texts: string[],
-  sourceLang: string,
-  targetLang: string
-): Promise<string[]> {
+async function deeplTranslateBatch(texts: string[], source: string, target: string): Promise<string[]> {
   const url = process.env.DEEPL_API_URL || "https://api-free.deepl.com/v2/translate";
   const body = new URLSearchParams();
   texts.forEach((t) => body.append("text", t));
-  body.append("source_lang", sourceLang.toUpperCase());
-  body.append("target_lang", targetLang.toUpperCase());
+  body.append("source_lang", source.toUpperCase());
+  body.append("target_lang", target.toUpperCase());
   body.append("preserve_formatting", "1");
 
-  // Node18+ のグローバル fetch を使用
   const res = await fetch(url, {
 	method: "POST",
 	headers: {
@@ -162,8 +152,7 @@ async function deeplTranslateBatch(
   return json.translations.map((t) => t.text);
 }
 
-// 翻訳API
-// body: { source: "JA", target: "EN", keys: ["text1","text2",...] }
+// body: { source:"JA", target:"EN", keys:["テキスト1","テキスト2", ...] }
 app.post("/api/translate", async (req: Request, res: Response, next: NextFunction) => {
   try {
 	const source = String(req.body?.source || "JA").toUpperCase();
@@ -176,14 +165,15 @@ app.post("/api/translate", async (req: Request, res: Response, next: NextFunctio
 	const missTexts: string[] = [];
 	const missOrder: string[] = [];
 
-	// キャッシュヒットを先に
 	for (const k of keys) {
 	  const h = keyHash(k, source, target);
 	  if (CACHE[h]) result[k] = CACHE[h];
-	  else { missTexts.push(k); missOrder.push(k); }
+	  else {
+		missTexts.push(k);
+		missOrder.push(k);
+	  }
 	}
 
-	// ミス分のみ DeepL バッチ
 	if (missTexts.length) {
 	  const translated = await deeplTranslateBatch(missTexts, source, target);
 	  translated.forEach((t, i) => {
@@ -192,7 +182,7 @@ app.post("/api/translate", async (req: Request, res: Response, next: NextFunctio
 		CACHE[h] = t;
 		result[orig] = t;
 	  });
-	  await store.save(CACHE); // 永続化
+	  await store.save(CACHE);
 	}
 
 	res.json({ translations: result, cached: missTexts.length === 0 });
@@ -201,14 +191,12 @@ app.post("/api/translate", async (req: Request, res: Response, next: NextFunctio
   }
 });
 
-// ========== エラーハンドラ ==========
-app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+// エラーハンドラ
+app.use((err: any, _req: Request, res: Response) => {
   console.error(err);
   res.status(500).json({ error: err?.message || "internal-error" });
 });
 
-// ========== サーバ起動 ==========
+// 起動
 const PORT = Number(process.env.PORT || 8080);
-app.listen(PORT, () => {
-  console.log(`server listening on :${PORT}`);
-});
+app.listen(PORT, () => console.log(`translate-api listening on :${PORT}`));
