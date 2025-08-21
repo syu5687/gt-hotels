@@ -14,7 +14,7 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/gtf/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/gtf/hero.webp?1') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">訪れるたびに思い出せる、ふたりのリゾート</p>
@@ -227,7 +227,7 @@ require __DIR__ . '/partials/header.php';
 		  <div>40</div>
 		  <div>3室</div>
 		  <div>1～3名</div>
-		  <div>ツイン　1400×2000++エキストラベッド</div>
+		  <div>ツイン　1400×2000+エキストラベッド</div>
 		</div>
 
 		<div class="spec-row spec-grid">
