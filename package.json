@@ -17,3 +17,10 @@
 	"typescript": "^5.5.4"
   }
 }
+
+# DeepL 呼び出し & サーバ & 型 & .env
+npm i express node-fetch@2 dotenv
+npm i -D typescript ts-node @types/express @types/node @types/node-fetch
+
+# 繁體字変換（OpenCC - ネイティブ版）
+npm i opencc
