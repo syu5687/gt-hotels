@@ -34,7 +34,7 @@
   filter: saturate(1.02);
 }
 .gtn-hero__lead{
-  position: absolute; left: 0; right: 0; bottom: 80px;
+  position: absolute; left: 0; right: 0; bottom: 20px;
   text-align: center; padding: 0 16px;
 }
 .gtn-hero__copyL{ font-size: clamp(18px, 2.2vw, 22px); letter-spacing: .18em; color:#000; text-shadow:0 2px 12px rgba(0,0,0,.45); margin-bottom:12px; line-height:1.6; }
