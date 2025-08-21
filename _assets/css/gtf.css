@@ -1,0 +1,218 @@
+/* =========================================================
+   GTN PAGE — Clean CSS (scoped under .gtn)
+========================================================= */
+
+/* ---- 基本スコープ ---- */
+.gtn * { box-sizing: border-box; }
+.gtn {
+  color: #222;
+  font-family: 'Cinzel', serif;
+  line-height: 1.9;
+  margin: 0;
+  overflow-x: hidden;
+}
+.gtn img { display: block; max-width: 100%; height: auto; }
+.gtn h1, .gtn h2, .gtn h3, .gtn p, .gtn ul { margin: 0; }
+.gtn section { padding: 60px 20px; }
+.gtn .gtn-wrap { max-width: 1180px; margin: 0 auto; }
+.gtn figure { margin: 0; }
+
+/* =========================================================
+   HERO（フルブリード）
+========================================================= */
+.gtn-hero{
+  position: relative;
+  padding: 0 !important;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw; max-width: 100vw; overflow: hidden;
+}
+.gtn-hero__bg img{
+  width: 100%; max-width: none;
+  height: clamp(420px, 72vh, 820px);
+  object-fit: cover; object-position: center;
+  filter: saturate(1.02);
+}
+.gtn-hero__lead{
+  position: absolute; left: 0; right: 0; bottom: 20px;
+  text-align: center; padding: 0 16px;
+}
+.gtn-hero__copyL{ font-size: clamp(18px, 2.2vw, 22px); letter-spacing: .18em; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.45); margin-bottom:12px; line-height:1.6; }
+.gtn-hero__brand{ font-size: clamp(12px, 1.5vw, 14px); letter-spacing:.22em; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.40); }
+.gtn-hero__mark{ position:absolute; right:clamp(12px,2.4vw,28px); top:clamp(56px,8vh,120px); width:clamp(140px,18vw,260px); filter:drop-shadow(0 2px 10px rgba(0,0,0,.35)); pointer-events:none; z-index:2; }
+@media (max-width:768px){ .gtn-hero__lead{ bottom:56px; } }
+@media (max-width:480px){ .gtn-hero__mark{ top:48px; right:16px; width:170px; } }
+
+/* =========================================================
+   Section 1: ROOMS
+========================================================= */
+.gtn-sec--rooms{ position:relative; padding:56px 20px 48px; background:#fff; margin-bottom: 10px; /* ← 下に10px余白を追加 */}
+.gtn-sec--rooms .rooms-grid{ display:grid; gap:32px; align-items:start; }
+@media (min-width:960px){
+  .gtn-sec--rooms .rooms-grid{ grid-template-columns:minmax(520px,1fr) minmax(420px,560px); }
+}
+.rooms-photoL img{ width:100%; height:clamp(320px,52vw,540px); object-fit:cover; object-position:center; }
+.rooms-side{ display:flex; flex-direction:column; gap:22px; }
+.rooms-photoS img{ width:100%; height:clamp(160px,22vw,230px); object-fit:cover; object-position:center; }
+.rooms-text{ line-height:2; color:#222; }
+
+/* ===== セクション間の背景帯（back1.svg：フルブリード） ===== */
+.gtn-divider{
+  width: 100vw;
+  max-width: 100vw;
+  height: 140px;                  /* 帯の高さはここで調整 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.gtn-divider--back1{
+  background-image: url("/_assets/images/back1.svg");
+}
+
+/* =========================================================
+   Section 2: DINING
+========================================================= */
+.gtn-sec--dining{ padding:56px 0; background:#f7f6f3; }
+.gtn-sec--dining .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
+
+.dining-hero{ margin:0 0 28px; }
+.dining-hero img{
+  display:block; width:100vw; max-width:100vw;
+  height:clamp(260px,40vw,560px); object-fit:cover; object-position:center;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+}
+
+.dining-head{ margin:18px 0 22px; }
+.dining-title{ margin:0 0 12px; font-size:clamp(22px,2.4vw,28px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.dining-lead{ color:#333; line-height:2; }
+.dining-lead p + p{ margin-top:.7em; }
+
+.dining-gallery{ display:grid; gap:24px; }
+.dining-row{ display:grid; gap:24px; }
+.dining-row.row-2col{ grid-template-columns:1fr 1fr; }
+.dining-row.row-3wide{ grid-template-columns:1fr 1fr 1fr; }
+
+.card{ margin:0; }
+.card img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
+.card.wide img{ height:clamp(180px,22vw,240px); }
+.card figcaption{ margin-top:8px; font-size:13px; color:#4b4b4b; letter-spacing:.05em; }
+.card.no-cap figcaption{ display:none; }
+
+@media (max-width:860px){
+  .dining-row.row-2col, .dining-row.row-3wide{ grid-template-columns:1fr; }
+  .card.wide img{ height:clamp(180px,48vw,280px); }
+}
+
+/* =========================================================
+   Section 3: BREEZE
+========================================================= */
+.gtn-sec--breeze{ position:relative; padding:56px 0; background:#f7f6f3; }
+.gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
+
+.breeze-hero{ margin:0 0 28px; }
+.breeze-hero img{
+  display:block; width:100vw; max-width:100vw;
+  height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+}
+
+/* Section2 と完全統一 */
+.breeze-trio{ display:grid; gap:24px; margin:0 0 26px; }
+@media (min-width:860px){ .breeze-trio{ grid-template-columns:1fr 1fr 1fr; } }
+.breeze-trio img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
+
+.breeze-head{ margin:8px 0 6px; }
+.breeze-title{ margin:0 0 12px; font-size:clamp(22px,2.4vw,28px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.breeze-body{ color:#333; line-height:2; }
+.breeze-body p + p{ margin-top:.7em; }
+
+/* =========================================================
+   Section 4: STAY
+========================================================= */
+.gtn-sec--stay{ padding:56px 0; background:#f7f6f3; }
+.gtn-sec--stay .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
+
+.stay-hero{ margin:0 0 24px; }
+.stay-hero img{
+  display:block; width:100vw; max-width:100vw;
+  height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
+  margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+}
+
+.stay-title{ margin:12px 0 12px; font-size:clamp(22px,2.6vw,30px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.stay-lead{ color:#333; line-height:2; margin:0 0 18px; }
+.stay-lead p + p{ margin-top:.7em; }
+
+/* 客室一覧（表） */
+.stay-spec{
+  background:#faf9f5;
+  border:1px solid #e5e3dc;
+  padding: 28px 24px;
+  margin-top: 8px;
+}
+.stay-spec .spec-grid{
+  display:grid;
+  grid-template-columns: 260px 120px 90px 110px 1fr;
+  column-gap: 24px;
+  align-items: baseline;
+}
+.stay-spec .spec-head{
+  font-family: 'TrajanPro','Cinzel',serif;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color:#111;
+  font-size: clamp(18px, 1.4vw, 22px);
+  margin-bottom: 10px;
+}
+.stay-spec .spec-row{
+  font-size: clamp(16px, 1.35vw, 20px);
+  line-height: 2.2;
+  color:#222;
+}
+.stay-spec .spec-divider{
+  border-top:1px solid #d9d6cd;
+  margin: 10px 0 14px;
+}
+.stay-spec .spec-note{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  color:#222;
+}
+.stay-spec .spec-note .mark{ color:#111; }
+.stay-spec .spec-note a{
+  color:#1b52a5;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+/* スマホ：2行構成 */
+@media (max-width: 880px){
+  .stay-spec .spec-grid{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 6px;
+  }
+  .stay-spec .spec-head > :nth-child(1){grid-column:1/2;}
+  .stay-spec .spec-head > :nth-child(2){grid-column:2/3;}
+  .stay-spec .spec-head > :nth-child(3){grid-column:1/2;}
+  .stay-spec .spec-head > :nth-child(4){grid-column:2/3;}
+  .stay-spec .spec-head > :nth-child(5){grid-column:1/3;}
+
+  .stay-spec .spec-row > :nth-child(1){grid-column:1/2;}
+  .stay-spec .spec-row > :nth-child(2){grid-column:2/3;}
+  .stay-spec .spec-row > :nth-child(3){grid-column:1/2;}
+  .stay-spec .spec-row > :nth-child(4){grid-column:2/3;}
+  .stay-spec .spec-row > :nth-child(5){grid-column:1/3;}
+
+  .stay-spec{ padding: 22px 16px; }
+}
+
+/* =========================================================
+   レスポンシブ微調整
+========================================================= */
+@media (max-width:720px){
+  .gtn section{ padding:44px 16px; }
+}
