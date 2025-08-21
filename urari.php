@@ -1,6 +1,6 @@
 <?php
 // ページ情報（index.cssは読み込まない運用。gtn.php → gtn.css を自動読込）
-$pageTitle = 'Garden Terrace Nagasaki';
+$pageTitle = 'URARI TAKEO GARDEN TERRACE SPA RESORTS';
 $pageDesc  = ''; // SEOテキスト不要
 
 require __DIR__ . '/partials/head.php';
@@ -14,15 +14,15 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/gtn/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/urari/hero.webp') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
-	  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
-	  <p class="gtn-hero__brand">GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS</p>
+	  <p class="gtn-hero__copyL">うららかに ゆったりと。</p>
+	  <p class="gtn-hero__brand">URARI TAKEO GARDEN TERRACE SPA RESORTS</p>
 	</div>
 	<!-- 右上ロゴ -->
 	<img class="gtn-hero__mark"
-		 src="<?= asset('/_assets/svg/nagasaki.svg') ?>"
+		 src="<?= asset('/_assets/svg/urari.svg') ?>"
 		 alt="Garden Terrace Nagasaki">
   </section>
 
@@ -34,18 +34,22 @@ require __DIR__ . '/partials/header.php';
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/gtn/sec1-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/urari/sec1-2.webp') ?>" alt="">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
 		<div class="rooms-side">
 		  <figure class="rooms-photoS">
-			<img src="<?= asset('/_assets/images/gtn/sec1-1.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/urari/sec1-1.webp') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
-			<p>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
-			<p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
-			<p>宿泊者だけに許される贅沢をお楽しみください。</p>
+			<p>全室温泉付のこだわりの客室。こだわりのスパと、佐賀の美食に癒されて。</p>
+			<p>「西の方に温泉の出る巌あり…。」</p>
+			<p>千三百年の時を超え、人々を癒す湯の郷として知られていた武雄。</p>
+			<p>今も変わらず、その恵みは湧き出ています。</p>
+			<p>全てのお部屋が武雄温泉付のこだわりの客室。</p>
+			<p>旅に求められるものを、最上のかたちでご用意しました。</p>
+			<p>うららかにゆったりと。感動や刺激の先にある、「回復」の滞在へ。</p>
 		  </div>
 		</div>
 	  </div>
@@ -63,16 +67,16 @@ require __DIR__ . '/partials/header.php';
 
 	  <!-- ワイドビジュアル -->
 	  <figure class="dining-hero">
-		<img src="<?= asset('/_assets/images/gtn/sec2-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/urari/sec2-1.webp') ?>" alt="">
 	  </figure>
 
 	  <!-- 見出し + リード -->
 	  <div class="dining-head">
-		<h2 class="dining-title">彩り豊かな長崎の食文化を五感で味わう。</h2>
+		<h2 class="dining-title">佐賀の「極み食材」を 贅沢に使った創作会席。 </h2>
 		<div class="dining-lead">
-		  <p>海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともにゆったりとご賞味ください。</p>
-		  <p>四季折々の恵みを活かしたアートと調和したメニューの数々。</p>
-		  <p>窓側に開いた設えは、港の風景を切り取る「額縁」となり、港と晩景オーシャンビューをお食事とともにお楽しみいただけます。</p>
+			<p>佐賀牛をはじめ、佐賀がほこる旬の食材を使った料理の数々。佐賀牛は、すき焼き、しゃぶしゃぶからお好みのスタイルをお選びいただけます。</p>
+			<p>ご朝食には、有明海の高級佐賀海苔、10年連続特Aを取得している若木地区のご当地米「さがびより」など日本の朝食にかかせない食材を、</p>
+			<p>佐賀特産の逸品で揃えました。 </p>
 		</div>
 	  </div>
 
@@ -82,40 +86,36 @@ require __DIR__ . '/partials/header.php';
 		<!-- 1行目：2列（キャプションなし） -->
 		<div class="dining-row row-2col">
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/gtn/sec2-2.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/urari/sec2-2.webp') ?>" alt="">
 		  </figure>
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/gtn/sec2-3.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/urari/sec2-3.webp') ?>" alt="">
 		  </figure>
 		</div>
 
-		<!-- 2行目：2列（キャプションあり） -->
-		<div class="dining-row row-2col">
+		<!-- 2行目：横長3枚（キャプションあり） -->
+		<!-- <div class="dining-row row-3wide">
+		  <figure class="card wide">
+			<img src="<?= asset('/_assets/images/urari/sec3-2.webp') ?>" alt="">
+		  </figure>
+		  <figure class="card wide">
+			<img src="<?= asset('/_assets/images/urari/sec3-3.webp') ?>" alt="">
+		  </figure>
+		  <figure class="card wide">
+			<img src="<?= asset('/_assets/images/urari/sec3-4.webp') ?>" alt="">
+		  </figure>
+		</div> -->
+		
+		<!-- 3行目：2列（キャプションあり） -->
+		<!-- <div class="dining-row row-2col">
 		  <figure class="card">
-			<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
-			<figcaption>レストラン「フォレスト」</figcaption>
+			<img src="<?= asset('/_assets/images/urari/sec3-5.webp') ?>" alt="">
 		  </figure>
 		  <figure class="card">
-			<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
-			<figcaption>九州創作「千山万水」</figcaption>
+			<img src="<?= asset('/_assets/images/urari/sec3-6.webp') ?>" alt="">
 		  </figure>
-		</div>
+		</div> -->
 
-		<!-- 3行目：横長3枚（キャプションあり） -->
-		<div class="dining-row row-3wide">
-		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
-			<figcaption>鉄板焼ダイニング「竹彩」</figcaption>
-		  </figure>
-		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
-			<figcaption>鮨ダイニング「天空」</figcaption>
-		  </figure>
-		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
-			<figcaption>懐石料理と天ぷら「秋月」</figcaption>
-		  </figure>
-		</div>
 
 	  </div><!-- /.dining-gallery -->
 
@@ -130,31 +130,41 @@ require __DIR__ . '/partials/header.php';
 
 	  <!-- 上：ワイド（プールの俯瞰） -->
 	  <figure class="breeze-hero">
-		<img src="<?= asset('/_assets/images/gtn/sec3-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/urari/sec3-1.webp') ?>" alt="">
 	  </figure>
 
 	  <!-- 中：3枚横並び -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gtn/sec3-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/urari/sec3-2.webp') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gtn/sec3-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/urari/sec3-3.webp') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/gtn/sec3-4.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/urari/sec3-4.webp') ?>" alt="">
 		</figure>
 	  </div>
+	  
+	  <!-- 中：3枚横並び -->
+		<div class="breeze-trio">
+		  <figure class="tri">
+			<img src="<?= asset('/_assets/images/urari/sec3-5.webp') ?>" alt="">
+		  </figure>
+		  <figure class="tri">
+			<img src="<?= asset('/_assets/images/urari/sec3-6.webp') ?>" alt="">
+		  </figure>
+		</div>
+
 
 	  <!-- タイトル＋本文 -->
 	  <div class="breeze-head">
-		<h2 class="breeze-title">心地よい風 澄み渡る空がリゾートタイムを演出</h2>
+		<h2 class="breeze-title">すべて武雄温泉をひきこんだスパフロア。</h2>
 		<div class="breeze-body">
-		  <p>長崎港や市街地の街並みを望む全長20mのインフィニティプール。無垢のウッドデッキにジャグジー、ソファセットなどが整備され、</p>
-		  <p>日中は海と空、プールが一つになり、まるで海外のリゾートホテルをイメージさせる癒しの空間が創出されます。</p>
-		  <p>夕暮れ時以降は、世界新三大夜景に認定された長崎の夜景が目の前に広がり、ロマンチックで感動的な世界に包まれます。</p>
-		  <p>ジムとサウナでは眼下に広がる長崎の景色を眺めながら運動やサウナ体験を楽しみたい方におすすめです。</p>
-		  <p>心地よい汗を流して日頃の疲れを癒し、心身ともにリフレッシュ。</p>
+			<p>温泉感覚でくつろげる屋内のスパに開放感あるインフィニティスパと、ととのいスペース。屋内も屋外も全て武雄温泉を使った贅沢なスパです。</p>
+			<p>武雄の森にいるような、木々の香りに癒されるドライサウナや山霧のように細やかな蒸気で潤うスチームサウナ。</p>
+			<p>宿泊者専用のプライベートラウンジでは、佐賀にこだわった日本酒をはじめとしたドリンクや、フィンガーフードをご用意しております。</p>
+			<p>ランニングマシンやバイク、ワークアウトグッズを取り揃え、メディテーションポッドも備えています。瞑想やリラックスにご利用ください。</p>
 		</div>
 	  </div>
 
@@ -171,20 +181,27 @@ require __DIR__ . '/partials/header.php';
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
 	  <figure class="stay-hero">
-		<img src="<?= asset('/_assets/images/gtn/sec4-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/urari/sec4-1.webp') ?>" alt="">
 	  </figure>
 
 	  <!-- 見出し -->
-	  <h2 class="stay-title">その滞在は上質の本質を知るひと時となる。</h2>
+	  <h2 class="stay-title">湖畔を眺めながら、季節を感じる全室温泉付のこだわりの客室。 </h2>
 
 	  <!-- リード本文 -->
 	  <div class="stay-lead">
-		<p>長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。</p>
-		<p>本館のほかに2棟ある「離れ」の宿泊棟「オーシャンスイート」「タワースイート」。</p>
-		<p>シンプルな装飾の室内空間に、立体的に彫り込まれた印象的な天井や、海側に開放感あふれるテラスを構えたラグジュアリーな空間。</p>
-		<p>扉を開くと、海側に大きく開いた窓が目に飛び込み、時間の経過や季節の移ろいとともに表情を変える景色を楽しめます。</p>
-		<p>落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。</p>
+		<p>お部屋は全室温泉付きのこだわりの客室をご用意しました。旅館のあたたかなおもてなしと、ホテルの心地よさを兼ね備えた温泉リトリート。</p>
+		<p>ペット同伴のお部屋もご用意。愛犬と泊まれて、館外にアクセスしやすくドックパークで自然と過ごすひととき。一日中、愛犬と一緒にくつろげる空間。  </p>
 	  </div>
+	  
+	  <div class="dining-row row-2col">
+		  <figure class="card no-cap">
+			<img src="<?= asset('/_assets/images/urari/sec4-2.webp') ?>" alt="">
+		  </figure>
+		  <figure class="card no-cap">
+			<img src="<?= asset('/_assets/images/urari/sec4-3.webp') ?>" alt="">
+		  </figure>
+		</div>
+
 
 	  <!-- 下段：客室一覧（表） -->
 	  <div class="stay-spec">
@@ -199,66 +216,50 @@ require __DIR__ . '/partials/header.php';
 		<div class="spec-divider"></div>
 
 		<div class="spec-row spec-grid">
-		  <div>ガーデンスイート</div>
-		  <div>53〜59</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>ジャパニーズスイート</div>
-		  <div>70〜79</div>
-		  <div>3室</div>
-		  <div>1〜6名</div>
-		  <div>和布団</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>オーシャンスイート</div>
-		  <div>46〜54</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>タワースイート</div>
-		  <div>50〜66</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>ハーバースイート</div>
-		  <div>50</div>
-		  <div>8室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>プレミアムハーバースイート</div>
-		  <div>50</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>ロイヤルスイート</div>
-		  <div>100</div>
+		  <div>スイートルーム</div>
+		  <div>87.7</div>
 		  <div>1室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
+		  <div>1〜5名</div>
+		  <div>ツイン　1,400×2,100</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>ジュニアスイートルーム</div>
+		  <div>76.2</div>
+		  <div>1室</div>
+		  <div>1〜5名</div>
+		  <div>ツイン　1,400×2,100</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>デラックス和洋室テラス付</div>
+		  <div>67.5</div>
+		  <div>1室</div>
+		  <div>1～4名</div>
+		  <div>ツイン　1,400×2,100</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>デラックス和洋室</div>
+		  <div>59.4㎡～63.8</div>
+		  <div>13室</div>
+		  <div>1～4名</div>
+		  <div>ツイン　1,400×2,100</div>
+		</div>
+
+		<div class="spec-row spec-grid">
+		  <div>デラックス和洋室ペット同伴</div>
+		  <div>60</div>
+		  <div>2室</div>
+		  <div>1～4名</div>
+		  <div>ツイン　1,400×2,100</div>
 		</div>
 
 		<div class="spec-divider"></div>
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a>
+		  <a href="https://uraritakeo.jp/" target="_blank" rel="noopener">https://uraritakeo.jp/</a>
 		</p>
 	  </div>
 
