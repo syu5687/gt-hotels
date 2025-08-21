@@ -14,7 +14,7 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/conkana/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/conkana/hero.webp?1') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">極上のワインと共に心安らぐひとときを。</p>
@@ -34,13 +34,13 @@ require __DIR__ . '/partials/header.php';
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/conkana/sec1-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/conkana/sec1-1.webp') ?>" alt="">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
 		<div class="rooms-side">
 		  <figure class="rooms-photoS">
-			<img src="<?= asset('/_assets/images/conkana/sec1-1.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/conkana/sec1-2.webp') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
 			<p data-i18n>長崎空港からわずか３０分(ジェットフォイルで９０分)で到着するこの島には</p>
