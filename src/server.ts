@@ -200,3 +200,11 @@ app.use((err: any, _req: Request, res: Response) => {
 // 起動
 const PORT = Number(process.env.PORT || 8080);
 app.listen(PORT, () => console.log(`translate-api listening on :${PORT}`));
+
+// …（中略：あなたの server.ts 全文）…
+
+// もしプロキシ背後で PORT が提供される場合でも動作
+const PORT = Number(process.env.PORT || 8080);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`server listening on :${PORT}`);
+});
