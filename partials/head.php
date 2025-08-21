@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="<?= asset('/_assets/css/style.css') ?>">
   <link rel="stylesheet" href="<?= asset('/_assets/css/header-footer.css') ?>">
-  
+  <script defer src="/_assets/js/i18n.js"></script>
   <!-- ページ固有CSS -->
   <?= pageCss() ?>
 </head>
