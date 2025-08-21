@@ -187,32 +187,75 @@ require __DIR__ . '/partials/header.php';
 		<figure class="duo"><img src="<?= asset('/_assets/images/gtn/sec4-3.webp') ?>" alt=""></figure>
 	  </div>
 
-	  <!-- 下段：ボックス -->
-	  <div class="stay-info">
-		<div class="stay-box">
-		  <div class="stay-col">
-			<h4>客室タイプ</h4>
-			<ul>
-			  <li>オーシャンビュー和洋室</li>
-			  <li>和洋室</li>
-			  <li>デラックスツイン</li>
-			  <li>和室（ベッドタイプ）</li>
-			</ul>
-		  </div>
-		  <div class="stay-col">
-			<h4>宿泊プラン</h4>
-			<ul>
-			  <li>二食付き（和洋中ビュッフェ）</li>
-			  <li>朝食付き（和洋中ビュッフェ）</li>
-			</ul>
-			<p class="note">※夕食は含まれません。宿泊日当日追加金額のお支払いで夕食追加の変更も可能です。</p>
-			<p class="note">※お食事は本館1階「ビュッフェダイニング THE ONE」にてご提供いたします。</p>
-		  </div>
-		</div>
+	  <!-- 下段：Bの内容（一覧表＋公式リンク） -->
+	  <div class="stay-info stay-specs">
+		<table class="spec-table" aria-label="客室仕様一覧">
+		  <thead>
+			<tr>
+			  <th scope="col">客室タイプ</th>
+			  <th scope="col">広さ（m²）</th>
+			  <th scope="col">室数</th>
+			  <th scope="col">定員数</th>
+			  <th scope="col">ベッドサイズ</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">ガーデンスイート</th>
+			  <td>53〜59</td>
+			  <td>6室</td>
+			  <td>1〜3名</td>
+			  <td>ツイン 1400×2000＋エキストラベッド</td>
+			</tr>
+			<tr>
+			  <th scope="row">ジャパニーズスイート</th>
+			  <td>70〜79</td>
+			  <td>3室</td>
+			  <td>1〜6名</td>
+			  <td>和布団</td>
+			</tr>
+			<tr>
+			  <th scope="row">オーシャンスイート</th>
+			  <td>46〜54</td>
+			  <td>6室</td>
+			  <td>1〜3名</td>
+			  <td>ツイン 1400×2000＋エキストラベッド</td>
+			</tr>
+			<tr>
+			  <th scope="row">タワースイート</th>
+			  <td>50〜66</td>
+			  <td>6室</td>
+			  <td>1〜3名</td>
+			  <td>ツイン 1400×2000＋エキストラベッド</td>
+			</tr>
+			<tr>
+			  <th scope="row">ハーバースイート</th>
+			  <td>50</td>
+			  <td>8室</td>
+			  <td>1〜3名</td>
+			  <td>ツイン 1400×2000＋エキストラベッド</td>
+			</tr>
+			<tr>
+			  <th scope="row">プレミアムハーバースイート</th>
+			  <td>50</td>
+			  <td>6室</td>
+			  <td>1〜3名</td>
+			  <td>ツイン 1400×2000＋エキストラベッド</td>
+			</tr>
+			<tr>
+			  <th scope="row">ロイヤルスイート</th>
+			  <td>100</td>
+			  <td>1室</td>
+			  <td>1〜3名</td>
+			  <td>ツイン 1400×2000＋エキストラベッド</td>
+			</tr>
+		  </tbody>
+		</table>
 
-		<div class="stay-bottom">
-		  <span>チェックイン / 15:00 − 22:00</span>
-		  <span>チェックアウト / 11:00</span>
+		<div class="spec-footer">
+		  <span class="dot" aria-hidden="true"></span>
+		  <span class="label">公式ホームページ</span>
+		  <a class="official-link" href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a>
 		</div>
 	  </div>
 
