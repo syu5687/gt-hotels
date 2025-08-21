@@ -41,7 +41,7 @@ require __DIR__.'/partials/header.php';
   <section id="relax" class="section">
 	<h3>RELAX</h3>
 	<div class="logos tail">
-	  <div class="logo-card"><a href="/bek.php"><img src="<?= asset('/_assets/svg/bekkan.svg') ?>" alt="Hotel Flags Bekkan"></a></div>
+	  <div class="logo-card"><a href="/bekkan.php"><img src="<?= asset('/_assets/svg/bekkan.svg') ?>" alt="Hotel Flags Bekkan"></a></div>
 	  <div class="logo-card"><a href="/conkana.php"><img src="<?= asset('/_assets/svg/forest.svg') ?>" alt="conkana"></a></div>
 	</div>
   </section>
