@@ -289,7 +289,7 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a>
+		  <a href="https://www.gt-saga.jp/" target="_blank" rel="noopener">https://www.gt-saga.jp/</a>
 		</p>
 	  </div>
 
