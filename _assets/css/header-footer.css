@@ -153,3 +153,13 @@ a:visited {
           sepia(10%) saturate(400%) hue-rotate(180deg)
           brightness(70%) contrast(95%);
 }
+/* === QRコード === */
+.qr-box {
+  text-align: center;   /* 子要素を中央寄せ */
+  margin: 20px 0;       /* フッターとの間に少し余白 */
+}
+.qr-box img {
+  max-width: 160px;     /* QRコードの最大サイズ（任意調整） */
+  height: auto;
+  display: inline-block;
+}
