@@ -109,7 +109,7 @@ require __DIR__ . '/partials/header.php';
 		</div> -->
 
 		<!-- 3行目：横長3枚（キャプションあり） -->
-		<div class="dining-row row-3wide">
+		<div class="dining-row row-3wide" style="gap:0;">
 		  <figure class="card wide">
 			<img src="<?= asset('/_assets/images/gts/sec2-8.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
