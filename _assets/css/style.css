@@ -53,3 +53,7 @@ body{
 
 /* Footer */
 footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
+
+.spec-grid{
+  font-size: 14px !important
+}
