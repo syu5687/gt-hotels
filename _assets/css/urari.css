@@ -60,7 +60,7 @@
 @media (min-width:960px){
   .gtn-sec--rooms .rooms-grid{ grid-template-columns:minmax(520px,1fr) minmax(420px,560px); }
 }
-.rooms-photoL img{ width:100%; height:clamp(320px,52vw,540px); object-fit:cover; object-position:center; }
+.rooms-photoL img{ width:100%; height:clamp(320px,40vw,540px); object-fit:cover; object-position:center; }
 .rooms-side{ display:flex; flex-direction:column; gap:22px; }
 .rooms-photoS img{ width:100%; height:clamp(160px,22vw,230px); object-fit:cover; object-position:center; }
 .rooms-text{ line-height:2; color:#222; }
