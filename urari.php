@@ -34,7 +34,7 @@ require __DIR__ . '/partials/header.php';
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/urari/sec1-1.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/urari/sec1-1.webp') ?>" alt="" style="padding-bottom: 50px;">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
