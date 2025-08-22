@@ -14,7 +14,7 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/gts/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/gts/hero.webp?1') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">寛ぎのひとときと、「ここにしかない」体験を。</p>
