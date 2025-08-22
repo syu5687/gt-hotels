@@ -69,6 +69,7 @@
 }
 .gtn-divider--back1{
   background-image: url("/_assets/images/gts/bg.png");
+  background-position: top;
 }
 
 /* =========================================================
