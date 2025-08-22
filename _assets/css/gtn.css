@@ -169,7 +169,7 @@
 }
 .stay-spec .spec-row{
   /* font-size: clamp(16px, 1.35vw, 20px); */
-  font-size: clamp(13px, 1.35vw, 20px);
+  font-size: clamp(13px, 1.35vw, 14px);
   line-height: 2.2;
   color:#222;
 }
