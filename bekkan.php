@@ -133,13 +133,13 @@ require __DIR__ . '/partials/header.php';
 	  <!-- 中：3枚横並び -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/bekkan/sec3-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/bekkan/sec3-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/bekkan/sec3-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/bekkan/sec3-3.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/bekkan/sec3-4.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/bekkan/sec3-4.webp?1') ?>" alt="">
 		</figure>
 	  </div>
 	  <div class="breeze-col2">
