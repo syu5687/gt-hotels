@@ -16,14 +16,14 @@ require __DIR__ . '/partials/header.php';
 	<div class="gtn-hero__bg">
 	  <img src="<?= asset('/_assets/images/urari/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">うららかに ゆったりと。</p>
 	  <p class="gtn-hero__brand">URARI TAKEO GARDEN TERRACE SPA RESORTS</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/urari.svg') ?>"
-		 alt="Garden Terrace Nagasaki">
+		 alt="Garden Terrace Nagasaki"> -->
   </section>
 
   <!-- =========================
