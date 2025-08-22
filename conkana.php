@@ -162,7 +162,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay" style="paddomg-top:0;">
+  <section class="gtn-sec gtn-sec--stay" style="padding-top:0;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
