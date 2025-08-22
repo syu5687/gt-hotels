@@ -60,7 +60,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 2：ダイニング
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining">
+  <section class="gtn-sec gtn-sec--dining" style="margin-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- ワイドビジュアル -->

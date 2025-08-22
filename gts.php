@@ -180,12 +180,12 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="margin-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->

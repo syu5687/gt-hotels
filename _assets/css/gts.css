@@ -46,7 +46,15 @@
 /* =========================================================
    Section 1: ROOMS
 ========================================================= */
-.gtn-sec--rooms{ position:relative; padding:56px 20px 48px; background:#fff; margin-bottom: 10px; /* ← 下に10px余白を追加 */}
+.gtn-sec--rooms{ 
+  position:relative; 
+  padding:56px 20px 48px; 
+  background-image: url("/_assets/images/gts/bg2.svg");
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 0px;
+ }
 .gtn-sec--rooms .rooms-grid{ display:grid; gap:32px; align-items:start; }
 @media (min-width:960px){
   .gtn-sec--rooms .rooms-grid{ grid-template-columns:minmax(520px,1fr) minmax(420px,560px); }
@@ -68,9 +76,10 @@
   margin-right: calc(50% - 50vw);
 }
 .gtn-divider--back1{
-  background-image: url("/_assets/images/gts/bg.svg");
-  background-position: top;
-  background-size: cover;
+  background-image: url("/_assets/images/gts/bg2.svg");
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 /* =========================================================
