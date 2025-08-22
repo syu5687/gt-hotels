@@ -137,7 +137,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 3：プール・スパ・ジム
   ========================== -->
-  <section class="gtn-sec gtn-sec--breeze">
+  <section class="gtn-sec gtn-sec--breeze" style="padding-bottom: 0px;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（プールの俯瞰） -->
@@ -174,7 +174,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="padding-top: 120px;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
