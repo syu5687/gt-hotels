@@ -155,7 +155,7 @@
 ========================================================= */
 .gtn-sec--stay{ 
   padding:56px 0; 
-  background: url("/_assets/images/gtf/bg2.jpg"),#f7f6f3;
+  background: url("/_assets/images/gtf/bg.jpg"),#F7F5F1;
   background-position: top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -171,7 +171,8 @@
   padding-right: 50px;
 }
 
-.stay-title{ margin:12px 0 12px; font-size:clamp(22px,2.6vw,30px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
+.stay-title{ margin:12px 0 12px; font-size:clamp(22px,2.6vw,30px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111;
+padding-top:20px; }
 .stay-lead{ color:#333; line-height:2; margin:0 0 18px; }
 .stay-lead p + p{ margin-top:.7em; }
 
