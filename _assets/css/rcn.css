@@ -101,7 +101,7 @@
 
 .dining-gallery{ display:grid; gap:24px; }
 .dining-row{ display:grid; gap:24px; }
-.dining-row.row-2col{ grid-template-columns:1fr; }
+.dining-row.row-2col{ grid-template-columns:1fr 1fr; }
 .dining-row.row-3wide{ grid-template-columns:1fr 1fr 1fr; }
 
 .card{ margin:0; }
@@ -139,7 +139,7 @@
 /* Section2 と完全統一 */
 .breeze-trio{ display:grid; gap:0px; margin:20px 0 26px; }
 @media (min-width:860px){ .breeze-trio{ grid-template-columns:1fr 1fr 1fr; } }
-.breeze-trio img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
+.breeze-trio img{ width:100%; height:clamp(180px,16vw,260px); object-fit:cover; object-position:center; background:#ddd; }
 
 .breeze-head{ margin:8px 0 6px; }
 .breeze-title{ margin:0 0 12px; font-size:clamp(22px,2.4vw,28px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; }
@@ -157,6 +157,7 @@
   display:block; width:100vw; max-width:100vw;
   height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
   margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+  padding-right: 50px;
 }
 
 .stay-title{ margin:12px 0 12px; font-size:clamp(22px,2.6vw,30px); letter-spacing:.08em; font-family:'TrajanPro','Cinzel',serif; color:#111; padding-top:20px;}

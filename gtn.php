@@ -29,7 +29,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
