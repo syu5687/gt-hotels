@@ -16,14 +16,14 @@ require __DIR__ . '/partials/header.php';
 	<div class="gtn-hero__bg">
 	  <img src="<?= asset('/_assets/images/rcn/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">ヘルシー＆ビューティをコンセプトにしたアーバンリトリートホテル </p>
 	  <p class="gtn-hero__brand">ROYAL CHESTER NAGASAKI HOTEL &amp; RETREAT</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/rcn.svg') ?>"
-		 alt="ROYAL CHESTER NAGASAKI">
+		 alt="ROYAL CHESTER NAGASAKI"> -->
   </section>
 
   <!-- =========================
