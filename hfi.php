@@ -14,33 +14,33 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/hfi/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/hfi/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">いつも寄り添える場所をあなたへ</p>
 	  <p class="gtn-hero__brand">HOTEL FLAGS ISAHAYA NAGASAKI</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/isahaya.svg') ?>"
-		 alt="HOTEL FLAGS ISAHAYA NAGASAKI">
+		 alt="HOTEL FLAGS ISAHAYA NAGASAKI"> -->
   </section>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/hfi/sec1-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/hfi/sec1-1.webp?1') ?>" alt="" style="padding-bottom: 50px;">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
 		<div class="rooms-side">
 		  <figure class="rooms-photoS">
-			<img src="<?= asset('/_assets/images/hfi/sec1-1.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec1-2.webp?1') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
 			<p data-i18n>皇室ゆかりのロイヤルステイ。</p>
@@ -54,17 +54,17 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining">
+  <section class="gtn-sec gtn-sec--dining" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- ワイドビジュアル -->
 	  <figure class="dining-hero">
-		<img src="<?= asset('/_assets/images/hfi/sec2-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/hfi/sec2-1.webp?1') ?>" alt="">
 	  </figure>
 
 	  <!-- 見出し + リード -->
@@ -83,33 +83,33 @@ require __DIR__ . '/partials/header.php';
 		<!-- 1行目：2列（キャプションなし） -->
 		<div class="dining-row row-2col">
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/hfi/sec2-2.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-2.webp?1') ?>" alt="">
 		  </figure>
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/hfi/sec2-3.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-3.webp?1') ?>" alt="">
 		  </figure>
 		</div>
 
 		<!-- 2行目：2列（キャプションあり） -->
 		<!-- <div class="dining-row row-2col">
 		  <figure class="card">
-			<img src="<?= asset('/_assets/images/hfi/sec2-4.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-4.webp?1') ?>" alt="">
 		  </figure>
 		  <figure class="card">
-			<img src="<?= asset('/_assets/images/hfi/sec2-5.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-5.webp?1') ?>" alt="">
 		  </figure>
 		</div> -->
 
 		<!-- 3行目：横長3枚（キャプションあり） -->
 		<!-- <div class="dining-row row-3wide">
 		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/hfi/sec2-8.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-8.webp?1') ?>" alt="">
 		  </figure>
 		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/hfi/sec2-7.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-7.webp?1') ?>" alt="">
 		  </figure>
 		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/hfi/sec2-6.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hfi/sec2-6.webp?1') ?>" alt="">
 		  </figure>
 		</div> -->
 
@@ -126,13 +126,13 @@ require __DIR__ . '/partials/header.php';
 
 	  <!-- 上：ワイド（プールの俯瞰） -->
 	  <figure class="breeze-hero">
-		<img src="<?= asset('/_assets/images/hfi/sec3-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/hfi/sec3-1.webp?1') ?>" alt="">
 	  </figure>
 
 	  <!-- 中：3枚横並び -->
 	  <!-- <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/hfi/sec3-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/hfi/sec3-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
 		  <img src="<?= asset('/_assets/images/hfi/sec3-3.webp') ?>" alt="">
@@ -153,17 +153,17 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
 	  <figure class="stay-hero">
-		<img src="<?= asset('/_assets/images/hfi/sec4-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/hfi/sec4-1.webp?1') ?>" alt="">
 	  </figure>
 
 	  <!-- 見出し -->
@@ -178,10 +178,10 @@ require __DIR__ . '/partials/header.php';
 	  
 	  <div class="dining-row row-2col">
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/hfi/sec4-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/hfi/sec4-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/hfi/sec4-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/hfi/sec4-3.webp?1') ?>" alt="">
 		</figure>
 	  </div>
 
@@ -211,7 +211,7 @@ require __DIR__ . '/partials/header.php';
 		  <div>26</div>
 		  <div>8室</div>
 		  <div>1～3名</div>
-		  <div>ツイン　1200×1950＆Extra bed</div>
+		  <div>ツイン<br>1200×1950＆Extra bed</div>
 		</div>
 
 		<div class="spec-row spec-grid">
@@ -235,7 +235,7 @@ require __DIR__ . '/partials/header.php';
 		  <div>28</div>
 		  <div>4室</div>
 		  <div>1～3名</div>
-		  <div>ツイン　1400×1950＆Extra bed</div>
+		  <div>ツイン<br>1400×1950＆Extra bed</div>
 		</div>
 
 		<div class="spec-row spec-grid">

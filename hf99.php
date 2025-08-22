@@ -14,33 +14,33 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/hf99/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/hf99/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">いつ訪れても安心してくつろげる、みんなのリゾートホテル。</p>
 	  <p class="gtn-hero__brand">HOTEL FLAGS SASEBO KUJUKUSHIMA</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/sasebo.svg') ?>"
-		 alt="HOTEL FLAGS SASEBO KUJUKUSHIMA">
+		 alt="HOTEL FLAGS SASEBO KUJUKUSHIMA"> -->
   </section>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/hf99/sec1-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/hf99/sec1-1.webp') ?>" alt="" style="padding-bottom: 50px;">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
 		<div class="rooms-side">
 		  <figure class="rooms-photoS">
-			<img src="<?= asset('/_assets/images/hf99/sec1-1.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/hf99/sec1-2.webp') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
 			<p data-i18n>日本百景にも選ばれた美しい自然。</p>
@@ -55,12 +55,12 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining">
+  <section class="gtn-sec gtn-sec--dining" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- ワイドビジュアル -->
@@ -152,12 +152,12 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->

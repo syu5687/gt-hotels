@@ -14,22 +14,22 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/gtn/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/gtn/hero.webp?1') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
 	  <p class="gtn-hero__brand">GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/nagasaki.svg') ?>"
-		 alt="Garden Terrace Nagasaki">
+		 alt="Garden Terrace Nagasaki"> -->
   </section>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->

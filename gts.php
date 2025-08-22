@@ -14,22 +14,22 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/gts/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/gts/hero.webp?1') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">寛ぎのひとときと、「ここにしかない」体験を。</p>
 	  <p class="gtn-hero__brand">GARDEN TERRACE SAGA HOTELS &amp; RESORTS</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/saga.svg') ?>"
-		 alt="Garden Terrace Saga">
+		 alt="Garden Terrace Saga"> -->
   </section>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
@@ -58,7 +58,7 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
@@ -109,7 +109,7 @@ require __DIR__ . '/partials/header.php';
 		</div> -->
 
 		<!-- 3行目：横長3枚（キャプションあり） -->
-		<div class="dining-row row-3wide">
+		<div class="dining-row row-3wide" style="gap:0;">
 		  <figure class="card wide">
 			<img src="<?= asset('/_assets/images/gts/sec2-8.webp') ?>" alt="鉄板焼ダイニング「佐賀竹彩」">
 		  </figure>
@@ -180,12 +180,12 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="margin-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->

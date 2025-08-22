@@ -14,27 +14,27 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/gtf/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/gtf/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">訪れるたびに思い出せる、ふたりのリゾート</p>
 	  <p class="gtn-hero__brand">GARDEN TERRACE FUKUOKA  HOTELS &amp; RESORTS</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/fukuoka.svg') ?>"
-		 alt="Garden Terrace Fukuoka">
+		 alt="Garden Terrace Fukuoka"> -->
   </section>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/gtf/sec1-1.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/gtf/sec1-1.webp') ?>" alt="" style="padding-bottom: 50px;">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
@@ -54,12 +54,12 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining">
+  <section class="gtn-sec gtn-sec--dining" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- ワイドビジュアル -->
@@ -137,7 +137,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 3：プール・スパ・ジム
   ========================== -->
-  <section class="gtn-sec gtn-sec--breeze">
+  <section class="gtn-sec gtn-sec--breeze" style="padding-bottom: 0px;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（プールの俯瞰） -->
@@ -169,12 +169,12 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="padding-top: 120px;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
@@ -227,7 +227,7 @@ require __DIR__ . '/partials/header.php';
 		  <div>40</div>
 		  <div>3室</div>
 		  <div>1～3名</div>
-		  <div>ツイン　1400×2000++エキストラベッド</div>
+		  <div>ツイン　1400×2000+エキストラベッド</div>
 		</div>
 
 		<div class="spec-row spec-grid">

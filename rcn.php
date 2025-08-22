@@ -14,36 +14,36 @@ require __DIR__ . '/partials/header.php';
   ========================== -->
   <section class="gtn-hero">
 	<div class="gtn-hero__bg">
-	  <img src="<?= asset('/_assets/images/rcn/hero.webp') ?>" alt="">
+	  <img src="<?= asset('/_assets/images/rcn/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
+	<!-- <div class="gtn-hero__lead">
 	  <p class="gtn-hero__copyL">ヘルシー＆ビューティをコンセプトにしたアーバンリトリートホテル </p>
 	  <p class="gtn-hero__brand">ROYAL CHESTER NAGASAKI HOTEL &amp; RETREAT</p>
-	</div>
+	</div> -->
 	<!-- 右上ロゴ -->
-	<img class="gtn-hero__mark"
+	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/rcn.svg') ?>"
-		 alt="ROYAL CHESTER NAGASAKI">
+		 alt="ROYAL CHESTER NAGASAKI"> -->
   </section>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
-  <section class="gtn-sec gtn-sec--rooms">
+  <section class="gtn-sec gtn-sec--rooms" style="padding: 60px 50px 60px 0px;">
 	<div class="gtn-wrap">
 	  <div class="rooms-grid">
 		<!-- 左：大きい写真 -->
 		<figure class="rooms-photoL">
-		  <img src="<?= asset('/_assets/images/rcn/sec1-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec1-1.webp') ?>" alt="" style="padding-bottom: 50px;">
 		</figure>
 
 		<!-- 右：小写真 + 本文 -->
 		<div class="rooms-side">
 		  <figure class="rooms-photoS">
-			<img src="<?= asset('/_assets/images/rcn/sec1-1.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/rcn/sec1-2.webp') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
-			<p data-i18n>ギリスのプライベートガーデンをモチーフにした空中のジャグジー付きの</p>
+			<p data-i18n>イギリスのプライベートガーデンをモチーフにした空中のジャグジー付きの</p>
 			<p>ボタニカルガーデンスパに、自然をテーマにした二つのサウナ。</p>
 			<p>オーガニックのドリンクや軽食がフリーで楽しめる宿泊者専用ラウンジ。</p>
 			<p>美のプロフェッショナル「ReFa」の美容家電をすべてのお部屋に備えました。</p>
@@ -56,12 +56,12 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining">
+  <section class="gtn-sec gtn-sec--dining" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- ワイドビジュアル -->
@@ -82,7 +82,7 @@ require __DIR__ . '/partials/header.php';
 	  <div class="dining-gallery">
 
 		<!-- 1行目：2列（キャプションなし） -->
-		<div class="dining-row row-2col">
+		<div class="dining-row row-1col">
 		  <figure class="card no-cap">
 			<img src="<?= asset('/_assets/images/rcn/sec2-2.webp') ?>" alt="">
 		  </figure>
@@ -130,13 +130,13 @@ require __DIR__ . '/partials/header.php';
 	  <!-- 中：3枚横並び -->
 	  <div class="breeze-trio">
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/rcn/sec3-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec3-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/rcn/sec3-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec3-3.webp?1') ?>" alt="">
 		</figure>
 		<figure class="tri">
-		  <img src="<?= asset('/_assets/images/rcn/sec3-4.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec3-4.webp?1') ?>" alt="">
 		</figure>
 	  </div>
 
@@ -156,12 +156,12 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
   ========================== -->
-  <section class="gtn-sec gtn-sec--stay">
+  <section class="gtn-sec gtn-sec--stay" style="padding-top: 0;">
 	<div class="gtn-wrap">
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
@@ -183,10 +183,10 @@ require __DIR__ . '/partials/header.php';
 	  
 	  <div class="dining-row row-2col">
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/rcn/sec4-2.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec4-2.webp?1') ?>" alt="">
 		</figure>
 		<figure class="card no-cap">
-		  <img src="<?= asset('/_assets/images/rcn/sec4-3.webp') ?>" alt="">
+		  <img src="<?= asset('/_assets/images/rcn/sec4-3.webp?1') ?>" alt="">
 		</figure>
 	  </div>
 
