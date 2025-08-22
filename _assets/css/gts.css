@@ -107,7 +107,7 @@
 
 .card{ margin:0; }
 .card img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
-.card.wide img{ height:clamp(180px,22vw,240px); }
+.card.wide img{ height:clamp(180px,19vw,240px); }
 .card figcaption{ margin-top:8px; font-size:13px; color:#4b4b4b; letter-spacing:.05em; }
 .card.no-cap figcaption{ display:none; }
 
@@ -135,6 +135,7 @@
   display:block; width:90vw; max-width:100vw;
   height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
   margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+  padding-top:20px;
 }
 
 /* Section2 と完全統一 */
