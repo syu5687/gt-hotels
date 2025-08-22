@@ -68,8 +68,9 @@
   margin-right: calc(50% - 50vw);
 }
 .gtn-divider--back1{
-  background-image: url("/_assets/images/hfi/bg.png");
+  background-image: url("/_assets/images/hfi/bg.svg");
   background-position: top;
+  background-size: cover;
 }
 
 /* =========================================================

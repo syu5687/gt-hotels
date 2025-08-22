@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1706.68 764.4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f7f6f1;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="1706.68" height="764.4"/>
+    </clipPath>
+  </defs>
+  <g id="BACKGROUND">
+    <g class="cls-3">
+      <g>
+        <g>
+          <circle class="cls-2" cx="208.23" cy="368.08" r="140.86"/>
+          <circle class="cls-2" cx="74.26" cy="465.41" r="140.86"/>
+          <circle class="cls-2" cx="125.43" cy="622.9" r="140.86"/>
+          <circle class="cls-2" cx="291.03" cy="622.9" r="140.86"/>
+          <circle class="cls-2" cx="342.2" cy="465.41" r="140.86"/>
+        </g>
+        <g>
+          <circle class="cls-2" cx="1141.73" cy="128.04" r="82.69"/>
+          <circle class="cls-2" cx="1103.75" cy="217.52" r="82.69"/>
+          <circle class="cls-2" cx="1177.12" cy="281.3" r="82.69"/>
+          <circle class="cls-2" cx="1260.44" cy="231.23" r="82.69"/>
+          <circle class="cls-2" cx="1238.58" cy="136.51" r="82.69"/>
+        </g>
+        <g>
+          <circle class="cls-2" cx="1478.9" cy="357.61" r="112.01"/>
+          <circle class="cls-2" cx="1372.37" cy="435.01" r="112.01"/>
+          <circle class="cls-2" cx="1413.06" cy="560.24" r="112.01"/>
+          <circle class="cls-2" cx="1544.74" cy="560.24" r="112.01"/>
+          <circle class="cls-2" cx="1585.43" cy="435.01" r="112.01"/>
+        </g>
+        <g>
+          <circle class="cls-2" cx="757.41" cy="309.18" r="114.69"/>
+          <circle class="cls-2" cx="671.56" cy="413.14" r="114.69"/>
+          <circle class="cls-2" cx="743.89" cy="526.92" r="114.69"/>
+          <circle class="cls-2" cx="874.45" cy="493.28" r="114.69"/>
+          <circle class="cls-2" cx="882.81" cy="358.72" r="114.69"/>
+        </g>
+        <rect class="cls-2" y="666.14" width="1706.68" height="1075.04"/>
+      </g>
+    </g>
+  </g>
+</svg>
