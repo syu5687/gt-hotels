@@ -30,7 +30,7 @@
 .gtn-hero__bg img{
   width: 100%; max-width: none;
   height: clamp(420px, 72vh, 820px);
-  object-fit: cover; object-position: center;
+  object-fit: cover; object-position: left;
   filter: saturate(1.02);
 }
 .gtn-hero__lead{
