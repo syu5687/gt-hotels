@@ -137,6 +137,7 @@
   display:block; width:100vw; max-width:100vw;
   height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
   margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+  padding-left: 50px;
 }
 
 /* Section2 と完全統一 */
