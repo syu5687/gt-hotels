@@ -60,7 +60,7 @@ require __DIR__ . '/partials/header.php';
   <!-- =========================
 	   SECTION 2：ダイニング
   ========================== -->
-  <section class="gtn-sec gtn-sec--dining">
+  <section class="gtn-sec gtn-sec--dining" style="padding-top:0px;">
 	<div class="gtn-wrap">
 
 	  <!-- ワイドビジュアル -->
@@ -142,7 +142,7 @@ require __DIR__ . '/partials/header.php';
 		  <img src="<?= asset('/_assets/images/bekkan/sec3-4.webp') ?>" alt="">
 		</figure>
 	  </div>
-	  <div class="breeze-trio">
+	  <div class="breeze-col2">
 		  <figure class="tri">
 			<img src="<?= asset('/_assets/images/bekkan/sec3-5.webp') ?>" alt="">
 		  </figure>
