@@ -101,7 +101,7 @@
 
 .dining-gallery{ display:grid; gap:24px; }
 .dining-row{ display:grid; gap:24px; }
-.dining-row.row-2col{ grid-template-columns:1fr 1fr; }
+.dining-row.row-2col{ grid-template-columns:1fr; }
 .dining-row.row-3wide{ grid-template-columns:1fr 1fr 1fr; }
 
 .card{ margin:0; }
