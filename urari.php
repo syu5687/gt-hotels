@@ -57,7 +57,7 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
@@ -147,7 +147,7 @@ require __DIR__ . '/partials/header.php';
 	  </div>
 	  
 	  <!-- 中：3枚横並び -->
-		<div class="breeze-trio">
+		<div class="breeze-row-2col">
 		  <figure class="tri">
 			<img src="<?= asset('/_assets/images/urari/sec3-5.webp') ?>" alt="">
 		  </figure>
@@ -171,7 +171,7 @@ require __DIR__ . '/partials/header.php';
 	</div>
   </section>
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-	<div class="gtn-divider gtn-divider--back1"></div>
+	<!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 4：客室クオリティ・タイプ／プラン
