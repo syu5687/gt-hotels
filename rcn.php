@@ -82,7 +82,7 @@ require __DIR__ . '/partials/header.php';
 	  <div class="dining-gallery">
 
 		<!-- 1行目：2列（キャプションなし） -->
-		<div class="dining-row row-2col">
+		<div class="dining-row row-1col">
 		  <figure class="card no-cap">
 			<img src="<?= asset('/_assets/images/rcn/sec2-2.webp') ?>" alt="">
 		  </figure>
