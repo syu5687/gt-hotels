@@ -141,7 +141,7 @@
 /* Section2 と完全統一 */
 .breeze-trio{ display:grid; gap:0px; margin:20px 0 26px; }
 @media (min-width:860px){ .breeze-trio{ grid-template-columns:1fr 1fr 1fr; } }
-.breeze-trio img{ width:100%; height:clamp(180px,26vw,260px); object-fit:cover; object-position:center; background:#ddd; }
+.breeze-trio img{ width:100%; height:clamp(180px,16vw,260px); object-fit:cover; object-position:center; background:#ddd; }
 
 .breeze-row-2col{ display:grid; gap:0px; margin:20px 0 26px;grid-template-columns:1fr 1fr; }
 

@@ -144,7 +144,7 @@
 .breeze-trio img{ 
   /* width:100%;  */
   /* height:clamp(180px,26vw,260px);  */
-  height:clamp(150px,26vw,200px); 
+  height:clamp(150px,16vw,200px); 
   object-fit:cover; 
   object-position:center; 
   background-image: url("/_assets/images/gts/bg.svg");
