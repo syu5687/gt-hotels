@@ -17,7 +17,21 @@ require __DIR__ . '/partials/header.php';
 	  <img src="<?= asset('/_assets/images/gtn/hero.webp?1') ?>" alt="">
 	</div>
 	<div class="gtn-hero__lead">
-	  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
+		<?php if ($lang==='en'): ?>
+		  <p class="gtn-hero__copyL">A place where you can encounter a special side of Nagasaki that you have never seen before.</p>
+		<?php elseif ($lang==='ko'): ?>
+		  <p class="gtn-hero__copyL">아직 보지 못한 특별한 나가사키를 만날 수 있는 장소.</p>
+		<?php else: ?>
+		<?php elseif ($lang==='tc'): ?>
+		  <p class="gtn-hero__copyL">在這裡，您可以見到尚未見過的特殊長崎。</p>
+		<?php else: ?>
+		<?php elseif ($lang==='sc'): ?>
+		  <p class="gtn-hero__copyL">一个能让你邂逅从未见过的独特长崎的场所。</p>
+		<?php else: ?>
+		  <p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
+		<?php endif; ?>
+	  
+	  
 	  <p class="gtn-hero__brand">GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS</p>
 	</div>
 	<!-- 右上ロゴ -->
