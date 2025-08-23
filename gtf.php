@@ -25,6 +25,10 @@ require __DIR__ . '/partials/header.php';
 		 src="<?= asset('/_assets/svg/fukuoka.svg') ?>"
 		 alt="Garden Terrace Fukuoka"> -->
   </section>
+	<div class="gtn-hero__lead">
+	<p class="gtn-hero__copyL">訪れるたびに思い出せる、ふたりのリゾート</p>
+	<p class="gtn-hero__brand">GARDEN TERRACE FUKUOKA  HOTELS &amp; RESORTS</p>
+  </div>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
