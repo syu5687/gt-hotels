@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 544.46 89.88">
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 567.07 117.36">
   <defs>
     <style>
       .cls-1 {
@@ -8,27 +8,6 @@
     </style>
   </defs>
   <g id="BACKGROUND">
-    <g>
-      <rect class="cls-1" x="1.19" width="73.01" height="27.18"/>
-      <rect class="cls-1" x="79.53" width="73.01" height="39.44"/>
-      <rect class="cls-1" x="157.87" width="73.01" height="39.44"/>
-      <rect class="cls-1" x="236.21" width="73.01" height="39.44"/>
-      <rect class="cls-1" x="314.55" width="73.01" height="39.44"/>
-      <rect class="cls-1" x="392.89" width="73.01" height="39.44"/>
-      <rect class="cls-1" x="471.23" width="73.01" height="39.44"/>
-      <rect class="cls-1" y="57.14" width="42.73" height="27.69"/>
-      <rect class="cls-1" x="93.37" y="57.14" width="42.73" height="22.95"/>
-      <rect class="cls-1" x="223.13" y="57.14" width="42.73" height="22.95"/>
-      <rect class="cls-1" x="50.64" y="57.14" width="32.2" height="20.87"/>
-      <rect class="cls-1" x="399.58" y="57.14" width="32.2" height="20.87"/>
-      <rect class="cls-1" x="439.15" y="57.14" width="32.2" height="30.36"/>
-      <rect class="cls-1" x="480.29" y="69.01" width="32.2" height="20.87"/>
-      <rect class="cls-1" x="512.26" y="48.49" width="32.2" height="15.33"/>
-      <rect class="cls-1" x="144.8" y="65.05" width="32.2" height="20.87"/>
-      <rect class="cls-1" x="184.36" y="65.05" width="32.2" height="20.87"/>
-      <rect class="cls-1" x="272.71" y="65.05" width="32.2" height="20.87"/>
-      <rect class="cls-1" x="311.76" y="57.14" width="42.73" height="22.95"/>
-      <rect class="cls-1" x="361.33" y="65.05" width="32.2" height="20.87"/>
-    </g>
+    <path class="cls-1" d="M567.07,117.36H0V0h567.07v117.36ZM86.61,14.28H13.6v27.18h73.01V14.28ZM164.95,14.28h-73.01v39.44h73.01V14.28ZM243.29,14.28h-73.01v39.44h73.01V14.28ZM321.63,14.28h-73.01v39.44h73.01V14.28ZM399.97,14.28h-73.01v39.44h73.01V14.28ZM478.31,14.28h-73.01v39.44h73.01V14.28ZM556.65,14.28h-73.01v39.44h73.01V14.28ZM55.14,71.42H12.41v27.69h42.73v-27.69ZM148.51,71.42h-42.73v22.95h42.73v-22.95ZM278.27,71.42h-42.73v22.95h42.73v-22.95ZM95.25,71.42h-32.2v20.87h32.2v-20.87ZM444.19,71.42h-32.2v20.87h32.2v-20.87ZM483.75,71.42h-32.2v30.36h32.2v-30.36ZM524.9,83.29h-32.2v20.87h32.2v-20.87ZM556.87,62.77h-32.2v15.33h32.2v-15.33ZM189.4,79.33h-32.2v20.87h32.2v-20.87ZM228.97,79.33h-32.2v20.87h32.2v-20.87ZM317.32,79.33h-32.2v20.87h32.2v-20.87ZM366.89,71.42h-42.73v22.95h42.73v-22.95ZM405.94,79.33h-32.2v20.87h32.2v-20.87Z"/>
   </g>
 </svg>
