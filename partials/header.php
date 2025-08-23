@@ -63,3 +63,28 @@ function url_with_lang(string $path, array $extra = []) {
   return $p.'?'.http_build_query($q).$h;
 }
 ?>
+<?php
+// 対応言語
+$supported = ['ja','en','ko','tc','sc'];
+
+// 1) URLに ?lang= がある → それを採用して Cookie に保存
+if (isset($_GET['lang']) && in_array($_GET['lang'], $supported, true)) {
+  $lang = $_GET['lang'];
+  // 1年保持（Secure/HTTPOnly）
+  setcookie('lang', $lang, [
+	'expires'  => time()+60*60*24*365,
+	'path'     => '/',
+	'secure'   => !empty($_SERVER['HTTPS']),
+	'httponly' => true,
+	'samesite' => 'Lax',
+  ]);
+}
+// 2) 無ければ Cookie を採用 / 3) それも無ければ ja
+if (empty($lang)) {
+  $lang = $_COOKIE['lang'] ?? 'ja';
+  if (!in_array($lang, $supported, true)) $lang = 'ja';
+}
+
+// ▼必要ならHTML側で参照できるように
+// <html data-lang="xx"> とかにしておくとJSでも使いやすい
+?>

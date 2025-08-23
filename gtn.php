@@ -18,7 +18,7 @@ require __DIR__ . '/partials/header.php';
 	</div>
 	<div class="gtn-hero__lead">
 		<?php if ($lang==='en'): ?>
-		  <p class="gtn-hero__copyL">A place where you can encounter a special side of Nagasaki that you have never seen before.</p>
+		  <p class="gtn-hero__copyL">A place where you can encounter a special side of<br>Nagasaki that you have never seen before.</p>
 		<?php elseif ($lang==='ko'): ?>
 		  <p class="gtn-hero__copyL">아직 보지 못한 특별한 나가사키를 만날 수 있는 장소.</p>
 		<?php elseif ($lang==='tc'): ?>
