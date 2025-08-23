@@ -53,7 +53,7 @@ require __DIR__ . '/partials/header.php';
   </section>
 
   <!-- ===== セクション間の背景帯（back1.svg：フルブリード） ===== -->
-  <div class="gtn-divider gtn-divider--back1"></div>
+  <!-- <div class="gtn-divider gtn-divider--back1"></div> -->
 
   <!-- =========================
 	   SECTION 2：ダイニング
