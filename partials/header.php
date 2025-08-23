@@ -12,11 +12,11 @@
 		<img src="<?= asset('/_assets/svg/world.svg') ?>" alt="world"> JAPANESE
 	  </button>
 	  <div class="lang-menu">
-		<a href="?lang=ja">JAPANESE</a>
-		<a href="?lang=en">ENGLISH</a>
-		<a href="?lang=ko">韓国語</a>
-		<a href="?lang=tc">繁体字</a>
-		<a href="?lang=sc">簡体字</a>
+ 		<a href="<?= langLink('ja') ?>">JAPANESE</a>
+		<a href="<?= langLink('en') ?>">ENGLISH</a>
+		<a href="<?= langLink('ko') ?>">韓国語</a>
+		<a href="<?= langLink('tc') ?>">繁体字</a>
+		<a href="<?= langLink('sc') ?>">簡体字</a>
 	  </div>
 	</div>
   </div>
