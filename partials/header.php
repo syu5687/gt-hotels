@@ -50,3 +50,16 @@ function langLink($target){
   return strtok($_SERVER['REQUEST_URI'],'?').'?'.http_build_query($q);
 }
 ?>
+
+<?php
+function url_with_lang(string $path, array $extra = []) {
+  global $lang;
+  $parts = parse_url($path);
+  $q = [];
+  if (!empty($parts['query'])) parse_str($parts['query'], $q);
+  $q = array_merge($q, $extra, ['lang' => $lang]);
+  $p = $parts['path'] ?? '';
+  $h = isset($parts['fragment']) ? '#'.$parts['fragment'] : '';
+  return $p.'?'.http_build_query($q).$h;
+}
+?>
