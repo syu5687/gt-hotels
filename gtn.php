@@ -55,9 +55,19 @@ require __DIR__ . '/partials/header.php';
 			<img src="<?= asset('/_assets/images/gtn/sec1-1.webp') ?>" alt="">
 		  </figure>
 		  <div class="rooms-text">
-			<p data-i18n>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
-			<p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
-			<p>宿泊者だけに許される贅沢をお楽しみください。</p>
+			<?php if ($lang==='en'): ?>
+				  <p data-i18n>All guest rooms offer ocean views of Nagasaki Port, with various sizes of windows arranged to allow guests to enjoy the scenery of Nagasaki as if it were a painting.</p>
+				  <p>Guests can enjoy an extraordinary city resort experience with a villa-like atmosphere. The night view of the port from the bathroom is also exceptional.</p>
+				  <p>Please enjoy the luxury reserved exclusively for guests staying at the hotel.</p>
+			<?php elseif ($lang==='ko'): ?>
+			<?php elseif ($lang==='tc'): ?>
+			<?php elseif ($lang==='sc'): ?>
+			<?php else: ?>
+				<p data-i18n>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
+				<p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
+				<p>宿泊者だけに許される贅沢をお楽しみください。</p>
+
+			<?php endif; ?>
 		  </div>
 		</div>
 	  </div>
