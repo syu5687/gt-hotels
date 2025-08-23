@@ -14,6 +14,7 @@
 	  <div class="lang-menu">
 		<a href="?lang=ja">JAPANESE</a>
 		<a href="?lang=en">ENGLISH</a>
+		<a href="?lang=ko">韓国語</a>
 		<a href="?lang=tc">繁体字</a>
 		<a href="?lang=sc">簡体字</a>
 	  </div>
