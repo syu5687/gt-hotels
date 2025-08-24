@@ -63,3 +63,23 @@ function url_with_lang(string $path, array $extra = []) {
   return $p.'?'.http_build_query($q).$h;
 }
 ?>
+<script>
+  // 現在の言語をクエリまたはCookieから取得
+  const urlParams = new URLSearchParams(window.location.search);
+  let lang = urlParams.get('lang') || getCookie('lang') || 'ja';
+
+  // すべての内部リンクに ?lang=xx を付与
+  document.querySelectorAll("a").forEach(a => {
+	const href = a.getAttribute("href");
+	if (href && href.startsWith("/") && !href.includes("lang=")) {
+	  const sep = href.includes("?") ? "&" : "?";
+	  a.setAttribute("href", href + sep + "lang=" + lang);
+	}
+  });
+
+  // Cookie取得関数
+  function getCookie(name) {
+	const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+	return match ? match[2] : null;
+  }
+</script>
