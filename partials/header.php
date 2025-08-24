@@ -83,21 +83,3 @@ function url_with_lang(string $path, array $extra = []) {
 	return match ? match[2] : null;
   }
 </script>
-<?php
-session_start();
-
-// 言語パラメータがある場合 → Cookieに保存
-if (isset($_GET['lang'])) {
-	$lang = $_GET['lang'];
-	setcookie("lang", $lang, time() + 60*60*24*30, "/"); // 30日有効
-	$_SESSION['lang'] = $lang;
-} elseif (isset($_COOKIE['lang'])) {
-	// Cookieから復元
-	$lang = $_COOKIE['lang'];
-	$_SESSION['lang'] = $lang;
-} else {
-	// デフォルト
-	$lang = 'ja';
-	$_SESSION['lang'] = $lang;
-}
-?>
