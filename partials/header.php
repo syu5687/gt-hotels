@@ -4,9 +4,9 @@ require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも�
 ?>
 <header>
   <div class="bar">
-	<div class="logo"><a href="/">Garden Terrace Hotels</a></div>
+	<div class="logo notranslate"><a href="/">Garden Terrace Hotels</a></div>
 
-	<nav class="nav">
+	<nav class="nav notranslate">
 	  <a href="<?= url_with_lang('/#luxury') ?>" <?= is_active(['index.php','']) ?>>LUXURY</a>
 	  <a href="<?= url_with_lang('/#city')   ?>" <?= is_active(['index.php','']) ?>>CITY RESORT</a>
 	  <a href="<?= url_with_lang('/#relax')  ?>" <?= is_active(['index.php','']) ?>>RELAX</a>
@@ -17,7 +17,7 @@ require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも�
 	  <img src="<?= asset('/_assets/svg/world.svg') ?>" alt="world">
 	  <?= currentLangLabel() ?>
 	</button>
-	  <div class="lang-menu">
+	  <div class="lang-menu notranslate">
 		<a href="<?= langLink('ja') ?>">JAPANESE</a>
 		<a href="<?= langLink('en') ?>">ENGLISH</a>
 		<a href="<?= langLink('ko') ?>">韓国語</a>
