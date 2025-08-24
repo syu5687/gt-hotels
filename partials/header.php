@@ -1,4 +1,7 @@
-<?php require_once __DIR__.'/../config/app.php'; ?>
+<?php
+require_once __DIR__.'/../config/app.php';
+require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも必ず言語ヘルパーを読み込む
+?>
 <header>
   <div class="bar">
 	<div class="logo"><a href="/">Garden Terrace Hotels</a></div>
