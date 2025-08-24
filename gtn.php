@@ -57,11 +57,20 @@ require __DIR__ . '/partials/header.php';
 		  <div class="rooms-text">
 			<?php if ($lang==='en'): ?>
 				  <p data-i18n>All guest rooms offer ocean views of Nagasaki Port, with various sizes of windows arranged to allow guests to enjoy the scenery of Nagasaki as if it were a painting.</p>
-				  <p>Guests can enjoy an extraordinary city resort experience with a villa-like atmosphere. The night view of the port from the bathroom is also exceptional.</p>
-				  <p>Please enjoy the luxury reserved exclusively for guests staying at the hotel.</p>
+				  <p>Guests can enjoy an extraordinary city resort experience with a vacation home feel. The night view of the port from the bathroom is also exceptional.</p>
+				  <p>Please enjoy the luxury reserved only for guests staying at the hotel.</p>
 			<?php elseif ($lang==='ko'): ?>
+				<p data-i18n>모든 객실은 눈앞에 나가사키 항구가 펼쳐지는 오션뷰로, 크고 작은 다양한 창문을 배치하여 그 창문을 통해 보이는 나가사키의 풍경을 마치 한 폭의 그림처럼 즐길 수 있도록 설계되었습니다.</p>
+				  <p>비일상적인 분위기가 넘치는 시티 리조트의 시간을 별장 같은 분위기에서 만끽하실 수 있습니다. 욕실에서 바라보는 항구의 야경도 특별합니다.</p>
+				  <p>숙박객만 누릴 수 있는 럭셔리를 즐겨보세요</p>
 			<?php elseif ($lang==='tc'): ?>
+				<p data-i18n>所有客房前方皆可眺望長崎港的海景，大小不一的窗戶排列有序，透過窗戶所見的長崎景色猶如一幅幅畫卷，讓人沉醉其中。</p>
+				  <p>您可以像在別墅中一樣，享受非凡的城市度假村時光。從浴室眺望港口的夜景也別有一番風味。</p>
+				  <p>享受只有住客才能享受的奢華。</p>
 			<?php elseif ($lang==='sc'): ?>
+				<p data-i18n>所有客房均可俯瞰長崎港的壮丽海景，我们精心布置了大小不一的窗户，让您仿佛置身于一幅画卷中，尽情欣赏長崎的美丽风景。</p>
+				  <p>在这里，您可以体验到充满非日常感的城市度假时光，仿佛置身于度假别墅般惬意。从浴室望出去的港湾夜景更是令人叹为观止。</p>
+				  <p>请尽情享受仅限住客专享的奢华体验。</p>
 			<?php else: ?>
 				<p data-i18n>客室は全て目の前に長崎港が広がるオーシャンビューで、大小様々な窓を配置し、そこから見える長崎の風景をまるで一枚の絵画にしたように楽しめるようにしました。</p>
 				<p>非日常感あふれるシティリゾートの時間を、別荘感覚で堪能していただけます。バスルームからのぞむ港の夜景も格別です。</p>
@@ -89,14 +98,54 @@ require __DIR__ . '/partials/header.php';
 	  </figure>
 
 	  <!-- 見出し + リード -->
-	  <div class="dining-head">
-		<h2 class="dining-title">彩り豊かな長崎の食文化を五感で味わう。</h2>
-		<div class="dining-lead">
-		  <p>海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともにゆったりとご賞味ください。</p>
-		  <p>四季折々の恵みを活かしたアートと調和したメニューの数々。</p>
-		  <p>窓側に開いた設えは、港の風景を切り取る「額縁」となり、港と晩景オーシャンビューをお食事とともにお楽しみいただけます。</p>
-		</div>
-	  </div>
+	  <?php if ($lang==='en'): ?>
+		  <div class="dining-head">
+			<h2 class="dining-title">Experience Nagasaki's colorful food culture with all five senses.</h2>
+			<div class="dining-lead">
+			  <p>Enjoy Nagasaki's seasonal seafood and mountain produce while relaxing with an ocean view overlooking the port. </p>
+				<p>A variety of menus that harmonize with art, utilizing the blessings of each season. </p>
+				<p>The window-side seating serves as a “picture frame” for the harbor scenery, allowing you to enjoy the harbor and evening ocean view along with your meal. </p>
+			</div>
+		  </div>
+		  <?php elseif ($lang==='ko'): ?>
+			  <h2 class="dining-title">다채로운 나가사키의 식문화를 오감으로 즐기세요.</h2>
+				  <div class="dining-lead">
+					<p>바다와 산의 풍요로움을 갖춘 나가사키의 제철 음식을, 항구를 바라보는 오션뷰와 함께 여유롭게 즐겨보세요. </p>
+					  <p>사계절의 풍요로움을 활용한 예술과 조화를 이룬 다양한 메뉴들. </p>
+					  <p>창가에 열린 공간은 항구의 풍경을 담는 '액자'가 되어, 항구와 저녁 풍경의 오션뷰를 식사와 함께 즐기실 수 있습니다. </p>
+				  </div>
+				</div>
+
+		  <?php elseif ($lang==='tc'): ?>
+			  <div class="dining-head">
+				  <h2 class="dining-title">用您所有的感官來品嚐長崎多彩多姿的美食文化。</h2>
+				  <div class="dining-lead">
+					<p>在眺望海港海景的悠閒氣氛中，為您奉上長崎四季的山珍海味。</p>
+					<p>菜單與藝術融為一體，充分利用了當季的豐富食材。</p>
+					<p>開放式的窗戶設置可作為海港景觀的「畫框」，讓您在用餐的同時也能欣賞海港和傍晚的海景。</p>
+				  </div>
+				</div>
+		  <?php elseif ($lang==='sc'): ?>
+			  <div class="dining-head">
+				<h2 class="dining-title">色彩斑斓的長崎美食文化，以五感尽情品味。</h2>
+				<div class="dining-lead">
+				  <p>得天独厚的海洋与山林馈赠，让您在俯瞰港口的海洋景观中，悠然品味長崎的时令美食。</p>
+					<p>融合四季馈赠的自然恩惠与艺术美学的精致菜单。</p>
+					<p>面向窗户的独特设计，宛如一幅框住港口风景的“画框”，让您在用餐时尽享港口与夕阳海景的绝美风光。</p>
+				</div>
+			  </div>
+		  <?php else: ?>
+			  <div class="dining-head">
+				  <h2 class="dining-title">彩り豊かな長崎の食文化を五感で味わう。</h2>
+				  <div class="dining-lead">
+					<p>海の幸・山の幸に恵まれた長崎の旬を、港を望むオーシャンビューとともにゆったりとご賞味ください。</p>
+					<p>四季折々の恵みを活かしたアートと調和したメニューの数々。</p>
+					<p>窓側に開いた設えは、港の風景を切り取る「額縁」となり、港と晩景オーシャンビューをお食事とともにお楽しみいただけます。</p>
+				  </div>
+				</div>
+	  <?php endif; ?>
+	  
+	  
 
 	  <!-- ギャラリー -->
 	  <div class="dining-gallery">
