@@ -532,8 +532,206 @@ require __DIR__ . '/partials/header.php';
 			</div>
 
 	  <?php elseif ($lang==='ko'): ?>
+		  <div class="stay-sdivec">
+		  <div class="sdivec-head sdivec-grid">
+			<div>객실 유형</div>
+			<div>면적 (m²)</div>
+			<div>객실 수</div>
+			<div>수용 인원</div>
+			<div>침대 크기</div>
+		  </div>
+		  
+		  <div class="sdivec-divider"></div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>가든 스위트</div>
+			<div>53〜59</div>
+			<div>6개</div>
+			<div>1-3명</div>
+			<div>트윈 1400 x 2000 + 추가 침대</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>일본식 스위트</div>
+			<div>70〜79</div>
+			<div>3개 객실</div>
+			<div>1-6명</div>
+			<div>일본식 퓨톤</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>오션 스위트</div>
+			<div>46~54</div>
+			<div>6개 객실</div>
+			<div>1~3명</div>
+			<div>트윈 1400×2000 + 추가 침대</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>타워 스위트</div>
+			<div>50~66</div>
+			<div>6실</div>
+			<div>1~3명</div>
+			<div>트윈 1400×2000 + 추가 침대</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>하버 스위트</div>
+			<div>50</div>
+			<div>8 객실</div>
+			<div>1-3명</div>
+			<div>v</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>프리미엄 하버 스위트</div>
+			<div>50</div>
+			<div>6 객실</div>
+			<div>1-3명</div>
+			<div>트윈 1400×2000 + 추가 침대</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>로열 스위트</div>
+			<div>100</div>
+			<div>1실</div>
+			<div>1–3명</div>
+			<div>트윈 1400×2000 + 추가 침대</div>
+		  </div>
 	  <?php elseif ($lang==='tc'): ?>
+		  <div class="stay-sdivec">
+		  <div class="sdivec-head sdivec-grid">
+		   <div>房間類型</div>
+		   <div>面積 (m²)</div>
+		   <div>房間數目</div>
+		   <div>可容納人數</div>
+		   <div>床位大小</div>
+		  </div>
+		  
+		  <div class="sdivec-divider"></div> 花園套房
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div>花園套房</div>
+		   <div>53〜59</div>
+		   <div>6 間客房</div>
+		   <div>1-3 人</div>
+		   <div>Twin 1400 x 2000 + 加床</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div>日式套房</div>
+		   <div>70〜79</div>
+		   <div>三房</div>
+		   <div>1-6人</div>
+		   <div>日式被褥</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div> 海洋套房</div>
+		   <div>46〜54</div>
+		   <div>6 間客房</div>
+		   <div>1-3 人</div>
+		   <div> 雙床 1400×2000 + 加床ド</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div>塔式套房</div>
+		   <div>50〜66</div>
+		   <div>6 房</div>
+		   <div>1-3 人</div>
+		   <div> 雙床 1400×2000 + 加床</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div>Harbor Suite</div>
+		   <div>50</div>
+		   <div>8 rooms</div>
+		   <div>1-3 diveodivle</div>
+		   <div>v</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div>divremium Harbor Suite</div>
+		   <div>50</div>
+		   <div>6 間房</div>
+		   <div>1-3 人</div>
+		   <div>Twin 1400×2000 + extra bed</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+		   <div>Royal Suite</div>
+		   <div>100</div>
+		   <div>1 間房</div>
+		   <div>1-3 位客人</div>
+		   <div>Twin 1400×2000 + 加床</div>
+		  </div>
 	  <?php elseif ($lang==='sc'): ?>
+		  <div class="stay-sdivec">
+		  <div class="sdivec-head sdivec-grid">
+			<div>房型</div>
+			<div>面积（平方米）</div>
+			<div>房间数量</div>
+			<div>容纳人数</div>
+			<div>床型</div>
+		  </div>
+		  
+		  <div class="sdivec-divider"></div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>花园套房</div>
+			<div>53〜59</div>
+			<div>6间</div>
+			<div>1-3人</div>
+			<div>双人床 1400 x 2000 + 附加床</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>日式套房</div>
+			<div>70～79</div>
+			<div>3间房</div>
+			<div>1-6人</div>
+			<div>日式被褥</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>海洋套房</div>
+			<div>46～54</div>
+			<div>6间房</div>
+			<div>1–3人</div>
+			<div>双人床1400×2000 + 附加床</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>塔楼套房</div>
+			<div>50～66</div>
+			<div>6间客房</div>
+			<div>1–3人</div>
+			<div>双人床1400×2000 + 附加床</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>港景套房</div>
+			<div>50</div>
+			<div>8间客房</div>
+			<div>1-3人</div>
+			<div>v</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>豪华港景套房</div>
+			<div>50</div>
+			<div>6间客房</div>
+			<div>1-3人</div>
+			<div>双床1400×2000 + 附加床</div>
+		  </div>
+		  
+		  <div class="sdivec-row sdivec-grid">
+			<div>皇家套房</div>
+			<div>100</div>
+			<div>1间客房</div>
+			<div>1–3位客人</div>
+			<div>双人床1400×2000 + 附加床</div>
+		  </div>
 	  <?php else: ?>
 		  <div class="stay-spec">
 		  <div class="spec-head spec-grid">
