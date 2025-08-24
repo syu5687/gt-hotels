@@ -10,12 +10,6 @@ require __DIR__.'/partials/head.php';
 require __DIR__.'/partials/header.php';
 ?>
 <main>
-  <!-- <section class="hero">
-	<video id="heroVideo" src="<?= asset('/_assets/media/hero.mp4') ?>" poster="<?= asset('/_assets/images/hero.jpg') ?>" preload="auto" playsinline></video>
-	<div class="overlay"></div>
-	<h1 class="hero-title">LUXURY HOTEL</h1>
-	<button class="play" id="playBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
-  </section> -->
 
   <section class="intro">
 	<h2>Garden Terrace Hotels</h2>
