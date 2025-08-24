@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 // ========= 設定 =========
 const I18N_CACHE_DIR = __DIR__ . '/../_assets/i18n/cache';
-const I18N_DEEPL_URL = 'https://api-free.deepl.com/v2/translate'; // 有料版なら https://api.deepl.com/v2/translate
+const I18N_DEEPL_URL = 'https://api.deepl.com/v2/translate'; // 有料版なら https://api.deepl.com/v2/translate
 
 function i18n_api_key(): string {
   return 'e7366784-6fe9-4039-9ff1-5d5c2a5ebf4a:fx'; // ★ここに直接書く
