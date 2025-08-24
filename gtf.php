@@ -1,4 +1,8 @@
 <?php
+require __DIR__ . '/config/i18n.php';
+i18n_begin();  // ← 先頭で開始
+?>
+<?php
 // ページ情報（index.cssは読み込まない運用。gtn.php → gtn.css を自動読込）
 $pageTitle = 'Garden Terrace Fukuoka';
 $pageDesc  = ''; // SEOテキスト不要
@@ -256,3 +260,4 @@ require __DIR__ . '/partials/header.php';
 
 <?php require __DIR__ . '/partials/footer.php'; ?>
 <?php require __DIR__ . '/partials/scripts.php'; ?>
+<?php i18n_end(); ?>
