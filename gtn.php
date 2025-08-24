@@ -319,16 +319,67 @@ require __DIR__ . '/partials/header.php';
 	  </div>
 
 	  <!-- タイトル＋本文 -->
-	  <div class="breeze-head">
-		<h2 class="breeze-title">心地よい風 澄み渡る空がリゾートタイムを演出</h2>
-		<div class="breeze-body">
-		  <p>長崎港や市街地の街並みを望む全長20mのインフィニティプール。無垢のウッドデッキにジャグジー、ソファセットなどが整備され、</p>
-		  <p>日中は海と空、プールが一つになり、まるで海外のリゾートホテルをイメージさせる癒しの空間が創出されます。</p>
-		  <p>夕暮れ時以降は、世界新三大夜景に認定された長崎の夜景が目の前に広がり、ロマンチックで感動的な世界に包まれます。</p>
-		  <p>ジムとサウナでは眼下に広がる長崎の景色を眺めながら運動やサウナ体験を楽しみたい方におすすめです。</p>
-		  <p>心地よい汗を流して日頃の疲れを癒し、心身ともにリフレッシュ。</p>
-		</div>
-	  </div>
+	  <?php if ($lang==='en'): ?>
+		  <div class="breeze-head">
+			  <h2 class="breeze-title">A pleasant breeze and clear skies create a resort-like atmosphere</h2>
+			  <div class="breeze-body">
+				<p>A 20-meter-long infinity pool overlooking Nagasaki Port and the cityscape. The pool is equipped with a solid wood deck, jacuzzi, and sofa set. </p>
+				<p>During the day, the sea, sky, and pool blend together to create a soothing space reminiscent of an overseas resort hotel. </p>
+				<p>As evening falls, the breathtaking night view of Nagasaki—recognized as one of the world's new three great night views—unfolds before your eyes, enveloping you in a romantic and awe-inspiring world. </p>
+				<p>The gym and sauna are recommended for those who wish to enjoy exercise or sauna experiences while taking in the stunning views of Nagasaki below. </p>
+				<p>Sweat it out comfortably to relieve daily stress and refresh both mind and body. </p>
+			  </div>
+			</div>
+
+		  <?php elseif ($lang==='ko'): ?>
+			  <div class="breeze-head">
+				  <h2 class="breeze-title">편안한 바람과 맑게 뻗은 하늘이 리조트 분위기를 연출합니다</h2>
+				  <div class="breeze-body">
+					<p>나가사키 항구와 도시의 풍경이 내려다보이는 20m 길이의 인피니티 풀. 순수한 목재 데크에 자쿠지, 소파 세트 등이 갖추어져 있으며,</p>
+					<p>낮에는 바다와 하늘, 풀이 하나가 되어 해외 리조트 호텔을 연상시키는 힐링 공간이 조성됩니다.</p>
+					<p>저녁이 되면 세계 신3대 야경으로 인정받은 나가사키의 야경이 눈앞에 펼쳐지며, 로맨틱하고 감동적인 세계에 휩싸입니다. </p>
+					<p>짐과 사우나에서는 아래로 펼쳐지는 나가사키의 풍경을 감상하며 운동이나 사우나 체험을 즐기고 싶은 분들에게 추천합니다. </p>
+					<p>편안한 땀을 흘리며 일상적인 피로를 풀어주고, 신체와 정신 모두를 리프레시합니다. </p>
+				  </div>
+				</div>
+
+		  <?php elseif ($lang==='tc'): ?>
+			  <div class="breeze-head">
+				  <h2 class="breeze-title">怡人的微風和晴朗的天空營造出度假時光。</h2>
+				  <div class="breeze-body">
+					<p>長達 20 公尺的無邊際泳池，可眺望長崎港與市中心的美景。實木甲板上設有按摩浴缸、沙發套等設備。</p>
+					<p>白天，大海、天空和泳池融為一體，營造出令人聯想到海外度假旅館的療愈空間。</p>
+					<p>黃昏之後，被公認為世界三大新夜景之一的長崎夜景在眼前鋪展開來，將您籠罩在浪漫動人的世界中。</p>
+					<p>推薦您使用健身房和桑拿房，一邊享受運動和桑拿體驗，一邊欣賞下方的長崎美景。</p>
+					<p>讓身心煥然一新，揮灑愉快的汗水，紓解每日的疲勞。</p>
+				  </div>
+				</div>
+
+		  <?php elseif ($lang==='sc'): ?>
+			  <div class="breeze-head">
+				  <h2 class="breeze-title">宜人的微风与澄澈的天空共同营造出度假时光的氛围</h2>
+				  <div class="breeze-body">
+					<p>长达20米的无边际泳池，可俯瞰長崎港及市区街景。泳池周边配备了原木甲板、按摩浴缸、沙发组等设施，</p>
+					<p>白天时，海天一色与泳池融为一体，营造出宛如海外度假酒店般的疗愈空间。</p>
+					<p>黄昏时分，被评为世界新三大夜景的長崎夜景尽收眼底，让人沉浸在浪漫而令人感动的世界中。</p>
+					<p>健身房和桑拿房可俯瞰長崎的景色，适合想要边运动边享受桑拿体验的人。</p>
+					<p>流淌着舒适的汗水，缓解日常疲劳，身心焕然一新。</p>
+				  </div>
+				</div>
+
+		  <?php else: ?>
+			  <div class="breeze-head">
+				  <h2 class="breeze-title">心地よい風 澄み渡る空がリゾートタイムを演出</h2>
+				  <div class="breeze-body">
+					<p>長崎港や市街地の街並みを望む全長20mのインフィニティプール。無垢のウッドデッキにジャグジー、ソファセットなどが整備され、</p>
+					<p>日中は海と空、プールが一つになり、まるで海外のリゾートホテルをイメージさせる癒しの空間が創出されます。</p>
+					<p>夕暮れ時以降は、世界新三大夜景に認定された長崎の夜景が目の前に広がり、ロマンチックで感動的な世界に包まれます。</p>
+					<p>ジムとサウナでは眼下に広がる長崎の景色を眺めながら運動やサウナ体験を楽しみたい方におすすめです。</p>
+					<p>心地よい汗を流して日頃の疲れを癒し、心身ともにリフレッシュ。</p>
+				  </div>
+				</div>
+
+	  <?php endif; ?>
 
 	</div>
   </section>
