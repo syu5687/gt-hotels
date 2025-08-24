@@ -174,18 +174,77 @@ require __DIR__ . '/partials/header.php';
 
 		<!-- 3行目：横長3枚（キャプションあり） -->
 		<div class="dining-row row-3wide">
-		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
-			<figcaption>鉄板焼ダイニング「竹彩」</figcaption>
-		  </figure>
-		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
-			<figcaption>鮨ダイニング「天空」</figcaption>
-		  </figure>
-		  <figure class="card wide">
-			<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
-			<figcaption>懐石料理と天ぷら「秋月」</figcaption>
-		  </figure>
+			<?php if ($lang==='en'): ?>
+				<figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
+					<figcaption>Teppanyaki Dining “Takusai”</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
+					<figcaption>Sushi Dining “Tenku”</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
+					<figcaption>Kaiseki Cuisine and Tempura “Akizuki”</figcaption>
+				  </figure>
+			<?php elseif ($lang==='ko'): ?>
+				<figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
+					<figcaption>철판구이 다이닝 「죽채」</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
+					<figcaption>스시 다이닝 「천공」</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
+					<figcaption>회석 요리와 튀김 「추월」</figcaption>
+				  </figure>
+
+			<?php elseif ($lang==='tc'): ?>
+				<figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
+					<figcaption>鐵板燒餐廳「Tikusai」</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
+					<figcaption>壽司餐廳 「Tenku」</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
+					<figcaption>懷石料理和天婦羅 「Akizuki」</figcaption>
+				  </figure>
+
+			<?php elseif ($lang==='sc'): ?>
+				<figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
+					<figcaption>铁板烧餐厅「竹彩」</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
+					<figcaption>寿司餐厅「天空」</figcaption>
+				  </figure>
+				  <figure class="card wide">
+					<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
+					<figcaption>怀石料理与天妇罗「秋月」</figcaption>
+				  </figure>
+
+			<?php else: ?>
+					<figure class="card wide">
+						<img src="<?= asset('/_assets/images/gtn/sec2-8.webp') ?>" alt="鉄板焼ダイニング 竹彩">
+						<figcaption>鉄板焼ダイニング「竹彩」</figcaption>
+					  </figure>
+					  <figure class="card wide">
+						<img src="<?= asset('/_assets/images/gtn/sec2-7.webp') ?>" alt="鮨ダイニング 天空">
+						<figcaption>鮨ダイニング「天空」</figcaption>
+					  </figure>
+					  <figure class="card wide">
+						<img src="<?= asset('/_assets/images/gtn/sec2-6.webp') ?>" alt="懐石料理と天ぷら 秋月">
+						<figcaption>懐石料理と天ぷら「秋月」</figcaption>
+					  </figure>
+			<?php endif; ?>
+			
+		  
 		</div>
 
 	  </div><!-- /.dining-gallery -->
