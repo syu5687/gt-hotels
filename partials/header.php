@@ -12,9 +12,9 @@ require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも�
 	  <a href="<?= url_with_lang('/#relax')  ?> class="notranslate"" <?= is_active(['index.php','']) ?>>RELAX</a>
 	</nav>
 
-	<div class="lang">
-	<button type="button" class="lang-btn">
-	  <img src="<?= asset('/_assets/svg/world.svg') ?>" alt="world">
+	<div class="lang notranslate>
+	<button type="button" class="lang-btn notranslate">
+	  <img src="<?= asset('/_assets/svg/world.svg') ?>"  class="notranslate" alt="world">
 	  <?= currentLangLabel() ?>
 	</button>
 	  <div class="lang-menu notranslate">
