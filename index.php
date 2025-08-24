@@ -1,8 +1,4 @@
-<?php
-require __DIR__ . '/partials/lang.php';
-require __DIR__ . '/config/i18n.php';
-i18n_begin();  // ← 先頭で開始
-?>
+
 <?php
 $pageTitle = 'Home';
 $pageDesc  = 'Garden Terrace Hotels | Luxury / City Resort / Relax';
