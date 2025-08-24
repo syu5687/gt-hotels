@@ -10,10 +10,10 @@
 	</nav>
 
 	<div class="lang">
-	  <button type="button" class="lang-btn">
-		<img src="<?= asset('/_assets/svg/world.svg') ?>" alt="world">
-		<?= htmlspecialchars(currentLangLabel(), ENT_QUOTES, 'UTF-8') ?>
-	  </button>
+	<button type="button" class="lang-btn">
+	  <img src="<?= asset('/_assets/svg/world.svg') ?>" alt="world">
+	  <?= currentLangLabel() ?>
+	</button>
 	  <div class="lang-menu">
 		<a href="<?= langLink('ja') ?>">JAPANESE</a>
 		<a href="<?= langLink('en') ?>">ENGLISH</a>
