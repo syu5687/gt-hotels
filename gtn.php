@@ -162,14 +162,56 @@ require __DIR__ . '/partials/header.php';
 
 		<!-- 2行目：2列（キャプションあり） -->
 		<div class="dining-row row-2col">
-		  <figure class="card">
-			<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
-			<figcaption>レストラン「フォレスト」</figcaption>
-		  </figure>
-		  <figure class="card">
-			<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
-			<figcaption>九州創作「千山万水」</figcaption>
-		  </figure>
+			<?php if ($lang==='en'): ?>
+				<figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
+					<figcaption>Restaurant “Forest”</figcaption>
+				  </figure>
+				  <figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
+					<figcaption>Kyushu Creative Cuisine “Senzen Bansui”</figcaption>
+				  </figure>
+
+			<?php elseif ($lang==='ko'): ?>
+				<figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
+					<figcaption>레스토랑 “포레스트”</figcaption>
+				  </figure>
+				  <figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
+					<figcaption>규슈 창작 “천산만수”</figcaption>
+				  </figure>
+
+			<?php elseif ($lang==='tc'): ?>
+				<figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
+					<figcaption>餐廳「森林」</figcaption>
+				  </figure>
+				  <figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
+					<figcaption>九州創意 「千山萬水」</figcaption>
+				  </figure>
+
+			<?php elseif ($lang==='sc'): ?>
+				<figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
+					<figcaption>餐厅「森林」</figcaption>
+				  </figure>
+				  <figure class="card">
+					<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
+					<figcaption>九州创意「千山万水」</figcaption>
+				  </figure>
+
+			<?php else: ?>
+					<figure class="card">
+						<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
+						<figcaption>レストラン「フォレスト」</figcaption>
+					  </figure>
+					  <figure class="card">
+						<img src="<?= asset('/_assets/images/gtn/sec2-5.webp') ?>" alt="九州創作 千山万水">
+						<figcaption>九州創作「千山万水」</figcaption>
+					  </figure>
+			<?php endif; ?>
 		</div>
 
 		<!-- 3行目：横長3枚（キャプションあり） -->
