@@ -463,72 +463,146 @@ require __DIR__ . '/partials/header.php';
 	  <?php endif; ?>
 
 	  <!-- 下段：客室一覧（表） -->
-	  <div class="stay-spec">
-		<div class="spec-head spec-grid">
-		  <div>客室タイプ</div>
-		  <div>広さ（m²）</div>
-		  <div>室数</div>
-		  <div>定員数</div>
-		  <div>ベッドサイズ</div>
-		</div>
+	  <?php if ($lang==='en'): ?>
+		  <div class="stay-spec">
+			<div class="spec-head spec-grid">
+			  <div>Room Type</div>
+			  <div>Size (m²)</div>
+			  <div>Number of Rooms</div>
+			  <div>Capacity</div>
+			  <div>Bed Size</div>
+			</div>
+			
+			<div class="spec-divider"></div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Garden Suite</div>
+			  <div>53〜59</div>
+			  <div>6rooms</div>
+			  <div>1-3 people</div>
+			  <div>Twin 1400 x 2000 + extra bed</div>
+			</div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Japanese Suite</div>
+			  <div>70〜79</div>
+			  <div>3 rooms</div>
+			  <div>1-6 people</div>
+			  <div>Japanese futon</div>
+			</div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Ocean Suite</div>
+			  <div>46〜54</div>
+			  <div>6 rooms</div>
+			  <div>1–3 people</div>
+			  <div>Twin 1400×2000 + extra bedド</div>
+			</div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Tower Suite</div>
+			  <div>50〜66</div>
+			  <div>6 rooms</div>
+			  <div>1–3 people</div>
+			  <div>Twin 1400×2000 + extra bed</div>
+			</div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Harbor Suite</div>
+			  <div>50</div>
+			  <div>8 rooms</div>
+			  <div>1-3 people</div>
+			  <div>v</div>
+			</div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Premium Harbor Suite</div>
+			  <div>50</div>
+			  <div>6 rooms</div>
+			  <div>1-3 people</div>
+			  <div>Twin 1400×2000 + extra bed</div>
+			</div>
+			
+			<div class="spec-row spec-grid">
+			  <div>Royal Suite</div>
+			  <div>100</div>
+			  <div>1 room</div>
+			  <div>1–3 guests</div>
+			  <div>Twin 1400×2000 + extra bed</div>
+			</div>
 
-		<div class="spec-divider"></div>
+	  <?php elseif ($lang==='ko'): ?>
+	  <?php elseif ($lang==='tc'): ?>
+	  <?php elseif ($lang==='sc'): ?>
+	  <?php else: ?>
+		  <div class="stay-spec">
+		  <div class="spec-head spec-grid">
+			<div>客室タイプ</div>
+			<div>広さ（m²）</div>
+			<div>室数</div>
+			<div>定員数</div>
+			<div>ベッドサイズ</div>
+		  </div>
+		  
+		  <div class="spec-divider"></div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>ガーデンスイート</div>
+			<div>53〜59</div>
+			<div>6室</div>
+			<div>1〜3名</div>
+			<div>ツイン 1400×2000＋エキストラベッド</div>
+		  </div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>ジャパニーズスイート</div>
+			<div>70〜79</div>
+			<div>3室</div>
+			<div>1〜6名</div>
+			<div>和布団</div>
+		  </div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>オーシャンスイート</div>
+			<div>46〜54</div>
+			<div>6室</div>
+			<div>1〜3名</div>
+			<div>ツイン 1400×2000＋エキストラベッド</div>
+		  </div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>タワースイート</div>
+			<div>50〜66</div>
+			<div>6室</div>
+			<div>1〜3名</div>
+			<div>ツイン 1400×2000＋エキストラベッド</div>
+		  </div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>ハーバースイート</div>
+			<div>50</div>
+			<div>8室</div>
+			<div>1〜3名</div>
+			<div>ツイン 1400×2000＋エキストラベッド</div>
+		  </div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>プレミアムハーバースイート</div>
+			<div>50</div>
+			<div>6室</div>
+			<div>1〜3名</div>
+			<div>ツイン 1400×2000＋エキストラベッド</div>
+		  </div>
+		  
+		  <div class="spec-row spec-grid">
+			<div>ロイヤルスイート</div>
+			<div>100</div>
+			<div>1室</div>
+			<div>1〜3名</div>
+			<div>ツイン 1400×2000＋エキストラベッド</div>
+		  </div>
 
-		<div class="spec-row spec-grid">
-		  <div>ガーデンスイート</div>
-		  <div>53〜59</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>ジャパニーズスイート</div>
-		  <div>70〜79</div>
-		  <div>3室</div>
-		  <div>1〜6名</div>
-		  <div>和布団</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>オーシャンスイート</div>
-		  <div>46〜54</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>タワースイート</div>
-		  <div>50〜66</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>ハーバースイート</div>
-		  <div>50</div>
-		  <div>8室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>プレミアムハーバースイート</div>
-		  <div>50</div>
-		  <div>6室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
-
-		<div class="spec-row spec-grid">
-		  <div>ロイヤルスイート</div>
-		  <div>100</div>
-		  <div>1室</div>
-		  <div>1〜3名</div>
-		  <div>ツイン 1400×2000＋エキストラベッド</div>
-		</div>
+	  <?php endif; ?>
 
 		<div class="spec-divider"></div>
 
