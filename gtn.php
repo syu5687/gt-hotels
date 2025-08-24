@@ -397,17 +397,70 @@ require __DIR__ . '/partials/header.php';
 		<img src="<?= asset('/_assets/images/gtn/sec4-1.webp') ?>" alt="">
 	  </figure>
 
-	  <!-- 見出し -->
-	  <h2 class="stay-title">その滞在は上質の本質を知るひと時となる。</h2>
 
 	  <!-- リード本文 -->
-	  <div class="stay-lead">
-		<p>長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。</p>
-		<p>本館のほかに2棟ある「離れ」の宿泊棟「オーシャンスイート」「タワースイート」。</p>
-		<p>シンプルな装飾の室内空間に、立体的に彫り込まれた印象的な天井や、海側に開放感あふれるテラスを構えたラグジュアリーな空間。</p>
-		<p>扉を開くと、海側に大きく開いた窓が目に飛び込み、時間の経過や季節の移ろいとともに表情を変える景色を楽しめます。</p>
-		<p>落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。</p>
-	  </div>
+	  <?php if ($lang==='en'): ?>
+		  <!-- 見出し -->
+			  <h2 class="stay-title">Your stay will be a moment to appreciate the essence of luxury.</h2>
+		  
+			<div class="stay-lead">
+				<p>The Premium Harbor Suite is a luxurious room located on the upper floors of the new Royal Terrace building, which has a terrace overlooking the city of Nagasaki. </p>
+				<p>In addition to the main building, there are two separate buildings, the Ocean Suite and Tower Suite. </p>
+				<p>The interior space features simple decor, with striking ceilings carved in three dimensions and a terrace on the sea side that offers a sense of openness. </p>
+				<p>Upon opening the door, you are greeted by large windows facing the sea, offering views that change with the passage of time and the seasons. </p>
+				<p>We promise you a high-quality, relaxing hotel stay in a calm and peaceful environment. </p>
+			  </div>
+
+	  <?php elseif ($lang==='ko'): ?>
+		  <!-- 見出し -->
+			  <h2 class="stay-title">그 체류는 고급스러운 본질을 체험하는 특별한 시간이 될 것입니다.
+</h2>
+		  
+			<div class="stay-lead">
+				<p>나가사키 시내가 한눈에 내려다보이는 테라스를 갖춘 신관 로열 테라스의 고층에 위치한 럭셔리 객실 ‘프리미엄 하버 스위트’.</p>
+				<p>본관 외에도 2동 있는 별관 숙박동 ‘오션 스위트'와 '타워 스위트’.</p>
+				<p>단순한 장식의 실내 공간에 입체적으로 조각된 인상적인 천장과 바다 쪽으로 개방감 넘치는 테라스를 갖춘 럭셔리 공간입니다. </p>
+				<p>문을 열면 바다 쪽으로 크게 열린 창문이 눈에 들어오며, 시간의 흐름과 계절의 변화에 따라 변하는 풍경을 즐길 수 있습니다. </p>
+				<p>차분한 공간에서 보내는 호텔 스테이로, 당신만의 고급스러운 시간을 약속드립니다. </p>
+			  </div>
+
+	  <?php elseif ($lang==='tc'): ?>
+		  <!-- 見出し -->
+			  <h2 class="stay-title">下榻此處，即是發現品質精髓的時刻。</h2>
+		  
+			<div class="stay-lead">
+				<p> Premium Harbour Suite 是位於 Royal Terrace 高層的豪華客房，這棟新建築擁有可俯瞰長崎市區的陽台。</p>
+				<p>海洋套房和塔樓套房是主樓之外的兩棟「獨立」住宿大樓。</p>
+				<p>豪華空間的內部裝潢簡潔，立體雕刻的天花板令人印象深刻，臨海的露天陽台也令人印象深刻。</p>
+				<p>打開房門，迎面而來的是一扇面向大海的大開窗，窗外的景色隨著時間的流逝和四季的變化而變化。</p>
+				<p>在寧靜的空間中住宿，我們承諾給您屬於自己的優質時光。</p>
+			  </div>
+
+	  <?php elseif ($lang==='sc'): ?>
+		  <!-- 見出し -->
+			  <h2 class="stay-title">此次住宿将为您带来一场品味高雅本质的难忘体验。</h2>
+		  
+			<div class="stay-lead">
+				<p>位于新馆皇家露台高层的豪华客房“プレミアムハーバースイート”，可俯瞰长崎市全景的露台令人叹为观止。</p>
+				<p>除主楼外，另设两栋独立住宿楼“オーシャンスイート”与“タワースイート”。</p>
+				<p>室内空间以简约装饰为特色，搭配立体雕刻的独特天花板，以及面向大海的开阔露台，营造出奢华的居住环境。</p>
+				<p>推开房门，映入眼帘的是面向大海的落地窗，您可随时间流转与季节更迭，欣赏不断变换的绝美景色。</p>
+				<p>在宁静的空间中度过酒店住宿时光，我们承诺为您带来专属的优质体验。</p>
+			  </div>
+
+	  <?php else: ?>
+		  <!-- 見出し -->
+			<h2 class="stay-title">その滞在は上質の本質を知るひと時となる。</h2>
+
+		  <div class="stay-lead">
+			  <p>長崎の街を一望できるテラスを構えた新館ロイヤルテラスの高層階に位置するラグジュアリールーム「プレミアムハーバースイート」。</p>
+			  <p>本館のほかに2棟ある「離れ」の宿泊棟「オーシャンスイート」「タワースイート」。</p>
+			  <p>シンプルな装飾の室内空間に、立体的に彫り込まれた印象的な天井や、海側に開放感あふれるテラスを構えたラグジュアリーな空間。</p>
+			  <p>扉を開くと、海側に大きく開いた窓が目に飛び込み、時間の経過や季節の移ろいとともに表情を変える景色を楽しめます。</p>
+			  <p>落ち着いた空間で過ごすホテルステイで、あなただけの上質なひとときをお約束します。</p>
+			</div>
+
+	  <?php endif; ?>
 
 	  <!-- 下段：客室一覧（表） -->
 	  <div class="stay-spec">
