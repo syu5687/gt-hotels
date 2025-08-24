@@ -18,11 +18,11 @@ require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも�
 	  <?= currentLangLabel() ?>
 	</button>
 	  <div class="lang-menu notranslate">
-		<a href="<?= langLink('ja') ?>">JAPANESE</a>
-		<a href="<?= langLink('en') ?>">ENGLISH</a>
-		<a href="<?= langLink('ko') ?>">韓国語</a>
-		<a href="<?= langLink('tc') ?>">繁体字</a>
-		<a href="<?= langLink('sc') ?>">簡体字</a>
+		<a href="<?= langLink('ja') ?>" class="notranslate">JAPANESE</a>
+		<a href="<?= langLink('en') ?>" class="notranslate">ENGLISH</a>
+		<a href="<?= langLink('ko') ?>" class="notranslate">韓国語</a>
+		<a href="<?= langLink('tc') ?>" class="notranslate">繁体字</a>
+		<a href="<?= langLink('sc') ?>" class="notranslate">簡体字</a>
 	  </div>
 	</div>
   </div>
