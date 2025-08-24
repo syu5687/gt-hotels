@@ -5,22 +5,29 @@
 declare(strict_types=1);
 
 // ========= 設定 =========
-const I18N_CACHE_DIR = __DIR__ . '/../_assets/i18n/cache';
-const I18N_DEEPL_URL = 'https://api.deepl.com/v2/translate'; // 有料版なら https://api.deepl.com/v2/translate
+// Cloud Run では書き込み可能なのは /tmp のみ
+const I18N_CACHE_DIR = '/tmp/i18n-cache';
 
+// Free キーならこっち（有料版は https://api.deepl.com/v2/translate）
+const I18N_DEEPL_URL = 'https://api-free.deepl.com/v2/translate';
+
+// ★APIキー：本番では環境変数に置くのが推奨ですが、直接書く場合はここ
 function i18n_api_key(): string {
-  return 'e7366784-6fe9-4039-9ff1-5d5c2a5ebf4a:fx'; // ★ここに直接書く
+  // 可能なら return getenv('DEEPL_API_KEY') ?: '...';
+  return 'e7366784-6fe9-4039-9ff1-5d5c2a5ebf4a:fx';
 }
 
+// ?lang= の取得と Cookie 反映（30日）
 function i18n_lang(): string {
   $q = strtolower($_GET['lang'] ?? '');
   if ($q) {
-	setcookie('lang', $q, time()+60*60*24*30, '/'); // 30日
+	setcookie('lang', $q, time()+60*60*24*30, '/');
 	return $q;
   }
   return strtolower($_COOKIE['lang'] ?? 'ja');
 }
 
+// DeepL のターゲットコード
 function i18n_target_code(string $lang): ?string {
   return match ($lang) {
 	'ja', ''   => null,        // 翻訳しない
@@ -34,7 +41,6 @@ function i18n_target_code(string $lang): ?string {
 
 // ========= パブリックAPI =========
 function i18n_begin(): void {
-  // 既にバッファ開始済みでも二重にならないように
   if (ob_get_level() === 0) {
 	ob_start('i18n_ob_callback');
   }
@@ -51,10 +57,10 @@ function i18n_ob_callback(string $html): string {
   // 日本語 or キー無し → 何もしない
   if (!$target || !i18n_api_key()) return $html;
 
-  // 翻訳除外処理： class="notranslate" の要素は <i18n-ignore>…</i18n-ignore> に置き換え（中身のみ）
+  // class="notranslate" の内側を <i18n-ignore>…</i18n-ignore> に置換
   $prepared = i18n_prepare_ignore($html);
 
-  // セクション分割（DeepLの制限対策）
+  // DeepL サイズ制限対策に分割
   $parts = i18n_split_by_section_or_size($prepared);
 
   $outParts = [];
@@ -69,15 +75,11 @@ function i18n_ob_callback(string $html): string {
   return $out;
 }
 
-// class="notranslate" を持つ要素の **内側** を <i18n-ignore>…</i18n-ignore> に差し替え
+// class="notranslate" の **内側** を ignore タグで包む
 function i18n_prepare_ignore(string $html): string {
-  // 例: <span class="foo notranslate bar">内容</span> → <span class="foo notranslate bar"><i18n-ignore>内容</i18n-ignore></span>
-  // 想定外のネストでも破綻しにくいように U(最短) + s(改行含む) フラグ利用
   $pattern = '/(<([a-zA-Z0-9:-]+)\b[^>]*\bclass="[^"]*\bnotranslate\b[^"]*"[^>]*>)(.*?)(<\/\2>)/sU';
   $repl    = '$1<i18n-ignore>$3</i18n-ignore>$4';
   $html    = preg_replace($pattern, $repl, $html);
-
-  // すでに <i18n-ignore>…</i18n-ignore> が直接書かれている場合はそのまま
   return $html;
 }
 
@@ -94,6 +96,7 @@ function i18n_split_by_section_or_size(string $html): array {
   return $out ?: [$html];
 }
 
+// 翻訳 + ファイルキャッシュ
 function i18n_translate_chunk(string $html, string $target): string {
   $hash = hash('sha256', $target.'|'.$html);
   $file = I18N_CACHE_DIR . "/$hash.html";
@@ -130,7 +133,7 @@ function i18n_call_deepl_html(string $html, string $target): string {
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_HTTPHEADER     => [
 	  'Content-Type: application/x-www-form-urlencoded',
-	  'Authorization: DeepL-Auth-Key ' . $key, // 推奨ヘッダ方式
+	  'Authorization: DeepL-Auth-Key ' . $key, // free/paid 共通の推奨ヘッダ
 	],
 	CURLOPT_POSTFIELDS     => $post,
 	CURLOPT_TIMEOUT        => 45,
@@ -140,10 +143,11 @@ function i18n_call_deepl_html(string $html, string $target): string {
   curl_close($ch);
 
   if ($res === false || $code !== 200) {
-	// 失敗時は原文を返す（必要なら error_log に JSON を吐く）
+	// 失敗時は原文を返す（必要に応じてログ）
+	// error_log("DeepL error($code): ".substr((string)$res,0,500));
 	return $html;
   }
-  $json = json_decode($res, true);
+  $json  = json_decode($res, true);
   $texts = $json['translations'][0]['text'] ?? '';
   return $texts !== '' ? $texts : $html;
 }
