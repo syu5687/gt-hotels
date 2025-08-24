@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/partials/lang.php';
 require __DIR__ . '/config/i18n.php';
 i18n_begin();  // ← 先頭で開始
 ?>
