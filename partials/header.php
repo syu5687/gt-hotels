@@ -1,22 +1,24 @@
 <?php
 require_once __DIR__.'/../config/app.php';
-require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも必ず言語ヘルパーを読み込む
+require_once __DIR__.'/lang.php';   // どのページでも言語ヘルパー読込
 ?>
 <header>
   <div class="bar">
-	<div class="logo notranslate"><a href="/" class="notranslate">Garden Terrace Hotels</a></div>
+	<div class="logo notranslate">
+	  <a href="/" class="notranslate">Garden Terrace Hotels</a>
+	</div>
 
 	<nav class="nav notranslate">
-	  <a href="<?= url_with_lang('/#luxury') ?> class="notranslate" <?= is_active(['index.php','']) ?>>LUXURY</a>
-	  <a href="<?= url_with_lang('/#city')   ?> class="notranslate" <?= is_active(['index.php','']) ?>>CITY RESORT</a>
-	  <a href="<?= url_with_lang('/#relax')  ?> class="notranslate" <?= is_active(['index.php','']) ?>>RELAX</a>
+	  <a href="<?= url_with_lang('/#luxury') ?>" class="notranslate" <?= is_active(['index.php','']) ?>>LUXURY</a>
+	  <a href="<?= url_with_lang('/#city')   ?>" class="notranslate" <?= is_active(['index.php','']) ?>>CITY RESORT</a>
+	  <a href="<?= url_with_lang('/#relax')  ?>" class="notranslate" <?= is_active(['index.php','']) ?>>RELAX</a>
 	</nav>
 
-	<div class="lang notranslate>
-	<button type="button" class="lang-btn notranslate">
-	  <img src="<?= asset('/_assets/svg/world.svg') ?>"  class="notranslate" alt="world">
-	  <?= currentLangLabel() ?>
-	</button>
+	<div class="lang notranslate">
+	  <button type="button" class="lang-btn notranslate">
+		<img src="<?= asset('/_assets/svg/world.svg') ?>" class="notranslate" alt="world">
+		<?= currentLangLabel() ?>
+	  </button>
 	  <div class="lang-menu notranslate">
 		<a href="<?= langLink('ja') ?>" class="notranslate">JAPANESE</a>
 		<a href="<?= langLink('en') ?>" class="notranslate">ENGLISH</a>
@@ -29,15 +31,17 @@ require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも�
 </header>
 
 <script>
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   const urlParams = new URLSearchParams(location.search);
   const lang = urlParams.get('lang') || (document.cookie.match(/(?:^| )lang=([^;]+)/)||[])[1] || 'ja';
 
-  // 内部リンクに ?lang を付与
+  // 内部リンクに ?lang を付与（外部 / # / 既にlang= 付きは除外）
   document.querySelectorAll('a').forEach(a => {
 	const href = a.getAttribute('href');
 	if (!href) return;
-	if (!href.startsWith('/')) return;     // 外部や # は除外
+	if (href.startsWith('#')) return;
+	if (/^https?:\/\//i.test(href)) return;
+	if (!href.startsWith('/')) return;
 	if (href.includes('lang=')) return;
 
 	const sep = href.includes('?') ? '&' : '?';
