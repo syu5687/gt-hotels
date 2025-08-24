@@ -4,12 +4,12 @@ require_once __DIR__.'/lang.php';   // ← 追加：どのページからでも�
 ?>
 <header>
   <div class="bar">
-	<div class="logo notranslate"><a href="/">Garden Terrace Hotels</a></div>
+	<div class="logo notranslate"><a href="/" class="notranslate">Garden Terrace Hotels</a></div>
 
 	<nav class="nav notranslate">
-	  <a href="<?= url_with_lang('/#luxury') ?>" <?= is_active(['index.php','']) ?>>LUXURY</a>
-	  <a href="<?= url_with_lang('/#city')   ?>" <?= is_active(['index.php','']) ?>>CITY RESORT</a>
-	  <a href="<?= url_with_lang('/#relax')  ?>" <?= is_active(['index.php','']) ?>>RELAX</a>
+	  <a href="<?= url_with_lang('/#luxury') ?> class="notranslate"" <?= is_active(['index.php','']) ?>>LUXURY</a>
+	  <a href="<?= url_with_lang('/#city')   ?> class="notranslate"" <?= is_active(['index.php','']) ?>>CITY RESORT</a>
+	  <a href="<?= url_with_lang('/#relax')  ?> class="notranslate"" <?= is_active(['index.php','']) ?>>RELAX</a>
 	</nav>
 
 	<div class="lang">
