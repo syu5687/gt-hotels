@@ -22,7 +22,7 @@ require __DIR__.'/partials/header.php';
 	<!-- <a href="#luxury" class="scroll-link"><div class="scroll">SCROLL</div></a> -->
   </section>
 
-  <section id="luxury" class="section">
+  <section id="luxury" class="section notranslate">
 	<h3>LUXURY</h3>
 	<div class="logos row-3">
 	  <div class="logo-card"><a href="/gtn.php"><img src="<?= asset('/_assets/svg/nagasaki.svg') ?>" alt="Garden Terrace Nagasaki"></a></div>
@@ -35,7 +35,7 @@ require __DIR__.'/partials/header.php';
 	</div>
   </section>
 
-  <section id="city" class="section">
+  <section id="city" class="section notranslate">
 	<h3>CITY RESORT</h3>
 	<div class="logos tail">
 	  <div class="logo-card"><a href="/hf99.php"><img src="<?= asset('/_assets/svg/sasebo.svg') ?>" alt="Hotel Flags Sasebo Kujukushima"></a></div>
@@ -43,7 +43,7 @@ require __DIR__.'/partials/header.php';
 	</div>
   </section>
 
-  <section id="relax" class="section">
+  <section id="relax" class="section notranslate">
 	<h3>RELAX</h3>
 	<div class="logos tail">
 	  <div class="logo-card"><a href="/bekkan.php"><img src="<?= asset('/_assets/svg/bekkan.svg') ?>" alt="Hotel Flags Bekkan"></a></div>
