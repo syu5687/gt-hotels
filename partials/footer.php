@@ -3,7 +3,7 @@
 
 
 <footer class="site-footer">
-  <div class="footer-inner">
+  <div class="footer-inner notranslate">
     <small>© <?= date('Y') ?> Garden Terrace Hotels</small>
   </div>
 </footer>
