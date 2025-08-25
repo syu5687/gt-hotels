@@ -118,7 +118,13 @@
 /* =========================================================
    Section 3: BREEZE
 ========================================================= */
-.gtn-sec--breeze{ position:relative; padding:56px 0; background:#f7f6f3; }
+.gtn-sec--breeze{ 
+  position:relative; 
+  padding:56px 0; 
+  /* background:#f7f6f3;  */
+  background:#fff; 
+
+}
 .gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
 .breeze-hero{ margin:0 0 28px; }
@@ -155,7 +161,7 @@
 ========================================================= */
 .gtn-sec--stay{ 
   padding:56px 0; 
-  background: url("/_assets/images/gtf/bg2-1.jpg"),#F7F5F1;
+  background: url("/_assets/images/gtf/bg2-2.jpg"),#F7F5F1;
   background-position: top;
   background-size: 100%;
   background-repeat: no-repeat;
