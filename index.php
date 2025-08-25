@@ -19,9 +19,9 @@ require __DIR__.'/partials/header.php';
   <section id="luxury" class="section notranslate">
 	<h3 class="notranslate">LUXURY</h3>
 	<div class="logos row-3">
-	  <div class="logo-card"><a href="/gtn.php"><img src="<?= asset('/_assets/svg/nagasaki.svg') ?>" alt="Garden Terrace Nagasaki"></a></div>
+	  <div class="logo-card"><a href="/gtn.php"><img src="<?= asset('/_assets/svg/nagasaki.svg') ?>" alt="Garden Terrace Nagasaki" width="90%" hight="auto"></a></div>
 	  <div class="logo-card"><a href="/gts.php"><img src="<?= asset('/_assets/svg/saga.svg') ?>" alt="Garden Terrace Saga"></a></div>
-	  <div class="logo-card"><a href="/gtf.php"><img src="<?= asset('/_assets/svg/fukuoka.svg') ?>" alt="Garden Terrace Fukuoka"></a></div>
+	  <div class="logo-card"><a href="/gtf.php"><img src="<?= asset('/_assets/svg/fukuoka.svg') ?>" alt="Garden Terrace Fukuoka" width="87%" hight="auto"></a></div>
 	</div>
 	<div class="logos tail">
 	  <div class="logo-card"><a href="urari.php"><img src="<?= asset('/_assets/svg/urari.svg') ?>" alt="URARI TAKEO"></a></div>
