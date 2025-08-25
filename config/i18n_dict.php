@@ -1,50 +1,86 @@
 <?php
-// 固定訳語を指定（完全一致置換）
-// '*' は全言語共通、言語別は 'en','ko','tc','sc' キーに記述
+// /config/i18n_dict.php
 return [
+  // 全言語共通で守りたい固有名詞（そのまま出したいとき）
   '*' => [
-    // 共通で守りたい固有名詞など
     'GARDEN TERRACE NAGASAKI' => 'GARDEN TERRACE NAGASAKI',
-    'GARDEN TERRACE SAGA' => 'GARDEN TERRACE SAGA',
-    'GARDEN TERRACE FUKUOKA' => 'GARDEN TERRACE FUKUOKA',
+    'GARDEN TERRACE SAGA'     => 'GARDEN TERRACE SAGA',
+    'GARDEN TERRACE FUKUOKA'  => 'GARDEN TERRACE FUKUOKA',
     'URARI TAKEO GARDEN TERRACE SPA RESORTS' => 'URARI TAKEO GARDEN TERRACE SPA RESORTS',
     'ROYAL CHESTER NAGASAKI HOTEL & RETREAT' => 'ROYAL CHESTER NAGASAKI HOTEL & RETREAT',
-    'HOTEL FLAGS SASEBO KUJUKUSHIMA' => 'HOTEL FLAGS SASEBO KUJUKUSHIMA',
-    'HOTEL FLAGS ISAHAYA NAGASAKI' => 'HOTEL FLAGS ISAHAYA NAGASAKI',
+    'HOTEL FLAGS SASEBO KUJUKUSHIMA'         => 'HOTEL FLAGS SASEBO KUJUKUSHIMA',
+    'HOTEL FLAGS ISAHAYA NAGASAKI'           => 'HOTEL FLAGS ISAHAYA NAGASAKI',
     'HOTEL FLAGS SASEBO KUJUKUSHIMA the BEKKAN' => 'HOTEL FLAGS SASEBO KUJUKUSHIMA the BEKKAN',
-    'GOTO KON-KANA KINGDOM WINERY & RESORT' => 'GOTO KON-KANA KINGDOM WINERY & RESORT',
+    'GOTO KON-KANA KINGDOM WINERY & RESORT'  => 'GOTO KON-KANA KINGDOM WINERY & RESORT',
   ],
+
+  // ───── 英語：DeepLが出す英語をキーに → 望む最終表記へ上書き ─────
   'en' => [
-    'レストラン「フォレスト」' => 'Restaurant “FOREST”',
-    '鉄板焼ダイニング「竹彩」' => 'Teppanyaki dining "CHIKUSAI"',
-    '鮨ダイニング「天空」'=> 'Sushi dining "TENKU"',
-    '懐石料理と天ぷら「秋月」'=> 'Kaiseki Cuisine and Tempura "AKIZUKI"',
-    '九州創作「千山万水」' => 'Kyusyu Creative "Senzan Bansui"',
+    // FOREST を必ず大文字に・引用符ゆらぎ対応
+    'Restaurant "Forest"'  => 'Restaurant “FOREST”',
+    'Restaurant “Forest”'  => 'Restaurant “FOREST”',
+    "Restaurant 'Forest'"  => 'Restaurant “FOREST”',
+
+    // TAKESAI（またはCHIKUSAIにしたいならこっちを使う）
+    'Teppanyaki dining "Takesai"' => 'Teppanyaki Dining “TAKESAI”',
+    'Teppanyaki Dining "Takesai"' => 'Teppanyaki Dining “TAKESAI”',
+    'Teppanyaki Dining “Takesai”' => 'Teppanyaki Dining “TAKESAI”',
+
+    // DeepL の大文字小文字ゆらぎ吸収
+    'Teppanyaki dining “Chikusai”' => 'Teppanyaki Dining “TAKESAI”',
+    'Teppanyaki Dining “Chikusai”' => 'Teppanyaki Dining “TAKESAI”',
+
+    // TENKU / AKIZUKI
+    'Sushi dining "Tenku"' => 'Sushi Dining “TENKU”',
+    'Sushi Dining "Tenku"' => 'Sushi Dining “TENKU”',
+    'Sushi Dining “Tenku”' => 'Sushi Dining “TENKU”',
+
+    'Kaiseki Cuisine and Tempura "Akizuki"' => 'Kaiseki Cuisine and Tempura “AKIZUKI”',
+    'Kaiseki cuisine and tempura "Akizuki"' => 'Kaiseki Cuisine and Tempura “AKIZUKI”',
+    'Kaiseki Cuisine and Tempura “Akizuki”' => 'Kaiseki Cuisine and Tempura “AKIZUKI”',
+
+    // Kyushu / Senzan Mansui の表記を正す
+    'Kyusyu' => 'Kyushu',
+    'Senzan Bansui' => 'Senzan Mansui',
+    'Kyusyu Creative "Senzan Bansui"' => 'Kyushu Creative “Senzan MBnsui”',
+    'Kyushu Creative "Senzan Bansui"' => 'Kyushu Creative “Senzan Bansui”',
+    'Kyushu Creative “Senzan Bansui”' => 'Kyushu Creative “Senzan Bansui”',
   ],
+
+  // ───── 繁体字（tc）：FORESTなどを大文字で固定 ─────
   'tc' => [
-    'レストラン「フォレスト」' => '餐廳「FOREST」',
-    'フォレスト' => 'FOREST',
+    '餐廳「Forest」' => '餐廳「FOREST」',
+    '餐廳“Forest”'   => '餐廳「FOREST」',
+    'Forest'          => 'FOREST',
+
     '竹彩' => 'CHIKUSAI',
     '天空' => 'TENKU',
     '秋月' => 'AKIZUKI',
-    '千山万水' => 'SENZAN BANSUI',
+
+    // 任意：表記ブレ補正
+    '千山萬水' => 'SENZAN BANSUI',
   ],
+
+  // ───── 簡体字（sc） ─────
   'sc' => [
-    'レストラン「フォレスト」' => '餐厅“FOREST”',
-    'フォレスト' => 'FOREST',
+    '餐厅“Forest”' => '餐厅“FOREST”',
+    '餐廳“Forest”' => '餐厅“FOREST”',
+    'Forest'        => 'FOREST',
+
     '竹彩' => 'CHIKUSAI',
     '天空' => 'TENKU',
     '秋月' => 'AKIZUKI',
     '千山万水' => 'SENZAN BANSUI',
-
   ],
+
+  // ───── 韓国語（ko） ─────
   'ko' => [
-    'レストラン「フォレスト」' => '레스토랑 “FOREST”',
-    'フォレスト' => 'FOREST',
+    '레스토랑 “Forest”' => '레스토랑 “FOREST”',
+    'Forest'            => 'FOREST',
+
     '竹彩' => 'CHIKUSAI',
     '天空' => 'TENKU',
     '秋月' => 'AKIZUKI',
     '千山万水' => 'SENZAN BANSUI',
-
   ],
 ];
