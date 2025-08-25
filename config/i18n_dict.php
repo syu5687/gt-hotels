@@ -22,13 +22,13 @@ return [
     "Restaurant 'Forest'"  => 'Restaurant “FOREST”',
 
     // TAKESAI（またはCHIKUSAIにしたいならこっちを使う）
-    'Teppanyaki dining "Takesai"' => 'Teppanyaki Dining “TAKESAI”',
-    'Teppanyaki Dining "Takesai"' => 'Teppanyaki Dining “TAKESAI”',
-    'Teppanyaki Dining “Takesai”' => 'Teppanyaki Dining “TAKESAI”',
+    'Teppanyaki dining "Takesai"' => 'Teppanyaki Dining “CHIKUSAI”',
+    'Teppanyaki Dining "Takesai"' => 'Teppanyaki Dining “CHIKUSAI”',
+    'Teppanyaki Dining “Takesai”' => 'Teppanyaki Dining “CHIKUSAI”',
 
     // DeepL の大文字小文字ゆらぎ吸収
-    'Teppanyaki dining “Chikusai”' => 'Teppanyaki Dining “TAKESAI”',
-    'Teppanyaki Dining “Chikusai”' => 'Teppanyaki Dining “TAKESAI”',
+    'Teppanyaki dining “Chikusai”' => 'Teppanyaki Dining “CHIKUSAI”',
+    'Teppanyaki Dining “Chikusai”' => 'Teppanyaki Dining “CHIKUSAI”',
 
     // TENKU / AKIZUKI
     'Sushi dining "Tenku"' => 'Sushi Dining “TENKU”',
@@ -42,7 +42,7 @@ return [
     // Kyushu / Senzan Mansui の表記を正す
     'Kyusyu' => 'Kyushu',
     'Senzan Bansui' => 'Senzan Mansui',
-    'Kyusyu Creative "Senzan Bansui"' => 'Kyushu Creative “Senzan MBnsui”',
+    'Kyusyu Creative "Senzan Bansui"' => 'Kyushu Creative “Senzan Bansui”',
     'Kyushu Creative "Senzan Bansui"' => 'Kyushu Creative “Senzan Bansui”',
     'Kyushu Creative “Senzan Bansui”' => 'Kyushu Creative “Senzan Bansui”',
   ],
