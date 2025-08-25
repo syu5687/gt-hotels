@@ -30,7 +30,7 @@ require __DIR__ . '/partials/header.php';
 <div class="gtn-hero__lead">
 	<p class="gtn-hero__copyL">まだ見たことのない特別な長崎に逢える場所。</p>
 	
-	<p class="gtn-hero__brand notranslate">GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS</p>
+	<p class="gtn-hero__brand notranslate"><i18n-ignore>GARDEN TERRACE NAGASAKI HOTELS &amp; RESORTS/i18n-ignore></p>
   </div>
   <!-- =========================
 	   SECTION 1：客室・眺望
