@@ -21,16 +21,16 @@ require __DIR__ . '/partials/header.php';
 	<div class="gtn-hero__bg">
 	  <img src="<?= asset('/_assets/images/conkana/hero.webp?2') ?>" alt="">
 	</div>
-	<div class="gtn-hero__lead">
-	  <p class="gtn-hero__copyL">極上のワインと共に心安らぐひとときを。</p>
-	  <p class="gtn-hero__brand">GOTO KON-KANA KINGDOM WINERY &amp; RESORT</p>
-	</div>
+	
 	<!-- 右上ロゴ -->
 	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/forest.svg') ?>"
 		 alt="GOTO KON-KANA KINGDOM WINERY & RESORT"> -->
   </section>
-
+<div class="gtn-hero__lead">
+	<p class="gtn-hero__copyL">極上のワインと共に心安らぐひとときを。</p>
+	<p class="gtn-hero__brand notranslate">GOTO KON-KANA KINGDOM WINERY &amp; RESORT</p>
+  </div>
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->

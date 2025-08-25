@@ -32,7 +32,7 @@ require __DIR__ . '/partials/header.php';
   </section>
 	<div class="gtn-hero__lead">
 	<p class="gtn-hero__copyL">訪れるたびに思い出せる、ふたりのリゾート</p>
-	<p class="gtn-hero__brand">GARDEN TERRACE FUKUOKA  HOTELS &amp; RESORTS</p>
+	<p class="gtn-hero__brand notranslate">GARDEN TERRACE FUKUOKA  HOTELS &amp; RESORTS</p>
   </div>
 
   <!-- =========================
