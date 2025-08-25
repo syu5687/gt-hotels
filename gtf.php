@@ -1,4 +1,9 @@
 <?php
+require __DIR__ . '/partials/lang.php';
+require __DIR__ . '/config/i18n.php';
+i18n_begin();  // ← 先頭で開始
+?>
+<?php
 // ページ情報（index.cssは読み込まない運用。gtn.php → gtn.css を自動読込）
 $pageTitle = 'Garden Terrace Fukuoka';
 $pageDesc  = ''; // SEOテキスト不要
@@ -25,6 +30,10 @@ require __DIR__ . '/partials/header.php';
 		 src="<?= asset('/_assets/svg/fukuoka.svg') ?>"
 		 alt="Garden Terrace Fukuoka"> -->
   </section>
+	<div class="gtn-hero__lead">
+	<p class="gtn-hero__copyL">訪れるたびに思い出せる、ふたりのリゾート</p>
+	<p class="gtn-hero__brand notranslate">GARDEN TERRACE FUKUOKA  HOTELS &amp; RESORTS</p>
+  </div>
 
   <!-- =========================
 	   SECTION 1：客室・眺望
@@ -252,3 +261,4 @@ require __DIR__ . '/partials/header.php';
 
 <?php require __DIR__ . '/partials/footer.php'; ?>
 <?php require __DIR__ . '/partials/scripts.php'; ?>
+<?php i18n_end(); ?>

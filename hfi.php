@@ -1,4 +1,9 @@
 <?php
+require __DIR__ . '/partials/lang.php';
+require __DIR__ . '/config/i18n.php';
+i18n_begin();  // ← 先頭で開始
+?>
+<?php
 // ページ情報（index.cssは読み込まない運用。gtn.php → gtn.css を自動読込）
 $pageTitle = 'HOTEL FLAGS ISAHAYA NAGASAKI';
 $pageDesc  = ''; // SEOテキスト不要
@@ -16,16 +21,16 @@ require __DIR__ . '/partials/header.php';
 	<div class="gtn-hero__bg">
 	  <img src="<?= asset('/_assets/images/hfi/hero.webp?2') ?>" alt="">
 	</div>
-	<!-- <div class="gtn-hero__lead">
-	  <p class="gtn-hero__copyL">いつも寄り添える場所をあなたへ</p>
-	  <p class="gtn-hero__brand">HOTEL FLAGS ISAHAYA NAGASAKI</p>
-	</div> -->
+	
 	<!-- 右上ロゴ -->
 	<!-- <img class="gtn-hero__mark"
 		 src="<?= asset('/_assets/svg/isahaya.svg') ?>"
 		 alt="HOTEL FLAGS ISAHAYA NAGASAKI"> -->
   </section>
-
+<div class="gtn-hero__lead">
+	<p class="gtn-hero__copyL">いつも寄り添える場所をあなたへ</p>
+	<p class="gtn-hero__brand notranslate">HOTEL FLAGS ISAHAYA NAGASAKI</p>
+  </div>
   <!-- =========================
 	   SECTION 1：客室・眺望
   ========================== -->
@@ -286,3 +291,4 @@ require __DIR__ . '/partials/header.php';
 
 <?php require __DIR__ . '/partials/footer.php'; ?>
 <?php require __DIR__ . '/partials/scripts.php'; ?>
+<?php i18n_end(); ?>

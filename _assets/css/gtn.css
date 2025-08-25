@@ -13,7 +13,7 @@
 }
 .gtn img { display: block; max-width: 100%; height: auto; }
 .gtn h1, .gtn h2, .gtn h3, .gtn p, .gtn ul { margin: 0; }
-.gtn section { padding: 60px 20px; }
+.gtn section { padding: 0px 20px; }
 .gtn .gtn-wrap { max-width: 1180px; margin: 0 auto; }
 .gtn figure { margin: 0; }
 
@@ -46,16 +46,23 @@
 /* =========================================================
    Section 1: ROOMS
 ========================================================= */
-.gtn-sec--rooms{ position:relative; padding:56px 20px 48px; background:#fff; margin-bottom: 10px; /* ← 下に10px余白を追加 */}
+.gtn-sec--rooms{ 
+  position:relative;
+  padding:56px 20px 48px; 
+  background-image: url("/_assets/images/gtn/bg.svg");
+  background-size: 100%;
+  margin-bottom: 0px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
 .gtn-sec--rooms .rooms-grid{ display:grid; gap:32px; align-items:start; }
 @media (min-width:960px){
   .gtn-sec--rooms .rooms-grid{ grid-template-columns:minmax(520px,1fr) minmax(420px,560px); }
 }
-.rooms-photoL img{ width:100%; height:clamp(320px,52vw,540px); object-fit:cover; object-position:center; }
+.rooms-photoL img{ width:100%; height:clamp(320px,40vw,540px); object-fit:cover; object-position:center; }
 .rooms-side{ display:flex; flex-direction:column; gap:22px; }
 .rooms-photoS img{ width:100%; height:clamp(160px,22vw,230px); object-fit:cover; object-position:center; }
 .rooms-text{ line-height:2; color:#222; }
-
 /* ===== セクション間の背景帯（back1.svg：フルブリード） ===== */
 .gtn-divider{
   width: 100vw;
@@ -108,7 +115,15 @@
 /* =========================================================
    Section 3: BREEZE
 ========================================================= */
-.gtn-sec--breeze{ position:relative; padding:56px 0; background:#f7f6f3; }
+.gtn-sec--breeze{ 
+  position:relative; 
+  padding:56px 0; 
+  background-image: url("/_assets/images/gtn/bg.svg");
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 0px;
+ }
 .gtn-sec--breeze .gtn-wrap{ max-width:1160px; margin:0 auto; padding:0 24px; }
 
 .breeze-hero{ margin:0 0 28px; }
@@ -116,6 +131,7 @@
   display:block; width:100vw; max-width:100vw;
   height:clamp(240px,38vw,560px); object-fit:cover; object-position:center;
   margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+  padding-left: 50px;
 }
 
 /* Section2 と完全統一 */
@@ -169,7 +185,7 @@
 }
 .stay-spec .spec-row{
   /* font-size: clamp(16px, 1.35vw, 20px); */
-  font-size: clamp(13px, 1.35vw, 20px);
+  font-size: clamp(13px, 1.35vw, 14px);
   line-height: 2.2;
   color:#222;
 }

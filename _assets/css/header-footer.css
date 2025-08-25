@@ -76,48 +76,51 @@ a:visited {
 .nav a::after:hover{background:transparent}
 
 /* === Language dropdown (pill button) === */
-.lang{position:relative;}
-
+/* ボタンを1つのピルに固定 */
+.lang { position: relative; }
 .lang-btn{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:6px 14px;
-  border-radius:999px;
-  font-size:13px;
-  letter-spacing:.02em;
-  cursor:pointer;
-  background:rgba(255,255,255,.95);  /* 白いピル */
-  color:#333;
-  border:1px solid rgba(0,0,0,.08);
+  padding:6px 12px;
+  border-radius:9999px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.12);
   box-shadow:0 1px 2px rgba(0,0,0,.06);
+  white-space:nowrap;        /* ← 折り返し禁止 */
+  line-height:1;
 }
-.lang-btn img{width:16px;height:16px;display:block}
-.lang-btn:hover{
-  background:#fff; color:#222;
-  border-color:rgba(0,0,0,.15);
-  box-shadow:0 2px 6px rgba(0,0,0,.08);
+.lang-btn__inner{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;                   /* アイコンとラベルの間隔 */
 }
-.lang.open .lang-btn{
-  background:#fff; color:#222; border-color:rgba(0,0,0,.15);
+.lang-btn img{
+  width:16px; height:16px;
+  display:block;
+  /* 余計な背景・角丸が付かないよう念押し */
+  background:transparent;
+  border:0; border-radius:0;
+  padding:0; margin:0;
 }
+.lang-label{ display:inline-block; }
 
 /* ドロップダウン */
 .lang-menu{
-  position:absolute; right:0; top:calc(100% + 10px);
-  min-width:260px;
+  position:absolute; right:0; top:calc(100% + 8px);
+  min-width:220px;
   background:rgba(0,0,0,.65);
-  backdrop-filter:saturate(140%) blur(6px);
+  color:#fff;
   border:1px solid rgba(255,255,255,.25);
-  border-radius:16px; padding:14px;
-  display:none; z-index:2000;
+  border-radius:14px;
+  padding:12px;
+  display:none;
+  backdrop-filter:saturate(140%) blur(6px);
 }
-.lang.open .lang-menu{display:block;}
+.lang:hover .lang-menu{ display:block; }
 .lang-menu a{
-  display:block; color:#fff; text-decoration:none;
-  padding:10px 12px; border-radius:10px; letter-spacing:.18em;
+  display:block; padding:9px 10px; border-radius:8px; text-decoration:none; color:#fff;
 }
-.lang-menu a:hover,.lang-menu a:focus{background:rgba(255,255,255,.12)}
+.lang-menu a:hover{ background:rgba(255,255,255,.12); }
 
 /* === Footer === */
 .site-footer{margin:40px 0 28px; color:#777; font-size:12px;}

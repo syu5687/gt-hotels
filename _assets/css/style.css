@@ -49,7 +49,7 @@ body{
 }
 
 /* 上段3つだけ拡大（ご指定：280px） */
-.logos.row-3 .logo-card img{ max-height:280px;width:60%; }
+.logos.row-3 .logo-card img{ max-height:280px;width:75%; }
 
 /* Footer */
 footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
