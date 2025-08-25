@@ -52,7 +52,7 @@ body{
 .logos.row-3 .logo-card img{ max-height:280px;width:75%; }
 
 .logos.row-3 .logo-card:nth-child(1) img,
-.logos.row-3 .logo-card:nth-child(3) img{ max-height:280px;width:88%; }
+.logos.row-3 .logo-card:nth-child(3) img{ max-height:280px;width:235px; }
 
 /* Footer */
 footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
