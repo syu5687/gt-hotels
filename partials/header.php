@@ -17,7 +17,7 @@ require_once __DIR__.'/lang.php';   // どのページでも言語ヘルパー�
 	<div class="lang notranslate">
 	  <button type="button" class="lang-btn notranslate">
 		<img src="<?= asset('/_assets/svg/world.svg') ?>" class="notranslate" alt="world">
-		<?= currentLangLabel() ?>
+		<span class="notranslate"><?= currentLangLabel() ?></span>
 	  </button>
 	  <div class="lang-menu notranslate">
 		<a href="<?= langLink('ja') ?>" class="notranslate">JAPANESE</a>
