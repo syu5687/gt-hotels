@@ -32,9 +32,19 @@ return [
   'sc' => [
     'レストラン「フォレスト」' => '餐厅“FOREST”',
     'フォレスト' => 'FOREST',
+    '竹彩' => 'CHIKUSAI',
+    '天空' => 'TENKU',
+    '秋月' => 'AKIZUKI',
+    '千山万水' => 'SENZAN BANSUI',
+
   ],
   'ko' => [
     'レストラン「フォレスト」' => '레스토랑 “FOREST”',
     'フォレスト' => 'FOREST',
+    '竹彩' => 'CHIKUSAI',
+    '天空' => 'TENKU',
+    '秋月' => 'AKIZUKI',
+    '千山万水' => 'SENZAN BANSUI',
+
   ],
 ];
