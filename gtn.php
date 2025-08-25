@@ -91,14 +91,14 @@ require __DIR__ . '/partials/header.php';
 			<img src="<?= asset('/_assets/images/gtn/sec2-2.webp') ?>" alt="">
 		  </figure>
 		  <figure class="card no-cap">
-			<img src="<?= asset('/_assets/images/gtn/sec2-3.webp') ?>" alt="">
+			<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="">
 		  </figure>
 		</div>
 
 		<!-- 2行目：2列（キャプションあり） -->
 		<div class="dining-row row-2col">
 		  <figure class="card">
-			<img src="<?= asset('/_assets/images/gtn/sec2-4.webp') ?>" alt="レストラン フォレスト">
+			<img src="<?= asset('/_assets/images/gtn/sec2-3.webp') ?>" alt="レストラン フォレスト">
 			<figcaption>レストラン「フォレスト」</figcaption>
 		  </figure>
 		  <figure class="card">
