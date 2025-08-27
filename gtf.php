@@ -251,7 +251,7 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-fukuoka.jp/" target="_blank" rel="noopener">https://www.gt-fukuoka.jp/</a>
+		  <a href="https://www.gt-fukuoka.net/" target="_blank" rel="noopener">https://www.gt-fukuoka.net/</a>
 		</p>
 	  </div>
 
