@@ -264,12 +264,10 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://uraritakeo.jp/" target="_blank" rel="noopener">https://uraritakeo.jp/</a><br>
+		  <a href="https://uraritakeo.jp/" target="_blank" rel="noopener">https://uraritakeo.jp/</a></p><br>
 		  <span class="mark">■</span>
 		  〒843-0021 佐賀県武雄市武雄町大字永島15750-1
 		  <a href="https://maps.app.goo.gl/odemkDm7ojdTYKzM8" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
-
-		</p>
 	  </div>
 
 	</div>

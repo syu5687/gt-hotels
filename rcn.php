@@ -252,11 +252,10 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.nagasaki-rch.jp/" target="_blank" rel="noopener">https://www.nagasaki-rch.jp/</a><br>
+		  <a href="https://www.nagasaki-rch.jp/" target="_blank" rel="noopener">https://www.nagasaki-rch.jp/</a></p><br>
 		  <span class="mark">■</span>
 			〒852-8156 長崎県長崎市赤迫3–6-10
 			<a href="https://maps.app.goo.gl/RGPvZBPcrP944V7c9" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
-		</p>
 	  </div>
 
 	</div>
