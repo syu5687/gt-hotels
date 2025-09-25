@@ -282,6 +282,9 @@ require __DIR__ . '/partials/header.php';
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
 		  <a href="https://flags-isahaya.jp/" target="_blank" rel="noopener">https://flags-isahaya.jp/</a>
+		  <span class="mark">■</span>
+		  〒854-0004 長崎県諫早市金谷町8-7
+		  <a href="https://maps.app.goo.gl/HsXmQUPPrxnZZwg77" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow">)</a>
 		</p>
 	  </div>
 

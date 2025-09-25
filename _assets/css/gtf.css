@@ -247,6 +247,8 @@ padding-top:20px; }
 
   .stay-spec{ padding: 22px 16px; }
 }
+.map{text-decoration: underline;}
+.iconwindow{display: inline-block;width: 1rem;padding-left: 4px;}
 
 /* =========================================================
    レスポンシブ微調整

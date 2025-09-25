@@ -213,6 +213,8 @@ padding-top:20px;
   text-decoration: underline;
   word-break: break-all;
 }
+.map{text-decoration: underline;}
+.iconwindow{display: inline-block;width: 1rem;padding-left: 4px;}
 
 /* スマホ：2行構成 */
 @media (max-width: 880px){
