@@ -177,7 +177,7 @@ require __DIR__ . '/partials/header.php';
 
 	  <!-- 上：ワイド（客室のワイド写真） -->
 	  <figure class="stay-hero">
-		<img src="<?= asset('/_assets/images/gtn/sec4-1.webp') ?>" alt="">
+		<img src="<?= asset('/_assets/images/gtn/sec4-1-1.webp') ?>" alt="">
 	  </figure>
 
 	  <!-- 見出し -->
@@ -265,7 +265,7 @@ require __DIR__ . '/partials/header.php';
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
 		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a></p><br>
-		  <span>〒850-0064 長崎県長崎市秋月町2-3 <a href="https://maps.app.goo.gl/Z3BnzJUyTiYCjye67" target="_blank" rel="noopener">(GoogleMap)</a></span>
+		  <span><span class="mark">■</span>〒850-0064 長崎県長崎市秋月町2-3 <a href="https://maps.app.goo.gl/Z3BnzJUyTiYCjye67" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow">)</a></span>
 		
 	  </div>
 
