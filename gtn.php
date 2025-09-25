@@ -264,8 +264,8 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a>
-		  <a href="https://goo.gl/maps/58VkujFZK4wr5eWB8" target="_blank" rel="noopener">〒850-0064 長崎県長崎市秋月町2-3 (GoogleMap)</a>
+		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener">https://www.gt-nagasaki.jp/</a><br>
+		  <span>〒850-0064 長崎県長崎市秋月町2-3 <a href="https://goo.gl/maps/58VkujFZK4wr5eWB8" target="_blank" rel="noopener">(GoogleMap)</a></span>
 		</p>
 	  </div>
 
