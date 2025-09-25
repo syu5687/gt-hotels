@@ -249,8 +249,10 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://gardenterracehotels.com/sasebo/" target="_blank" rel="noopener">https://gardenterracehotels.com/sasebo/</a>
-		</p>
+		  <a href="https://gardenterracehotels.com/sasebo/" target="_blank" rel="noopener">https://gardenterracehotels.com/sasebo/</a></p><br>
+		  <span class="mark">■</span>
+		  〒858-0922 長崎県佐世保市鹿子前町１１２９
+		  <a href="https://maps.app.goo.gl/XCAR2QawMJX1rYXbA" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
 	  </div>
 
 	</div>

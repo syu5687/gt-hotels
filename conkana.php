@@ -308,8 +308,10 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://conkana.jp" target="_blank" rel="noopener">https://conkana.jp</a>
-		</p>
+		  <a href="https://conkana.jp" target="_blank" rel="noopener">https://conkana.jp</a></p><br>
+		  <span class="mark">■</span>
+			〒853-0013	長崎県五島市上大津町2413
+			<a href="https://maps.app.goo.gl/5bvSCybZwHFpVubv7" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
 	  </div>
 
 	</div>
