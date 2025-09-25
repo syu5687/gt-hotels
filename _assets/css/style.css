@@ -57,3 +57,5 @@ body{
 
 /* Footer */
 footer{margin:40px 0 28px; text-align:center; color:#777; font-size:12px;}
+.iconwindow{display: inline-block;width: 1rem;padding-left: 4px;}
+.map{text-decoration: underline;}
