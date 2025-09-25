@@ -251,7 +251,7 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-fukuoka.net/" target="_blank" rel="noopener">https://www.gt-fukuoka.net/</a>
+		  <a href="https://www.gt-fukuoka.net/" target="_blank" rel="noopener">https://www.gt-fukuoka.net/</a><br>
 		  <span class="mark">■</span>
 			〒819-0001 福岡県福岡市西区小戸2-3-55
 			<a href="https://www.google.com/maps/place/Garden+Terrace+Fukuoka+Hotels+%26+Resorts/@33.5936591,130.3164755,17z/data=!3m1!4b1!4m8!3m7!1s0x3541935da7dc8171:0xfe0747b67ef871ac!5m2!4m1!1i2!8m2!3d33.5936591!4d130.3186642?shorturl=1" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>

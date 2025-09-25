@@ -275,7 +275,7 @@ require __DIR__ . '/partials/header.php';
 
 		<p class="spec-note">
 		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-saga.jp/" target="_blank" rel="noopener">https://www.gt-saga.jp/</a>
+		  <a href="https://www.gt-saga.jp/" target="_blank" rel="noopener">https://www.gt-saga.jp/</a><br>
 		  <span class="mark">■</span>
 		  〒840-0850　佐賀県佐賀市新栄東3丁目7-8
 		  <a href="https://maps.app.goo.gl/Bn4U2MhedjrCoNRg9" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
