@@ -267,7 +267,7 @@ require __DIR__ . '/partials/header.php';
 		  <a href="https://www.gt-nagasaki.jp/" target="_blank" rel="noopener" class="hpLink">https://www.gt-nagasaki.jp/</a></p><br>
 		  <span class="mark">■</span>
 		  〒850-0064 長崎県長崎市秋月町2-3 
-		  <a href="https://maps.app.goo.gl/Z3BnzJUyTiYCjye67" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
+		  <a href="https://maps.app.goo.gl/Z3BnzJUyTiYCjye67" class="map" target="_blank" rel="noopener">(GoogleMAP<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
 		
 	  </div>
 

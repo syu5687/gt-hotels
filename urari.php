@@ -267,7 +267,7 @@ require __DIR__ . '/partials/header.php';
 		  <a href="https://uraritakeo.jp/" target="_blank" rel="noopener" class="hpLink">https://uraritakeo.jp/</a></p><br>
 		  <span class="mark">■</span>
 		  〒843-0021 佐賀県武雄市武雄町大字永島15750-1
-		  <a href="https://maps.app.goo.gl/odemkDm7ojdTYKzM8" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
+		  <a href="https://maps.app.goo.gl/odemkDm7ojdTYKzM8" class="map" target="_blank" rel="noopener">(GoogleMAP<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
 	  </div>
 
 	</div>

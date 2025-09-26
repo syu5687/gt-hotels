@@ -254,7 +254,7 @@ require __DIR__ . '/partials/header.php';
 		  <a href="https://www.gt-fukuoka.net/" target="_blank" rel="noopener" class="hpLink">https://www.gt-fukuoka.net/</a></p><br>
 		  <span class="mark">■</span>
 			〒819-0001 福岡県福岡市西区小戸2-3-55
-			<a href="https://maps.app.goo.gl/mkjadrMH9Aw75FQX9" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
+			<a href="https://maps.app.goo.gl/mkjadrMH9Aw75FQX9" class="map" target="_blank" rel="noopener">(GoogleMAP<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>
 
 	  </div>
 
