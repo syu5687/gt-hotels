@@ -250,8 +250,8 @@ require __DIR__ . '/partials/header.php';
 		<div class="spec-divider"></div>
 
 		<p class="spec-note">
-		  <span class="mark">■</span>公式ホームページ
-		  <a href="https://www.gt-fukuoka.net/" target="_blank" rel="noopener">https://www.gt-fukuoka.net/</a></p><br>
+		  <span class="mark">■</span>公式サイト
+		  <a href="https://www.gt-fukuoka.net/" target="_blank" rel="noopener" class="hpLink">https://www.gt-fukuoka.net/</a></p><br>
 		  <span class="mark">■</span>
 			〒819-0001 福岡県福岡市西区小戸2-3-55
 			<a href="https://maps.app.goo.gl/mkjadrMH9Aw75FQX9" class="map" target="_blank" rel="noopener">(GoogleMap<img src="<?= asset('/_assets/images/window.svg') ?>" alt="別ウィンドウ" class="iconwindow" style="display: inline-block;">)</a>

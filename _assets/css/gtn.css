@@ -207,8 +207,9 @@
   text-decoration: underline;
   word-break: break-all;
 }
-.map{text-decoration: underline;}
+.map{text-decoration: underline;font-family: serif;}
 .iconwindow{width: 1rem;padding-left: 4px;}
+.hpLink{font-family: serif;}
 
 /* スマホ：2行構成 */
 @media (max-width: 880px){
