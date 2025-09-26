@@ -209,7 +209,7 @@
   text-decoration: underline;
   word-break: break-all;
 }
-.map{text-decoration: underline;font-family: serif;}
+a.map{text-decoration: underline;font-family: serif;}
 .iconwindow{width: 1rem;padding-left: 4px;}
 .hpLink{font-family: serif;}
 

@@ -226,7 +226,7 @@ padding-top:20px; }
   text-decoration: underline;
   word-break: break-all;
 }
-.map{text-decoration: underline;font-family: serif;color:#1b52a5;}
+a.map{text-decoration: underline;font-family: serif;color:#1b52a5;}
 .iconwindow{width: 1rem;padding-left: 4px;}
 .hpLink{font-family: serif;}
 
