@@ -2,10 +2,10 @@
   <title>水と光の揺らぎ</title>
   <desc>淡いセージとシャンパンカラーが、ゆっくりと呼吸するように動く背景素材。</desc>
   <defs>
-    <radialGradient id="sage"><stop stop-color="#95a68b" stop-opacity=".32"/><stop offset=".55" stop-color="#b9c5aa" stop-opacity=".14"/><stop offset="1" stop-color="#b9c5aa" stop-opacity="0"/></radialGradient>
-    <radialGradient id="gold"><stop stop-color="#cfb78c" stop-opacity=".28"/><stop offset=".55" stop-color="#dbcba9" stop-opacity=".12"/><stop offset="1" stop-color="#dbcba9" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sage"><stop stop-color="#95a68b" stop-opacity=".58"/><stop offset=".55" stop-color="#b9c5aa" stop-opacity=".28"/><stop offset="1" stop-color="#b9c5aa" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gold"><stop stop-color="#cfb78c" stop-opacity=".5"/><stop offset=".55" stop-color="#dbcba9" stop-opacity=".24"/><stop offset="1" stop-color="#dbcba9" stop-opacity="0"/></radialGradient>
     <radialGradient id="light"><stop stop-color="#fff" stop-opacity=".9"/><stop offset=".4" stop-color="#fff" stop-opacity=".4"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-    <linearGradient id="line"><stop stop-color="#a3b29b" stop-opacity="0"/><stop offset=".45" stop-color="#a3b29b" stop-opacity=".2"/><stop offset=".65" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#c4cbb8" stop-opacity="0"/></linearGradient>
+    <linearGradient id="line"><stop stop-color="#a3b29b" stop-opacity="0"/><stop offset=".45" stop-color="#a3b29b" stop-opacity=".46"/><stop offset=".65" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#c4cbb8" stop-opacity="0"/></linearGradient>
   </defs>
   <g>
     <animateTransform attributeName="transform" type="translate" values="0 0;70 -35;-20 25;0 0" dur="32s" repeatCount="indefinite"/>
@@ -21,7 +21,7 @@
     <ellipse cx="1050" cy="520" rx="400" ry="180" fill="url(#light)" transform="rotate(-32 1050 520)"/>
     <ellipse cx="420" cy="400" rx="230" ry="380" fill="url(#light)" transform="rotate(35 420 400)" opacity=".5"/>
   </g>
-  <g fill="none" stroke="url(#line)" stroke-width="1.1">
+  <g fill="none" stroke="url(#line)" stroke-width="2.2">
     <animateTransform attributeName="transform" type="translate" values="0 0;30 -18;0 0" dur="22s" repeatCount="indefinite"/>
     <path d="M-180 700 C200 370 380 1000 830 600 S1330 180 1800 410">
       <animate attributeName="d" values="M-180 700 C200 370 380 1000 830 600 S1330 180 1800 410;M-180 660 C200 490 380 900 830 630 S1330 250 1800 370;M-180 700 C200 370 380 1000 830 600 S1330 180 1800 410" dur="25s" repeatCount="indefinite"/>
