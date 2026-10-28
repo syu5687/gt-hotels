@@ -1,0 +1,4 @@
+DirectoryIndex index.html
+Options -Indexes
+AddType text/javascript .mjs
+AddType video/mp4 .mp4
