@@ -1,36 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
   <title>水と光の揺らぎ</title>
-  <desc>淡いセージとシャンパンカラーが、ゆっくりと呼吸するように動く背景素材。</desc>
+  <desc>淡いセージとシャンパンカラー、水紋を重ねた静止背景素材。</desc>
   <defs>
-    <radialGradient id="sage"><stop stop-color="#95a68b" stop-opacity=".58"/><stop offset=".55" stop-color="#b9c5aa" stop-opacity=".28"/><stop offset="1" stop-color="#b9c5aa" stop-opacity="0"/></radialGradient>
-    <radialGradient id="gold"><stop stop-color="#cfb78c" stop-opacity=".5"/><stop offset=".55" stop-color="#dbcba9" stop-opacity=".24"/><stop offset="1" stop-color="#dbcba9" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sage"><stop stop-color="#95a68b" stop-opacity=".42"/><stop offset=".55" stop-color="#b9c5aa" stop-opacity=".2"/><stop offset="1" stop-color="#b9c5aa" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gold"><stop stop-color="#cfb78c" stop-opacity=".36"/><stop offset=".55" stop-color="#dbcba9" stop-opacity=".17"/><stop offset="1" stop-color="#dbcba9" stop-opacity="0"/></radialGradient>
     <radialGradient id="light"><stop stop-color="#fff" stop-opacity=".9"/><stop offset=".4" stop-color="#fff" stop-opacity=".4"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-    <linearGradient id="line"><stop stop-color="#a3b29b" stop-opacity="0"/><stop offset=".45" stop-color="#a3b29b" stop-opacity=".46"/><stop offset=".65" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#c4cbb8" stop-opacity="0"/></linearGradient>
+    <linearGradient id="line"><stop stop-color="#a3b29b" stop-opacity="0"/><stop offset=".45" stop-color="#a3b29b" stop-opacity=".3"/><stop offset=".65" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#c4cbb8" stop-opacity="0"/></linearGradient>
   </defs>
   <g>
-    <animateTransform attributeName="transform" type="translate" values="0 0;70 -35;-20 25;0 0" dur="32s" repeatCount="indefinite"/>
     <ellipse cx="1330" cy="210" rx="590" ry="490" fill="url(#sage)">
-      <animate attributeName="ry" values="490;560;470;490" dur="28s" repeatCount="indefinite"/>
     </ellipse>
     <ellipse cx="150" cy="810" rx="620" ry="510" fill="url(#gold)">
-      <animate attributeName="rx" values="620;720;590;620" dur="35s" repeatCount="indefinite"/>
     </ellipse>
   </g>
   <g>
-    <animateTransform attributeName="transform" type="translate" values="0 0;-65 45;30 -25;0 0" dur="37s" repeatCount="indefinite"/>
     <ellipse cx="1050" cy="520" rx="400" ry="180" fill="url(#light)" transform="rotate(-32 1050 520)"/>
     <ellipse cx="420" cy="400" rx="230" ry="380" fill="url(#light)" transform="rotate(35 420 400)" opacity=".5"/>
   </g>
-  <g fill="none" stroke="url(#line)" stroke-width="2.2">
-    <animateTransform attributeName="transform" type="translate" values="0 0;30 -18;0 0" dur="22s" repeatCount="indefinite"/>
+  <g fill="none" stroke="url(#line)" stroke-width="1.6">
     <path d="M-180 700 C200 370 380 1000 830 600 S1330 180 1800 410">
-      <animate attributeName="d" values="M-180 700 C200 370 380 1000 830 600 S1330 180 1800 410;M-180 660 C200 490 380 900 830 630 S1330 250 1800 370;M-180 700 C200 370 380 1000 830 600 S1330 180 1800 410" dur="25s" repeatCount="indefinite"/>
     </path>
     <path d="M-180 740 C230 390 400 1030 850 635 S1360 220 1800 450" opacity=".65">
-      <animate attributeName="d" values="M-180 740 C230 390 400 1030 850 635 S1360 220 1800 450;M-180 705 C210 530 420 930 850 675 S1360 300 1800 410;M-180 740 C230 390 400 1030 850 635 S1360 220 1800 450" dur="25s" repeatCount="indefinite"/>
     </path>
     <path d="M300 180 C650 -80 1000 500 1750 70" opacity=".5">
-      <animate attributeName="d" values="M300 180 C650 -80 1000 500 1750 70;M260 210 C700 -30 1050 420 1750 110;M300 180 C650 -80 1000 500 1750 70" dur="31s" repeatCount="indefinite"/>
     </path>
   </g>
 </svg>
