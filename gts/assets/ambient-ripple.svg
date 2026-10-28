@@ -8,12 +8,16 @@
     <linearGradient id="line"><stop stop-color="#a3b29b" stop-opacity="0"/><stop offset=".45" stop-color="#a3b29b" stop-opacity=".3"/><stop offset=".65" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#c4cbb8" stop-opacity="0"/></linearGradient>
   </defs>
   <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;70 -35;-20 25;0 0" dur="32s" repeatCount="indefinite"/>
     <ellipse cx="1330" cy="210" rx="590" ry="490" fill="url(#sage)">
+      <animate attributeName="ry" values="490;560;470;490" dur="28s" repeatCount="indefinite"/>
     </ellipse>
     <ellipse cx="150" cy="810" rx="620" ry="510" fill="url(#gold)">
+      <animate attributeName="rx" values="620;720;590;620" dur="35s" repeatCount="indefinite"/>
     </ellipse>
   </g>
   <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;-65 45;30 -25;0 0" dur="37s" repeatCount="indefinite"/>
     <ellipse cx="1050" cy="520" rx="400" ry="180" fill="url(#light)" transform="rotate(-32 1050 520)"/>
     <ellipse cx="420" cy="400" rx="230" ry="380" fill="url(#light)" transform="rotate(35 420 400)" opacity=".5"/>
   </g>
